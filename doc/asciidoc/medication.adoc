@@ -1,0 +1,63 @@
+= Medications Resource実装ガイド
+
+このリソースは医師の処方箋、薬局での払い出し、薬剤投与、ワクチン接種状況についての情報を扱う。この文書ではこのリソースを利用して実際のサービスを
+
+== 目的と範囲
+
+この文書で扱うFHIR resourceは以下の4つである。
+
+* Medication
+* MedicationRequest
+* MedicationDispense
+* MedicationAdministration
+* Immunization
+
+HL7 FHIR R4のMedications resourceにはその他開発中のResourceがあるが、
+現時点では上記のResourceを対象としている。
+
+== Medications Resource概説
+
+先に述べたようにMedications resourceは処方に関連する情報モデルであり、日常的な診療情報とは以下のように対応する。
+
+[options="header"]
+.Table HL7 FHIR Medicatins Resource一覧
+|===
+|FHIR Resource|臨床概念
+
+|Medication
+|薬剤リスト
+
+|MedicationRequest
+|処方箋
+
+|MedicationDispense
+|薬剤払い出し(調剤結果)
+
+|MedicationAdministration
+|薬剤投与状況（注射記録、内服結果)
+
+|===
+
+Medicationは薬剤のリストであり、MedicationRequest, MedicationDispense, MedicationAdministrationに組み込まれて利用される。MedicationAdministration Resourceは最終的に患者にどのように薬剤が投与されたかの結果が記録される。したがって、内服処方であれば患者が内服した結果であり、注射であれば医療従事者による注射の実施記録となる。業務手順を示したシーケンス図を示す。
+
+.Figure Medicationsシーケンス図（内服処方箋)
+[plantuml]
+--
+医師 -> 薬剤師: MedicationRequest
+薬剤師 -> 患者: MedicationDispense
+--
+
+.Figure Medicationsシーケンス図（内服処方箋)
+[plantuml]
+--
+医師 -> 薬剤師: MedicationRequest
+薬剤師 -> 看護師: MedicationDispense
+看護師 -> 患者: MedicationAction
+--
+
+Immunizationはワクチン接種履歴についての記録である。
+
+以下、それぞれのリソースの実装について解説する。
+
+== Medication
+Medication Resourceの項目を以下に示す。

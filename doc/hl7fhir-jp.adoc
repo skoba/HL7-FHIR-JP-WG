@@ -1,3 +1,0 @@
-# HL7 FHIR日本版
-
-HL7 FHIRはGraham Grieveによって開発が始められ、その
