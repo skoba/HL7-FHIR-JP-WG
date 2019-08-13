@@ -1,6 +1,6 @@
 = Medications Resource実装ガイド
 
-このリソースは医師の処方箋、薬局での払い出し、薬剤投与、ワクチン接種状況についての情報を扱う。この文書ではこのリソースを利用して実際のサービスを
+このリソースは医師の処方箋、薬局での払い出し、薬剤投与、ワクチン接種状況についての情報を扱う。この文書ではこのリソースを利用して実際のサービスを実装するための方法について解説する。
 
 == 目的と範囲
 
@@ -60,4 +60,29 @@ Immunizationはワクチン接種履歴についての記録である。
 以下、それぞれのリソースの実装について解説する。
 
 == Medication
-Medication Resourceの項目を以下に示す。
+Medication ResourceのUML図を以下に示す。
+
+.Figure Mecdication Resource UML図
+[plantuml]
+--
+class "Medication(Domain Resource)" as Medication {
+      identifier: Identifier [0..*]
+      code: CodeableConcept [0..1]
+      status: code [0..1]
+      manufacturer: Reference [0..1]
+      amount: Ratio [0..1]
+}
+
+class Batch {
+      lotNumber: string [0..1]
+      expirationDate: dateTime [0..1]
+}
+class Ingredient {
+      item: Type [1..1]
+      isActive: Boolean [0..1]
+      strength: Type [0..1]
+}
+Medication "0..*" *-right- Batch : batch
+Medication "0..*" *-down- Ingredient : ingredient
+--
+
