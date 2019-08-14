@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="author" content="== はじめに">
 <title>HL7 FHIR実装ガイド</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -439,10 +440,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <body class="book">
 <div id="header">
 <h1>HL7 FHIR実装ガイド</h1>
+<div class="details">
+<span id="author" class="author">== はじめに</span><br>
+</div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_参考文献">参考文献</a></li>
+<li><a href="#_medications_resource実装ガイド">Medications Resource実装ガイド</a>
+<ul class="sectlevel1">
 <li><a href="#_目的と範囲">目的と範囲</a></li>
 <li><a href="#_medications_resource概説">Medications Resource概説</a></li>
 <li><a href="#_medication">Medication</a>
@@ -451,6 +457,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_medicationrequest">MedicationRequest</a></li>
+<li><a href="#_用語集">用語集</a>
+<ul class="sectlevel2">
+<li><a href="#_目的と範囲_2">目的と範囲</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -458,15 +471,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>HL7 FHIRは2011年にGraham Grieveによって開発が始められ、実装の容易さと
-公開性により開発者を中心に人気が高まりました。現在医療分野で急速に普及
-しつつある規格です。日本においても取り入れていく機運が高まりつつあります。</p>
+<p>HL7 FHIRは2011年にGraham Grieveによって開発が始められ、実装
+の容易さと公開性により開発者を中心に人気が広まりつつある現在急速に普及
+しつつある医療情報規格の一つである。日本においても取り入れていく機運が
+高まりつつある。</p>
 </div>
 <div class="paragraph">
 <p>次世代健康医療記録システム共通プラットフォーム課題研究会ではFHIRの日本
 での運用について検討するため、FHIR実装検討ワーキンググループで検討を深
-めております。各種課題に対応するため、下記のサブワーキンググループを設
-定しています。</p>
+めている。各種課題に対応するため、下記のサブワーキンググループを設
+定した。</p>
 </div>
 <div class="ulist">
 <ul>
@@ -491,7 +505,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>以下に各サブワーキンググループで取りまとめた実装ガイドを示します。</p>
+<p>以下に各サブワーキンググループで取りまとめた実装ガイドを示す。</p>
 </div>
 </div>
 </div>
@@ -504,14 +518,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><a id="FHIR_orig"></a> HL7 FHIR 公式サイト, <a href="https://www.hl7.org/fhir/" class="bare">https://www.hl7.org/fhir/</a></p>
 </li>
 <li>
-<p><a id="SSMIX2"></a> SS-MIX2仕様書・ガイドライン, <a href="http://www.jami.jp/jamistd/ssmix2.php" class="bare">http://www.jami.jp/jamistd/ssmix2.php</a>
-= Medications Resource実装ガイド</p>
+<p><a id="SSMIX2"></a> SS-MIX2仕様書・ガイドライン, <a href="http://www.jami.jp/jamistd/ssmix2.php" class="bare">http://www.jami.jp/jamistd/ssmix2.php</a></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>このリソースは医師の処方箋、薬局での払い出し、薬剤投与、ワクチン接種状況についての情報を扱う。この文書ではこのリソースを利用して実際のサービスを実装するための方法について解説する。</p>
 </div>
+</div>
+<h1 id="_medications_resource実装ガイド" class="sect0">Medications Resource実装ガイド</h1>
+<div class="openblock partintro">
+<div class="content">
+このリソースは医師の処方箋、薬局での払い出し、薬剤投与、ワクチン接種状況についての情報を扱う。この文書ではこのリソースを利用して実際のサービスを実装するための方法について解説する。
 </div>
 </div>
 <div class="sect1">
@@ -741,10 +757,106 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_用語集">用語集</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_目的と範囲_2">目的と範囲</h3>
+<div class="paragraph">
+<p>本章では、HL7 FHIRで使われるVocabulary, Terminologyについて記述する。<em>HL7 FHIR</em> <a href="#FHIR_orig">[FHIR_orig]</a>ではSNOMED CTが使われていることが多いが日本国内での利用を考え代替となる用語集についても検討された。</p>
+</div>
+<div class="paragraph">
+<p>各ワーキンググループが使用するVocabularyについてそれぞれ記述する。</p>
+</div>
+<div class="sect3">
+<h4 id="_medications_resource">Medications Resource</h4>
+<div class="sect4">
+<h5 id="_medication_2">Medication</h5>
+<div class="sect5">
+<h6 id="_medication_status_codes">Medication Status Codes</h6>
+<div class="paragraph">
+<p>薬剤の有効性を示すコードセットである。HL7 FHIRで規定された <a href="http://hl7.org/fhir/ValueSet/medication-status">Medicatin Status Codes</a>を利用する。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Table Medicaion Status Codes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">コード</th>
+<th class="tableblock halign-left valign-top">表示</th>
+<th class="tableblock halign-left valign-top">定義</th>
+<th class="tableblock halign-left valign-top">正規の用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">active</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">この薬剤は使用可能</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~active</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inactive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inactive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">この薬剤は使用できない</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~inactive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entered-in-error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entered in Error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">この薬剤は誤って入力された</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~error</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="_medication_ingredientstrength">Medication IngredientStrength</h6>
+<div class="paragraph">
+<p>薬剤の力価に関するコードセットである。HL7 FHIRで規定された <a href="http://build.fhir.org/valueset-medication-ingredientstrength.html">Medical IngredientStrength</a>を利用する。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Table Medicaion IngredientStrength</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">コード</th>
+<th class="tableblock halign-left valign-top">表示</th>
+<th class="tableblock halign-left valign-top">定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">qs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">適量</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ごく少量</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-08-14 11:37:47 +0900
+Last updated 2019-08-14 13:47:58 +0900
 </div>
 </div>
 </body>
