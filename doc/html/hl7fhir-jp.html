@@ -602,6 +602,59 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="title">Figure 3. Figure Mecdication Resource UML図</div>
 </div>
+<div class="listingblock">
+<div class="title">XML template</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;Medication xmlns="http://hl7.org/fhir"&gt;
+ &lt;!-- from Resource: id, meta, implicitRules, and language --&gt;
+ &lt;!-- from DomainResource: text, contained, extension, and modifierExtension --&gt;
+ &lt;identifier&gt;&lt;!-- 0..* Identifier Business identifier for this medication --&gt;&lt;/identifier&gt;
+ &lt;code&gt;&lt;!-- 0..1 CodeableConcept Codes that identify this medication --&gt;&lt;/code&gt;
+ &lt;status value="[code]"/&gt;&lt;!-- 0..1 active | inactive | entered-in-error --&gt;
+ &lt;manufacturer&gt;&lt;!-- 0..1 Reference(Organization) Manufacturer of the item --&gt;&lt;/manufacturer&gt;
+ &lt;doseForm&gt;&lt;!-- 0..1 CodeableConcept powder | tablets | capsule + --&gt;&lt;/doseForm&gt;
+ &lt;amount&gt;&lt;!-- 0..1 Ratio Amount of drug in package --&gt;&lt;/amount&gt;
+ &lt;ingredient&gt;  &lt;!-- 0..* Active or inactive ingredient --&gt;
+  &lt;item[x]&gt;&lt;!-- 1..1 CodeableConcept|Reference(Medication|Substance) The actual ingredient or content --&gt;&lt;/item[x]&gt;
+  &lt;isActive value="[boolean]"/&gt;&lt;!-- 0..1 Active ingredient indicator --&gt;
+  &lt;strength[x]&gt;&lt;!-- 0..1 Ratio|CodeableConcept Quantity of ingredient present --&gt;&lt;/strength[x]&gt;
+ &lt;/ingredient&gt;
+ &lt;batch&gt;  &lt;!-- 0..1 Details about packaged medications --&gt;
+  &lt;lotNumber value="[string]"/&gt;&lt;!-- 0..1 Identifier assigned to batch --&gt;
+  &lt;expirationDate value="[dateTime]"/&gt;&lt;!-- 0..1 When batch will expire --&gt;
+ &lt;/batch&gt;
+&lt;/Medication&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">JSON template</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "resourceType" : "Medication",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Business identifier for this medication
+  "code" : { CodeableConcept }, // Codes that identify this medication
+  "status" : "&lt;code&gt;", // active | inactive | entered-in-error
+  "manufacturer" : { Reference(Organization) }, // Manufacturer of the item
+  "doseForm" : { CodeableConcept }, // powder | tablets | capsule +
+  "amount" : { Ratio }, // Amount of drug in package
+  "ingredient" : [{ // Active or inactive ingredient
+    // item[x]: The actual ingredient or content. One of these 2:
+    "itemCodeableConcept" : { CodeableConcept },
+    "itemReference" : { Reference(Medication|Substance) },
+    "isActive" : &lt;boolean&gt;, // Active ingredient indicator
+    // strength[x]: Quantity of ingredient present. One of these 2:
+    "strengthRatio" : { Ratio }
+    "strengthCodeableConcept" : { CodeableConcept }
+  }],
+  "batch" : { // Details about packaged medications
+    "lotNumber" : "&lt;string&gt;", // Identifier assigned to batch
+    "expirationDate" : "&lt;dateTime&gt;" // When batch will expire
+  }
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

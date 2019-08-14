@@ -60,6 +60,8 @@ Immunizationはワクチン接種履歴についての記録である。
 以下、それぞれのリソースの実装について解説する。
 
 == Medication
+このResourceは単独で用いられることはなく、MedicationRequestやMedicationDispenseなどの他のResourceに組み込まれて利用される。
+
 Medication ResourceのUML図を以下に示す。
 
 .Figure Mecdication Resource UML図
@@ -86,3 +88,76 @@ Medication "0..*" *-right- Batch : batch
 Medication "0..*" *-down- Ingredient : ingredient
 --
 
+.XML template
+[source, xml]
+--
+<Medication xmlns="http://hl7.org/fhir">
+ <!-- from Resource: id, meta, implicitRules, and language -->
+ <!-- from DomainResource: text, contained, extension, and modifierExtension -->
+ <identifier><!-- 0..* Identifier Business identifier for this medication --></identifier>
+ <code><!-- 0..1 CodeableConcept Codes that identify this medication --></code>
+ <status value="[code]"/><!-- 0..1 active | inactive | entered-in-error -->
+ <manufacturer><!-- 0..1 Reference(Organization) Manufacturer of the item --></manufacturer>
+ <doseForm><!-- 0..1 CodeableConcept powder | tablets | capsule + --></doseForm>
+ <amount><!-- 0..1 Ratio Amount of drug in package --></amount>
+ <ingredient>  <!-- 0..* Active or inactive ingredient -->
+  <item[x]><!-- 1..1 CodeableConcept|Reference(Medication|Substance) The actual ingredient or content --></item[x]>
+  <isActive value="[boolean]"/><!-- 0..1 Active ingredient indicator -->
+  <strength[x]><!-- 0..1 Ratio|CodeableConcept Quantity of ingredient present --></strength[x]>
+ </ingredient>
+ <batch>  <!-- 0..1 Details about packaged medications -->
+  <lotNumber value="[string]"/><!-- 0..1 Identifier assigned to batch -->
+  <expirationDate value="[dateTime]"/><!-- 0..1 When batch will expire -->
+ </batch>
+</Medication>
+--
+.JSON template
+[source, json]
+--
+{
+  "resourceType" : "Medication",
+  // from Resource: id, meta, implicitRules, and language
+  // from DomainResource: text, contained, extension, and modifierExtension
+  "identifier" : [{ Identifier }], // Business identifier for this medication
+  "code" : { CodeableConcept }, // Codes that identify this medication
+  "status" : "<code>", // active | inactive | entered-in-error
+  "manufacturer" : { Reference(Organization) }, // Manufacturer of the item
+  "doseForm" : { CodeableConcept }, // powder | tablets | capsule +
+  "amount" : { Ratio }, // Amount of drug in package
+  "ingredient" : [{ // Active or inactive ingredient
+    // item[x]: The actual ingredient or content. One of these 2:
+    "itemCodeableConcept" : { CodeableConcept },
+    "itemReference" : { Reference(Medication|Substance) },
+    "isActive" : <boolean>, // Active ingredient indicator
+    // strength[x]: Quantity of ingredient present. One of these 2:
+    "strengthRatio" : { Ratio }
+    "strengthCodeableConcept" : { CodeableConcept }
+  }],
+  "batch" : { // Details about packaged medications
+    "lotNumber" : "<string>", // Identifier assigned to batch
+    "expirationDate" : "<dateTime>" // When batch will expire
+  }
+}
+--
+
+
+
+
+
+
+// [options="header"]
+// .Table Medication Resource項目一覧
+// |===
+// |項目名|Flags|Cardinality|Type|内容、制約
+
+// |Medication
+// |TU
+// |
+// |DomainResource
+// |Medication resouceの定義 +
+// id, meta, implicitRules, language, text, contained, extension, modifiedExtension項目の定義は上位クラスで行っている。
+// |===
+
+
+== MedicationRequest
+このResourceは前述のように内服、注射を問わず処方箋についての情報を示している。
