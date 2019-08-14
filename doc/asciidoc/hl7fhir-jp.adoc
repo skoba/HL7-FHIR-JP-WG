@@ -1,16 +1,17 @@
 :toc:
 :doctype: book
 = HL7 FHIR実装ガイド
+== はじめに
 
-
-HL7 FHIRは2011年にGraham Grieveによって開発が始められ、実装の容易さと
-公開性により開発者を中心に人気が高まりました。現在医療分野で急速に普及
-しつつある規格です。日本においても取り入れていく機運が高まりつつあります。
+HL7 FHIRは2011年にGraham Grieveによって開発が始められ、実装
+の容易さと公開性により開発者を中心に人気が広まりつつある現在急速に普及
+しつつある医療情報規格の一つである。日本においても取り入れていく機運が
+高まりつつある。
 
 次世代健康医療記録システム共通プラットフォーム課題研究会ではFHIRの日本
 での運用について検討するため、FHIR実装検討ワーキンググループで検討を深
-めております。各種課題に対応するため、下記のサブワーキンググループを設
-定しています。
+めている。各種課題に対応するため、下記のサブワーキンググループを設
+定した。
 
 * SWG1 FHIR Infrastructure
 * SWG2 Diagnostics and Observaiton
@@ -19,7 +20,9 @@ HL7 FHIRは2011年にGraham Grieveによって開発が始められ、実装の�
 * SWG5 <<_medication resource, pharmacy and medication>>
 * SWG6 vocabulary and Terminology
 
-以下に各サブワーキンググループで取りまとめた実装ガイドを示します。
+以下に各サブワーキンググループで取りまとめた実装ガイドを示す。
 
 include::references.adoc[]
 include::medication.adoc[]
+include::terminologies.adoc[]
+

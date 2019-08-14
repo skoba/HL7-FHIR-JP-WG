@@ -1,0 +1,23 @@
+== 用語集
+=== 目的と範囲
+
+本章では、HL7 FHIRで使われるVocabulary, Terminologyについて記述する。_HL7 FHIR_ <<FHIR_orig>>ではSNOMED CTが使われていることが多いが日本国内での利用を考え代替となる用語集についても検討された。
+
+各ワーキンググループが使用するVocabularyについてそれぞれ記述する。
+
+
+==== Medications Resource
+===== Medication
+====== Medication.code
+
+HL7 FHIRでの薬剤コードは_Example_としてSNOMED CTによる薬剤コードが挙げられているが、日本での利用には制限がある。以下のコードが代替として挙げられるが、HOTコードの使用を推奨する。
+
+.Table 薬剤コード
+|===
+|名称|概要|URL
+
+|HOTx|階層構造を持つ薬剤コード集|
+
+|厚生労働省マスタ|厚生労働省が指定する薬剤コード集|
+
+|===

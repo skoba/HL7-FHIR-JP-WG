@@ -89,7 +89,7 @@ Medication "0..*" *-down- Ingredient : ingredient
 --
 
 .XML template
-[source, xml]
+[source,xml]
 --
 <Medication xmlns="http://hl7.org/fhir">
  <!-- from Resource: id, meta, implicitRules, and language -->
@@ -112,7 +112,7 @@ Medication "0..*" *-down- Ingredient : ingredient
 </Medication>
 --
 .JSON template
-[source, json]
+[source,json]
 --
 {
   "resourceType" : "Medication",
@@ -140,14 +140,24 @@ Medication "0..*" *-down- Ingredient : ingredient
 }
 --
 
+=== Terminology bindings
+薬剤コードとして、_HL7 FHIR_　<<FHIR_orig>>ではSNOMED CTなどのコードが前提となっているが、薬剤サブワーキンググループおよびのVocabularyサブワーキンググループの見解として以下のTerminologyを推奨とする。
+
+.Table Terminology bindings
+|===
+|Path|定義|Type|Reference
+
+|Medication.code|薬剤を定義するコード|Example|#HOTコード#
+
+|Medication.status|その薬剤の有効性を示すコード|Required|Medication Status Codes
+|Medication.doseForm|剤形についてのコード|Example|#TBD#
+|Medication.ingredientStrength|薬剤成分の力価を示すコード|Example|Medication Ingredient Strength Codes
+|===
 
 
 
-
-
-// [options="header"]
-// .Table Medication Resource項目一覧
-// |===
+// .Table Medication Resource構造
+// --
 // |項目名|Flags|Cardinality|Type|内容、制約
 
 // |Medication
@@ -161,3 +171,14 @@ Medication "0..*" *-down- Ingredient : ingredient
 
 == MedicationRequest
 このResourceは前述のように内服、注射を問わず処方箋についての情報を示している。
+
+UML図を以下に示す。
+.Figure MecdicationRequest Resource UML図
+[plantuml]
+--
+class "MedicationRequest (DomainResource)" as MedicationRequest {
+  identifier: Identifier [0..*]
+  status: code [1..1]
+}
+--
+
