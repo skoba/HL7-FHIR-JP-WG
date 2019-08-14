@@ -178,7 +178,59 @@ UML図を以下に示す。
 --
 class "MedicationRequest (DomainResource)" as MedicationRequest {
   identifier: Identifier [0..*]
-  status: code [1..1]
+  status: code [1..1] <<medicationrequestStatus!>>
+  statusReason: CodeableConcept [0..1] <<medicationRequestStatus Reas...??>>
+  intent: code [1..1] <<medicationRequest Intent!>>
+  category: CodeableConcept [0..] <<medicationRequest Category ??>>
+  priority: code [0..1] <<RequestPriority!>>
+  doNotPerform: boolean [0..1]
+  reported : boolean [0..1]
+  informationSource : Reference [0..1] <<Patient|Practitioner| PractitionerRole|RelatedPerson|Organization>>
+  medication[x]: Type [1..1] <<CodeableConcept|Reference(Medication); SNOMEDCTMedicationCodes??>>
+  subject: Reference [1..1] <<Patient|Group>>
+  encounter: Reference [0..1] <<Encounter>>
+  supportingInformation: Reference [0..] <<Any>>
+  authoredOn: dateTime [0..1]
+  requester : Reference [0..1] <<Practitioner|PractitionerRole|Organization|Patient|RelatedPerson|Device>>
+  performer: Reference [0..1] <<Practitioner|PractitionerRole|Organization|Patient|Device|RelatedPerson|CareTeam|HealthcareService>>
+  performerType: CodeableConcept [0..1] <<ProcedurePerformerRoleCodes??>>
+  recorder: Reference [0..1] <<Practitioner|PractitionerRole>>
+  reasonCode: CodeableConcept [0..] <<Condition/Problem/DiagnosisCo...??>>
+  reasonReference: Reference [0..] <<Condition|Observation>>
+  instantiatesCanonical: canonical [0..] <<PlanDefinition|ActivityDefinition>>
+  instantiatesUri: uri [0..]
+  basedOn: Reference [0..] <<CarePlan|MedicationRequest|ServiceRequest|ImmunizationRecommendation>>
+  groupIdentifier: Identifier [0..1]
+  courseOfTherapyType : CodeableConcept [0..1] <<medicationRequest Course of T...??>>
+  insurance: Reference [0..] <<Coverage|ClaimResponse>>
+  note: Annotation [0..]
+  dosageInstruction: Dosage [0..]
+  priorPrescription: Reference [0..1] <<MedicationRequest>>
+  detectedIssue: Reference [0..] <<DetectedIssue>>
+  eventHistory: Reference [0..*] <<Provenance>>
 }
+
+class DispenseRequest {
+  dispenseInterval: Duration [0..1]
+  validityPeriod: Period [0..1]
+  numberOfRepeatsAllowed: unsignedInt [0..1]
+  quantity: Quantity(SimpleQuantity) [0..1]
+  expectedSupplyDuration: Duration [0..1]
+  performer: Reference [0..1] <<Organization>>
+}
+
+class InitialFill {
+  quantity: Quantity(SimpleQuantity) [0..1]
+  duration: Duration [0..1]
+}
+
+class Substitution {
+  allowed[x]: Type [1..1] <<boolean|CodeableConcept; v3.ActSubstanceAdminSubstitut...??>>
+  reason: CodeableConcept [0..1] <<v3.SubstanceAdminSubstitution...??>>
+}
+
+MedicationRequest *-- "0..1" DispenseRequest
+DispenseRequest *-- "0..1" InitialFill
+MedicationRequest *-- "0..1" Substitution
 --
 
