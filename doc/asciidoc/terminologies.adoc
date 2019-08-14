@@ -8,16 +8,30 @@
 
 ==== Medications Resource
 ===== Medication
-====== Medication.code
+====== Medication Status Codes
 
-HL7 FHIRでの薬剤コードは_Example_としてSNOMED CTによる薬剤コードが挙げられているが、日本での利用には制限がある。以下のコードが代替として挙げられるが、HOTコードの使用を推奨する。
+薬剤の有効性を示すコードである。HL7 FHIRで規定された http://hl7.org/fhir/ValueSet/medication-status[Medicatin Status Codes]のコードを利用する。
 
-.Table 薬剤コード
+.Table Medicaion Status Codes
 |===
-|名称|概要|URL
+|コード|表示|定義|正規の用法
 
-|HOTx|階層構造を持つ薬剤コード集|
+|active
+|Active
+|この薬剤は使用可能
+|~active
 
-|厚生労働省マスタ|厚生労働省が指定する薬剤コード集|
+|inactive
+|Inactive
+|この薬剤は使用できない
+|~inactive
 
+|entered-in-error
+|Entered in Error
+|この薬剤は誤って入力された
+|~error
 |===
+
+====== Medication IngredientStrength
+
+
