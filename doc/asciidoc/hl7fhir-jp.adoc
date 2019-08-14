@@ -21,4 +21,5 @@ HL7 FHIRは2011年にGraham Grieveによって開発が始められ、実装の�
 
 以下に各サブワーキンググループで取りまとめた実装ガイドを示します。
 
+include::references.adoc[]
 include::medication.adoc[]
