@@ -10,7 +10,7 @@
 ===== Medication
 ====== Medication Status Codes
 
-薬剤の有効性を示すコードである。HL7 FHIRで規定された http://hl7.org/fhir/ValueSet/medication-status[Medicatin Status Codes]のコードを利用する。
+薬剤の有効性を示すコードセットである。HL7 FHIRで規定された http://hl7.org/fhir/ValueSet/medication-status[Medicatin Status Codes]を利用する。
 
 .Table Medicaion Status Codes
 |===
@@ -33,5 +33,17 @@
 |===
 
 ====== Medication IngredientStrength
+薬剤の力価に関するコードセットである。HL7 FHIRで規定された http://build.fhir.org/valueset-medication-ingredientstrength.html[Medical IngredientStrength]を利用する。
 
+.Table Medicaion IngredientStrength
+|===
+|コード|表示|定義
 
+|qs
+|QS
+|適量
+
+|trace
+|Trace
+|ごく少量
+|===
