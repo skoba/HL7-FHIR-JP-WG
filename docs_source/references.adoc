@@ -1,4 +1,5 @@
 == 参考文献
+
 [bibliography]
 - [[[FHIR_orig]]] HL7 FHIR 公式サイト, https://www.hl7.org/fhir/
 - [[[SSMIX2]]] SS-MIX2仕様書・ガイドライン, http://www.jami.jp/jamistd/ssmix2.php

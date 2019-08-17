@@ -1,4 +1,5 @@
 == 用語集
+
 === 目的と範囲
 
 本章では、HL7 FHIRで使われるVocabulary, Terminologyについて記述する。_HL7 FHIR_ <<FHIR_orig>>ではSNOMED CTが使われていることが多いが日本国内での利用を考え代替となる用語集についても検討された。
@@ -7,7 +8,9 @@
 
 
 ==== Medications Resource
+
 ===== Medication
+
 ====== Medication Status Codes
 
 薬剤の有効性を示すコードセットである。HL7 FHIRで規定された http://hl7.org/fhir/ValueSet/medication-status[Medicatin Status Codes]を利用する。

@@ -3,13 +3,15 @@
         <validator name="SentenceLength">
             <property name="max_len" value="100"/>
         </validator>
-	<validator name="InvalidSymbol" />
+	<!-- <validator name="InvalidSymbol" /> -->
         <validator name="KatakanaEndHyphen"/>
 	<!-- <validator name="SuggestExpression" />  -->
-        <validator name="KatakanaSpellCheck"/>
+        <!-- <validator name="KatakanaSpellCheck"/> -->
         <validator name="SectionLength" />
-	<validator name="DoubledJoshi" />
-        <validator name="CommaNumber" />
+	<!-- <validator name="DoubledJoshi" /> -->
+        <validator name="CommaNumber">
+	  <property name="max_num" value="5"/>
+	</validator>
         <validator name="SuccessiveWord" />
         <validator name="InvalidExpression"/>
         <validator name="JapaneseStyle"/>
@@ -17,13 +19,15 @@
         <validator name="FrequentSentenceStart" />
         <validator name="JapaneseAmbiguousNounConjunction" />
         <validator name="JapaneseNumberExpression" /> 
-        <validator name="LongKanjiChain" />
+        <!-- <validator name="LongKanjiChain" /> -->
         <validator name="SuccessiveSentence" />
         <validator name="DoubledConjunctiveParticleGa" />
 
-        <validator name="ParagraphNumber" />
+        <!-- <validator name="ParagraphNumber"> -->
+	<!--   <property name="max_num" value="6"/> -->
+	<!-- </validator> -->
         <validator name="DuplicatedSection" />
-        <validator name="EmptySection" />
+        <!-- <validator name="EmptySection" /> -->
         <validator name="SectionLevel" />
     </validators>
 </redpen-conf>

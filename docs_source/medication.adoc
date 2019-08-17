@@ -40,14 +40,14 @@ HL7 FHIR R4のMedications resourceにはその他開発中のResourceがある�
 
 Medicationは薬剤のリストであり、MedicationRequest, MedicationDispense, MedicationAdministrationに組み込まれて利用される。MedicationAdministration Resourceは最終的に患者にどのように薬剤が投与されたかの結果が記録される。したがって、内服処方であれば患者が内服した結果であり、注射であれば医療従事者による注射の実施記録となる。業務手順を示したシーケンス図を示す。
 
-.Figure Medicationsシーケンス図（内服処方箋)
+.Figure Medicationsシーケンス図（内服処方箋）
 [plantuml]
 --
 医師 -> 薬剤師: MedicationRequest
 薬剤師 -> 患者: MedicationDispense
 --
 
-.Figure Medicationsシーケンス図（内服処方箋)
+.Figure Medicationsシーケンス図（内服処方箋）
 [plantuml]
 --
 医師 -> 薬剤師: MedicationRequest
@@ -55,12 +55,11 @@ Medicationは薬剤のリストであり、MedicationRequest, MedicationDispense
 看護師 -> 患者: MedicationAction
 --
 
-Immunizationはワクチン接種履歴についての記録である。
+Immunizationはワクチン接種履歴についての記録である。以下、各Resourceについて解説する。
 
-以下、それぞれのリソースの実装について解説する。
 
 === Medication
-このResourceは単独で用いられることはなく、MedicationRequestやMedicationDispenseなどの他のResourceに組み込まれて利用される。
+このResourceは単独で用いられることはなく、MedicationRequestやMedicationDispenseなど、他のResourceに組み込まれて利用される。
 
 Medication ResourceのUML図を以下に示す。
 
@@ -141,7 +140,7 @@ Medication "0..*" *-down- Ingredient : ingredient
 --
 
 ==== Terminology bindings
-薬剤コードとして、_HL7 FHIR_　<<FHIR_orig>>ではSNOMED CTなどのコードが前提となっているが、薬剤サブワーキンググループおよびのVocabularyサブワーキンググループの見解として以下のTerminologyを推奨とする。
+薬剤コードとして、_HL7 FHIR_　<<FHIR_orig>>ではSNOMED CTが前提となっている。日本での使用を考え、以下のTerminologyを推奨とする。
 
 .Table Terminology bindings
 |===
@@ -230,7 +229,9 @@ class Substitution {
 }
 
 MedicationRequest *-- "0..1" DispenseRequest
+
 DispenseRequest *-- "0..1" InitialFill
+
 MedicationRequest *-- "0..1" Substitution
 --
 
