@@ -8,7 +8,7 @@
 	<!-- <validator name="SuggestExpression" />  -->
         <validator name="KatakanaSpellCheck"/>
         <validator name="SectionLength" />
-	<validator name="DoubleJoshi" />
+	<validator name="DoubledJoshi" />
         <validator name="CommaNumber" />
         <validator name="SuccessiveWord" />
         <validator name="InvalidExpression"/>
