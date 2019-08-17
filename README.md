@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/skoba/HL7-FHIR-JP-WG.svg?branch=master)](https://travis-ci.org/skoba/HL7-FHIR-JP-WG)
+
 # HL7 FHIR JP WG
 HL7 FHIR Japan Working groupでの作業のために試行的に作成したリポジトリです。
 
