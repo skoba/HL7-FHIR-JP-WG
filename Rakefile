@@ -1,8 +1,8 @@
 require "rspec/core/rake_task"
 
 base_dir = File.join(File.dirname(__FILE__))
-doc_dir = File.join(base_dir, 'doc')
-html_dir = File.join(doc_dir, 'html')
+doc_dir = File.join(base_dir, 'docs')
+html_dir = doc_dir # File.join(doc_dir, 'html')
 adoc_dir = File.join(doc_dir, 'asciidoc')
 conf_dir = File.join(base_dir, 'conf')
 RSpec::Core::RakeTask.new(:spec)

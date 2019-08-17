@@ -1,8 +1,8 @@
-= Medications Resource実装ガイド
+== Medications Resource実装ガイド
 
 このリソースは医師の処方箋、薬局での払い出し、薬剤投与、ワクチン接種状況についての情報を扱う。この文書ではこのリソースを利用して実際のサービスを実装するための方法について解説する。
 
-== 目的と範囲
+=== 目的と範囲
 
 この文書で扱うFHIR resourceは以下の4つである。
 
@@ -15,7 +15,7 @@
 HL7 FHIR R4のMedications resourceにはその他開発中のResourceがあるが、
 現時点では上記のResourceを対象としている。
 
-== Medications Resource概説
+=== Medications Resource概説
 
 先に述べたようにMedications resourceは処方に関連する情報モデルであり、日常的な診療情報とは以下のように対応する。
 
@@ -59,7 +59,7 @@ Immunizationはワクチン接種履歴についての記録である。
 
 以下、それぞれのリソースの実装について解説する。
 
-== Medication
+=== Medication
 このResourceは単独で用いられることはなく、MedicationRequestやMedicationDispenseなどの他のResourceに組み込まれて利用される。
 
 Medication ResourceのUML図を以下に示す。
@@ -140,7 +140,7 @@ Medication "0..*" *-down- Ingredient : ingredient
 }
 --
 
-=== Terminology bindings
+==== Terminology bindings
 薬剤コードとして、_HL7 FHIR_　<<FHIR_orig>>ではSNOMED CTなどのコードが前提となっているが、薬剤サブワーキンググループおよびのVocabularyサブワーキンググループの見解として以下のTerminologyを推奨とする。
 
 .Table Terminology bindings
@@ -169,7 +169,7 @@ Medication "0..*" *-down- Ingredient : ingredient
 // |===
 
 
-== MedicationRequest
+=== MedicationRequest
 このResourceは前述のように内服、注射を問わず処方箋についての情報を示している。
 
 UML図を以下に示す。

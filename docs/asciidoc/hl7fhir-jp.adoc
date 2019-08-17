@@ -1,6 +1,8 @@
-:toc:
 :doctype: book
 = HL7 FHIR実装ガイド
+:toc:
+:toc-title: 目次
+:sectnums:
 
 == はじめに
 

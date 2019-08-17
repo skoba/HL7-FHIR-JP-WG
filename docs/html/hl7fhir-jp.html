@@ -440,25 +440,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>HL7 FHIR実装ガイド</h1>
 <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
+<div id="toctitle">目次</div>
 <ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_参考文献">参考文献</a></li>
-<li><a href="#_medications_resource実装ガイド">Medications Resource実装ガイド</a>
-<ul class="sectlevel1">
-<li><a href="#_目的と範囲">目的と範囲</a></li>
-<li><a href="#_medications_resource概説">Medications Resource概説</a></li>
-<li><a href="#_medication">Medication</a>
+<li><a href="#_はじめに">1. はじめに</a></li>
+<li><a href="#_参考文献">2. 参考文献</a></li>
+<li><a href="#_medications_resource実装ガイド">3. Medications Resource実装ガイド</a>
 <ul class="sectlevel2">
-<li><a href="#_terminology_bindings">Terminology bindings</a></li>
+<li><a href="#_目的と範囲">3.1. 目的と範囲</a></li>
+<li><a href="#_medications_resource概説">3.2. Medications Resource概説</a></li>
+<li><a href="#_medication">3.3. Medication</a></li>
+<li><a href="#_medicationrequest">3.4. MedicationRequest</a></li>
 </ul>
 </li>
-<li><a href="#_medicationrequest">MedicationRequest</a></li>
-<li><a href="#_用語集">用語集</a>
+<li><a href="#_用語集">4. 用語集</a>
 <ul class="sectlevel2">
-<li><a href="#_目的と範囲_2">目的と範囲</a></li>
-</ul>
-</li>
+<li><a href="#_目的と範囲_2">4.1. 目的と範囲</a></li>
 </ul>
 </li>
 </ul>
@@ -466,7 +462,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_はじめに">はじめに</h2>
+<h2 id="_はじめに">1. はじめに</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>HL7 FHIRは2011年にGraham Grieveによって開発が始められ、実装
@@ -508,29 +504,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_参考文献">参考文献</h2>
+<h2 id="_参考文献">2. 参考文献</h2>
 <div class="sectionbody">
-<div id="bibliography" class="ulist">
-<ul>
+<div class="ulist bibliography">
+<ul class="bibliography">
 <li>
-<p><a id="FHIR_orig"></a> HL7 FHIR 公式サイト, <a href="https://www.hl7.org/fhir/" class="bare">https://www.hl7.org/fhir/</a></p>
+<p><a id="FHIR_orig"></a>[FHIR_orig] HL7 FHIR 公式サイト, <a href="https://www.hl7.org/fhir/" class="bare">https://www.hl7.org/fhir/</a></p>
 </li>
 <li>
-<p><a id="SSMIX2"></a> SS-MIX2仕様書・ガイドライン, <a href="http://www.jami.jp/jamistd/ssmix2.php" class="bare">http://www.jami.jp/jamistd/ssmix2.php</a></p>
+<p><a id="SSMIX2"></a>[SSMIX2] SS-MIX2仕様書・ガイドライン, <a href="http://www.jami.jp/jamistd/ssmix2.php" class="bare">http://www.jami.jp/jamistd/ssmix2.php</a></p>
+</li>
+<li>
+<p><a id="DocProdSystem"></a>[DocProdSystem] 伊藤敬彦、吉村孝宏、ドキュメント作成システム構築ガイド、技術評論社、2016年</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<h1 id="_medications_resource実装ガイド" class="sect0">Medications Resource実装ガイド</h1>
-<div class="openblock partintro">
-<div class="content">
-このリソースは医師の処方箋、薬局での払い出し、薬剤投与、ワクチン接種状況についての情報を扱う。この文書ではこのリソースを利用して実際のサービスを実装するための方法について解説する。
-</div>
-</div>
 <div class="sect1">
-<h2 id="_目的と範囲">目的と範囲</h2>
+<h2 id="_medications_resource実装ガイド">3. Medications Resource実装ガイド</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>このリソースは医師の処方箋、薬局での払い出し、薬剤投与、ワクチン接種状況についての情報を扱う。この文書ではこのリソースを利用して実際のサービスを実装するための方法について解説する。</p>
+</div>
+<div class="sect2">
+<h3 id="_目的と範囲">3.1. 目的と範囲</h3>
 <div class="paragraph">
 <p>この文書で扱うFHIR resourceは以下の4つである。</p>
 </div>
@@ -558,10 +556,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 現時点では上記のResourceを対象としている。</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_medications_resource概説">Medications Resource概説</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_medications_resource概説">3.2. Medications Resource概説</h3>
 <div class="paragraph">
 <p>先に述べたようにMedications resourceは処方に関連する情報モデルであり、日常的な診療情報とは以下のように対応する。</p>
 </div>
@@ -618,10 +614,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>以下、それぞれのリソースの実装について解説する。</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_medication">Medication</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_medication">3.3. Medication</h3>
 <div class="paragraph">
 <p>このResourceは単独で用いられることはなく、MedicationRequestやMedicationDispenseなどの他のResourceに組み込まれて利用される。</p>
 </div>
@@ -687,8 +681,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 }</code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_terminology_bindings">Terminology bindings</h3>
+<div class="sect3">
+<h4 id="_terminology_bindings">3.3.1. Terminology bindings</h4>
 <div class="paragraph">
 <p>薬剤コードとして、<em>HL7 FHIR</em>　<a href="#FHIR_orig">[FHIR_orig]</a>ではSNOMED CTなどのコードが前提となっているが、薬剤サブワーキンググループおよびのVocabularyサブワーキンググループの見解として以下のTerminologyを推奨とする。</p>
 </div>
@@ -737,10 +731,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_medicationrequest">MedicationRequest</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_medicationrequest">3.4. MedicationRequest</h3>
 <div class="paragraph">
 <p>このResourceは前述のように内服、注射を問わず処方箋についての情報を示している。</p>
 </div>
@@ -755,11 +747,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_用語集">用語集</h2>
+<h2 id="_用語集">4. 用語集</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_目的と範囲_2">目的と範囲</h3>
+<h3 id="_目的と範囲_2">4.1. 目的と範囲</h3>
 <div class="paragraph">
 <p>本章では、HL7 FHIRで使われるVocabulary, Terminologyについて記述する。<em>HL7 FHIR</em> <a href="#FHIR_orig">[FHIR_orig]</a>ではSNOMED CTが使われていることが多いが日本国内での利用を考え代替となる用語集についても検討された。</p>
 </div>
@@ -767,7 +760,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>各ワーキンググループが使用するVocabularyについてそれぞれ記述する。</p>
 </div>
 <div class="sect3">
-<h4 id="_medications_resource">Medications Resource</h4>
+<h4 id="_medications_resource">4.1.1. Medications Resource</h4>
 <div class="sect4">
 <h5 id="_medication_2">Medication</h5>
 <div class="sect5">
@@ -854,7 +847,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-08-14 16:52:09 +0900
+Last updated 2019-08-17 14:50:19 +0900
 </div>
 </div>
 </body>

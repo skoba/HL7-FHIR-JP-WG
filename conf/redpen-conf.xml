@@ -1,13 +1,16 @@
 <redpen-conf lang="ja">
     <validators>
         <validator name="SentenceLength">
-            <property name="max_len" value="120"/>
+            <property name="max_len" value="100"/>
         </validator>
-        <validator name="CommaNumber" />
-
-        <validator name="SuccessiveWord" />
+	<validator name="InvalidSymbol" />
         <validator name="KatakanaEndHyphen"/>
+	<!-- <validator name="SuggestExpression" />  -->
         <validator name="KatakanaSpellCheck"/>
+        <validator name="SectionLength" />
+	<validator name="DoubleJoshi" />
+        <validator name="CommaNumber" />
+        <validator name="SuccessiveWord" />
         <validator name="InvalidExpression"/>
         <validator name="JapaneseStyle"/>
         <validator name="DoubleNegative" />
@@ -19,7 +22,6 @@
         <validator name="DoubledConjunctiveParticleGa" />
 
         <validator name="ParagraphNumber" />
-        <validator name="SectionLength" />
         <validator name="DuplicatedSection" />
         <validator name="EmptySection" />
         <validator name="SectionLevel" />
