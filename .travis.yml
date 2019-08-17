@@ -12,6 +12,7 @@ before_install:
   - ssh-add deploy_key
   - git config --global user.name "skoba@Travis-CI"
   - git config --global user.email "skoba-github@travis-ci.org"
+  - gem install bundler
 
 env:
   - URL=https://github.com/redpen-cc/redpen/releases/download/redpen-1.10.1
@@ -21,11 +22,9 @@ install:
   - wget $URL/redpen-1.10.1.tar.gz
   - tar xvf redpen-1.10.1.tar.gz
   - export PATH=$PATH:$PWD/redpen-distribution-1.10.1/bin
+  - bundle install
 
 script:
-  - gem install asciidoctor
-  - gem install coderay
-  - gem install asciidoctor-diagram
   - rake redpen
   - rake html
 #  - '[ "$TRAVIS_BRANCH" == master ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && git commit -m "Publishing site on `date "+%Y-%m-%d %H:%M:%S"`"
