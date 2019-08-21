@@ -1,0 +1,54 @@
+== セクションタイトル
+
+// ここにはまとめを書いてください
+
+=== 目的と範囲
+
+////
+文書の対象を表します
+
+* Medication
+* MedicationRequest
+* MedicationDispense
+* MedicationAdministration
+* Immunization
+////
+
+=== Resource/Profileの概説
+
+
+[options="header"]
+.Table 表は以下のように書いていきます
+|===
+|項目名1|項目名2
+
+|内容1|内容2
+
+|内容3|内容4
+|===
+
+.Figure PlantUMLでUML図を表現できます http://plantuml.com/ja/
+[plantuml]
+--
+医師 -> 薬剤師: MedicationRequest
+薬剤師 -> 患者: MedicationDispense
+--
+
+// XMLのソースは以下のように記述します。
+
+.XML template
+[source,xml]
+--
+<Medication xmlns="http://hl7.org/fhir">
+</Medication>
+--
+
+// JSONは以下のように記述します。
+
+.JSON template
+[source,json]
+--
+{
+  "resourceType" : "Medication"
+}
+--
