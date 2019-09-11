@@ -20,7 +20,7 @@ Google translator toolkitを使って翻訳することを前提とするが、�
 
 === 翻訳した文書
 
-* link:translations/HL7 FHIR Medications modules.html[Medication Modules]
+* link:translations/HL7_FHIR_Medications_modules.html[Medication Modules]
 
 === 翻訳の方針
 * 最初から完璧なものは目指さない
