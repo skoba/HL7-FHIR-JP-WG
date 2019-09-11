@@ -447,19 +447,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">目次</div>
 <ul class="sectlevel1">
 <li><a href="#_本文書の位置づけ">1. 本文書の位置づけ</a></li>
-<li><a href="#_はじめに">2. はじめに</a></li>
-<li><a href="#_参考文献">3. 参考文献</a></li>
-<li><a href="#_medications_resource実装ガイド">4. Medications Resource実装ガイド</a>
+<li><a href="#_はじめに">2. はじめに</a>
 <ul class="sectlevel2">
-<li><a href="#_目的と範囲">4.1. 目的と範囲</a></li>
-<li><a href="#_medications_resource概説">4.2. Medications Resource概説</a></li>
-<li><a href="#_medication">4.3. Medication</a></li>
-<li><a href="#_medicationrequest">4.4. MedicationRequest</a></li>
+<li><a href="#_目的と範囲">2.1. 目的と範囲</a></li>
+<li><a href="#_翻訳した文書">2.2. 翻訳した文書</a></li>
+<li><a href="#_翻訳の方針">2.3. 翻訳の方針</a></li>
+<li><a href="#_glossary">2.4. Glossary</a></li>
 </ul>
 </li>
-<li><a href="#_用語集">5. 用語集</a>
+<li><a href="#_実装ガイド">3. 実装ガイド</a></li>
+<li><a href="#_参考文献">4. 参考文献</a></li>
+<li><a href="#_medications_resource実装ガイド">5. Medications Resource実装ガイド</a>
 <ul class="sectlevel2">
 <li><a href="#_目的と範囲_2">5.1. 目的と範囲</a></li>
+<li><a href="#_medications_resource概説">5.2. Medications Resource概説</a></li>
+<li><a href="#_medication">5.3. Medication</a></li>
+<li><a href="#_medicationrequest">5.4. MedicationRequest</a></li>
+</ul>
+</li>
+<li><a href="#_用語集">6. 用語集</a>
+<ul class="sectlevel2">
+<li><a href="#_目的と範囲_3">6.1. 目的と範囲</a></li>
 </ul>
 </li>
 </ul>
@@ -517,12 +525,75 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>以下に各サブワーキンググループで取りまとめた実装ガイドを示す。</p>
+<p>各ワーキンググループでは実装に向けての課題について調査を行い、翻訳や実装ガイドの策定などを進めている。</p>
+</div>
+<div class="paragraph">
+<p>翻訳された文書を下記に示す。
+== 文書翻訳</p>
+</div>
+<div class="paragraph">
+<p>この文書では、FHIRに関連する文書の翻訳について概説する。</p>
+</div>
+<div class="paragraph">
+<p>HL7 FHIR-JPワーキンググループではFHIRの理解を深めていくために一部で翻
+訳を試みている。</p>
+</div>
+<div class="paragraph">
+<p>効率よく翻訳を進めていくためには、用語集の整備やツールの活用が欠かせな
+い。翻訳用語の調整には全体での議論も必要である。ここでは、Google
+translator toolkitを使った翻訳の進め方、用語集(Glossary)の整備について概説する。</p>
+</div>
+<div class="sect2">
+<h3 id="_目的と範囲">2.1. 目的と範囲</h3>
+<div class="paragraph">
+<p>FHIRに関連する文書を日本語に翻訳するために必要となることを対象とする。
+Google translator toolkitを使って翻訳することを前提とするが、他のツー
+ルの使用を妨げない。内容は文体についてのガイドラインと翻訳の方針につい
+てslackで話し合ったことを中心にまとめたものである。</p>
+</div>
+<div class="paragraph">
+<p>検討の後に公開していくことを前提としている。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_翻訳した文書">2.2. 翻訳した文書</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>link:translations/HL7 FHIR Medications modules.html[Medication Modules]</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_翻訳の方針">2.3. 翻訳の方針</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>最初から完璧なものは目指さない</p>
+</li>
+<li>
+<p>ですます調。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_glossary">2.4. Glossary</h3>
+
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_参考文献">3. 参考文献</h2>
+<h2 id="_実装ガイド">3. 実装ガイド</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>各ワーキンググループで書かれた実装ガイドを以下に示す。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考文献">4. 参考文献</h2>
 <div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
@@ -540,13 +611,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_medications_resource実装ガイド">4. Medications Resource実装ガイド</h2>
+<h2 id="_medications_resource実装ガイド">5. Medications Resource実装ガイド</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>このリソースは医師の処方箋、薬局での払い出し、薬剤投与、ワクチン接種状況についての情報を扱う。この文書ではこのリソースを利用して実際のサービスを実装するための方法について解説する。</p>
 </div>
 <div class="sect2">
-<h3 id="_目的と範囲">4.1. 目的と範囲</h3>
+<h3 id="_目的と範囲_2">5.1. 目的と範囲</h3>
 <div class="paragraph">
 <p>この文書で扱うFHIR resourceは以下の4つである。</p>
 </div>
@@ -575,7 +646,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_medications_resource概説">4.2. Medications Resource概説</h3>
+<h3 id="_medications_resource概説">5.2. Medications Resource概説</h3>
 <div class="paragraph">
 <p>先に述べたようにMedications resourceは処方に関連する情報モデルであり、日常的な診療情報とは以下のように対応する。</p>
 </div>
@@ -630,7 +701,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_medication">4.3. Medication</h3>
+<h3 id="_medication">5.3. Medication</h3>
 <div class="paragraph">
 <p>このResourceは単独で用いられることはなく、MedicationRequestやMedicationDispenseなど、他のResourceに組み込まれて利用される。</p>
 </div>
@@ -697,7 +768,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_terminology_bindings">4.3.1. Terminology bindings</h4>
+<h4 id="_terminology_bindings">5.3.1. Terminology bindings</h4>
 <div class="paragraph">
 <p>薬剤コードとして、<em>HL7 FHIR</em>　<a href="#FHIR_orig">[FHIR_orig]</a>ではSNOMED CTが前提となっている。日本での使用を考え、以下のTerminologyを推奨とする。</p>
 </div>
@@ -747,7 +818,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_medicationrequest">4.4. MedicationRequest</h3>
+<h3 id="_medicationrequest">5.4. MedicationRequest</h3>
 <div class="paragraph">
 <p>このResourceは前述のように内服、注射を問わず処方箋についての情報を示している。</p>
 </div>
@@ -764,10 +835,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_用語集">5. 用語集</h2>
+<h2 id="_用語集">6. 用語集</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_目的と範囲_2">5.1. 目的と範囲</h3>
+<h3 id="_目的と範囲_3">6.1. 目的と範囲</h3>
 <div class="paragraph">
 <p>本章では、HL7 FHIRで使われるVocabulary, Terminologyについて記述する。<em>HL7 FHIR</em> <a href="#FHIR_orig">[FHIR_orig]</a>ではSNOMED CTが使われていることが多いが日本国内での利用を考え代替となる用語集についても検討された。</p>
 </div>
@@ -775,7 +846,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>各ワーキンググループが使用するVocabularyについてそれぞれ記述する。</p>
 </div>
 <div class="sect3">
-<h4 id="_medications_resource">5.1.1. Medications Resource</h4>
+<h4 id="_medications_resource">6.1.1. Medications Resource</h4>
 <div class="sect4">
 <h5 id="_medication_2">Medication</h5>
 <div class="sect5">
@@ -862,7 +933,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-08-22 02:58:55 +0900
+Last updated 2019-09-12 02:41:05 +0900
 </div>
 </div>
 </body>

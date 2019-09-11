@@ -33,8 +33,13 @@ HL7 FHIRは2011年にGraham Grieveによって開発が始められ、実装
 * SWG5 <<_medication resource, pharmacy and medication>>
 * SWG6 vocabulary and Terminology
 
+各ワーキンググループでは実装に向けての課題について調査を行い、翻訳や実装ガイドの策定などを進めている。
 
-以下に各サブワーキンググループで取りまとめた実装ガイドを示す。
+翻訳された文書を下記に示す。
+include::translation.adoc[]
+
+== 実装ガイド
+各ワーキンググループで書かれた実装ガイドを以下に示す。
 
 include::references.adoc[]
 include::medication.adoc[]
