@@ -1,0 +1,288 @@
+﻿<html lang="ja" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>Medications-module - FHIR v4.0.0</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  <meta name="author" content="http://hl7.org/fhir"></meta>
+
+  <link rel="stylesheet" href="https://www.hl7.org/implement/standards/fhir/fhir.css"></link>
+  <link rel="Prev" href="http://hl7.org/fhir/medications-module.html"></link>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://www.hl7.org/implement/standards/fhir/dist/css/bootstrap.css"></link>
+  <link rel="stylesheet" href="https://www.hl7.org/implement/standards/fhir/assets/css/bootstrap-fhir.css"></link>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="https://www.hl7.org/implement/standards/fhir/assets/css/project.css"></link>
+  <link rel="stylesheet" href="https://www.hl7.org/implement/standards/fhir/fhir-pub.css"></link>
+  <link rel="stylesheet" href="https://www.hl7.org/implement/standards/fhir/assets/css/pygments-manni.css"></link>
+	<link rel="stylesheet" href="https://www.hl7.org/implement/standards/fhir/jquery-ui.css"></link>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" href="https://www.hl7.org/implement/standards/fhir/assets/ico/apple-touch-icon-144-precomposed.png" sizes="144x144"></link>
+  <link rel="apple-touch-icon-precomposed" href="https://www.hl7.org/implement/standards/fhir/assets/ico/apple-touch-icon-114-precomposed.png" sizes="114x114"></link>
+  <link rel="apple-touch-icon-precomposed" href="https://www.hl7.org/implement/standards/fhir/assets/ico/apple-touch-icon-72-precomposed.png" sizes="72x72"></link>
+  <link rel="apple-touch-icon-precomposed" href="https://www.hl7.org/implement/standards/fhir/assets/ico/apple-touch-icon-57-precomposed.png"></link>
+  <link rel="shortcut icon" href="https://www.hl7.org/implement/standards/fhir/assets/ico/favicon.png"></link>
+
+</head>
+<body dir="ltr">
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="https://www.hl7.org/implement/standards/fhir/assets/images/fhir-logo-www.png" height="60" width="249" alt="logo fhir"> </a>
+			<div id="hl7-status">
+				<b>FHIR R4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="https://www.hl7.org/implement/standards/fhir/assets/images/hl7-logo.png" width="42" alt="visit the hl7 website" height="50">
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" href="http://hl7.org/fhir/search.cfm" no-external="true"><img src="https://www.hl7.org/implement/standards/fhir/assets/images/search.png" alt="Search FHIR"></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button type="button" class="navbar-toggle" data-target=".navbar-inverse-collapse" data-toggle="collapse"></button>
+					<a href="https://www.hl7.org/implement/standards/fhir/index.html" class="navbar-brand hidden">FHIR</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="https://www.hl7.org/implement/standards/fhir/index.html">ホーム</a></li>
+              <li><a href="https://www.hl7.org/implement/standards/fhir/modules.html">はじめてみよう</a></li>
+              <li><a href="https://www.hl7.org/implement/standards/fhir/documentation.html">文書</a></li>
+              <li><a href="https://www.hl7.org/implement/standards/fhir/resourcelist.html">リソース</a></li>
+              <li><a href="https://www.hl7.org/implement/standards/fhir/profilelist.html">プロファイル</a></li>
+              <li><a href="https://www.hl7.org/implement/standards/fhir/extensibility-registry.html">エクステンション</a></li>
+              <li><a href="https://www.hl7.org/implement/standards/fhir/operationslist.html">オペレーション</a></li>
+              <li><a href="https://www.hl7.org/implement/standards/fhir/terminologies-systems.html">用語集</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><b><img src="https://www.hl7.org/implement/standards/fhir/medication.png">薬剤</b></li>          <!-- medications-module.html / page / -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box-current">これは、現在公式にリリースされているFHIRのバージョンで、 <a href="https://www.hl7.org/implement/standards/fhir/history.html">R4</a> （v4.0.0）です。すべてのバージョンがそろったリストについては、<a href="http://hl7.org/fhir/directory.cfml">公開バージョンのディレクトリを</a>参照してください 。</p><!--EndReleaseHeader-->
+<table class="colsi"><tr><td id="wg">ワークグループ<a href="http://www.hl7.org/Special/committees/medication/index.cfm" _target="blank">薬剤関連<img src="https://www.hl7.org/implement/standards/fhir/external.png" style="vertical-align:baseline"></a>と<a href="http://www.hl7.org/Special/committees/pher/index.cfm" _target="blank">公衆衛生と緊急対応<img src="https://www.hl7.org/implement/standards/fhir/external.png" style="vertical-align:baseline"></a> </td><td id="ballot"><a href="https://www.hl7.org/implement/standards/fhir/versions.html#std-process">標準ステータス</a> ： <!-- !ns! --> <a href="https://www.hl7.org/implement/standards/fhir/versions.html#std-process">Informative</a></td></tr></table>
+
+<a name="root"></a>
+<h2 class="self-link-parent"><span class="sectioncount">11.0 <a name="11.0"> </a></span>薬剤モジュール<a href="https://www.hl7.org/implement/standards/fhir/medications-module.html#11.0" title="link to here" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+
+<a name="intro"></a>
+<h3 class="self-link-parent"><span class="sectioncount">11.0.1</span>はじめに<a href="https://www.hl7.org/implement/standards/fhir/medications-module.html#intro" title="link to here" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>このモジュールは、3つの主要なドメインのリソースと機能に関係しています。</p>
+
+<ul>
+	<li>注文、調剤、薬物の投与、および薬物使用状態の記録。</li>
+	<li>接種済み（あるいは、未接種の）ワクチンの記録、接種済みのワクチンの評価、ならびに個別の患者に対して診療した時点で推奨されるワクチンについて。</li>
+	<li>薬物情報または薬物知識の一部としての薬剤情報の作成またはクエリー。</li>
+</ul>
+
+    <a name="index"></a>
+    <h3 class="self-link-parent"><span class="sectioncount">11.0.2</span> 索引<a href="https://www.hl7.org/implement/standards/fhir/medications-module.html#index" title="link to here" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+    <table width="100%" style="table-layout:fixed">
+        <tr>
+            <td>
+                <ul>
+                    <li><a href="https://www.hl7.org/implement/standards/fhir/medicationrequest.html">MedicationRequest</a></li>
+                    <li><a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.html">MedicationDispense</a></li>
+                    <li><a href="https://www.hl7.org/implement/standards/fhir/medicationadministration.html">MedicationAdministration</a></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><a href="https://www.hl7.org/implement/standards/fhir/medicationstatement.html">MedicationStatement</a></li>
+                    <li><a href="https://www.hl7.org/implement/standards/fhir/medication.html">Medication</a></li>
+                	<li><a href="https://www.hl7.org/implement/standards/fhir/medicationknowledge.html">MedicationKnowledge</a></li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><a href="https://www.hl7.org/implement/standards/fhir/immunization.html">Immunization</a></li>
+                    <li><a href="https://www.hl7.org/implement/standards/fhir/immunizationevaluation.html">ImmunizationEvaluation</a></li>
+                    <li><a href="https://www.hl7.org/implement/standards/fhir/immunizationrecommendation.html">ImmunizationRecommendation</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+
+
+<a name="meds"></a>
+<h4 class="self-link-parent"><span class="sectioncount">11.0.2.1</span> Medications <a href="https://www.hl7.org/implement/standards/fhir/medications-module.html#meds" title="link to here" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+<table class="bare">
+    <tr><td><b>名称</b></td><td><b>説明</b></td></tr>
+	<tr bgcolor="#EFEFEF">
+		<td valign="top"><a href="https://www.hl7.org/implement/standards/fhir/medicationrequest.html">MedicationRequest</a></td>
+		<td>
+		<p>入院患者（病院）と外来の両方で、患者への薬物投与の指示を表現します。また、調剤の指示、投与を行うべき理由、その他のデータを含めることができます。</p>
+		<p>他のFHIR Resourceおよびワークフローパターンとの一貫性を保つために「Request」と呼ばれますが、このResourceは一般的には「処方」または「オーダー」と呼ばれるものです。オーダーは指示の内容を表し、それ自体が実施した内容を示すものではありません。オーダーの「実施」に関するワークフロープロセスは、 <a href="https://www.hl7.org/implement/standards/fhir/workflow-module.html">一般的なFHIRワークフローの</a>一部であり（下記を参照）、MedicationRequestが内容を表します。</p>
+
+	</td></tr>
+	<tr>
+		<td><a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.html">MedicationDispense</a></td>
+		<td>（通常は処方箋の内容に従って）払い出しした後に患者が服用することを意図した医薬品の提供。</td></tr>
+	<tr bgcolor="#EFEFEF">
+		<td><a href="https://www.hl7.org/implement/standards/fhir/medicationadministration.html">MedicationAdministration</a></td>
+		<td>患者が実際に薬を服用した記録、または他の方法で患者に投与された記録</td></tr>
+	<tr>
+		<td><a href="https://www.hl7.org/implement/standards/fhir/medicationstatement.html">MedicationStatement</a></td>
+		<td>これは、患者が現在薬を服用しているか、過去に薬を服用しているか、または将来薬を服用することなっているのかという状態を示す記録です。この情報のソースは、患者、キーパーソン（家族や配偶者など）、または臨床医です。この情報が記録される一般的なシナリオは、患者の外来あるいは入院中に病歴を取得する処理中です。MedicationStatementで示される状態は、処方-&gt;調剤-&gt;投与の業務手順の一部ではありませんが、そのような業務（または少なくともその一部）が実際に行われたか、患者が特定の投薬を受けたと信頼できる結果を示すものです。これは患者の「現在服用中の薬」リストを作成するためにも使用できます。
+
+
+		</td></tr>
+	<tr bgcolor="#EFEFEF">
+		<td><a href="https://www.hl7.org/implement/standards/fhir/medication.html">Medication</a></td>
+		<td>Medication resourceは患者に実際の薬物を表現するもので、他のMedicationに分類されるresourceからも参照されます。。多くの場合、このリソースは必要なく、薬は適切な用語への参照によって示されるため、コード化可能な概念を使用して表すことができます。ただし、他の場合では、単純な薬物（パッケージ、ジェネリック医薬品または有効成分と不活性成分など）よりも詳細を示すことが望ましい場合があり、そのために薬物リソースを使用できます。</td></tr>
+	<tr bgcolor="#EFEFEF">
+		<td><a href="https://www.hl7.org/implement/standards/fhir/medicationknowledge.html">薬の知識</a></td>
+		<td>MedicationKnowledgeリソースはドラフトであり、コメント用に含まれています。このリソースは、相互作用、禁忌、費用、規制状況、管理ガイドラインなど、薬物に関する詳細など、薬物に関する情報を表します。</td></tr>
+</table>
+    <a name="imm"></a>
+    <h4 class="self-link-parent"><span class="sectioncount">11.0.2.2</span>予防接種<a href="https://www.hl7.org/implement/standards/fhir/medications-module.html#imm" title="link to here" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h4>
+    <table class="bare">
+        <tr><td><b>名</b></td><td><b>説明</b></td></tr>
+	<tr bgcolor="#EFEFEF">
+		<td><a href="https://www.hl7.org/implement/standards/fhir/immunization.html">免疫</a></td>
+		<td>予防接種リソースは、すべてのケア設定およびすべての地域のすべての医療分野にわたる患者へのワクチンの現在および過去の投与の記録を対象としています。これには、ヒトと動物の両方の免疫が含まれますが、非ワクチン剤の投与は含まれません。</td></tr>
+	<tr>
+		<td><a href="https://www.hl7.org/implement/standards/fhir/immunizationrecommendation.html">予防接種</a></td>
+		<td>患者の特定時点での予防接種と推奨事項（すなわち、公開されたスケジュールに従って患者の予防接種の適格性を予測する）と、オプションでサポートする正当化</td></tr>
+    	<tr>
+    		<td><a href="https://www.hl7.org/implement/standards/fhir/immunizationevaluation.html">予防接種評価</a></td>
+    		<td>ImmunizationEvaluationリソースは、ワクチン管理イベント（Immunizationリソースを使用して文書化されている）の評価結果を、公開されている一連の推奨事項（プロトコル）に対して伝達することを目的としています。</td></tr>
+</table>
+
+
+<a name="uses"></a>
+<h3 class="self-link-parent"><span class="sectioncount">11.0.3</span>一般的なユースケース<a href="https://www.hl7.org/implement/standards/fhir/medications-module.html#uses" title="link to here" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<ul>
+	<li>薬のリクエスト（処方箋または注文）を配置します。MedicationRequestリソースは、処方者が患者に受けさせたい薬物の詳細と、投与量、タイミング、経路などのその他の詳細を表します。ただし、その順序を表している間、その医薬品の供給（分配）および管理に関する実際のワークフローは共通の<a href="https://www.hl7.org/implement/standards/fhir/workflow-module.html">ワークフロー機能</a>によって管理され、その結果、実行時に他の医薬品リソース（MedicationDispense、MedicationAdministration）が作成されます。
+	</li>
+	<li>患者の現在の薬のリスト。これは<a href="https://www.hl7.org/implement/standards/fhir/list.html">List</a>リソースを使用して表されます。これにより、作成者は「キュレートされた」リストを作成できます。これには、リストの作成時に患者が現在薬を服用していないことを示す機能や、ある時点で行われた変更（薬の調整と呼ばれることもあります）などのリソースの単純なコレクションを超える機能があります。FHIRは、この目的のためにいくつかの特定の<a href="https://www.hl7.org/implement/standards/fhir/lifecycle.html#lists">機能リスト</a>と、それを取得する特定の<a href="https://www.hl7.org/implement/standards/fhir/list-operation-find.html">操作</a>を定義します。FHIRは、実装ごとにリストが大きく異なるため、個々のシステムがリストをどのように維持すべきかを説明していないことに注意してください。
+	</li>
+	<li>予防接種のリストを取得します。これは、 <a href="https://www.hl7.org/implement/standards/fhir/immunization.html">予防接種</a>リソースタイプに対する<a href="https://www.hl7.org/implement/standards/fhir/http.html#search">単純なクエリ</a>を使用して実現できます。予防接種リソースには、それが与えられなかったこと、および発生した反応を具体的に示すことができることに注意してください。反応がアレルギーまたは不耐性の兆候であると考えられる場合は、別の<a href="https://www.hl7.org/implement/standards/fhir/allergyintolerance.html">AllergyIntolerance</a>リソースを作成する必要があることに注意してください。
+	</li>
+	<li>ある時点での特定の患者に対する推奨の取得。推奨される予防接種はImmunizationRecommendation Resourceで表されますが、その推奨事項の決定は<a href="https://www.hl7.org/implement/standards/fhir/clinicalreasoning-module.html">意思決定支援の</a>一部であり、実際の予防接種スケジュールは一般的な<a href="https://www.hl7.org/implement/standards/fhir/plandefinition.html">プラン定義</a> 、個別の<a href="https://www.hl7.org/implement/standards/fhir/careplan.html">ケアプラン、</a>またはその他のレコードで表されます。
+	</li>
+	<li>Medication Request（処方またはオーダーとも呼ばれます）に基づいて薬剤を払い出す。MedicationDispense Resourceは、患者に提供される実際の薬剤と、投与または服用される量を含む調剤イベントの詳細を表します。</li>
+	<li>ある時点での特定の患者に対して計画された薬物療法を取得する。予定された薬物療法は、個々の<a href="https://www.hl7.org/implement/standards/fhir/careplan.html">ケアプラン</a>によって表されます。</li>
+	<li>単独のリクエストとして、または患者の処方内容を確認しながら、薬剤に関する情報を取得する</li>
+
+</ul>
+
+<h3 class="self-link-parent"><span class="sectioncount">11.0.4 <a name="11.0.4"> </a></span>その他のResource<a href="https://www.hl7.org/implement/standards/fhir/medications-module.html#11.0.4" title="link to here" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>薬の分野で特に興味深い他のResourceがあります。
+	<ul>
+		<li> <a href="https://www.hl7.org/implement/standards/fhir/supplyrequest.html">SupplyRequest</a>および<a href="https://www.hl7.org/implement/standards/fhir/supplydelivery.html">SupplyDelivery</a>は、MedicationRequestのように、 <a href="https://www.hl7.org/implement/standards/fhir/workflow-module.html">ワークフローの</a>一部として使用される「詳細」Resourceです。これらのResourceは、医療プロセスで使用される消耗品の要求に関連しています。これには、特に患者の治療で使用される消耗品と、施設内での消耗品の配送、つまり材料管理からサービスユニット（ナースステーション）への消耗品セットの輸送が含まれます。</li>
+    <li>この仕様には、管理上の目的で医薬品の登録に使用されるResourceのドラフトセットも含まれています。<ul>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproduct.html" title="医薬品の詳細な定義。通常、直接的な患者ケア以外の用途（たとえば管理目的など）に使用されます。">MedicinalProduct</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproductauthorization.html" title="医薬品の規制認可。">MedicinalProductAuthorization</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproductcontraindication.html" title="臨床の詳細-規制目的を含む、医薬品の適応症、禁忌など。">MedicinalProductContraindication</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproductindication.html" title="医薬品の適応。">MedicinalProductIndication</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproductingredient.html" title="製造品目または医薬品の成分。">MedicinalProductIngredient</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproductinteraction.html" title="医薬品と他の医薬品との相互作用、または他の剤形での相互作用。">MedicinalProductInteraction</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproductmanufactured.html" title="包装された医薬品に含まれる製造品目。">MedicinalProductManufactured</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproductpackaged.html" title="容器またはパッケージに入った医薬品。">MedicinalProductPackaged</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproductpharmaceutical.html" title="組成および剤形の観点から説明される医薬品。">MedicinalProductPharmaceutical</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/medicinalproductundesirableeffect.html" title="医薬品の副作用についての説明。">MedicinalProductUndesirableEffect</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/substancepolymer.html" title="Todo.">SubstancePolymer</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/substancereferenceinformation.html" title="Todo.">SubstanceReferenceInformation</a></li>
+    <li><a href="https://www.hl7.org/implement/standards/fhir/substancespecification.html" title="通常の処方に使用される以上に詳細な薬剤成分についての詳細な説明。">SubstanceSpecification</a></li>    
+    </ul>これらのResourceは、いくつかの薬物規制当局と共同で開発中です。</li>
+	</ul>
+
+<a name="secpriv"></a>
+<h3 class="self-link-parent"><span class="sectioncount">11.0.5</span>セキュリティとプライバシー<a href="https://www.hl7.org/implement/standards/fhir/medications-module.html#secpriv" title="link to here" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>すべての臨床データと同様に、特定の薬は精神疾患やHIV感染などの機微な個人情報の存在を示す可能性があるため、（特に）薬物は機密情報になります。しかし、どの薬を誰が服用しているかについての情報がわからないと、破局的な結果につながる可能性があるため、非常に慎重に検討する必要があります。少なくとも、臨床判断を下すときに与えられていない情報があることを臨床医に認識させる必要があります。
+</p>
+
+<p>より一般的な考慮事項について<a href="https://www.hl7.org/implement/standards/fhir/secpriv-module.html">は、セキュリティとプライバシーモジュールを</a>参照してください。</p>
+
+
+<a name="roadmap"></a>
+<h3 class="self-link-parent"><span class="sectioncount">11.0.6</span>開発ロードマップ<a href="https://www.hl7.org/implement/standards/fhir/medications-module.html#roadmap" title="link to here" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
+<p>薬剤ワークグループには、既存のすべてのResourceを改善する計画があります。たとえば、構造化された方法で条件付きオーダーを詳細までサポートする機能を追加したり、医薬品処方および薬物の知識をサポートするための要件を評価したりしています。この作業には、新しいResourceの開発と承認が含まれることが予定されており、Medication Resourceの更新が含まれる場合があります。
+
+</p>
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>®©HL7.org 2011+。FHIR Release 4 (v4.0.0) generated on Thu, Dec 27, 2018. <a href="https://www.hl7.org/implement/standards/fhir/qa.html" style="color:#ffffff">QAページ</a>
+        <br>
+        <span style="color:#ffff77">リンク： <a href="http://hl7.org/fhir/search.cfm" style="color:#b8dcf9">検索<img src="https://www.hl7.org/implement/standards/fhir/external.png" style="vertical-align:baseline"></a> | <a href="https://www.hl7.org/implement/standards/fhir/history.html" style="color:#b8dcf9">バージョン履歴</a> | <a href="https://www.hl7.org/implement/standards/fhir/toc.html" style="color:#b8dcf9">目次</a> | <a href="https://www.hl7.org/implement/standards/fhir/credits.html" style="color:#b8dcf9">クレジット</a> | <a href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fmedications-module.html&amp;doc2=http%3A%2F%2Fhl7.org%2Ffhir%2Fmedications-module.html" style="color:#b8dcf9">R3と比較<img src="https://www.hl7.org/implement/standards/fhir/external.png" style="vertical-align:baseline"></a> | <a rel="license" href="https://www.hl7.org/implement/standards/fhir/license.html" style="color:#b8dcf9"><img src="https://www.hl7.org/implement/standards/fhir/cc0.png" alt="CC0" style="border-style:none"></a> | <a href="http://hl7.org/fhir-issues" style="color:#b8dcf9" target="_blank">変更を提案する<img src="https://www.hl7.org/implement/standards/fhir/external.png" style="vertical-align:baseline"></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="https://www.hl7.org/implement/standards/fhir/assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="https://www.hl7.org/implement/standards/fhir/dist/js/bootstrap.min.js"> </script>
+<script src="https://www.hl7.org/implement/standards/fhir/assets/js/respond.min.js"> </script>
+
+<script src="https://www.hl7.org/implement/standards/fhir/assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+</body>
+</html>
