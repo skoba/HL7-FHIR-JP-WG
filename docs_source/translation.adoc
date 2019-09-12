@@ -11,9 +11,7 @@ translator toolkitを使った翻訳の進め方、用語集(Glossary)の整備�
 
 === 目的と範囲
 
-FHIRに関連する文書を日本語に翻訳するために必要となることを対象とする。
-Google translator toolkitを使って翻訳することを前提とするが、他のツー
-ルの使用を妨げない。内容は文体についてのガイドラインと翻訳の方針につい
+FHIRに関連する文書を日本語に翻訳するために必要となることを対象とする。Google translator toolkitを使って翻訳することを推奨する。内容は文体についてのガイドラインと翻訳の方針につい
 てslackで話し合ったことを中心にまとめたものである。
 
 検討の後に公開していくことを前提としている。
@@ -21,10 +19,11 @@ Google translator toolkitを使って翻訳することを前提とするが、�
 === 翻訳した文書
 
 * link:translations/HL7_FHIR_Medications_modules.html[Medication Modules]
+* link:translations/condition_definitions_aoki.html[Condition Definitions]
 
 === 翻訳の方針
 * 最初から完璧なものは目指さない
-* ですます調。
+* 「です・ます」調。
 
 
 === Glossary
