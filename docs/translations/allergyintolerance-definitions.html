@@ -1,0 +1,393 @@
+<html lang="ja" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>アレルギー不耐性-FHIR v4.0.0</title>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  <meta name="author" content="http://hl7.org/fhir"></meta>
+
+  <link rel="stylesheet" href="http://hl7.org/fhir/fhir.css"></link>
+  <link rel="Prev" href="http://hl7.org/fhir/allergyintolerance-definitions.html"></link>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="http://hl7.org/fhir/dist/css/bootstrap.css"></link>
+  <link rel="stylesheet" href="http://hl7.org/fhir/assets/css/bootstrap-fhir.css"></link>
+
+    <!-- Project extras -->
+  <link rel="stylesheet" href="http://hl7.org/fhir/assets/css/project.css"></link>
+  <link rel="stylesheet" href="http://hl7.org/fhir/fhir-pub.css"></link>
+  <link rel="stylesheet" href="http://hl7.org/fhir/assets/css/pygments-manni.css"></link>
+	<link rel="stylesheet" href="http://hl7.org/fhir/jquery-ui.css"></link>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- [if lt IE 9]>
+  <script src="./assets/js/html5shiv.js"></script>
+  <script src="./assets/js/respond.min.js"></script>
+  <![endif] -->
+
+    <!-- Favicons -->
+  <link rel="apple-touch-icon-precomposed" href="http://hl7.org/fhir/assets/ico/apple-touch-icon-144-precomposed.png" sizes="144x144"></link>
+  <link rel="apple-touch-icon-precomposed" href="http://hl7.org/fhir/assets/ico/apple-touch-icon-114-precomposed.png" sizes="114x114"></link>
+  <link rel="apple-touch-icon-precomposed" href="http://hl7.org/fhir/assets/ico/apple-touch-icon-72-precomposed.png" sizes="72x72"></link>
+  <link rel="apple-touch-icon-precomposed" href="http://hl7.org/fhir/assets/ico/apple-touch-icon-57-precomposed.png"></link>
+  <link rel="shortcut icon" href="http://hl7.org/fhir/assets/ico/favicon.png"></link>
+
+</head>
+<body dir="ltr">
+	<div id="segment-header" class="segment">  <!-- segment-header -->	
+		<div class="container">  <!-- container -->
+			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="http://hl7.org/fhir/assets/images/fhir-logo-www.png" height="60" width="249" alt="ロゴファー"> </a>
+			<div id="hl7-status">
+				<b>FHIR R4</b>
+			</div>       	
+			
+			<div id="hl7-nav">
+				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
+					<img src="http://hl7.org/fhir/assets/images/hl7-logo.png" width="42" alt="hl7ウェブサイトをご覧ください" height="50">
+				</a> 
+			</div>       	
+			<div id="hl7-nav"><a id="hl7-logo" href="http://hl7.org/fhir/search.cfm" no-external="true"><img src="http://hl7.org/fhir/assets/images/search.png" alt="FHIRを検索"></a></div> 
+		</div>
+		<div class="container">  <!-- container -->
+	</div></div>  <!-- /segment-header -->	
+
+
+	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+		<div id="stripe"> </div>
+		<div class="container">  <!-- container -->
+   <!-- HEADER CONTENT -->
+ 	      		 	      		      		
+			<nav class="navbar navbar-inverse">
+				<div class="container">
+					<button type="button" class="navbar-toggle" data-target=".navbar-inverse-collapse" data-toggle="collapse"></button>
+					<a href="http://hl7.org/fhir/index.html" class="navbar-brand hidden">ファー</a>
+					<div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav navbar-nav">
+              <li><a href="http://hl7.org/fhir/index.html">ホーム</a></li>
+              <li><a href="http://hl7.org/fhir/modules.html">入門</a></li>
+              <li><a href="http://hl7.org/fhir/documentation.html">ドキュメンテーション</a></li>
+              <li><a href="http://hl7.org/fhir/resourcelist.html">資源</a></li>
+              <li><a href="http://hl7.org/fhir/profilelist.html">プロフィール</a></li>
+              <li><a href="http://hl7.org/fhir/extensibility-registry.html">拡張機能</a></li>
+              <li><a href="http://hl7.org/fhir/operationslist.html">オペレーション</a></li>
+              <li><a href="http://hl7.org/fhir/terminologies-systems.html">用語集</a></li>
+						</ul>
+					</div>  <!-- /.nav-collapse -->
+				</div>  <!-- /.container -->
+			</nav>  <!-- /.navbar -->
+      		
+  <!-- /HEADER CONTENT -->				
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-navbar -->
+	
+
+	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+		<div class="container">  <!-- container -->	
+			<ul class="breadcrumb">
+        <li><a href="http://hl7.org/fhir/clinicalsummary-module.html"><img src="http://hl7.org/fhir/clinical.png">臨床概要</a></li>        <li><a href="http://hl7.org/fhir/allergyintolerance.html">アレルギー不耐症</a></li>        <li><b>詳細な説明</b></li>          <!-- allergyintolerance.html / res-Detailed Descriptions / AllergyIntolerance -->
+
+			</ul>	
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-breadcrumb -->
+	
+
+	<div id="segment-content" class="segment">  <!-- segment-content -->
+	<div class="container">  <!-- container -->
+            <div class="row">
+            	<div class="inner-wrapper">
+  <!-- CONTENT CONTENT -->
+
+
+<div class="col-12"><!--ReleaseHeader--><p id="publish-box-current">これは、現在公式にリリースされているFHIRのバージョンで、 <a href="http://hl7.org/fhir/history.html">R4</a> （v4.0.0）です。すべてのバージョンの完全なリストについては<a href="http://hl7.org/fhir/directory.cfml">、公開バージョンのディレクトリを</a>参照してください<a href="http://hl7.org/fhir/directory.cfml"><img src="http://hl7.org/fhir/external.png" style="vertical-align:baseline"></a> 。</p><!--EndReleaseHeader-->
+
+<ul class="nav nav-tabs"><li><a href="http://hl7.org/fhir/allergyintolerance.html">コンテンツ</a></li><li><a href="http://hl7.org/fhir/allergyintolerance-examples.html">例</a></li><li class="active"><a href="http://hl7.org/fhir/allergyintolerance-definitions.html#">詳細な説明</a></li><li><a href="http://hl7.org/fhir/allergyintolerance-mappings.html">マッピング</a></li><li><a href="http://hl7.org/fhir/allergyintolerance-profiles.html">プロファイルと拡張機能</a></li><li><a href="http://hl7.org/fhir/allergyintolerance-version-maps.html">R3変換</a></li></ul>
+
+<h2 class="self-link-parent"><span class="sectioncount">9.1.6 <a name="9.1.6"> </a></span>リソースアレルギー不耐症-詳細な説明<a href="http://hl7.org/fhir/allergyintolerance-definitions.html#9.1.6" title="ここへリンク" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
+<table class="colstu"><tr><td><a href="http://www.hl7.org/Special/committees/patientcare/index.cfm">患者ケア<img src="http://hl7.org/fhir/external.png" style="vertical-align:baseline"></a>ワークグループ</td><td><a href="http://hl7.org/fhir/versions.html#maturity">成熟度</a> ：3</td><td> <a href="http://hl7.org/fhir/versions.html#std-process" title="標準ステータス">試用</a></td><td><a href="http://hl7.org/fhir/security.html#SecPrivConsiderations">セキュリティカテゴリ</a> ：患者</td>  <td><!-- !ns! --></td><td><a href="http://hl7.org/fhir/compartmentdefinition.html">コンパートメント</a> ： <a href="http://hl7.org/fhir/compartmentdefinition-patient.html">患者</a> 、 <a href="http://hl7.org/fhir/compartmentdefinition-practitioner.html">開業医</a> 、 <a href="http://hl7.org/fhir/compartmentdefinition-relatedperson.html">関連者</a></td></tr></table>
+
+
+<p>AllergyIntoleranceリソースの要素の詳細な説明。</p>
+
+<table class="dict">
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance"> </a> <b>アレルギー不耐症</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance</td></tr>
+  <tr><td>Definition</td><td><p>患者に特有な、物質への曝露に関連する有害または望ましくない生理学的反応のリスク。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0 ..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/domainresource.html">DomainResource</a></td></tr>
+  <tr><td>Requirements</td><td><p>患者に対する、特定の物質や類似物質への暴露に対しての副作用の傾向や、潜在的なリスクについての臨床的評価を記録するためのもの。</p>
+</td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>アレルギー;不耐性;副作用</td></tr>
+  <tr><td>Comments</td><td><p>物質には以下のものが含まれる。患者に適切な用量で正しく投与された薬剤、食物;植物または動物に由来する物質;虫刺されからの毒。</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>この要素で定義されるルール</b></td></tr>
+<tr><td width="60px"><b title="正式な不変識別子">ait-1</b></td><td><a href="http://hl7.org/fhir/conformance-rules.html#rule" style="color:Maroon">ルール</a> </td><td>validationStatusが"entered-in-error"でない場合、AllergyIntolerance.clinicalStatusが存在する必要があります。</td><td><span style="font-family:Courier New,monospace">validationStatus = 'entered-in-error'またはclinicStatus.exists（）</span></td></tr><tr><td width="60px"><b title="正式な不変識別子">ait-2</b></td><td><a href="http://hl7.org/fhir/conformance-rules.html#rule" style="color:Maroon">ルール</a> </td><td>verificationStatusが"entered-in-error"になっている場合は、AllergyIntolerance.clinicalStatusは存在しないものとします。</td><td><span style="font-family:Courier New,monospace">validationStatus != 'entered-in-error'またはclinicStatus.empty（）</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.identifier"> </a> <b>AllergyIntolerance.identifier</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.identifier</td></tr>
+  <tr><td>Definition</td><td><p>このAllergyIntoreranceに割り当てられた、ビジネス識別子。実行者または他のシステムにより割り当てられる。リソースが更新されたり、サーバー間で伝送されたりする間、変化せず一意である。</p>
+</td></tr>
+  <tr><td>Note</td><td>これはビジネス識別子であり、リソース識別子ではない。（ <a href="http://hl7.org/fhir/resource.html#identifiers">説明を</a>参照）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0 ..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#Identifier">Identifier</a></td></tr>
+  <tr><td>Requirements</td><td><p>AllergyIntoleranceの一意の識別を可能とする。これは、さまざまなシステムで認識されており、サーバー間で一貫性を保つことができる。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>これはビジネス識別子であり、リソース識別子ではありません（ <a href="http://hl7.org/fhir/resource.html#identifiers">説明を</a>参照）。識別子は単一のリソースインスタンスにのみ表示されることがベストプラクティスですが、ビジネスプラクティスでは、同じ識別子を持つ複数のリソースインスタンスが存在するように指定されることがあります。たとえば、複数のPatientおよびPersonリソースインスタンスが同じ社会保険番号を共有する場合などがあります。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.clinicalStatus"> </a> <b>AllergyIntolerance.clinicalStatus</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.clinicalStatus</td></tr>
+  <tr><td>Definition</td><td><p>アレルギーまたは不耐性の臨床状態。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-allergyintolerance-clinical.html">アレルギー不耐症のクリニカルステータスコード</a> （ <a href="http://hl7.org/fhir/terminologies.html#required">必須</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true（理由：この要素は修飾子としてラベル付けされている。ステータスにAllergyIntoleranceがアクティブではないことを示す"inactive"および"resolved"というコードが含まれている。）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>clincalStatusにデータがない場合は、 <a href="http://hl7.org/fhir/extensibility.html#Special-Case">discussion</a>を参照してください。ClinicalStatusには何らかの臨床判断が関係しているため、データタイプはCodeableConceptです。そのため、もとのFHIR値セットがカバーするよりも具体的な値セットが必要になる場合があります。たとえば、SNOMEDコーディングを使えば、さらに詳しくできるでしょう。</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>この要素に影響するルール</b></td></tr>
+<tr><td width="60px"><b title="正式な不変識別子">ait-1</b></td><td><a href="http://hl7.org/fhir/conformance-rules.html#rule" style="color:Maroon">ルール</a> </td><td>validationStatusが"entered-in-error"でない場合、AllergyIntolerance.clinicalStatusが存在する必要があります。</td><td><span style="font-family:Courier New,monospace">validationStatus = 'entered-in-error'またはclinicStatus.exists（）</span></td></tr><tr><td width="60px"><b title="正式な不変識別子">ait-2</b></td><td><a href="http://hl7.org/fhir/conformance-rules.html#rule" style="color:Maroon">ルール</a> </td><td>verificationStatusが"entered-in-error"になっている場合は、AllergyIntolerance.clinicalStatusは存在しないものとします。</td><td><span style="font-family:Courier New,monospace">validationStatus != 'entered-in-error'またはclinicStatus.empty（）</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.verificationStatus"> </a> <b>AllergyIntolerance.verificationStatus</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.verificationStatus</td></tr>
+  <tr><td>Definition</td><td><p>特定された物質（医薬品を含む）に対する反応の傾向や潜在的なリスクに関連する確実性に関する確認</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-allergyintolerance-verification.html">AllergyIntolerance Verification Status Codes</a> （ <a href="http://hl7.org/fhir/terminologies.html#required">必須</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#ismodifier">Is Modifier</a></td><td>true（理由：このステータスにはAllergyIntoleranceが現在無効であるとマークするための、refuteコードや"entered-in-error"コードが含まれているため。）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>validationStatusには何らかの臨床判断が関係しているため、データタイプはCodeableConceptです。そのため、もとのFHIR値セットがカバーするよりも具体的な値セットが必要になる場合があります。たとえば、SNOMEDコーディングを使えば、さらに詳しくできるでしょう。</p>
+</td></tr>
+  <tr><td>Invariants</td><td><table class="dict">
+<tr><td colspan="4"><b>この要素に影響するルール</b></td></tr>
+<tr><td width="60px"><b title="正式な不変識別子">ait-1</b></td><td><a href="http://hl7.org/fhir/conformance-rules.html#rule" style="color:Maroon">ルール</a> </td><td>validationStatusが"entered-in-error"でない場合、AllergyIntolerance.clinicalStatusが存在する必要があります。</td><td><span style="font-family:Courier New,monospace">validationStatus = 'entered-in-error'またはclinicStatus.exists（）</span></td></tr><tr><td width="60px"><b title="正式な不変識別子">ait-2</b></td><td><a href="http://hl7.org/fhir/conformance-rules.html#rule" style="color:Maroon">ルール</a> </td><td>verificationStatusが"entered-in-error"になっている場合は、AllergyIntolerance.clinicalStatusは存在しないものとします。</td><td><span style="font-family:Courier New,monospace">validationStatus != 'entered-in-error'またはclinicStatus.empty（）</span></td></tr></table>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.type"> </a> <b>AllergyIntolerance.type</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.type</td></tr>
+  <tr><td>Definition</td><td><p>副作用リスクの原因にある生理学的メカニズムの種類。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-allergy-intolerance-type.html">AllergyIntoleranceType</a> （ <a href="http://hl7.org/fhir/terminologies.html#required">必須</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#code">Code</a></td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>カテゴリー;クラス</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>アレルギー（通常は免疫介在性）反応は、歴史的には、重大な将来のリスクへつながる潜在的な指標と見なされてきました。現代では、以前は免疫介在性であると考えられていたいくつかの反応は、実際には非免疫性であるが、場合によっては依然として生命を脅かすリスクをもたらす可能性があることが示唆されています。多くの臨床医が特定の反応のメカニズムを区別しないかもしれないことが指摘されています。多くの場合、「アレルギー」という用語はかなり一般的に使用され、「不耐性」と重複することがあります。実際には、これら2つの概念の境界は明確に定義または理解されていないかもしれません。にもかかわらず、多くのレガシーシステムがこの属性を記録しているので、このデータ要素が存在します。免疫学的検査により、反応の基盤と原因物質を裏付けるエビデンスを得られるかもしれないが、特定の物質に対する感度または特異的が100％な検査はありません。よくあることですが、もし反応がアレルギーによるものか不耐性によるものかが不明な場合は、リソースからtype要素を省略してください。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.category"> </a> <b>AllergyIntolerance.category</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.category</td></tr>
+  <tr><td>Definition</td><td><p>特定された原因物質のカテゴリ。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0 ..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-allergy-intolerance-category.html">AllergyIntoleranceCategory</a> （ <a href="http://hl7.org/fhir/terminologies.html#required">必須</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#code">Code</a></td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>カテゴリー;タイプ;反応タイプ;クラス</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>このデータ要素は、現在一部の臨床システムで取得されているため、含まれています。このデータは、コーディングシステムが使用されている"Substance"から取得することができ、取得できる場合、事実上冗長なデータです。カテゴリーを検索するときは、カテゴリーなしのAllergyIntoleranceリソースの影響を考慮してください。たとえば、カテゴリ=薬で検索する場合、カテゴリの値が設定されていない薬物へのアレルギーは返されません。カテゴリを持たないアレルギーを取得するには、:missing修飾子を使用してカテゴリを検索します。詳細については、 <a href="http://hl7.org/fhir/search.html">search</a>を参照してください。また、カテゴリは送信者の主観的なものになる可能性があります、注意して使用してください。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.criticality"> </a> <b>AllergyIntolerance.criticality</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.criticality</td></tr>
+  <tr><td>Definition</td><td><p>特定されたアレルギー物質に対する反応の、潜在的な臨床的危害または深刻さの推定。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-allergy-intolerance-criticality.html">AllergyIntoleranceCriticality</a> （ <a href="http://hl7.org/fhir/terminologies.html#required">必須</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#code">Code</a></td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>重大度(Severity);深刻さ;禁忌;リスク</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>有害反応の傾向のデフォルトの"criticality"は「低リスク」であるべきです。これは、物質への意図的または自発的暴露に対しての、少なくとも相対的禁忌のレベルを示します。臨床医がアナフィラキシーなどのより深刻な、または生命を脅かす可能性のある反応の傾向を特定した場合、「高リスク」にフラグが立てられ、物質への意図的または自発的暴露に対する絶対的な禁忌を意味します。この要素が欠落している場合、"Criticality"は不明です（ただし、他の所で表現されているかもしれません）。"condition"レベルで"Severity"をキャプチャするシステムでは、実際には"criticality"の概念を表していますし、"reaction"レベルで文書化された"Severity"は真の反応の"Severity"を表しています。"condition"の"criticality"と"reaction"の"severity"の両方をキャプチャしている既存のシステムでは、"Severity"という用語を使用して両方を表す場合があります。"Severity"は状況に依存しないのに対し、"Criticality"は将来可能性として最悪になり得ます（つまり、状況に依存しない）。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.code"> </a> <b>AllergyIntolerance.code</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.code</td></tr>
+  <tr><td>Definition</td><td><p>アレルギーまたは不寛容に関する表現のコード（肯定的または否定/除外、などの表現）。これは、以下のいずれかである。
+・有害反応のリスクの原因と考えられた物質または医薬品のコード（例：「ラテックス」）
+・アレルギーと不耐性の状態についてのコード（例、「ラテックスアレルギー」）
+・特定の物質やクラスが原因ではない時の、否定・除外を表すコード（例：「ラテックスアレルギーなし」）
+・一般的な否定文、またはカテゴリに対する否定文を表す、否定・除外を表すコード（例：「既知のアレルギーなし」、「既知の薬物アレルギーなし」）注：特定の一回の反応に対する物質は、リスクの原因として特定された物質とは異なる場合があるが、それらは一貫している必要がある。たとえば、具体的なアレルギー物質（たとえば、ある薬のブランド）と、その物質を含む複合製品などがある。「code」のみを処理し、「reaction.substance」を無視することが、臨床上安全であることを保証しなければならない。受信側のシステムがAllergyIntolerance.reaction.substanceで詳細化された情報が、AllergyIntolerance.codeの表現する物質のスコープ内にあることを確認できない場合、受信側システムはAllergyIntolerance.reaction.substanceの方を無視するべきです。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-allergyintolerance-code.html">アレルギー不耐性物質/製品、状態および否定コード</a> （ <a href="http://hl7.org/fhir/terminologies.html#example">例</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>コード</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>この要素は、可能であれば、用語集を利用して設定することを強くお勧めします。たとえば、用語集には、RxNorm、SNOMED CT、DM + D、NDFRT、ICD-9、IDC-10、UNII、ATCなどがあります。プレーンテキストは、使用可能な適切な用語がない場合にのみ使用してください。追加の詳細をテキストで指定できます。</p>
+<p>「コード」要素に物質または製品コードが指定されている場合、「デフォルト」では、これが物質または製品に対するアレルギーまたは不耐性の（「タイプ」要素が存在する場合は、その要素の値による）の肯定的なステートメントであることを意味する。対応するSNOMED CTアレルギーモデルでは、指定された物質/製品が「原因物質」関係のターゲット（宛先）です。</p>
+<p>「substanceExposureRisk」拡張機能は、肯定的または否定的なアレルギー・不耐性のstatementを作成するための、「コード」要素の構造化されたより柔軟な代替手段として利用できます。この拡張は、コード化された物質/製品に関する「既知のアレルギーなし」（または「有害反応のリスクなし」）statementを作成する機能を提供します（その物質/製品の事前調整された「xへのアレルギーなし」の概念が存在しないケースを含む）。'substanceExposureRisk'拡張が存在する場合、AllergyIntolerance.codeエレメントは省略されるべきである。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.patient"> </a> <b>AllergyIntolerance.patient</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.patient</td></tr>
+  <tr><td>Definition</td><td><p>アレルギーまたは不耐性を持つ患者。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>1..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/references.html#Reference">Reference</a> （ <a href="http://hl7.org/fhir/patient.html">Patient</a> ）</td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>患者</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.encounter"> </a> <b>AllergyIntolerance.encounter</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.encounter</td></tr>
+  <tr><td>Definition</td><td><p>アレルギーまたは不耐性が確認されたときの、受診(Encounter)</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/references.html#Reference">Reference</a> （ <a href="http://hl7.org/fhir/encounter.html">受診(encounter)</a> ）</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.onset_x_"> </a> <b>AllergyIntolerance.onset [x]</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.onset [x]</td></tr>
+  <tr><td>Definition</td><td><p>アレルギーまたは不耐性が確認された、推定または実際の日付・日時または年齢。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#dateTime">dateTime</a> | <a href="http://hl7.org/fhir/datatypes.html#Age">Age</a> | <a href="http://hl7.org/fhir/datatypes.html#Period">Period</a> | <a href="http://hl7.org/fhir/datatypes.html#Range">Range</a> | <a href="http://hl7.org/fhir/datatypes.html#string">string</a></td></tr>
+  <tr><td>[x]注</td><td>使用方法の詳細については、<a href="http://hl7.org/fhir/formats.html#choice">データ型の選択</a>を参照してください[x]</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.recordedDate"> </a> <b>AllergyIntolerance.recordedDate</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.recordedDate</td></tr>
+  <tr><td>Definition</td><td><p>recordedDateは、この特定のAllergyIntoleranceレコードがシステムで作成された日時を表します。多くの場合、システムで生成された日付です。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.recorder"> </a> <b>AllergyIntolerance.recorder</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.recorder</td></tr>
+  <tr><td>Definition</td><td><p>記録を記録し、その内容について責任を負う人。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/references.html#Reference">Reference</a> （ <a href="http://hl7.org/fhir/practitioner.html">Practitioner</a> | <a href="http://hl7.org/fhir/practitionerrole.html">PractitionerRole</a> | <a href="http://hl7.org/fhir/patient.html">Patient</a> | <a href="http://hl7.org/fhir/relatedperson.html">RelatedPerson</a> ）</td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>Author</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.asserter"> </a> <b>AllergyIntolerance.asserter</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.asserter</td></tr>
+  <tr><td>Definition</td><td><p>記録されたアレルギーに関する情報のソース。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/references.html#Reference">Reference</a> （ <a href="http://hl7.org/fhir/patient.html">Patient</a> | <a href="http://hl7.org/fhir/relatedperson.html">RelatedPerson</a> | <a href="http://hl7.org/fhir/practitioner.html">Practitioner</a> | <a href="http://hl7.org/fhir/practitionerrole.html">PractitionerRole</a> ）</td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>ソース;情報提供者</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/search.html#summary">Summary</a></td><td>true</td></tr>
+  <tr><td>Comments</td><td><p>記録者はコンテンツに対して責任を負いますが、そのコンテンツの取得元のソースを参照できます。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.lastOccurrence"> </a> <b>AllergyIntolerance.lastOccurrence</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.lastOccurrence</td></tr>
+  <tr><td>Definition</td><td><p>既知の、最後のアレルギー反応イベントの発生日時または時間を表します。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td>Comments</td><td><p>この日付は、反応のOnset(AllergyIntolerance.onsetと思われる)のいずれかと同じである場合があります。「10年前の子供時代」など、最後の発生日のテキスト表現が必要な場合は、コメント要素を使用する必要があります。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.note"> </a> <b>AllergyIntolerance.note</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.note</td></tr>
+  <tr><td>Definition</td><td><p>他のフィールドでは記載されていない、副作用の傾向に関する追加の記述。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0 ..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#Annotation">Annotation</a></td></tr>
+  <tr><td>Comments</td><td><p>例：「高リスク」の重大性にフラグを立てる理由を含める。集中治療室内や、ステロイドカバー下など、将来的な物質の暴露または投与に関する指示。メモは、一般的な状態としてのアレルギーまたは不耐性に関連するものであるべきであり、特定のエピソードに関連するものを記述すべきではない。特定のエピソードについてのメモ・説明には、AllergyIntolerance.event.descriptionとAllergyIntolerance.event.notesを使用してください。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.reaction"> </a> <b>AllergyIntolerance.reaction</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.reaction</td></tr>
+  <tr><td>Definition</td><td><p>アレルギー物質として特定された物質への、暴露に関連する各有害反応イベントに関する詳細。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0 ..*</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.reaction.substance"> </a> <b>AllergyIntolerance.reaction.substance</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.reaction.substance</td></tr>
+  <tr><td>Definition</td><td><p>有害事象イベントの原因と考えられた特定の物質（または医薬品）の識別情報。注：特定の一回の反応に対する物質は、リスクの原因として特定された物質とは異なる場合があるが、それらは一貫している必要がある。たとえば、具体的なアレルギー物質（たとえば、ある薬のブランド）と、その物質を含む複合製品などがあります。「code」のみを処理し、「reaction.substance」を無視することが、臨床上安全であることを保証しなければならない。受信側のシステムがAllergyIntolerance.reaction.substanceで詳細化された情報が、AllergyIntolerance.codeの表現する物質のセマンティックスコープ内にあることを確認できない場合、受信側システムはAllergyIntolerance.reaction.substanceの方を無視するべきです。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-substance-code.html">物質コード</a> （ <a href="http://hl7.org/fhir/terminologies.html#example">例</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Comments</td><td><p>可能な限り、特定の物質（または医薬品）を、意思決定支援システムをトリガーできる用語でコーディングするべきです。'.code'要素は、特定の物質または医薬品だけでなく、物質のグループまたはクラスの使用を許しています。'code'で指定されたものが、物質のクラスに対するアレルギーまたは不耐性の場合（「ペニシリン系薬物」など）、「reaction.substance」要素を利用して、反応を引き起こしたと特定された物質をコーディングできます（例えば、 「アモキシシリン」）。「code」および「reaction.substance」要素の値の重複は、特定の物質が「code」に記録されている場合に許されます。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.reaction.manifestation"> </a> <b>AllergyIntolerance.reaction.manifestation</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.reaction.manifestation</td></tr>
+  <tr><td>Definition</td><td><p>副作用反応イベントにおいて観測される、または関連する臨床症状および/または兆候。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>1 ..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-clinical-findings.html">SNOMED CT臨床所見</a> （ <a href="http://hl7.org/fhir/terminologies.html#example">例</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>症状;サイン</td></tr>
+  <tr><td>Comments</td><td><p>症状は、単一の単語、フレーズ、または簡単な説明として表現できます。例：吐き気、発疹、または反応なし。可能な場合は、用語を使用して明示するほうが好ましいです。ここで入力した値は、英国NHS CUIガイドラインで推奨されているように、副作用のリストの一部としてアプリケーション画面に表示するのに利用できます。一般的に使用される用語には、SNOMED CTまたはICD10が含まれますが、これらに限定されません。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.reaction.description"> </a> <b>AllergyIntolerance.reaction.description</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.reaction.description</td></tr>
+  <tr><td>Definition</td><td><p>反応全体に関する説明文、必要に応じて症状の詳細を含む。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#string">string</a></td></tr>
+  <tr><td title="このリソース/要素が知られている他の名前">Alternate Names</td><td>ナラティブ;テキスト</td></tr>
+  <tr><td>Comments</td><td><p>このフィールドを利用して、状況、反応の詳細、前後に発生したことなど、発生した反応の特定のイベントの詳細を提供してください。イベントに関連するが、特定のケアを説明していない情報は、コメントフィールドに記録すべきです。たとえば、「4歳のとき、患者は連鎖球菌性咽頭炎のためにペニシリンを投与され、その後重度のじんましんを発症した」など。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.reaction.onset"> </a> <b>AllergyIntolerance.reaction.onset</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.reaction.onset</td></tr>
+  <tr><td>Definition</td><td><p>反応の開始日時の記録。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#dateTime">dateTime</a></td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.reaction.severity"> </a> <b>AllergyIntolerance.reaction.severity</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.reaction.severity</td></tr>
+  <tr><td>Definition</td><td><p>複数の異なる症状を考慮するかもしれない、反応イベント全体の重症度の臨床評価。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-reaction-event-severity.html">AllergyIntoleranceSeverity</a> （ <a href="http://hl7.org/fhir/terminologies.html#required">必須</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#code">Code</a></td></tr>
+  <tr><td>Comments</td><td><p>この評価は非常に主観的であることが認められています。客観的な尺度が適用されている特定の分野がいくつかあるかもしれません。このモデルには、拡張機能として客観的尺度を含めることができます。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.reaction.exposureRoute"> </a> <b>AllergyIntolerance.reaction.exposureRoute</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.reaction.exposureRoute</td></tr>
+  <tr><td>Definition</td><td><p>被験者が物質にさらされた経路の説明</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0..1</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/terminologies.html">Terminology Binding</a></td><td><a href="http://hl7.org/fhir/valueset-route-codes.html">SNOMED CTルートコード</a> （ <a href="http://hl7.org/fhir/terminologies.html#example">例</a> ）</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a></td></tr>
+  <tr><td>Comments</td><td><p>暴露経路の用語によるコーディングを、可能な限り使用する必要があります。</p>
+</td></tr>
+  <tr><td colspan="2" class="structure"><a name="AllergyIntolerance.reaction.note"> </a> <b>AllergyIntolerance.reaction.note</b></td></tr>
+  <tr><td>Element ID</td><td>AllergyIntolerance.reaction.note</td></tr>
+  <tr><td>Definition</td><td><p>他のフィールドでは捕捉されない、副作用反応イベントに関する追加テキスト。</p>
+</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/conformance-rules.html#cardinality">Cardinality</a></td><td>0 ..*</td></tr>
+  <tr><td><a href="http://hl7.org/fhir/datatypes.html">Type</a></td><td><a href="http://hl7.org/fhir/datatypes.html#Annotation">Annotation</a></td></tr>
+  <tr><td>Comments</td><td><p>このフィールドを利用して、特定のイベントに間接的に関連し、説明には含まれない情報を記録してください。例：母親から患者に提供された情報に基づいて臨床記録が記録されたが、そのカルテはすでになく、母親も亡くなっている。</p>
+</td></tr>
+</table>
+
+
+
+</div>
+
+
+				</div>  <!-- /inner-wrapper -->
+            </div>  <!-- /row -->
+        </div>  <!-- /container -->
+        
+    </div>  <!-- /segment-content -->
+
+
+	<div id="segment-footer" class="segment">  <!-- segment-footer -->
+		<div class="container">  <!-- container -->
+			<div class="inner-wrapper">
+				<p>®©HL7.org 2011+。2018年12月27日木曜日に生成されたFHIRリリース4（v4.0.0）<a href="http://hl7.org/fhir/qa.html" style="color:#ffffff">QAページ</a>
+        <br>
+        <span style="color:#ffff77">リンク： <a href="http://hl7.org/fhir/search.cfm" style="color:#b8dcf9">検索<img src="http://hl7.org/fhir/external.png" style="vertical-align:baseline"></a> | <a href="http://hl7.org/fhir/history.html" style="color:#b8dcf9">バージョン履歴</a> | <a href="http://hl7.org/fhir/toc.html" style="color:#b8dcf9">目次</a> | <a href="http://hl7.org/fhir/credits.html" style="color:#b8dcf9">クレジット</a> | <a href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fallergyintolerance-definitions.html&amp;doc2=http%3A%2F%2Fhl7.org%2Ffhir%2Fallergyintolerance-definitions.html" style="color:#b8dcf9">R3と比較<img src="http://hl7.org/fhir/external.png" style="vertical-align:baseline"></a> | <a rel="license" href="http://hl7.org/fhir/license.html" style="color:#b8dcf9"><img src="http://hl7.org/fhir/cc0.png" alt="CC0" style="border-style:none"></a> | <a href="http://hl7.org/fhir-issues" style="color:#b8dcf9" target="_blank">変更を提案する<img src="http://hl7.org/fhir/external.png" style="vertical-align:baseline"></a>   
+        </span>
+        </p>
+			</div>  <!-- /inner-wrapper -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-footer -->
+  <!-- disqus thread -->
+  <!-- disqus -->
+  <!-- end disqus -->        
+	
+	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+		<div class="container">  <!-- container -->
+		</div>  <!-- /container -->
+	</div>  <!-- /segment-post-footer -->
+    
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="http://hl7.org/fhir/assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="http://hl7.org/fhir/dist/js/bootstrap.min.js"> </script>
+<script src="http://hl7.org/fhir/assets/js/respond.min.js"> </script>
+
+<script src="http://hl7.org/fhir/assets/js/fhir.js"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+
+    
+</body>
+</html>

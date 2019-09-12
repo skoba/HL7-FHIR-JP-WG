@@ -19,8 +19,8 @@ FHIRに関連する文書を日本語に翻訳するために必要となるこ�
 === 翻訳した文書
 
 * link:translations/HL7_FHIR_Medications_modules.html[Medication Modules]
-* link:translations/condition_definitions_aoki.html[Condition Definitions]
-
+* link:translations/condition-definitions_aoki.html[Condition Definitions]
+* link:translations/allergyintolerance-definitions.html[Allergy Intolerance Definition]
 === 翻訳の方針
 * 最初から完璧なものは目指さない
 * 「です・ます」調。
