@@ -1,0 +1,40 @@
+:doctype: book
+= HL7 FHIR実装ガイド
+:toc:
+:toc-title: 目次
+:sectnums:
+:author: Shinji KOBAYASHI
+
+== 本文書の位置づけ
+
+この文書はFHIR実装検討ワーキンググループの薬剤処方サブワーキング
+グループで文書およびサンプルプログラムの開発作業として試験的に公開されている。
+
+個人的に作業中の文書および環境であり、FHIR実装検討ワーキンググループや
+日本HL7協会の見解を代表するものではない。
+
+
+== はじめに
+
+HL7 FHIRは2011年にGraham Grieveによって開発が始められ、実装
+の容易さと公開性により開発者を中心に人気が広まりつつある現在急速に普及
+しつつある医療情報規格である。日本においても取り入れていく機運が
+高まりつつある。
+
+次世代健康医療記録システム共通プラットフォーム課題研究会ではFHIRの日本
+での運用について検討するため、FHIR実装検討ワーキンググループで検討を深
+めている。各種課題に対応するため、下記のサブワーキンググループを設
+定した。
+
+* SWG1 FHIR Infrastructure
+* SWG2 Diagnostics and Observaiton
+* SWG3 Patient Administration
+* SWG4 patient care and summary
+* SWG5 <<_medication resource, pharmacy and medication>>
+* SWG6 vocabulary and Terminology
+
+以下に各サブワーキンググループで取りまとめた実装ガイドを示す。
+
+include::references.adoc[]
+include::medication.adoc[]
+include::terminologies.adoc[]
