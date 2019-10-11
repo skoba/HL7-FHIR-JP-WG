@@ -1,0 +1,271 @@
+﻿<html class="client-nojs" lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8"></meta>
+<title>FHIR Implementation Guides - HL7Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"FHIR_Implementation_Guides","wgTitle":"FHIR Implementation Guides","wgCurRevisionId":164774,"wgRevisionId":164774,"wgArticleId":26892,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"FHIR_Implementation_Guides","wgRelevantArticleId":26892,"wgRequestId":"0e8f3f3061e3621d3275b251","wgCSPNonce":false,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en","usePageImages":false,"usePageDescriptions":false},"wgVisualEditorToolbarScrollOffset":0,"wgVisualEditorUnsupportedEditParams":["undo","undoafter","veswitched"],"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"ready","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.toc.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.tokens@0tffind",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","skins.vector.js"];mw.loader.load(RLPAGEMODULES);});</script>
+<link rel="stylesheet" href="https://wiki.hl7.org/w/load.php?lang=en&modules=ext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.legacy.commonPrint,shared%7Cmediawiki.skinning.interface%7Cmediawiki.toc.styles%7Cskins.vector.styles&only=styles&skin=vector"></link>
+<script src="https://wiki.hl7.org/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector" async=""></script>
+<meta name="ResourceLoaderDynamicStyles" content=""></meta>
+<meta name="generator" content="MediaWiki 1.33.0"></meta>
+<link rel="shortcut icon" href="https://wiki.hl7.org/w/images/wiki.hl7.org/favicon.ico"></link>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.hl7.org/w/opensearch_desc.php" title="HL7Wiki (en)"></link>
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.hl7.org/w/api.php?action=rsd"></link>
+<link rel="alternate" type="application/atom+xml" title="HL7Wiki Atom feed" href="https://wiki.hl7.org/w/index.php?title=Special:RecentChanges&amp;feed=atom"></link>
+<!--[if lt IE 9]><script src="/w/load.php?lang=en&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-FHIR_Implementation_Guides rootpage-FHIR_Implementation_Guides skin-vector action-view" dir="ltr">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+</div>
+
+	<h1 id="firstHeading" class="firstHeading" lang="ja">FHIR実装ガイド</h1>
+	
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">From HL7Wiki</div>
+		<div id="contentSub"></div>
+		
+		
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="https://wiki.hl7.org/index.php?title=FHIR_Implementation_Guides#mw-head">ナビゲーションにジャンプ</a> <a class="mw-jump-link" href="https://wiki.hl7.org/index.php?title=FHIR_Implementation_Guides#p-search">検索にジャンプ</a>
+		<div id="mw-content-text" lang="ja" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div id="toc" class="toc"><input type="checkbox" id="toctogglecheckbox" class="toctogglecheckbox" role="button" style="display:none"><div class="toctitle" lang="ja" dir="ltr"><h2>目次</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://wiki.hl7.org/index.php?title=FHIR_Implementation_Guides#Introducing_FHIR_Implementation_Guides"><span class="tocnumber">1</span> <span class="toctext">FHIR実装ガイドの紹介</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://wiki.hl7.org/index.php?title=FHIR_Implementation_Guides#Finding_Implementation_Guides"><span class="tocnumber">2</span> <span class="toctext">実装ガイドの見つけ方</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="https://wiki.hl7.org/index.php?title=FHIR_Implementation_Guides#Using_Implementation_Guides"><span class="tocnumber">3</span> <span class="toctext">実装ガイドの使い方</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="https://wiki.hl7.org/index.php?title=FHIR_Implementation_Guides#Authoring_FHIR_Implementation_Guides"><span class="tocnumber">4</span> <span class="toctext">FHIR実装ガイドの書き方</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="https://wiki.hl7.org/index.php?title=FHIR_Implementation_Guides#Publishing_Implementation_Guides"><span class="tocnumber">4.1</span> <span class="toctext">実装ガイドの公開</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="https://wiki.hl7.org/index.php?title=FHIR_Implementation_Guides#Kinds_of_content_in_a_typical_Implementation_Guide"><span class="tocnumber">5</span> <span class="toctext">典型的な実装ガイドにある内容の種類</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="https://wiki.hl7.org/index.php?title=FHIR_Implementation_Guides#Tooling_Support_for_Authoring_FHIR_Implementation_Guides"><span class="tocnumber">6</span> <span class="toctext">FHIR実装ガイドを執筆するためのツールのサポート</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Introducing_FHIR_Implementation_Guides">FHIR実装ガイドの紹介</span></h1>
+<p>FHIRはプラットフォーム仕様です。多くの医療データ交換の問題を解決するために使用できる機能の一般的なデータセットについて説明します。FHIRは、さまざまなアーキテクチャと情報交換パターンを使用する多くの管轄区域であらゆる種類の問題に使用されるため、FHIR仕様は汎用性があり、問題を解決する方法は多数備えています。このため、実装者は方法を選択する必要があります。特定のソリューションで相互運用可能にするには、同じ実装を選択する必要があります。
+</p><p>FHIR実装ガイド（IG; Implementation Guide）は、特定のコンテキストでFHIRがどのように使用されるかを説明するものです。多くのIGは、次の3つの分類のいずれかに適合します。</p>
+<ol><li>司法管轄区：司法管轄区でFHIRを使用するためのベースのルールを説明します（通常は各国特有のルールセット）</li>
+<li>アプリケーションソリューション：FHIRを使用して特定の問題（EHRアプリアクセスなど）を解決する方法を説明します</li>
+<li>ドメインガイド：FHIRで特定のコンテンツを表す適切な方法を説明します（例：乳がんの診断プロセスを適切に表す方法）</li></ol>
+<p>IGの中にはカテゴリを超えたり、これらの主要なカテゴリのいずれにも該当しない場合があることに注意してください。
+</p>
+<h1><span class="mw-headline" id="Finding_Implementation_Guides">実装ガイドの見つけ方</span></h1>
+<p>FHIR財団は、IGの中央レジストリを維持しています。公開されているIGはすべて登録することができます（手順を参照）ので、IGを書いたら登録することをお勧めします。
+</p><p>FHIR財団は、きめ細かい情報セットを含む一般的なFHIRリポジトリも維持しています。このレジストリには、fhir.orgおよびhl7.orgによって公開された実装ガイドにある適合制作物（拡張、プロファイル、値セットなど）が含まれますが、これらに限定されません。実装ガイドを書く際には一般的なレジストリを最新の状態に保つことをお勧めします。レジストリのコンテンツがIGアップロードプロセスを通じて登録されている場合、レジストリはResourceが公開されているIGへのリンクを提供します。
+</p><p>さらに、実装ガイドはGoogleなどを使用して見つけることができます。</p>
+<h1><span class="mw-headline" id="Using_Implementation_Guides">実装ガイドの使い方</span></h1>
+<p>実装ガイドの主な用途は、オンラインで読むことです。
+</p><p>ほとんどのガイドにはダウンロード機能があり、オフラインでもローカルで使用できます。しかし、ガイドの中で相互に参照しているところは、ローカルダウンロードコピーにはリンクされず、Webロケーションを参照することに注意してください。
+</p><p>さらに、ガイドには、コンテンツの一部として（ <a title="FHIR Implementation Guide Publishing Requirements" href="https://wiki.hl7.org/FHIR_Implementation_Guide_Publishing_Requirements">FHIR実装ガイド公開要件</a>を参照）、検証およびコード生成ツールでの使用に適したファイルのセットが含まれています。FHIR IGをサポートするツールは、IGの場所（ルートURL）（ローカルコピーまたはWeb）が提供されると、このツールの場所を認識します。
+</p><p>FHIR IGには<a rel="nofollow" class="external text" href="https://www.npmjs.com/">NPM</a>パッケージの説明があるため、NPMを使用してIG依存関係を管理できます。</p>
+<h1><span class="mw-headline" id="Authoring_FHIR_Implementation_Guides">FHIR実装ガイドの書き方</span></h1>
+<p>実装ガイドを作成するための一般的なワークフローは次のとおりです。</p>
+<ul><li>はじめてみよう<ul><li>実装ガイド（IG）、その範囲、および正規のURLを記載してください<ul><li>HL7ガイドの場合、正規URLのルートは<a class="external free" href="http://hl7.org" rel="nofollow">http://hl7.orgになり</a>ます。他のガイドであれば、<a class="external free" href="http://fhir.org" rel="nofollow">http://fhir.org</a> 、 <a class="external free" href="http://ihe.net" rel="nofollow">http://ihe.net</a>などとなるかもしれません。</li></ul></li>
+<li>IGのテンプレートを選択します（ <a title="FHIR IG publisher templates" href="https://wiki.hl7.org/FHIR_IG_publisher_templates">FHIR IG Publisher templates</a>を参照）</li>
+<li>コンテンツを記載していない初期ImplementationGuideリソースを作成します</li>
+<li>IGのバージョン管理を設定します</li>
+<li>IG Publisherを使用してIGを構築する<ul><li>githubリポジトリが公開されている場合、自動公開を設定して、ガイドの最新バージョンが常にbuild.fhir.orgから見つかるようにしておきます。</li></ul></li></ul></li></ul>
+<ul><li>コンテンツの開発<ul><li>実装について記述された適合リソース（以下を参照）を追加します</li>
+<li>解説を書きます（好みに応じてhtml、xhtml、またはマークダウン）</li>
+<li>例、画像などを追加して、実装ガイドに記入します</li>
+<li>ローカルビルドを実行して、すべてのコンテンツがすべて正常であることを確認します<ul><li>CIビルドサイトに公開することをコミットします（セットアップの場合、全員が現在の作業を確認できるようにします）</li></ul></li></ul></li></ul>
+<ul><li>公開（完了後）<ul><li>マイルストーンビルドは、正規の場所に発行する必要があります（生成されたHTMLファイルのセットをコピーします）</li>
+<li>正規の場所のレイアウトは通常、 <a title="Standard FHIR Publishing Layout Pattern" href="https://wiki.hl7.org/Standard_FHIR_Publishing_Layout_Pattern">Standard FHIR Publishing Layout Pattern</a>に従う必要があります</li>
+<li>hl7.orgまたはfhir.orgで公開されるコンテンツは、FHIR IG Publihsherを介して生成される必要があります</li></ul></li></ul>
+<p>通常、IGは、公式コンセンサスビルドで下書きされてから公開されるため、開発と公開を何度も繰り返します。
+</p>
+<h2><span class="mw-headline" id="Publishing_Implementation_Guides">実装ガイドの公開</span></h2>
+<p>todo：公開プロセスに関する詳細情報。一般的なガイドライン：</p>
+<ul><li>生成されたコンテンツをWebサーバーにコピーします</li>
+<li>registry.fhir.org.zipファイルをregistry.fhir.orgにアップロードします</li>
+<li>最新版のfhir実装ガイドのレジストリについては[ <a class="external autonumber" href="https://github.com/FHIR/ig-registry" rel="nofollow">[1]</a> ]を参照</li></ul>
+<h1><span class="mw-headline" id="Kinds_of_content_in_a_typical_Implementation_Guide">一般的な実装ガイドのコンテンツの種類</span></h1>
+<p>通常、実装ガイドには次の種類のコンテンツが含まれます。</p>
+<ul><li>Resource<ul><li>ProfileとExtensionの定義-ガイドの対象となるResourceのコンテンツモデルの定義</li>
+<li>値セットとコードシステム-実装ガイドの用語定義をサポート</li>
+<li>機能定義と検索パラメーターと共に機能ステートメント-FHIR APIの使用方法を定義します</li>
+<li>テストケース（テストスクリプト）-実装がパスする、またはパスする必要がある実際のテストのセット</li>
+<li>ExampleScenaro-IGのストーリーボードの正式な定義（テストスクリプトまたは他のテストフレームワークを駆動する場合があります）</li>
+<li>ConceptMapおよびStructureMap-ガイドで説明されているFHIRコンテンツとの間のマップおよび変換</li>
+<li>論理モデル- <a href="https://wiki.hl7.org/w/index.php?title=Logical_Models_in_Implementation_Guides&amp;action=edit&amp;redlink=1" class="new" title="Logical Models in Implementation Guides (page does not exist)">実装ガイドの論理モデルの</a>ドキュメントを参照</li>
+<li>例-実装ガイドをさらに説明するあらゆる種類のResource</li></ul></li></ul>
+<ul><li>解説：<ul><li>プロセス情報： <b>バージョン</b>とライセンス、発行者/所有者、問題の報告/議論への参加</li>
+<li>セキュリティ情報：セキュリティの仕組み（アプリケーションソリューションタイプガイド用）</li>
+<li>ドメイン分析/背景情報</li>
+<li>UML図、BPMNフロー図、その他の種類の図</li></ul></li></ul>
+<p>これらのコンテンツはすべてオプションであり、IGの実際のコンテンツと解決される問題に応じて適切であることに注意してください。IGを書くときには、開発中に<a class="new" title="Best practice Guidelines for IGs (page does not exist)" href="https://wiki.hl7.org/w/index.php?title=Best_practice_Guidelines_for_IGs&amp;action=edit&amp;redlink=1">IGのベストプラクティスガイドライン</a>に留意する必要があります</p><p>IGソースの例をご覧になりたい場合は、次のいずれかの場所をご覧ください。</p>
+<ul><li>FHIR GitHubリポジトリ、/guides /* の中にある2で終わるディレクトリにはさまざまなスタイルの実装ガイドがあります。</li>
+<li>また、ツールのテストに使用される/tests/igがあります</li></ul>
+<h1><span class="mw-headline" id="Tooling_Support_for_Authoring_FHIR_Implementation_Guides">FHIR実装ガイドを書くときのツールサポート</span></h1>
+<p>FHIR IGを公開するための主なツールチェーン：</p>
+<ul><li><a href="https://wiki.hl7.org/FHIR_IG_Publishing_tool" title="FHIR IG Publishing tool">FHIR IG Publishingツール</a></li>
+<li>Simplifier</li></ul>
+<p>さらに、次のツールは、IGの作成中に役立つ場合があります。</p>
+<ul><li>プロファイルの編集/拡張機能の定義/論理モデル：Forge</li>
+<li>実装ガイドの編集：Forge（制限付き）</li>
+<li>値セット、コンセプトマップ、およびコードシステムの編集：</li>
+<li>シナリオ例の編集：</li>
+<li>アンケートの編集：</li></ul>
+<p>他のResourceは手動で編集する必要があります。
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20190826211405
+Cache expiry: 1209600
+Dynamic content: false
+CPU time usage: 0.016 seconds
+Real time usage: 0.050 seconds
+Preprocessor visited node count: 27/1000000
+Preprocessor generated node count: 32/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key wikidb_hl7:pcache:idhash:26892-0!canonical and timestamp 20190826211404 and revision id 164774
+ -->
+</div></div>
+		
+		<div class="printfooter">「 <a dir="ltr" href="https://wiki.hl7.org/w/index.php?title=FHIR_Implementation_Guides&amp;oldid=164774">https://wiki.hl7.org/w/index.php?title=FHIR_Implementation_Guides&amp;oldid=164774</a> 」から取得</div>
+		
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+		
+		<div class="visualClear"></div>
+		
+	</div>
+</div>
+
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.hl7.org/w/index.php?title=Special:UserLogin&amp;returnto=FHIR+Implementation+Guides" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" class="vectorTabs" role="navigation" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+							<li id="ca-nstab-main" class="selected"><span><a href="https://wiki.hl7.org/FHIR_Implementation_Guides" title="View the content page [c]" accesskey="c">Page</a></span></li><li id="ca-talk" class="new"><span><a href="https://wiki.hl7.org/w/index.php?title=Talk:FHIR_Implementation_Guides&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t">Discussion</a></span></li>						</ul>
+					</div>
+										<div id="p-variants" class="vectorMenu emptyPortlet" role="navigation" aria-labelledby="p-variants-label">
+												<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-variants-label">
+						<h3 id="p-variants-label">
+							<span>Variants</span>
+						</h3>
+						<ul class="menu">
+													</ul>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" class="vectorTabs" role="navigation" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+							<li id="ca-view" class="collapsible selected"><span><a href="https://wiki.hl7.org/FHIR_Implementation_Guides">Read</a></span></li><li id="ca-viewsource" class="collapsible"><span><a href="https://wiki.hl7.org/w/index.php?title=FHIR_Implementation_Guides&amp;action=edit" title="This page is protected. You can view its source [e]" accesskey="e">View source</a></span></li><li id="ca-history" class="collapsible"><span><a href="https://wiki.hl7.org/w/index.php?title=FHIR_Implementation_Guides&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>						</ul>
+					</div>
+										<div id="p-cactions" class="vectorMenu emptyPortlet" role="navigation" aria-labelledby="p-cactions-label">
+						<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span></h3>
+						<ul class="menu">
+													</ul>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+						<form id="searchform" action="/w/index.php">
+							<div id="simpleSearch">
+								<input type="search" name="search" placeholder="Search HL7Wiki" title="Search HL7Wiki [f]" id="searchInput" accesskey="f"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="https://wiki.hl7.org/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal" id="p-navigation" role="navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+			<div class="body">
+								<ul>
+					<li id="n-mainpage"><a href="https://wiki.hl7.org/Main_Page" title="Visit the main page [z]" accesskey="z">Main Page</a></li><li id="n-INDEX9"><a href="https://wiki.hl7.org/Categories">Categories</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" id="p-groups" role="navigation" aria-labelledby="p-groups-label">
+			<h3 id="p-groups-label">groups</h3>
+			<div class="body">
+								<ul>
+					<li id="n-WG-label"><a href="https://wiki.hl7.org/Category:Work_Group">ワークグループ</a></li><li id="n-UG-label"><a href="https://wiki.hl7.org/Category:User_Group">ユーザーグループ</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" id="p-meetings" role="navigation" aria-labelledby="p-meetings-label">
+			<h3 id="p-meetings-label">meetings</h3>
+			<div class="body">
+								<ul>
+					<li id="n-WGM-Information"><a href="https://wiki.hl7.org/WGM_information">WGM Information</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" id="p-general" role="navigation" aria-labelledby="p-general-label">
+			<h3 id="p-general-label">general</h3>
+			<div class="body">
+								<ul>
+					<li id="n-recentchanges"><a href="https://wiki.hl7.org/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-help"><a href="https://wiki.hl7.org/Basic_Editing" title="The place to find out">Help</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" id="p-tb" role="navigation" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+			<div class="body">
+								<ul>
+					<li id="t-whatlinkshere"><a href="https://wiki.hl7.org/Special:WhatLinksHere/FHIR_Implementation_Guides" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.hl7.org/Special:RecentChangesLinked/FHIR_Implementation_Guides" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.hl7.org/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.hl7.org/w/index.php?title=FHIR_Implementation_Guides&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.hl7.org/w/index.php?title=FHIR_Implementation_Guides&amp;oldid=164774" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.hl7.org/w/index.php?title=FHIR_Implementation_Guides&amp;action=info" title="More information about this page">Page information</a></li>				</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+				<div id="footer" role="contentinfo">
+						<ul id="footer-info">
+								<li id="footer-info-lastmod"> This page was last edited on 28 January 2019, at 14:14.</li>
+								<li id="footer-info-copyright">Copyright © Health Level Seven International ® ALL RIGHTS RESERVED. The reproduction of this material in any form is strictly forbidden without the written permission of the publisher.</li>
+							</ul>
+						<ul id="footer-places">
+								<li id="footer-places-privacy"><a href="https://wiki.hl7.org/HL7Wiki:Privacy_policy" title="HL7Wiki:Privacy policy">Privacy policy</a></li>
+								<li id="footer-places-about"><a href="https://wiki.hl7.org/HL7Wiki:About" title="HL7Wiki:About">About HL7Wiki</a></li>
+								<li id="footer-places-disclaimer"><a href="https://wiki.hl7.org/HL7Wiki:General_disclaimer" title="HL7Wiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+										<ul id="footer-icons" class="noprint">
+										<li id="footer-poweredbyico">
+						<a href="https://www.mediawiki.org/"><img src="https://wiki.hl7.org/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" srcset="/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /w/resources/assets/poweredby_mediawiki_176x62.png 2x"></a>					</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		
+
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.016","walltime":"0.050","ppvisitednodes":{"value":27,"limit":1000000},"ppgeneratednodes":{"value":32,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20190826211405","ttl":1209600,"transientcontent":false}}});});</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-676355-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":357});});</script>
+</body>
+</html>
