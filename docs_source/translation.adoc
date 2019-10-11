@@ -30,6 +30,7 @@ HL7協会の木村通男会長の許諾を得て翻訳・公開するもので�
 * link:translations/HL7_FHIR_Medications_modules.html[Medication Modules]
 * link:translations/HL7_FHIR_Medication_Resource.html[Medication Resource]
 * link:translations/HL7_FHIR_MedicationRequest_resource.html[MedicationRequest Resource]
+* link:translations/HL7_FHIR_MedicationDispense.html[MedicationDispense Resource]
 
 // * link:translations/condition-definitions_aoki.html[Condition Definitions]
 // * link:translations/allergyintolerance-definitions.html[Allergy Intolerance Definition]
