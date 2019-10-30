@@ -2,14 +2,14 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="98f6b570-4345-474c-b631-8a0b09ec6312" />
   <meta>
-    <versionId value="4" />
-    <lastUpdated value="2019-10-29T07:54:41.148+00:00" />
+    <versionId value="5" />
+    <lastUpdated value="2019-10-30T06:55:37.368+00:00" />
   </meta>
   <url value="http://hl7fhir.jp/fhir/StructureDefinition/JP_Medication" />
   <version value="0.0.1" />
   <name value="JP_Medication" />
   <status value="draft" />
-  <date value="2019-10-28T11:27:00.8348706Z" />
+  <date value="2019-10-30T06:55:35.1463276+00:00" />
   <description value="NEXEHRS協議会のFHIR JPワーキンググループで開発中の日本向けFHIR Medication Profile" />
   <fhirVersion value="4.0.0" />
   <mapping>
@@ -884,8 +884,8 @@
     </element>
     <element id="Medication.identifier.type.coding.system">
       <path value="Medication.identifier.type.coding.system" />
-      <short value="用語集システムのID" />
-      <definition value="The identification of the code system that defines the meaning of the symbol in the code." />
+      <short value="コードシステムのID" />
+      <definition value="コードシステムThe identification of the code system that defines the meaning of the symbol in the code." />
       <comment value="The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously." />
       <requirements value="Need to be unambiguous about the source of the definition of the symbol." />
       <min value="0" />
@@ -1098,10 +1098,10 @@
     </element>
     <element id="Medication.identifier.type.text">
       <path value="Medication.identifier.type.text" />
-      <short value="Plain text representation of the concept" />
-      <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user." />
-      <comment value="Very often the text is the same as a displayName of one of the codings." />
-      <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source." />
+      <short value="概念のプレインテキスト表現" />
+      <definition value="データを入力したユーザー（および/または）ユーザーが意図した概念を参照/選択/完全な形での自然言語表現。" />
+      <comment value="このテキスト表現はコーディングのdisplayNameとよく一致する。" />
+      <requirements value="用語集から選ばれたコードは必ずしも人間が使っている用語の意味のすべてのニュアンスまでは正確に一致することはない。また、適切なコードがないような場合もある。そのような場合に大元の意味のすべてを伝えるためにこのテキストが使われる。" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -1138,12 +1138,20 @@
         <identity value="orim" />
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" />
       </mapping>
+      <mapping>
+        <identity value="ssmix" />
+        <map value="RXE?" />
+      </mapping>
+      <mapping>
+        <identity value="JAHIS" />
+        <map value="RXE?" />
+      </mapping>
     </element>
     <element id="Medication.identifier.system">
       <path value="Medication.identifier.system" />
-      <short value="The namespace for the identifier value" />
-      <definition value="Establishes the namespace for the value - that is, a URL that describes a set values that are unique." />
-      <comment value="Identifier.system is always case sensitive." />
+      <short value="ID値のためのネームスペース" />
+      <definition value="値のネームスペースを特定する。つまり、値セットが唯一のものであることを示すURLを指定する。" />
+      <comment value="Identifier.systemは常に大文字小文字を判別する。" />
       <requirements value="There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers." />
       <min value="0" />
       <max value="1" />
@@ -2231,7 +2239,29 @@
     </element>
     <element id="Medication.identifier.type.coding.system">
       <path value="Medication.identifier.type.coding.system" />
-      <short value="用語集システムのID" />
+      <short value="コードシステムのID" />
+      <definition value="コードシステムThe identification of the code system that defines the meaning of the symbol in the code." />
+    </element>
+    <element id="Medication.identifier.type.text">
+      <path value="Medication.identifier.type.text" />
+      <short value="概念のプレインテキスト表現" />
+      <definition value="データを入力したユーザー（および/または）ユーザーが意図した概念を参照/選択/完全な形での自然言語表現。" />
+      <comment value="このテキスト表現はコーディングのdisplayNameとよく一致する。" />
+      <requirements value="用語集から選ばれたコードは必ずしも人間が使っている用語の意味のすべてのニュアンスまでは正確に一致することはない。また、適切なコードがないような場合もある。そのような場合に大元の意味のすべてを伝えるためにこのテキストが使われる。" />
+      <mapping>
+        <identity value="ssmix" />
+        <map value="RXE?" />
+      </mapping>
+      <mapping>
+        <identity value="JAHIS" />
+        <map value="RXE?" />
+      </mapping>
+    </element>
+    <element id="Medication.identifier.system">
+      <path value="Medication.identifier.system" />
+      <short value="ID値のためのネームスペース" />
+      <definition value="値のネームスペースを特定する。つまり、値セットが唯一のものであることを示すURLを指定する。" />
+      <comment value="Identifier.systemは常に大文字小文字を判別する。" />
     </element>
   </differential>
 </StructureDefinition>

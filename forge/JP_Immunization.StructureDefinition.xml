@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="3d49e9c2-07d3-47af-8ebe-064b8c1a7a61" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2019-10-28T10:03:43.182+00:00" />
+  </meta>
   <url value="http://hl7fhir.jp/fhir/StructureDefinition/JP_Immunization" />
   <name value="JP_Immunization" />
   <status value="draft" />
+  <date value="2019-10-28T10:03:40.4793613+00:00" />
   <fhirVersion value="4.0.0" />
   <mapping>
     <identity value="workflow" />

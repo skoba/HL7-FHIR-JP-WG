@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="13fa6823-c9de-45b9-a8fa-b820544b2fae" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2019-10-28T10:01:53.877+00:00" />
+  </meta>
   <url value="http://hl7fhir.jp/fhir/StructureDefinition/MyMedicationAdministration" />
   <name value="JP_MedicationAdministration" />
   <status value="draft" />
+  <date value="2019-10-28T10:01:53.2048115+00:00" />
   <fhirVersion value="4.0.0" />
   <mapping>
     <identity value="workflow" />

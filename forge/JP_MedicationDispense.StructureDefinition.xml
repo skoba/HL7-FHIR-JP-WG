@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="a9b018d6-e66a-4ce6-ae5f-caeed3fe81d1" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2019-10-28T10:05:32.924+00:00" />
+  </meta>
   <url value="http://hl7fhir.jp/fhir/StructureDefinition/JP_MedicationDispense" />
   <name value="JP_MedicationDispense" />
   <status value="draft" />
+  <date value="2019-10-28T10:05:30.9758649+00:00" />
   <fhirVersion value="4.0.0" />
   <mapping>
     <identity value="workflow" />
