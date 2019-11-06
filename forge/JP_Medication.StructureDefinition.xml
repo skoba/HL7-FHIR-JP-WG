@@ -2,14 +2,14 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="98f6b570-4345-474c-b631-8a0b09ec6312" />
   <meta>
-    <versionId value="6" />
-    <lastUpdated value="2019-11-01T14:32:30.44+00:00" />
+    <versionId value="7" />
+    <lastUpdated value="2019-11-05T14:18:18.475+00:00" />
   </meta>
   <url value="http://hl7fhir.jp/fhir/StructureDefinition/JP_Medication" />
   <version value="0.0.1" />
   <name value="JP_Medication" />
   <status value="draft" />
-  <date value="2019-10-30T06:55:35.1463276Z" />
+  <date value="2019-11-05T14:18:17.1348615+00:00" />
   <description value="NEXEHRS協議会のFHIR JPワーキンググループで開発中の日本向けFHIR Medication Profile" />
   <fhirVersion value="4.0.0" />
   <mapping>
@@ -1617,7 +1617,7 @@
     <element id="Medication.identifier.assigner.reference">
       <path value="Medication.identifier.assigner.reference" />
       <short value="文字での参照、相対的、内部あるいは絶対的URL" />
-      <definition value="A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." />
+      <definition value="他のResourceが存在する場所への参照。参照はサービスのベースURLに対する相対的なものや、リソースがある場所を示す絶対的URLであることもある。参照はバージョンを指定していることもあればそうでないこともある。もし参照が、FHIRのRESTfulサーバ以外を対象としていれば、それはバージョンが指定されているべきである。分割された内部参照('#'で始まる)の場合は内部に含まれるResourceへの参照である。" />
       <comment value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server." />
       <min value="0" />
       <max value="1" />
@@ -2731,6 +2731,7 @@
     <element id="Medication.identifier.assigner.reference">
       <path value="Medication.identifier.assigner.reference" />
       <short value="文字での参照、相対的、内部あるいは絶対的URL" />
+      <definition value="他のResourceが存在する場所への参照。参照はサービスのベースURLに対する相対的なものや、リソースがある場所を示す絶対的URLであることもある。参照はバージョンを指定していることもあればそうでないこともある。もし参照が、FHIRのRESTfulサーバ以外を対象としていれば、それはバージョンが指定されているべきである。分割された内部参照('#'で始まる)の場合は内部に含まれるResourceへの参照である。" />
     </element>
   </differential>
 </StructureDefinition>
