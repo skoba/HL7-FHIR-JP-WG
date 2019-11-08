@@ -1618,7 +1618,7 @@
       <path value="Medication.identifier.assigner.reference" />
       <short value="文字での参照、相対的、内部あるいは絶対的URL" />
       <definition value="他のResourceが存在する場所への参照。参照はサービスのベースURLに対する相対的なものや、リソースがある場所を示す絶対的URLであることもある。参照はバージョンを指定していることもあればそうでないこともある。もし参照が、FHIRのRESTfulサーバ以外を対象としていれば、それはバージョンが指定されているべきである。分割された内部参照('#'で始まる)の場合は内部に含まれるResourceへの参照である。" />
-      <comment value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server." />
+      <comment value="絶対URLを使えば安定してクラウドやWeb上にスケーラブルな対応をすることができる。一方で、相対・論理参照を使えば閉鎖されたエコシステム内部に適した柔軟な対応ができる。絶対URLをはFHIRリソースのRESTfulサーバを指定するために必要となるわけではないが、より推奨される方法である。もし、URLが&quot;/[type]/[id]&quot;で構成されていれば、FHIRのRESTfulサーバへの参照を想定していると推測することもできる。" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -1651,9 +1651,9 @@
     </element>
     <element id="Medication.identifier.assigner.type">
       <path value="Medication.identifier.assigner.type" />
-      <short value="Type the reference refers to (e.g. &quot;Patient&quot;)" />
-      <definition value="The expected type of the target of the reference. If both Reference.type and Reference.reference are populated and Reference.reference is a FHIR URL, both SHALL be consistent.&#xA;&#xA;The type is the Canonical URL of Resource Definition that is the type this reference refers to. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition/ e.g. &quot;Patient&quot; is a reference to http://hl7.org/fhir/StructureDefinition/Patient. Absolute URLs are only allowed for logical models (and can only be used in references in logical models, not resources)." />
-      <comment value="This element is used to indicate the type of  the target of the reference. This may be used which ever of the other elements are populated (or not). In some cases, the type of the target may be determined by inspection of the reference (e.g. a RESTful URL) or by resolving the target of the reference; if both the type and a reference is provided, the reference SHALL resolve to a resource of the same type as that specified." />
+      <short value="参照先の型(たとえば、&quot;Patient)" />
+      <definition value="参照の対象として予定される型。もし、Reference.typeとReference.referenceがともに指定されていて、Reference.referenceがFHIRのURLであればどちらも一致させるべきである(SHALL)。&#xA;&#xD;&#xA;型はResouce Definitionに対するCanonical URLであってその型も参照の対象となる。Referenceはhttp://hl7.org/fhir/StructureDefinition/に対する相対URLである。たとえば、&quot;Patient&quot;はhttp://hl7.org/fhir/StructureDefinition/Patientへの参照である。絶対URLは論理モデルにおいて、論理モデル内部での参照として飲み使用可能であり、Resouceに対しては指定できない。" />
+      <comment value="このelementは参照の対象の型を指定するためのものである。他のElementで指定されていた型であってもなくても指定することができる。場合によっては、対象の型は参照（たとえば、RESTful URL)についての調査により決定されることもあるし、参照の対象から決定されることもある。もし、参照と型のどちらもが指定されていたら、参照は指定された型を決定されるべきである(SHALL)。" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -2352,8 +2352,8 @@
     </element>
     <element id="Medication.batch">
       <path value="Medication.batch" />
-      <short value="Details about packaged medications" />
-      <definition value="Information that only applies to packages (not products)." />
+      <short value="分包された薬剤についての詳細な解説" />
+      <definition value="薬剤のパッケージ（薬品そのものではない）についての情報。" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -2517,9 +2517,9 @@
     </element>
     <element id="Medication.batch.lotNumber">
       <path value="Medication.batch.lotNumber" />
-      <short value="Identifier assigned to batch" />
-      <definition value="The assigned lot number of a batch of the specified product." />
-      <comment value="Note that FHIR strings SHALL NOT exceed 1MB in size" />
+      <short value="バッチのID" />
+      <definition value="特定の薬品を含むバッチに割り当てられたロット番号" />
+      <comment value="FHIRの文字列は1MBを超えるサイズであってはならない(SHALL NOT)。" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -2558,8 +2558,8 @@
     </element>
     <element id="Medication.batch.expirationDate">
       <path value="Medication.batch.expirationDate" />
-      <short value="When batch will expire" />
-      <definition value="When this specific batch of product will expire." />
+      <short value="このバッチの期限が切れるとき" />
+      <definition value="この特定のバッチの薬剤の期限が切れるとき" />
       <min value="0" />
       <max value="1" />
       <base>
@@ -2732,6 +2732,29 @@
       <path value="Medication.identifier.assigner.reference" />
       <short value="文字での参照、相対的、内部あるいは絶対的URL" />
       <definition value="他のResourceが存在する場所への参照。参照はサービスのベースURLに対する相対的なものや、リソースがある場所を示す絶対的URLであることもある。参照はバージョンを指定していることもあればそうでないこともある。もし参照が、FHIRのRESTfulサーバ以外を対象としていれば、それはバージョンが指定されているべきである。分割された内部参照('#'で始まる)の場合は内部に含まれるResourceへの参照である。" />
+      <comment value="絶対URLを使えば安定してクラウドやWeb上にスケーラブルな対応をすることができる。一方で、相対・論理参照を使えば閉鎖されたエコシステム内部に適した柔軟な対応ができる。絶対URLをはFHIRリソースのRESTfulサーバを指定するために必要となるわけではないが、より推奨される方法である。もし、URLが&quot;/[type]/[id]&quot;で構成されていれば、FHIRのRESTfulサーバへの参照を想定していると推測することもできる。" />
+    </element>
+    <element id="Medication.identifier.assigner.type">
+      <path value="Medication.identifier.assigner.type" />
+      <short value="参照先の型(たとえば、&quot;Patient)" />
+      <definition value="参照の対象として予定される型。もし、Reference.typeとReference.referenceがともに指定されていて、Reference.referenceがFHIRのURLであればどちらも一致させるべきである(SHALL)。&#xA;&#xD;&#xA;型はResouce Definitionに対するCanonical URLであってその型も参照の対象となる。Referenceはhttp://hl7.org/fhir/StructureDefinition/に対する相対URLである。たとえば、&quot;Patient&quot;はhttp://hl7.org/fhir/StructureDefinition/Patientへの参照である。絶対URLは論理モデルにおいて、論理モデル内部での参照として飲み使用可能であり、Resouceに対しては指定できない。" />
+      <comment value="このelementは参照の対象の型を指定するためのものである。他のElementで指定されていた型であってもなくても指定することができる。場合によっては、対象の型は参照（たとえば、RESTful URL)についての調査により決定されることもあるし、参照の対象から決定されることもある。もし、参照と型のどちらもが指定されていたら、参照は指定された型を決定されるべきである(SHALL)。" />
+    </element>
+    <element id="Medication.batch">
+      <path value="Medication.batch" />
+      <short value="分包された薬剤についての詳細な解説" />
+      <definition value="薬剤のパッケージ（薬品そのものではない）についての情報。" />
+    </element>
+    <element id="Medication.batch.lotNumber">
+      <path value="Medication.batch.lotNumber" />
+      <short value="バッチのID" />
+      <definition value="特定の薬品を含むバッチに割り当てられたロット番号" />
+      <comment value="FHIRの文字列は1MBを超えるサイズであってはならない(SHALL NOT)。" />
+    </element>
+    <element id="Medication.batch.expirationDate">
+      <path value="Medication.batch.expirationDate" />
+      <short value="このバッチの期限が切れるとき" />
+      <definition value="この特定のバッチの薬剤の期限が切れるとき" />
     </element>
   </differential>
 </StructureDefinition>
