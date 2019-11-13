@@ -29,4 +29,3 @@ script:
   - rake redpen
   - rake html
   - '[ "$TRAVIS_BRANCH" == master ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && git commit -m "Publishing site on `date "+%Y-%m-%d %H:%M:%S"`"'
-

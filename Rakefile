@@ -16,5 +16,5 @@ end
 
 task :redpen do
   adoc_files = Dir.glob("#{adoc_dir}/*.adoc").join(" ")
-  sh "redpen -l 3 -c#{conf_dir}/redpen-conf.xml -f asciidoc #{adoc_files}"
+  sh "redpen -l 10 -c #{conf_dir}/redpen-conf.xml -f asciidoc #{adoc_files}"
 end
