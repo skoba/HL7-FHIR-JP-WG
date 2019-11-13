@@ -3,10 +3,8 @@ RSpec::Matchers.define :be_valid_json do
     begin
       JSON.parse(text)
     rescue JSON::ParserError
-      print 'invalid json format'
       false
     rescue Error
-      puts 'other error'
       raise Error
     ensure
       true
@@ -14,9 +12,11 @@ RSpec::Matchers.define :be_valid_json do
   end
 end
 
+require 'pathname'
 RSpec::Matchers.define :be_valid_fhir_json do
   match do |text|
-    fhir_json_shema = JSONSchemer.schema(JSON_SCHEMA)
-    fhir_json_shema.valid? text
+    json = JSON.parse text
+    fhir_json_schema = JSONSchemer.schema(Pathname.new(JSON_SCHEMA))
+    fhir_json_schema.valid? json
   end
 end
