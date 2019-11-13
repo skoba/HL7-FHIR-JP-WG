@@ -2,12 +2,9 @@ RSpec::Matchers.define :be_valid_json do
   match do |text|
     begin
       JSON.parse(text)
+      true
     rescue JSON::ParserError
       false
-    rescue Error
-      raise Error
-    ensure
-      true
     end
   end
 end
