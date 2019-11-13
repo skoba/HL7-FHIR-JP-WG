@@ -7,4 +7,6 @@ gem 'coderay'
 gem 'asciidoctor'
 gem 'asciidoctor-diagram'
 gem 'json-schema'
+#gem "rspec-json_matcher", require: "rspec/json_matcher"
+#gem 'rspec-json_expectations'
 #gem 'erubis'
