@@ -584,13 +584,13 @@
 	{
 	    "resource": {
 		"resourceType": "Coverage",
-		"status": "active",
 		"identifier": [
 		    {
 			"system": "OID:1.2.392.100495.20.3.71",
 			"value": "15138092"
 		    }
 		],
+		"status": "active",
 		"type": {
 		    "coding": [
 			{
@@ -600,15 +600,15 @@
 			}
 		    ]
 		},
+		"beneficiary": {
+		    "reference": "Patient/pat1"
+		},
 		"payor": [
 		    {
 			"reference": "Organization/org1",
 			"display": "広域組合"
 		    }
-		],
-		"beneficiary": {
-		    "reference": "Patient/pat1"
-		}
+		]
 	    }
 	}
     ]
