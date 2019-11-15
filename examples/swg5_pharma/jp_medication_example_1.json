@@ -11,11 +11,11 @@
 		},
 		"destination": [
 		    {
-			"name": "Acme Message Gateway"
+			"name": "HL7FHIR"
 		    }
 		],
 		"source": {
-		    "name": "Acme Central Patient Registry"
+		    "name": "HL7V2"
 		}
 	    }
 	},
