@@ -6,7 +6,7 @@
 	    "resource": {
 		"resourceType": "MessageHeader",
 		"eventCoding": {
-		    "system": "http://www.hl7.org",
+		    "system": "http://www.hl7fhir.jp",
 		    "code": "RDE^O11^RDE_O11"
 		},
 		"destination": [
@@ -21,12 +21,152 @@
 	},
 	{
 	    "resource": {
+		"resourceType": "Patient",
+		"identifier": [
+		    {
+			"system": "OID:1.2.392.100495.20.3.51.11319999999",
+			"value": "1000000001"
+		    }
+		],
+		"name": [
+		    {
+			"use": "official",
+			"family": "患者",
+			"given": ["太郎"],
+			"extension": [
+			    {
+				"url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+				"valueCode": "IDE"
+			    }
+			]
+		    },
+		    {
+			"use": "official",
+			"family": "カンジャ",
+			"given": ["タロウ"],
+			"extension": [
+			    {
+				"url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+				"valueCode": "SYL"
+			    }
+			]
+		    }
+		],
+		"telecom": [
+		    {
+			"system": "phone",
+			"value": "03-1234-5678",
+			"use": "home"
+		    }
+		],
+		"gender": "male",
+		"birthDate": "1979-11-01",
+		"address": [
+		    {
+			"line": [
+			    "東京都渋谷区本町三丁目１２ー１"
+			],
+			"city": "渋谷区",
+			"state": "東京都",
+			"postalCode": "1510071",
+			"country": "JPN"
+		    }
+		]
+	    }
+	},
+	{
+	    "resource": {
+		"resourceType": "Practitioner",
+		"identifier": [
+		    {
+			"system": "OID:1.2.392.100495.20.3.41.11319999999",
+			"value": "123456"
+		    }
+		],
+		"name": [
+		    {
+			"family": "医師",
+			"given": ["春子"],
+			"extension": [
+			    {
+				"url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+				"valueCode": "IDE"
+			    }
+			]
+		    },
+		    {
+			"family": "イシ",
+			"given": ["ハルコ"],
+			"extension": [
+			    {
+				"url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+				"valueCode": "SYL"
+			    }
+			]
+		    }
+		]
+	    }
+	},
+	{
+	    "resource": {
+		"resourceType": "PractitionerRole",
+		"identifier": [
+		    {
+			"system": "OID:1.2.392.100495.20.3.41.11319999999",
+			"value": "123456"
+		    }
+		],
+		"specialty": [
+		    {
+			"coding": [
+			    {
+				"system": "99Z01",
+				"code": "01",
+				"display": "内科"
+			    }
+			]
+		    }
+		]
+	    }
+	},
+	{
+	    "resource": {
+		"resourceType": "Organization",
+		"identifier": [
+		    {
+			"system": "OID:1.2.392.100495.20.3.21",
+			"value": "13"
+		    },
+		    {
+			"system": "OID:1.2.392.100495.20.3.22",
+			"value": "1"
+		    },
+		    {
+			"system": "OID:1.2.392.100495.20.3.23",
+			"value": "9999999"
+		    }
+		],
+		"name": "メドレークリニック",
+		"address": [
+		    {
+			"line": [
+			    "東京都港区六本木３−２−１"
+			],
+			"city": "港区",
+			"state": "東京都",
+			"country": "JPN"
+		    }
+		]
+	    }
+	},
+	{
+	    "resource": {
 		"resourceType": "MedicationRequest",
 		"status": "draft",
 		"intent": "order",
 		"subject": {
 		    "reference": "Patient/pat1",
-		    "display": "小林慎治"
+		    "display": "患者太郎"
 		},
 		"identifier": [
 		    {
@@ -116,6 +256,357 @@
 			]
 		    }
 		]
+	    }
+	},
+	{
+	    "resource": {
+		"resourceType": "MedicationRequest",
+		"status": "draft",
+		"intent": "order",
+		"subject": {
+		    "reference": "Patient/pat1",
+		    "display": "患者太郎"
+		},
+		"identifier": [
+		    {
+			"system": "OID:1.2.392.100495.20.3.11",
+			"value": "12345678"
+		    },
+		    {
+			"system": "OID:1.2.392.100495.20.3.81",
+			"value": "12345678_01"
+		    }
+		],
+		"category": [
+		    {
+			"coding": [
+			    {
+				"system": "MR9P",
+				"code": "TAB",
+				"display": "錠"
+			    }
+			]
+		    },
+		    {
+			"coding": [
+			    {
+				"system": "JHSP0003",
+				"code": "21",
+				"display": "内服"
+			    }
+			]
+		    }
+		],
+		"medicationCodeableConcept": {
+		    "coding": [
+			{
+			    "system": "OID:1.2.392.100495.20.2.74",
+			    "code": "110626901",
+			    "display": "パンスポリンＴ錠１００ １００ｍｇ"
+			}
+		    ]
+		},
+		"authoredOn": "2016-08-25",
+		"dosageInstruction": [
+		    {
+			"timing": {
+			    "repeat": {
+				"period": 3,
+				"periodUnit": "d"
+			    },
+			    "code": [
+				{
+				    "coding": [
+					{
+					    "system": "JAMISDP01",
+					    "code": "1013044400000000",
+					    "display": "内服・経口・１日３回朝昼夕食後"
+					}
+				    ]
+				}
+			    ]
+			},
+			"route": {
+			    "coding": [
+				{
+				    "system": "HL70162",
+				    "code": "PO",
+				    "display": "口"
+				}
+			    ]
+			},
+			"doseAndRate": [
+			    {
+				"type": {
+				    "coding": [
+					{
+					    "system": "LC",
+					    "code": "T",
+					    "display": "１回量"
+					}
+				    ]
+				},
+				"doseQuantity": {
+				    "value": 2,
+				    "unit": "錠",
+				    "code": "TAB"
+				}
+			    },
+			    {
+				"type": {
+				    "coding": [
+					{
+					    "system": "LC",
+					    "code": "D",
+					    "display": "１日量"
+					}
+				    ]
+				},
+				"doseQuantity": {
+				    "value": 6,
+				    "unit": "錠",
+				    "code": "TAB"
+				}
+			    }
+			]
+		    }
+		],
+		"dispenseRequest": {
+		    "quantity": {
+			"value": 18,
+			"unit": "錠",
+			"code": "TAB"
+		    }
+		}
+	    }
+	},
+	{
+	    "resource": {
+		"resourceType": "MedicationRequest",
+		"status": "draft",
+		"intent": "order",
+		"subject": {
+		    "reference": "Patient/pat1",
+		    "display": "患者太郎"
+		},
+		"identifier": [
+		    {
+			"system": "OID:1.2.392.100495.20.3.11",
+			"value": "12345678"
+		    },
+		    {
+			"system": "OID:1.2.392.100495.20.3.81",
+			"value": "12345678_02"
+		    }
+		],
+		"category": [
+		    {
+			"coding": [
+			    {
+				"system": "JHSP0003",
+				"code": "22",
+				"display": "頓用"
+			    }
+			]
+		    }
+		],
+		"medicationCodeableConcept": {
+		    "coding": [
+			{
+			    "system": "OID:1.2.392.100495.20.2.74",
+			    "code": "100795402",
+			    "display": "ボルタレン錠２５ｍｇ"
+			}
+		    ]
+		},
+		"authoredOn": "2016-08-25",
+		"dosageInstruction": [
+		    {
+			"timing": {
+			    "code": [
+				{
+				    "coding": [
+					{
+					    "system": "JAMISDP01",
+					    "code": "1050110020000000",
+					    "display": "内服・経口・疼痛時"
+					}
+				    ]
+				}
+			    ]
+			},
+			"route": {
+			    "coding": [
+				{
+				    "system": "HL70162",
+				    "code": "PO",
+				    "display": "口"
+				}
+			    ]
+			},
+			"doseAndRate": [
+			    {
+				"type": {
+				    "coding": [
+					{
+					    "system": "LC",
+					    "code": "T",
+					    "display": "１回量"
+					}
+				    ]
+				},
+				"doseQuantity": {
+				    "value": 1,
+				    "unit": "錠",
+				    "code": "TAB"
+				}
+			    }
+			]
+		    }
+		],
+		"dispenseRequest": {
+		    "quantity": {
+			"value": 10,
+			"unit": "錠",
+			"code": "TAB"
+		    }
+		}
+	    }
+	},
+	{
+	    "resource": {
+		"resourceType": "MedicationRequest",
+		"status": "draft",
+		"intent": "order",
+		"subject": {
+		    "reference": "Patient/pat1",
+		    "display": "患者太郎"
+		},
+		"identifier": [
+		    {
+			"system": "OID:1.2.392.100495.20.3.11",
+			"value": "12345678"
+		    },
+		    {
+			"system": "OID:1.2.392.100495.20.3.81",
+			"value": "12345678_03"
+		    }
+		],
+		"category": [
+		    {
+			"coding": [
+			    {
+				"system": "MR9P",
+				"code": "OIT",
+				"display": "軟膏"
+			    }
+			]
+		    },
+		    {
+			"coding": [
+			    {
+				"system": "JHSP0003",
+				"code": "23",
+				"display": "外用"
+			    }
+			]
+		    }
+		],
+		"medicationCodeableConcept": {
+		    "coding": [
+			{
+			    "system": "OID:1.2.392.100495.20.2.74",
+			    "code": "106238001",
+			    "display": "ジフラール軟膏０．０５％"
+			}
+		    ]
+		},
+		"authoredOn": "2016-08-25",
+		"dosageInstruction": [
+		    {
+			"timing": {
+			    "code": [
+				{
+				    "coding": [
+					{
+					    "system": "JAMISDP01",
+					    "code": "2B74000000000000",
+					    "display": "外用・塗布・１日４回"
+					}
+				    ]
+				}
+			    ]
+			},
+			"site": {
+			    "coding": [
+				{
+				    "system": "JAMISDP01",
+				    "code": "77L",
+				    "display": "左手"
+				}
+			    ]
+			},
+			"route": {
+			    "coding": [
+				{
+				    "system": "HL70162",
+				    "code": "AP",
+				    "display": "外用"
+				}
+			    ]
+			},
+			"doseAndRate": [
+			    {
+				"type": {
+				    "coding": [
+					{
+					    "system": "LC",
+					    "code": "T",
+					    "display": "１回量"
+					}
+				    ]
+				}
+			    }
+			]
+		    }
+		],
+		"dispenseRequest": {
+		    "quantity": {
+			"value": 2,
+			"unit": "本",
+			"code": "HON"
+		    }
+		}
+	    }
+	},
+	{
+	    "resource": {
+		"resourceType": "Coverage",
+		"status": "active",
+		"identifier": [
+		    {
+			"system": "OID:1.2.392.100495.20.3.71",
+			"value": "15138092"
+		    }
+		],
+		"type": {
+		    "coding": [
+			{
+			    "system": "1.2.392.100495.20.2.61",
+			    "code": "8",
+			    "display": "公費"
+			}
+		    ]
+		},
+		"payor": [
+		    {
+			"reference": "Organization/org1",
+			"display": "広域組合"
+		    }
+		],
+		"beneficiary": {
+		    "reference": "Patient/pat1"
+		}
 	    }
 	}
     ]

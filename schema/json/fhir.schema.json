@@ -36690,7 +36690,9 @@
       "additionalProperties": false,
       "required": [
         "subject",
-        "resourceType"
+        "resourceType",
+        "status",
+        "intent"
       ]
     },
     "MedicationRequest_DispenseRequest": {
