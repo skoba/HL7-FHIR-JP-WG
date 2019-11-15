@@ -126,18 +126,73 @@
       </Organization>
     </resource>    
   </entry>
-  <!-- <entry> -->
-  <!--   <resource> -->
-  <!--     <MedicationRequest> -->
-  <!-- 	<status value="draft"/> -->
-  <!-- 	<intent value="order"/> -->
-  <!-- 	<subject> -->
-  <!-- 	  <reference value="Patient/pat1"/> -->
-  <!-- 	  <display value="患者太郎"/> -->
-  <!-- 	</subject> -->
-  <!--     </MedicationRequest> -->
-  <!--   </resource>     -->
-  <!-- </entry> -->
+  <entry>
+    <resource>
+      <MedicationRequest>
+	<identifier>
+	  <system value="OID:1.2.392.100495.20.3.11"/>
+	  <value value="12345678"/>
+	</identifier>
+	<status value="completed"/> 
+	<intent value="order"/>
+	<category>
+          <coding> 
+            <system value="MR9P"/>
+            <code value="TAB"/> 
+            <display value="錠"/> 
+          </coding>	  
+          <coding> 
+            <system value="JHSP0003"/>
+            <code value="21"/> 
+            <display value="内服"/> 
+          </coding>	  
+	</category>
+	<medicationCodeableConcept>
+          <coding> 
+            <system value="OID:1.2.392.100495.20.2.74"/>
+            <code value="103835401"/> 
+            <display value="ムコダイン錠２５０ｍｇ"/> 
+          </coding>	  
+	</medicationCodeableConcept>
+	<subject> 
+          <reference value="Patient/pat1"/> 
+          <display value="患者太郎"/> 
+	</subject> 
+	<authoredOn value="2016-08-25"/> 
+	<dosageInstruction> 
+          <sequence value="1"/> 
+          <text value="10 drops four times daily - apply in mouth using cotton swab or finger"/> 
+          <timing> 
+            <repeat> 
+              <period value="3"/> 
+              <periodUnit value="d"/> 
+            </repeat>
+	    <code>
+	      <coding>
+		<system value="JAMISDP01"/>
+		<code value="1013044400000000"/>
+		<display value="内服・経口・１日３回朝昼夕食後"/>
+	      </coding>
+	    </code>
+          </timing> 
+          <doseAndRate> 
+            <type> 
+              <coding> 
+                <system value="LC" />
+                <code value="T"/> 
+                <display value="１回量"/> 
+              </coding> 
+            </type> 
+            <doseQuantity> 
+              <value value="1"/> 
+              <unit value="錠"/> 
+              <code value="TAB"/> 
+            </doseQuantity> 
+          </doseAndRate> 
+	</dosageInstruction> 
+      </MedicationRequest> 
+    </resource>    
+  </entry>
   <entry>
     <resource>
       <MedicationRequest>

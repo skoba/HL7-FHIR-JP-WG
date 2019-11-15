@@ -39675,7 +39675,10 @@
           "$ref": "#/definitions/Reference"
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "endpoint"
+      ]	
     },
     "MessageHeader_Source": {
       "description": "The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.",
@@ -39735,6 +39738,9 @@
           "$ref": "#/definitions/Element"
         }
       },
+      "required": [
+        "endpoint"
+      ],
       "additionalProperties": false
     },
     "MessageHeader_Response": {

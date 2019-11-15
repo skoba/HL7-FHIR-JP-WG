@@ -11,11 +11,13 @@
 		},
 		"destination": [
 		    {
-			"name": "HL7FHIR"
+			"name": "HL7FHIR",
+			"endpoint": "http://h7fhir.jp/dest"
 		    }
 		],
 		"source": {
-		    "name": "HL7V2"
+		    "name": "HL7V2",
+		    "endpoint": "http://h7fhir.jp/src"
 		}
 	    }
 	},
