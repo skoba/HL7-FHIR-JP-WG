@@ -39,8 +39,10 @@ TQ1|||1012040400000000&内服・経口・１日２回朝夕食後&JAMISDP01|||14
 RXR|PO^口^HL70162
 EOM
 
+
 #v2_message = HL7::Message.new RP1_HL7_VER25_INSTANCE
 #print v2_message.inspect
+
 # MSH(Message Header) Mapping HL7 V2.5 to FHIR 
 # MSH-1 - none
 # MSH-2 - none
@@ -121,6 +123,7 @@ message_header = FHIR::MessageHeader.new(
 # PID-38 - none
 # PID-39 - none
 # ref to https://www.jahis.jp/standard/detail/id=125
+
 
 patient_name = FHIR::HumanName.new(
   family: '患者',
@@ -207,7 +210,8 @@ coverage = FHIR::Coverage.new(
 # ORC-1 - 
 # ORC-1 - 
 
+
 bundle = FHIR::Bundle.new(type: 'message')
-bundle.entry = [message_header, patient, coverage]
+bundle.entry = [message_header, patient]
 
 print bundle.to_xml if bundle.valid?
