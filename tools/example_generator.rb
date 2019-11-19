@@ -38,7 +38,7 @@ TQ1|||1012040400000000&内服・経口・１日２回朝夕食後&JAMISDP01|||14
 RXR|PO^口^HL70162
 EOM
 
-# Mappin HL7 V 2.5 to FHIR 
+# MSH(Message Header) Mapping HL7 V2.5 to FHIR 
 # MSH-1 - none
 # MSH-2 - none
 # MSH-3 - source.name
@@ -60,10 +60,53 @@ EOM
 # MSH-19 - none
 # MSH-20 - none
 # MSH-21 - none
+# ref to https://www.jahis.jp/standard/detail/id=125
 
 message_header = FHIR::MessageHeader.new(source: {name: 'SEND', endpoint: 'http://fhir-jp/sending'}, destination: {name: 'RECEIVE', endpoint: 'http://fhir-jp/receiving'}, eventCoding: {system: 'http://www.hl7.org', code: 'RDE^O11^RDE_O11'})
 
-patient = FHIR::Patient.new
+# PID(Patient Identifier) mapping HL7 V2.5 to FHIR
+# PID-1 - none
+# PID-2 - none
+# PID-3 - identifier[Identifier]
+# PID-4 - none
+# PID-5 - [HumanName]
+# PID-6 - none
+# PID-7 - birthDate
+# PID-8 - gender
+# PID-9 - none
+# PID-10 - none
+# PID-11 - [Address]
+# PID-12 - none
+# PID-13 - [Telecom]
+# PID-14 - [Telecom]
+# PID-15 - communication.language
+# PID-16 - marritalStatus
+# PID-17 - none
+# PID-18 - none
+# PID-19 - none
+# PID-20 - none
+# PID-21 - none
+# PID-22 - none
+# PID-23 - none
+# PID-24 - multipleBirth
+# PID-25 - multipleBirth
+# PID-26 - none
+# PID-27 - none
+# PID-28 - none
+# PID-29 - deceased
+# PID-30 - deceased
+# PID-31 - none
+# PID-32 - none
+# PID-33 - none
+# PID-34 - none
+# PID-35 - none
+# PID-36 - none
+# PID-37 - none
+# PID-38 - none
+# PID-39 - none
+# ref to https://www.jahis.jp/standard/detail/id=125
+
+
 patient_name = FHIR::HumanName.new(family: "患者",
                            given: "太郎",
                            extension: {
@@ -74,7 +117,10 @@ patient_kananame = FHIR::HumanName.new(family: "カンジャ",
                            extension: {
                              url: "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
                              valueCode: "SYL"})
-patient.name = [patient_name, patient_kananame]
+patient = FHIR::Patient.new(identifier: {value: '1000000001'}, name: [patient_name, patient_kananame], birthDate: '1960-12-24', gender: 'male')
 
-print message_header.to_json
-print patient.to_xml
+
+bundle = FHIR::Bundle.new(type: 'message')
+bundle.entry = [message_header, patient]
+
+print bundle.to_xml if bundle.valid?
