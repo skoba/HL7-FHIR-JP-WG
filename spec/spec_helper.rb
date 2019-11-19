@@ -1,6 +1,5 @@
 require 'nokogiri'
 require 'json'
-require 'json-schema'
 require 'json_schemer'
 require 'supports/json_matchers'
 require 'supports/xml_matchers'

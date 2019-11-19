@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'fhir_models'
+#require 'ruby-hl7'
 
 # JAHIS　処方データ交換規約　Ver 3.0Cから
 # 1. 内服処方例
@@ -38,7 +39,9 @@ TQ1|||1012040400000000&内服・経口・１日２回朝夕食後&JAMISDP01|||14
 RXR|PO^口^HL70162
 EOM
 
-# Mappin HL7 V 2.5 to FHIR 
+#v2_message = HL7::Message.new RP1_HL7_VER25_INSTANCE
+#print v2_message.inspect
+# MSH(Message Header) Mapping HL7 V2.5 to FHIR 
 # MSH-1 - none
 # MSH-2 - none
 # MSH-3 - source.name
@@ -60,21 +63,151 @@ EOM
 # MSH-19 - none
 # MSH-20 - none
 # MSH-21 - none
+# ref to https://www.jahis.jp/standard/detail/id=125
 
-message_header = FHIR::MessageHeader.new(source: {name: 'SEND', endpoint: 'http://fhir-jp/sending'}, destination: {name: 'RECEIVE', endpoint: 'http://fhir-jp/receiving'}, eventCoding: {system: 'http://www.hl7.org', code: 'RDE^O11^RDE_O11'})
+message_header = FHIR::MessageHeader.new(
+  source: {
+    name: 'SEND', #v2_message.sending_app,
+    endpoint: 'http://fhir-jp/sending'
+  },
+  destination: {
+    name: 'RECEIVE', #v2_massage.receiving_app,
+    endpoint: 'http://fhir-jp/receiving'
+  },
+  eventCoding: {
+    system: 'http://www.hl7.org',
+    code: 'RDE^O11^RDE_O11'
+  }
+)
 
-patient = FHIR::Patient.new
-patient_name = FHIR::HumanName.new(family: "患者",
-                           given: "太郎",
-                           extension: {
-                             url: "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
-                             valueCode: "IDE"})
-patient_kananame = FHIR::HumanName.new(family: "カンジャ",
-                           given: "タロウ",
-                           extension: {
-                             url: "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
-                             valueCode: "SYL"})
-patient.name = [patient_name, patient_kananame]
+# PID(Patient Identifier) mapping HL7 V2.5 to FHIR
+# PID-1 - none
+# PID-2 - none
+# PID-3 - identifier[Identifier]
+# PID-4 - none
+# PID-5 - [HumanName]
+# PID-6 - none
+# PID-7 - birthDate
+# PID-8 - gender
+# PID-9 - none
+# PID-10 - none
+# PID-11 - [Address]
+# PID-12 - none
+# PID-13 - [Telecom]
+# PID-14 - [Telecom]
+# PID-15 - communication.language
+# PID-16 - marritalStatus
+# PID-17 - none
+# PID-18 - none
+# PID-19 - none
+# PID-20 - none
+# PID-21 - none
+# PID-22 - none
+# PID-23 - none
+# PID-24 - multipleBirth
+# PID-25 - multipleBirth
+# PID-26 - none
+# PID-27 - none
+# PID-28 - none
+# PID-29 - deceased
+# PID-30 - deceased
+# PID-31 - none
+# PID-32 - none
+# PID-33 - none
+# PID-34 - none
+# PID-35 - none
+# PID-36 - none
+# PID-37 - none
+# PID-38 - none
+# PID-39 - none
+# ref to https://www.jahis.jp/standard/detail/id=125
 
-print message_header.to_json
-print patient.to_xml
+patient_name = FHIR::HumanName.new(
+  family: '患者',
+  given: '太郎',
+  extension: {
+    url: 'http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation',
+    valueCode: 'IDE'
+  }
+)
+patient_kananame = FHIR::HumanName.new(
+  family: 'カンジャ',
+  given: 'タロウ',
+  extension: {
+    url: 'http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation',
+    valueCode: 'SYL'
+  }
+)
+
+patient = FHIR::Patient.new(
+  identifier: { value: '1000000001' },
+  name: [patient_name, patient_kananame],
+  birthDate: '1960-12-24',
+  ender: 'male'
+)
+
+# IN1(Insurance) Mapping HL7 V2.5 to FHIR
+# IN1-1 - none
+# IN1-2 - identifier
+# IN1-3 - payor
+# IN1-4 - (payor)
+# IN1-5 - none
+# IN1-6 - none
+# IN1-7 - none
+# IN1-8 - class.value, class.name, costToBeneficiary.value
+# IN1-9 - none
+# IN1-10 - none
+# IN1-11 - none
+# IN1-12 - period
+# IN1-13 - period
+# IN1-14 - none
+# IN1-15 - type
+# IN1-16 - polycyHolder, subscriber, subscribedId, beneficiary, contract
+# IN1-17 - none
+# IN1-18 - polycyHolder, subscriber, subscribedId, beneficiary, contract
+# IN1-19 - polycyHolder, subscriber, subscribedId, beneficiary, contract
+# IN1-20 - none
+# IN1-21 - none
+# IN1-22 - none
+# IN1-23 - none
+# IN1-24 - none
+# IN1-25 - none
+# IN1-26 - none
+# IN1-27 - none
+# IN1-28 - none
+# IN1-29 - none
+# IN1-30 - none
+# IN1-40 - none
+# IN1-41 - none
+# IN1-42 - none
+# IN1-43 - none
+# IN1-44 - none
+# IN1-45 - none
+# IN1-46 - none
+# IN1-47 - none
+# IN1-48 - none
+# IN1-49 - none
+# IN1-50 - none
+# IN1-51 - none
+# IN1-52 - none
+# IN1-53 - none
+coverage_organization = FHIR::Organization.new(
+  type: { coding: { code: '06', display: '組合管掌健康保険' } },
+  identifier: [{ value: 'JHSD0001' }]
+)
+coverage = FHIR::Coverage.new(
+  identifier: [{ value: '1' }],
+  payor: coverage_organization
+)
+# ORC(Common Order) Mapping HL7 V2.5 to FHIR
+# ORC-1 - 
+# ORC-1 - 
+# ORC-1 - 
+# ORC-1 - 
+# ORC-1 - 
+# ORC-1 - 
+
+bundle = FHIR::Bundle.new(type: 'message')
+bundle.entry = [message_header, patient, coverage]
+
+print bundle.to_xml if bundle.valid?
