@@ -39,7 +39,6 @@ TQ1|||1012040400000000&内服・経口・１日２回朝夕食後&JAMISDP01|||14
 RXR|PO^口^HL70162
 EOM
 
-
 #v2_message = HL7::Message.new RP1_HL7_VER25_INSTANCE
 #print v2_message.inspect
 
@@ -53,15 +52,15 @@ EOM
 # MSH-7 - none
 # MSH-8 - none
 # MSH-9 - eventCoding.code, system: HL7.org
-# MSH-10 - * none
-# MSH-11 - * none
-# MSH-12 - * none
+# MSH-10* - none
+# MSH-11* - none
+# MSH-12* - none
 # MSH-13 - none
 # MSH-14 - none
 # MSH-15 - none
 # MSH-16 - none
 # MSH-17 - none
-# MSH-18 - * none
+# MSH-18* - none
 # MSH-19 - none
 # MSH-20 - none
 # MSH-21 - none
@@ -123,7 +122,6 @@ message_header = FHIR::MessageHeader.new(
 # PID-38 - none
 # PID-39 - none
 # ref to https://www.jahis.jp/standard/detail/id=125
-
 
 patient_name = FHIR::HumanName.new(
   family: '患者',
@@ -203,15 +201,34 @@ coverage = FHIR::Coverage.new(
   payor: coverage_organization
 )
 # ORC(Common Order) Mapping HL7 V2.5 to FHIR
-# ORC-1 - 
-# ORC-1 - 
-# ORC-1 - 
-# ORC-1 - 
-# ORC-1 - 
-# ORC-1 - 
+# ORC-1* - none
+# ORC-2* - MedicationRequest.identifier
+# ORC-3 - MedicationRequest.identifier
+# ORC-4* - none
+# ORC-5 - none
+# ORC-6 - none
+# ORC-7 - none
+# ORC-8 - none
+# ORC-9 - MedicationRequest.authoredOn
+# ORC-10 - none
+# ORC-11 - none
+# ORC-12 - MedicationRequest.requester (STU3のドキュメントではマッピングされているが、R4では削除)
+# ORC-13 - none
+# ORC-14 - none
+# ORC-15 - none
+# ORC-16 - MedicationRequest.reasonCode
+# ORC-17 - none
 
-
+# RXE(Pharmacy/Treatment Encoded Order) Mapping HL7 V2.5 to FHIR
+# RXE-1 - none
+# RXE-2* - MedicationRequest.medication
+# RXE-3* - MedicationRequest.doseInstruction, Dosage.doseAndRate.dose
+# RXE-4 - MedicationRequest.doseInstruction, Dosage.doseAndRate.dose
+# RXE-5* - Medication.form
+# RXE-6* - 
+# RXE-7* - 
+# RXE-5* - 
 bundle = FHIR::Bundle.new(type: 'message')
-bundle.entry = [message_header, patient]
+bundle.entry = [message_header, patient, coverage]
 
 print bundle.to_xml if bundle.valid?
