@@ -1,6 +1,6 @@
 # coding: utf-8
 require 'fhir_models'
-#require 'ruby-hl7'
+require 'ruby-hl7'
 
 # JAHIS　処方データ交換規約　Ver 3.0Cから
 # 1. 内服処方例
@@ -200,6 +200,8 @@ coverage = FHIR::Coverage.new(
   identifier: [{ value: '1' }],
   payor: coverage_organization
 )
+
+# MedicationRequest Resourceは、ORC, RXE, TQ1, RXRから構成される。
 # ORC(Common Order) Mapping HL7 V2.5 to FHIR
 # ORC-1* - none
 # ORC-2* - MedicationRequest.identifier
@@ -221,14 +223,67 @@ coverage = FHIR::Coverage.new(
 
 # RXE(Pharmacy/Treatment Encoded Order) Mapping HL7 V2.5 to FHIR
 # RXE-1 - none
-# RXE-2* - MedicationRequest.medication
+# RXE-2* - MedicationRequest.medication, HOT code
 # RXE-3* - MedicationRequest.doseInstruction, Dosage.doseAndRate.dose
 # RXE-4 - MedicationRequest.doseInstruction, Dosage.doseAndRate.dose
-# RXE-5* - Medication.form
-# RXE-6* - 
-# RXE-7* - 
-# RXE-5* - 
+# RXE-5* - Medication.form.strength MR9P
+# RXE-6* - Medication.form MR9P
+# RXE-7 - none
+# RXE-8 - none
+# RXE-9 - substitution.allowed, substitution.reason(HL7 table 0167)
+# RXE-10* - dispenseRequest.quantity
+# RXE-11* - dispenseRequest.quantity.unit(MR9P)
+# RXE-12 - none
+# RXE-13 - none
+# RXE-14 - none
+# RXE-15 - none
+# RXE-16 - none
+# RXE-17 - none
+# RXE-18 - none
+# RXE-19 - Dosage.maxDosePerPeriod
+# RXE-20 - none
+# RXE-21 - none
+# RXE-22 - Dosage.doseAndRate.rate
+# RXE-23 - Dosage.maxDosePerPeriod
+# RXE-24 - Dosage.doseAndRate.rate
+# RXE-25 - Medication.ingredient.strength
+# RXE-26 - Medication.ingredient.strength.unit
+# RXE-27 - MedicationRequest.category
+# RXE-28 - none
+# RXE-29 - none
+# RXE-30 - none
+# RXE-31 - none
+# RXE-32 - none
+# RXE-33 - none
+# RXE-34 - none
+# RXE-35 - none
+# RXE-36 - none
+# RXE-37 - none
+# RXE-38 - none
+# RXE-39 - none
+# RXE-40 - none
+# RXE-41 - none
+# RXE-42 - none
+# RXE-43 - none
+# RXE-44 - none
+
+# RXR(Route) Mapping HL7 V2.5 to FHIR
+# RXR-1* - MedicationRequest.dosageInstruction, Dosage.route, 使用者定義表0162
+# RXR-2 - Dosage.site, HL7 table 0163, HL7 table 0550, JAMI標準用法規格
+# RXR-3 - none
+# RXR-4 - Dosage.method
+# RXR-5 - none
+# RXR-6 - none, HL70495
+
+# TQ1(Timing/Quantity Segment) Mapping HL7 V2.5 to FHIR
+# TQ1-1 - MedicationRequest.dosageInstruction, Dosage.sequence
+# TQ1-2 - MedicationRequest.dosageInstruction, Dosage.doseAndRate.dose
+# TQ1-3 - MedicationRequest.dosageInstruction, Dosage.doseAndRate.rate, 使用者定義表0335
+# TQ1-4 - none
+# TQ1-5 - none 
+# TQ1-6 - none
+
 bundle = FHIR::Bundle.new(type: 'message')
 bundle.entry = [message_header, patient, coverage]
 
-print bundle.to_xml if bundle.valid?
+print bundle.to_json if bundle.valid?
