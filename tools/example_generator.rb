@@ -283,6 +283,7 @@ coverage = FHIR::Coverage.new(
 # TQ1-5 - none 
 # TQ1-6 - none
 
+
 bundle = FHIR::Bundle.new(type: 'message')
 bundle.entry = [message_header, patient, coverage]
 
