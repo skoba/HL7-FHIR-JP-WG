@@ -2,13 +2,14 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="510af89c-61b1-4cb3-b78b-4e391f7827da" />
   <meta>
-    <versionId value="1" />
-    <lastUpdated value="2019-10-28T10:01:12.848+00:00" />
+    <versionId value="2" />
+    <lastUpdated value="2019-11-25T14:53:59.736+00:00" />
   </meta>
   <url value="http://hl7fhir.jp/fhir/StructureDefinition/JP_MedicationRequest" />
   <name value="JP_MedicationRequest" />
   <status value="draft" />
-  <date value="2019-10-28T10:01:11.178637+00:00" />
+  <date value="2019-11-25T14:53:58.7727021+00:00" />
+  <description value="日本版FHIR処方箋Resource" />
   <fhirVersion value="4.0.0" />
   <mapping>
     <identity value="workflow" />
@@ -1957,6 +1958,51 @@
         <map value="N/A" />
       </mapping>
     </element>
+    <element id="MedicationRequest.dispenseRequest.extension:dispenseRequestExtension">
+      <path value="MedicationRequest.dispenseRequest.extension" />
+      <sliceName value="dispenseRequestExtension" />
+      <short value="残薬調整" />
+      <definition value="H30年診療報酬改定に伴う様式2号に準拠した残薬調整に関する薬局への指示" />
+      <comment value="HL7 Ver 2.5では未サポートであり当エレメントへのマッピングはなし。" />
+      <alias value="extensions" />
+      <alias value="user content" />
+      <min value="0" />
+      <max value="*" />
+      <base>
+        <path value="Element.extension" />
+        <min value="0" />
+        <max value="*" />
+      </base>
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7fhir.jp/fhir/StructureDefinition/JP_MedicationRequestExtension" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ext-1" />
+        <severity value="error" />
+        <human value="Must have either extensions or value[x], not both" />
+        <expression value="extension.exists() != value.exists()" />
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" />
+        <source value="Extension" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+      <mapping>
+        <identity value="rim" />
+        <map value="N/A" />
+      </mapping>
+    </element>
     <element id="MedicationRequest.dispenseRequest.modifierExtension">
       <path value="MedicationRequest.dispenseRequest.modifierExtension" />
       <short value="Extensions that cannot be ignored even if unrecognized" />
@@ -3066,4 +3112,24 @@
       </mapping>
     </element>
   </snapshot>
+  <differential>
+    <element id="MedicationRequest.dispenseRequest.extension">
+      <path value="MedicationRequest.dispenseRequest.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="MedicationRequest.dispenseRequest.extension:dispenseRequestExtension">
+      <path value="MedicationRequest.dispenseRequest.extension" />
+      <sliceName value="dispenseRequestExtension" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7fhir.jp/fhir/StructureDefinition/JP_MedicationRequestExtension" />
+      </type>
+    </element>
+  </differential>
 </StructureDefinition>
