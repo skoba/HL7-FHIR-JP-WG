@@ -158,7 +158,10 @@
           <reference value="Patient/pat1"/> 
           <display value="患者太郎"/> 
 	</subject> 
-	<authoredOn value="2016-08-25"/> 
+	<authoredOn value="2016-08-25"/>
+	<groupIdentifier>
+	  <value value="1"/>
+	</groupIdentifier>
 	<dosageInstruction> 
           <timing> 
             <repeat> 
@@ -225,6 +228,9 @@
           <display value="患者太郎"/> 
 	</subject> 
 	<authoredOn value="2016-08-25"/> 
+	<groupIdentifier>
+	  <value value="1"/>
+	</groupIdentifier>
 	<dosageInstruction> 
           <timing> 
             <repeat> 
@@ -320,6 +326,9 @@
           <display value="患者太郎"/> 
 	</subject> 
 	<authoredOn value="2016-08-25"/> 
+	<groupIdentifier>
+	  <value value="2"/>
+	</groupIdentifier>
 	<dosageInstruction> 
           <timing> 
             <repeat> 
@@ -401,6 +410,9 @@
           <display value="患者太郎"/> 
 	</subject> 
 	<authoredOn value="2016-08-25"/> 
+	<groupIdentifier>
+	  <value value="3"/>
+	</groupIdentifier>
 	<dosageInstruction> 
           <timing> 
             <repeat> 
