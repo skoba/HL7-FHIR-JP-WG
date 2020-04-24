@@ -263,7 +263,14 @@
 					"value": 1,
 					"unit": "日"
 				    }
-				}
+				},
+				"extension": [
+				    {
+					"url": "http://hl7fhir.jp/fhir/StructureDefinition/Dosage/dailyTotal",
+					"valueInteger": 3
+				    }
+				]
+
 			    }
 			]
 		    }
