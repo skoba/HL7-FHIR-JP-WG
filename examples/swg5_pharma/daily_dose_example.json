@@ -246,7 +246,7 @@
 				    ]
 				},
 				"doseQuantity": {
-				    "value": 3,
+				    "value": 1,
 				    "unit": "錠",
 				    "system": "http://hl7fhir.jp/medication/MR9PUnit",
 				    "code": "TAB"
@@ -254,7 +254,7 @@
 				"rateRatio": {
 				    "numerator": {
 					"value": 3,
-					"unit": "回"
+					"unit": "錠"
 				    },
 				    "denominator": {
 					"value": 1,
