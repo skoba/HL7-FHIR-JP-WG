@@ -267,7 +267,12 @@
 				"extension": [
 				    {
 					"url": "http://hl7fhir.jp/fhir/StructureDefinition/Dosage/dailyTotal",
-					"valueInteger": 3
+					"valueQuantity": {
+					    "value": 3,
+					    "unit": "錠",
+					    "system": "http://hl7fhir.jp/medication/MR9PUnit",
+					    "code": "TAB"
+					}
 				    }
 				]
 
