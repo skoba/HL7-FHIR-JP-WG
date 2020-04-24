@@ -206,6 +206,9 @@
 		    ]
 		},
 		"authoredOn": "2016-08-25",
+		"groupIdentifier": {
+		    "value": "1"
+		},
 		"dosageInstruction": [
 		    {
 			"timing": {
@@ -303,7 +306,7 @@
 		},
 		"authoredOn": "2016-08-25",
 		"groupIdentifier": {
-		    "value": 1
+		    "value": "1"
 		},
 		"dosageInstruction": [
 		    {
@@ -418,7 +421,7 @@
 		},
 		"authoredOn": "2016-08-25",
 		"groupIdentifier": {
-		    "value": 2
+		    "value": "2"
 		},
 		"dosageInstruction": [
 		    {
@@ -520,7 +523,7 @@
 		    ]
 		},
 		"groupIdentifier": {
-		    "value": 3
+		    "value": "3"
 		},
 		"authoredOn": "2016-08-25",
 		"dosageInstruction": [
