@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <type value="message"/>
+  <entry>
+    <resource>
+      <MessageHeader>
+	<eventCoding>
+	  <system value="http://www.hl7fhir.jp"/>
+	  <code value="RDE^O11^RDE_O11"/>
+	</eventCoding>
+	<destination>
+	  <name value="HL7FHIR"/>
+	  <endpoint value="http://h7fhir.jp/dest"/>
+	</destination>
+	<source>
+	  <name value="HL7FHIR"/>
+	  <endpoint value="http://h7fhir.jp/src"/>
+	</source>
+      </MessageHeader>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Patient>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.51.11319999999"/>
+	  <value value="1000000001"/>
+	</identifier>
+	<name>
+	  <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation">
+	    <valueCode value="IDE"/>
+	  </extension>
+	  <use value="official"/>
+	  <family value="患者"/>
+	  <given value="太郎"/>
+	</name>
+	<name>
+	  <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation">
+	    <valueCode value="SYL"/>
+	  </extension>
+	  <use value="official"/>
+	  <family value="カンジャ"/>
+	  <given value="タロウ"/>
+	</name>
+	<telecom>
+	  <system value="phone"/>
+	  <value value="03-1234-5678"/>
+	  <use value="home"/>
+	</telecom>
+	<gender value="male"/>
+	<birthDate value="1979-11-01"/>
+	<address>
+	  <line value="東京都渋谷区本町三丁目１２ー１"/>
+	  <city value="渋谷区"/>
+	  <state value="東京都"/>
+	  <postalCode value="1510071"/>
+	  <country value="JPN"/>
+	</address>
+      </Patient>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Practitioner>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.41.11319999999"/>
+	  <value value="123456"/>
+	</identifier>
+	<name>
+	  <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation">
+	    <valueCode value="IDE"/>
+	  </extension>
+	  <family value="医師"/>
+	  <given value="春子"/>
+	</name>
+	<name>
+	  <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation">
+	    <valueCode value="SYL"/>
+	  </extension>
+	  <family value="イシ"/>
+	  <given value="ハルコ"/>
+	</name>
+      </Practitioner>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <PractitionerRole>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.41.11319999999"/>
+	  <value value="123456"/>
+	</identifier>
+	<specialty>
+	  <coding>
+	    <system value="urn:oid:1.2.392.200250.2.2.2"/>
+	    <code value="01"/>
+	    <display value="内科"/>
+	  </coding>
+	</specialty>
+      </PractitionerRole>
+    </resource>
+  </entry>
+  <entry>
+    <resource>
+      <Organization>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.21"/>
+	  <value value="13"/>
+	</identifier>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.22"/>
+	  <value value="1"/>
+	</identifier>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.23"/>
+	  <value value="9999999"/>
+	</identifier>
+	<name value="メドレークリニック"/>
+	<address>
+	  <line value="東京都港区六本木３−２−１"/>
+	  <city value="港区"/>
+	  <state value="東京都"/>
+	  <country value="JPN"/>
+	</address>
+      </Organization>
+    </resource>    
+  </entry>
+  <entry>
+    <resource>
+      <MedicationRequest>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.11"/>
+	  <value value="12345678"/>
+	</identifier>
+	<status value="draft"/> 
+	<intent value="order"/>
+	<category>
+          <coding> 
+            <system value="http://hl7fhir.jp/medication/MR9PForm"/>
+            <code value="TAB"/> 
+            <display value="錠"/> 
+          </coding>	  
+          <coding> 
+            <system value="http://hl7fhir.jp/medication/JHSP0003"/>
+            <code value="21"/> 
+            <display value="内服"/> 
+          </coding>	  
+	</category>
+	<medicationCodeableConcept>
+          <coding> 
+            <system value="urn:oid:1.2.392.100495.20.2.74"/>
+            <code value="103835401"/> 
+            <display value="ムコダイン錠２５０ｍｇ"/> 
+          </coding>	  
+	</medicationCodeableConcept>
+	<subject> 
+          <reference value="Patient/pat1"/> 
+          <display value="患者太郎"/> 
+	</subject> 
+	<authoredOn value="2016-08-25"/>
+	<groupIdentifier>
+	  <value value="1"/>
+	</groupIdentifier>
+	<dosageInstruction> 
+	  <extension url="http://hl7fhir.jp/fhir/StructureDefinition/Dosage/dailyTotal">
+	    <valueQuantity>
+	      <value value="3"/>
+	      <unit value="錠"/>
+	      <system value="http://hl7fhir.jp/medication/MR9PUnit"/>
+	      <code value="TAB"/>
+	    </valueQuantity>
+	  </extension>
+          <timing> 
+            <repeat> 
+              <period value="3"/> 
+              <periodUnit value="d"/> 
+            </repeat>
+	    <code>
+	      <coding>
+		<system value="urn:oid:1.2.392.200250.2.2.20"/>
+		<code value="1013044400000000"/>
+		<display value="内服・経口・１日３回朝昼夕食後"/>
+	      </coding>
+	    </code>
+          </timing> 
+          <doseAndRate> 
+            <type> 
+              <coding> 
+                <system value="http://terminology.hl7.org/CodeSystem/dose-rate-type" />
+                <code value="ordered"/> 
+                <display value="Ordered"/> 
+              </coding> 
+            </type> 
+            <doseQuantity> 
+              <value value="1"/> 
+              <unit value="錠"/>
+	      <system value="http://hl7fhir.jp/medication/MR9PUnit"/>
+              <code value="TAB"/> 
+            </doseQuantity> 
+          </doseAndRate>
+	</dosageInstruction> 
+      </MedicationRequest> 
+    </resource>    
+  </entry>
+  <entry>
+    <resource>
+      <Coverage>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.71"/>
+	  <value value="15138092"/>
+	</identifier>
+	<status value="active"/>
+	<type>
+          <coding> 
+            <system value="urn:oid:1.2.392.100495.20.2.61" />
+            <code value="8"/> 
+            <display value="公費"/> 
+          </coding> 
+	</type>
+	<beneficiary>
+	  <reference value="Patient/pat1"/>
+	</beneficiary>
+	<payor>
+	  <reference value="Organiization/org1"/>
+	  <display value="広域連合"/>
+	</payor>
+      </Coverage>
+    </resource>
+  </entry>
+</Bundle>
