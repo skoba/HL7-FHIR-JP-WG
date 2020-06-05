@@ -159,6 +159,15 @@
           <display value="患者太郎"/> 
 	</subject> 
 	<authoredOn value="2016-08-25"/>
+	<requester>
+	  <reference value="Practitioner/phys1"/>
+	  <type value="Practitioner"/>
+	  <identifier>
+	    <system value="urn:oid:1.2.392.100495.20.3.41.11319999999"/>
+	    <value value="123456"/>
+	  </identifier>
+	  <display value="医師春子"/>
+	</requester>
 	<groupIdentifier>
 	  <value value="1"/>
 	</groupIdentifier>
@@ -228,6 +237,15 @@
           <display value="患者太郎"/> 
 	</subject> 
 	<authoredOn value="2016-08-25"/> 
+	<requester>
+	  <reference value="Practitioner/phys1"/>
+	  <type value="Practitioner"/>
+	  <identifier>
+	    <system value="urn:oid:1.2.392.100495.20.3.41.11319999999"/>
+	    <value value="123456"/>
+	  </identifier>
+	  <display value="医師春子"/>
+	</requester>
 	<groupIdentifier>
 	  <value value="1"/>
 	</groupIdentifier>
@@ -326,6 +344,15 @@
           <display value="患者太郎"/> 
 	</subject> 
 	<authoredOn value="2016-08-25"/> 
+	<requester>
+	  <reference value="Practitioner/phys1"/>
+	  <type value="Practitioner"/>
+	  <identifier>
+	    <system value="urn:oid:1.2.392.100495.20.3.41.11319999999"/>
+	    <value value="123456"/>
+	  </identifier>
+	  <display value="医師春子"/>
+	</requester>
 	<groupIdentifier>
 	  <value value="2"/>
 	</groupIdentifier>
@@ -404,12 +431,21 @@
             <code value="106238001"/> 
             <display value="ジフラール軟膏０．０５％"/> 
           </coding>	  
-	</medicationCodeableConcept>
 	<subject> 
           <reference value="Patient/pat1"/> 
           <display value="患者太郎"/> 
 	</subject> 
+	</medicationCodeableConcept>
 	<authoredOn value="2016-08-25"/> 
+	<requester>
+	  <reference value="Practitioner/phys1"/>
+	  <type value="Practitioner"/>
+	  <identifier>
+	    <system value="urn:oid:1.2.392.100495.20.3.41.11319999999"/>
+	    <value value="123456"/>
+	  </identifier>
+	  <display value="医師春子"/>
+	</requester>	
 	<groupIdentifier>
 	  <value value="3"/>
 	</groupIdentifier>

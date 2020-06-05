@@ -180,48 +180,22 @@
 		    {
 			"coding": [
 			    {
+				"system": "http://hl7fhir.jp/medication/MR9PForm",
+				"code": "TAB",
+				"display": "錠"
+			    }
+			]
+		    },
+		    {
+			"coding": [
+			    {
 				"system": "http://hl7fhir.jp/medication/JHSP0003",
 				"code": "21",
 				"display": "内服"
 			    }
 			]
 		    },
-		    {
-			"coding": [
-			    {
-				"system": "HL70482",
-				"code": "O",
-				"display": "外来患者オーダ"
-			    }
-			]
-		    },
-		    {
-			"coding": [
-			    {
-				"system": "MR9P",
-				"code": "OHP",
-				"display": "外来処方"
-			    }
-			]
-		    },
-		    {
-			"coding": [
-			    {
-				"system": "MR9P",
-				"code": "OHI",
-				"display": "院内処方"
-			    }
-			]
-		    },
-		    {
-			"coding": [
-			    {
-				"system": "JHSP0003",
-				"code": "21",
-				"display": "内服"
-			    }
-			]
-		    }
+		    
 		],
 		"medicationCodeableConcept": {
 		    "coding": [
@@ -233,15 +207,6 @@
 		    ]
 		},
 		"authoredOn": "2016-08-25",
-		"requester": {
-		    "reference": "Practitioner/phys1",
-		    "type": "Practioner",
-		    "identifier": {
-			"system": "urn:oid:1.2.392.100495.20.3.41.11319999999",
-			"value": "123456"
-		    },
-		    "display": "医師春子"
-		},
 		"groupIdentifier": {
 		    "value": "1"
 		},
@@ -341,15 +306,6 @@
 		    ]
 		},
 		"authoredOn": "2016-08-25",
-		"requester": {
-		    "reference": "Practitioner",
-		    "type": "Practioner/phys1",
-		    "identifier": {
-			"system": "urn:oid:1.2.392.100495.20.3.41.11319999999",
-			"value": "123456"
-		    },
-		    "display": "医師春子"
-		},
 		"groupIdentifier": {
 		    "value": "1"
 		},
@@ -465,15 +421,6 @@
 		    ]
 		},
 		"authoredOn": "2016-08-25",
-		"requester": {
-		    "reference": "Practitioner/phys1",
-		    "type": "Practioner",
-		    "identifier": {
-			"system": "urn:oid:1.2.392.100495.20.3.41.11319999999",
-			"value": "123456"
-		    },
-		    "display": "医師春子"
-		},
 		"groupIdentifier": {
 		    "value": "2"
 		},
@@ -580,15 +527,6 @@
 		    "value": "3"
 		},
 		"authoredOn": "2016-08-25",
-		"requester": {
-		    "reference": "Practitioner/phys1",
-		    "type": "Practioner",
-		    "identifier": {
-			"system": "urn:oid:1.2.392.100495.20.3.41.11319999999",
-			"value": "123456"
-		    },
-		    "display": "医師春子"
-		},
 		"dosageInstruction": [
 		    {
 			"timing": {
