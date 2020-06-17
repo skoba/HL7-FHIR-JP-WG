@@ -492,6 +492,7 @@
 				}
 			    ]
 			},
+			"asNeededBoolean": true,
 			"route": {
 			    "coding": [
 				{
