@@ -1,15 +1,11 @@
 {
     "resource": {
-      // リソースを一意に識別するID
       "id": "2e0a96ad-d94d-4a7d-95fb-9845a8463b94",
-      // 調剤結果ID
       "identifier": {
         "system": "urn:oid:1.2.392.100495.20.3.12",
         "value": "dummy"
       },
-      // ステータス
       "status": "draft",
-      // カテゴリー（剤型など、MedicationRequestと同じで良いか？）
       "category": {
         "coding": [
           {
@@ -19,7 +15,6 @@
           }
         ]
       },
-      // 実際に投薬された医薬品
       "medicationCodeableConcept": {
         "coding": [
           {
@@ -29,52 +24,43 @@
           }
         ]
       },
-      // 患者（Patientリソースの参照）
       "subject": {
         "id": "d2d077e1-8aa2-499c-ab68-a1bb05bdee60",
         "type": "Patient"
       },
-      // 薬剤師
       "performer": {
         "function": {
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function",
               "code": "finalchecker",
-              "display": "Final Checker" // packager:薬を準備した人　checker:品質保証を実施した人　finalchecker:最終確認をした人
+              "display": "Final Checker"
             }
           ]
         },
-        // 薬剤師のリソース参照
         "actor": {
           "id": "6fe7dbed-f385-42d2-a7e7-b16acb0e0058",
           "type": "PractitionerRole"
         }
       },
-      // 調剤の元になった処方箋(MedicationRequest)の参照
       "authorizingPrescription": {
         "id": "dummy",
         "type": "MedicationRequest"
       },
-      // 調剤量（総量？）
       "quantity": {
         "value": 42.0,
         "unit": "錠"
       },
-      // 投与日数？
       "daysSupply": {
         "value": 14,
         "unit": "d"
       },
-      // 医薬品が患者に渡された日
       "whenHandedOver": "20161028",
-      // 特定の医薬品の補足情報
       "note": [
         {
           "text": "医薬品補足情報のフリーテキスト"
         }
       ],
-      // 用法/用量等（仕様はMedicationRequestと同じで良いか？）
       "dosageInstruction": [
         {
           "timing": {
@@ -94,9 +80,8 @@
           }
         }
       ],
-      // 医薬品の変更有無
       "substitution": {
-        "wasSubstituted": false, // 先発品 → 後発品に変更された場合などはtrue
+        "wasSubstituted": false,
         "type": {
           "coding": [
             {

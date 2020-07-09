@@ -16,6 +16,7 @@ RSpec::Matchers.define :be_valid_fhir_json do
     ## because JSON Schema of HL7 FHIR is so big. You may try this, if
     ## If you are suffered from error of JSON schema
     # 
+    fhir_json_schema = JSONSchemer.schema(Pathname.new(JSON_SCHEMA))
     # errors = fhir_json_schema.validate(JSON.parse(text)).to_a
     # if errors.empty?
     #   true
@@ -23,7 +24,6 @@ RSpec::Matchers.define :be_valid_fhir_json do
     #   print errors[0]
     #   false
     # end
-    fhir_json_schema = JSONSchemer.schema(Pathname.new(JSON_SCHEMA))
     fhir_json_schema.valid?(JSON.parse(text))
   end
 end
