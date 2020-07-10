@@ -1,7 +1,7 @@
 RSpec.describe "Medication Resource Instance" do
-  describe 'JSON Instance' do
-    MEDICATION_JSON_EXAMPLES.each do |example|
-      let(:json) { File.read(example) }
+  MEDICATION_JSON_EXAMPLES.each do |example|
+    describe 'JSON Instance' do
+      let(:json) { puts example; File.read(example) }
 
       subject { json }
 
@@ -11,9 +11,9 @@ RSpec.describe "Medication Resource Instance" do
     end
   end
 
-  describe 'XML Instance' do
-    MEDICATION_XML_EXAMPLES.each do |example|
-      let(:xml) { File.read(example) }
+  MEDICATION_XML_EXAMPLES.each do |example|
+    describe 'XML Instance' do
+      let(:xml) { puts example; File.read(example) }
 
       subject { xml }
 
