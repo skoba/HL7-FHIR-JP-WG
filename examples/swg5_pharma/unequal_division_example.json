@@ -1,9 +1,10 @@
 {
-    "resourceType": "Bundle",
-    "type": "message",
+  "resourceType": "Bundle",
+  "type": "message",
   "entry": [
     {
       "resource": {
+        "resourceType": "MessageHeader",
         "id": "4c97ffdb-6168-4df7-8c83-ecd00b95757a",
         "eventCoding": {
           "system": "http://www.hl7fhir.jp",
@@ -11,18 +12,21 @@
         },
         "destination": [
           {
-            "name": "RECEIVE"
+            "name": "RECEIVE",
+	    "endpoint": "http://h7fhir.jp/dest"
+
           }
         ],
         "source": {
-          "name": "SEND"
-        },
-        "resourceType": "MessageHeader"
+          "name": "SEND",
+	  "endpoint": "http://h7fhir.jp/src"
+        }
       }
     },
     {
       "resource": {
-        "id": "4d42f5a0-ed7b-4a2a-91ad-56196de1c98f",
+        "resourceType": "Patient",
+	"id": "4d42f5a0-ed7b-4a2a-91ad-56196de1c98f",
         "identifier": [
           {
             "system": "urn:oid:1.2.392.100495.20.3.51.1",
@@ -58,13 +62,13 @@
           }
         ],
         "gender": "male",
-        "birthDate": "1960-12-24",
-        "resourceType": "Patient"
+        "birthDate": "1960-12-24"
       }
     },
     {
       "resource": {
-        "id": "a9761f5d-a4e4-4559-996b-313f8b9d1d55",
+        "resourceType": "Coverage",
+	"id": "a9761f5d-a4e4-4559-996b-313f8b9d1d55",
         "identifier": [
           {
             "system": "urn:oid:1.2.392.100495.20.3.61",
@@ -89,13 +93,13 @@
             "id": "dummy",
             "type": "Organization"
           }
-        ],
-        "resourceType": "Coverage"
+        ]
       }
     },
     {
       "resource": {
-        "id": "9b79ad7e-8649-4f13-be2d-c46c8a20de07",
+        "resourceType": "Practitioner",
+	"id": "9b79ad7e-8649-4f13-be2d-c46c8a20de07",
         "identifier": [
           {
             "system": "urn:oid:1.2.392.100495.20.3.41.1",
@@ -127,13 +131,13 @@
               "ハルコ"
             ]
           }
-        ],
-        "resourceType": "Practitioner"
+        ]
       }
     },
     {
       "resource": {
-        "id": "43575da0-3ede-4958-9f85-615c4631e191",
+        "resourceType": "PractitionerRole",
+	"id": "43575da0-3ede-4958-9f85-615c4631e191",
         "identifier": [
           {
             "system": "urn:oid:1.2.392.100495.20.3.41.1",
@@ -159,51 +163,50 @@
           {
             "coding": [
               {
-                "system": "99Z01",
+		"system": "urn:oid:1.2.392.200250.2.2.2",
                 "code": "01",
                 "display": "内科"
               }
             ]
           }
-        ],
-        "resourceType": "PractitionerRole"
+        ]
       }
     },
     {
       "resource": {
-        "id": "0a8dba94-90ea-4bba-97b5-3d2deb19842c",
+        "resourceType": "Organization",
+	"id": "0a8dba94-90ea-4bba-97b5-3d2deb19842c",
         "identifier": [
           {
-            "system": "urn:oid:1.2.392.100495.20.3.21"
+            "system": "urn:oid:1.2.392.100495.20.3.21",
+	    "value": "13"
           },
           {
-            "system": "urn:oid:1.2.392.100495.20.3.22"
+            "system": "urn:oid:1.2.392.100495.20.3.22",
+	    "value": "1"
           },
           {
-            "system": "urn:oid:1.2.392.100495.20.3.23"
+            "system": "urn:oid:1.2.392.100495.20.3.23",
+	    "value": "9999999"
           }
         ],
-        "resourceType": "Organization"
+	"name": "メドレークリニック",
+	"address": [
+	  {
+	    "line": [
+	      "東京都港区六本木３−２−１"
+	    ],
+	    "city": "港区",
+	    "state": "東京都",
+	    "country": "JPN"
+	  }
+	]
       }
     },
     {
       "resource": {
-        "id": "255dc18f-596e-477d-85dd-7ce0b22bcdda",
-        "contained": [
-          {
-            "id": "4496a76c-caef-402c-a61c-fab59d5f767c",
-            "code": {
-              "coding": [
-                {
-                  "system": "urn:oid:1.2.392.100495.20.2.74",
-                  "code": "105271807",
-                  "display": "プレドニン錠５ｍｇ"
-                }
-              ]
-            },
-            "resourceType": "Medication"
-          }
-        ],
+        "resourceType": "MedicationRequest",
+	"id": "255dc18f-596e-477d-85dd-7ce0b22bcdda",
         "identifier": [
           {
             "system": "urn:oid:1.2.392.100495.20.3.11",
@@ -216,16 +219,7 @@
           {
             "coding": [
               {
-                "system": "HL70482",
-                "code": "O",
-                "display": "外来患者オーダ"
-              }
-            ]
-          },
-          {
-            "coding": [
-              {
-                "system": "MR9P",
+                "system": "http://hl7fhir.jp/medication/MR9PCategory",
                 "code": "OHP",
                 "display": "外来処方"
               }
@@ -234,7 +228,7 @@
           {
             "coding": [
               {
-                "system": "MR9P",
+                "system": "http://hl7fhir.jp/medication/MR9PCategory",
                 "code": "OHI",
                 "display": "院内処方"
               }
@@ -243,35 +237,46 @@
           {
             "coding": [
               {
-                "system": "JHSP0003",
+                "system": "http://hl7fhir.jp/medication/JHSP0003",
                 "code": "21",
                 "display": "内服薬"
               }
             ]
           }
         ],
-        "medicationReference": {
-          "id": "4496a76c-caef-402c-a61c-fab59d5f767c",
-          "type": "Medication"
-        },
-        "subject": {
-          "id": "4d42f5a0-ed7b-4a2a-91ad-56196de1c98f",
-          "type": "Patient"
-        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.392.100495.20.2.74",
+              "code": "105271807",
+              "display": "プレドニン錠５ｍｇ"
+            }
+          ]
+	},
         "authoredOn": "2016-08-21",
-        "requester": {
-          "id": "9b79ad7e-8649-4f13-be2d-c46c8a20de07",
-          "type": "Practitioner"
-        },
         "groupIdentifier": {
           "system": "urn:oid:1.2.392.100495.20.3.81",
-          "value": "01"
+          "value": "1"
+        },
+        "subject": {
+          "type": "Patient",
+	  "identifier": {
+            "value": "4d42f5a0-ed7b-4a2a-91ad-56196de1c98f"
+	  }
+        },
+        "requester": {
+          "type": "Practitioner",
+	  "identifier": {
+            "value": "9b79ad7e-8649-4f13-be2d-c46c8a20de07"
+ 	  }
         },
         "insurance": [
           {
-            "id": "a9761f5d-a4e4-4559-996b-313f8b9d1d55",
-            "type": "Coverage"
-          }
+	    "type": "Coverage",
+	    "identifier": {
+              "value": "a9761f5d-a4e4-4559-996b-313f8b9d1d55"
+            }
+	  }
         ],
         "dosageInstruction": [
           {
@@ -282,11 +287,11 @@
               ],
               "repeat": {
                 "period": 7,
-                "periodUnit": "日"
+                "periodUnit": "d"
               },
               "code": [
                 {
-                  "system": "JAMISDP01",
+                  "system": "urn:oid:1.2.392.200250.2.2.20",
                   "code": "V14NNNNN",
                   "display": "４錠"
                 }
@@ -295,7 +300,7 @@
             "route": {
               "coding": [
                 {
-                  "system": "HL70162",
+                  "system": "urn:oid:2.16.840.1.113883.3.1937.777.10.5.162",
                   "code": "PO",
                   "display": "口"
                 }
@@ -305,6 +310,7 @@
               {
                 "doseQuantity": {
                   "value": 4,
+		  "system": "http://hl7fhir.jp/medication/MR9PUnit",
                   "unit": "錠",
                   "code": "TAB"
                 }
@@ -319,11 +325,11 @@
               ],
               "repeat": {
                 "period": 7,
-                "periodUnit": "日"
+                "periodUnit": "d"
               },
               "code": [
                 {
-                  "system": "JAMISDP01",
+                  "system": "urn:oid:1.2.392.200250.2.2.20",
                   "code": "V22NNNNN",
                   "display": "２錠"
                 }
@@ -332,7 +338,7 @@
             "route": {
               "coding": [
                 {
-                  "system": "HL70162",
+                  "system": "urn:oid:2.16.840.1.113883.3.1937.777.10.5.162",
                   "code": "PO",
                   "display": "口"
                 }
@@ -343,6 +349,7 @@
                 "doseQuantity": {
                   "value": 2,
                   "unit": "錠",
+		  "system": "http://hl7fhir.jp/medication/MR9PUnit",
                   "code": "TAB"
                 }
               }
@@ -356,7 +363,7 @@
               ],
               "repeat": {
                 "period": 7,
-                "periodUnit": "日"
+                "periodUnit": "d"
               },
               "code": [
                 {
@@ -380,101 +387,105 @@
                 "doseQuantity": {
                   "value": 1,
                   "unit": "錠",
+		  "system": "http://hl7fhir.jp/medication/MR9PUnit",
+
                   "code": "TAB"
                 }
               }
             ]
           },
 	  {
-	      "timing": {
-		  "repeat": {
-		      "period": 3,
-		      "periodUnit": "d"
-		  },
-		  "code": [
-		      {
-			  "coding": [
-			      {
-				  "system": "urn:oid:1.2.392.200250.2.2.20",
-				  "code": "1013044400000000",
-				  "display": "内服・経口・１日３回朝昼夕食後"
-			      }
-			  ]
-		      }
-		  ]
+	    "timing": {
+	      "repeat": {
+		"period": 3,
+		"periodUnit": "d"
 	      },
-	      "timing": {
-		  "event": [
-		      "2016-08-25T00:00:00+00:00"
-		  ],
-		  "repeat": {
-		      "period": 7,
-		      "periodUnit": "日"
-		  },
-		  "code": [
-		      {
-			  "system": "JAMISDP01",
-			  "code": "V31NNNNN",
-			  "display": "7錠"
-		      }
-		  ]
-	      },
-	      "route": {
+	      "code": [
+		{
 		  "coding": [
-		      {
-			  "system": "HL70162",
-			  "code": "PO",
-			  "display": "口"
-		      }
+		    {
+		      "system": "urn:oid:1.2.392.200250.2.2.20",
+		      "code": "1013044400000000",
+		      "display": "内服・経口・１日３回朝昼夕食後"
+		    }
 		  ]
-	      },
-	      "doseAndRate": [
-		  {
-		      "doseQuantity": {
-			  "value": 4,
-			  "unit": "錠",
-			  "code": "TAB",
-			  "extension": [
-			      {
-				  "url": "http://hl7fhir.jp/StructuredDefinition/jp_medicationRequest/sequence",
-				  "valueInteger": 1
-			      }
-			  ]
-		      },
-		      "doseQuantity": {
-			  "value": 2,
-			  "unit": "錠",
-			  "code": "TAB",
-			  "extension": [
-			      {
-				  "url": "http://hl7fhir.jp/StructuredDefinition/jp_medicationRequest/sequence",
-				  "valueInteger": 2
-			      }
-			  ]
-		      },
-		      "doseQuantity": {
-			  "value": 1,
-			  "unit": "錠",
-			  "code": "TAB",
-			  "extension": [
-			      {
-				  "url": "http://hl7fhir.jp/StructuredDefinition/jp_medicationRequest/sequence",
-				  "valueInteger": 3
-			      }
-			  ]
-		      }
-		  }
+		}
 	      ]
+	    },
+	    "timing": {
+	      "event": [
+		"2016-08-25T00:00:00+00:00"
+	      ],
+	      "repeat": {
+		"period": 7,
+		"periodUnit": "d"
+	      },
+	      "code": [
+		{
+		  "system": "urn:oid:1.2.392.200250.2.2.20",
+		  "code": "V31NNNNN",
+		  "display": "7錠"
+		}
+	      ]
+	    },
+	    "route": {
+	      "coding": [
+		{
+		  "system": "urn:oid:2.16.840.1.113883.3.1937.777.10.5.162",
+		  "code": "PO",
+		  "display": "口"
+		}
+	      ]
+	    },
+	    "doseAndRate": [
+	      {
+		"doseQuantity": {
+		  "value": 4,
+		  "unit": "錠",
+		  "system": "http://hl7fhir.jp/medication/MR9PUnit",
+		  "code": "TAB",
+		  "extension": [
+		    {
+		      "url": "http://hl7fhir.jp/StructuredDefinition/jp_medicationRequest/sequence",
+		      "valueInteger": 1
+		    }
+		  ]
+		},
+		"doseQuantity": {
+		  "value": 2,
+		  "unit": "錠",
+		  "system": "http://hl7fhir.jp/medication/MR9PUnit",
+		  "code": "TAB",
+		  "extension": [
+		    {
+		      "url": "http://hl7fhir.jp/StructuredDefinition/jp_medicationRequest/sequence",
+		      "valueInteger": 2
+		    }
+		  ]
+		},
+		"doseQuantity": {
+		  "value": 1,
+		  "unit": "錠",
+		  "system": "http://hl7fhir.jp/medication/MR9PUnit",
+		  "code": "TAB",
+		  "extension": [
+		    {
+		      "url": "http://hl7fhir.jp/StructuredDefinition/jp_medicationRequest/sequence",
+		      "valueInteger": 3
+		    }
+		  ]
+		}
+	      }
+	    ]
           }
         ],
-          "dispenseRequest": {
+        "dispenseRequest": {
           "quantity": {
             "value": 49,
             "unit": "錠",
             "code": "TAB"
           }
-        },
-        "resourceType": "MedicationRequest"
+        }
       }
     }
   ]
