@@ -1,7 +1,7 @@
 RSpec::Matchers.define :be_valid_json do
   match do |text|
     begin
-      JSON.parse(text)
+      JSON.parse(File.read(text))
       true
     rescue JSON::ParserError
       false
@@ -17,13 +17,15 @@ RSpec::Matchers.define :be_valid_fhir_json do
     ## If you are suffered from error of JSON schema
     # 
     fhir_json_schema = JSONSchemer.schema(Pathname.new(JSON_SCHEMA))
-    # errors = fhir_json_schema.validate(JSON.parse(text)).to_a
+    # errors = fhir_json_schema.validate(JSON.parse(File.read(text))).to_a
     # if errors.empty?
     #   true
     # else
-    #   print errors[0]
+    #   errors.each do |error|
+    #     puts error
+    #   end
     #   false
     # end
-    fhir_json_schema.valid?(JSON.parse(text))
+    fhir_json_schema.valid?(JSON.parse(File.read(text)))
   end
 end

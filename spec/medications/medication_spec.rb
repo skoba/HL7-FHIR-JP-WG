@@ -1,9 +1,7 @@
 RSpec.describe "Medication Resource Instance" do
   MEDICATION_JSON_EXAMPLES.each do |example|
     describe 'JSON Instance' do
-      let(:json) { File.read(example) }
-      
-      subject { json }
+      subject { example }
 
       it { is_expected.to be_valid_json }
 
@@ -13,9 +11,7 @@ RSpec.describe "Medication Resource Instance" do
 
   MEDICATION_XML_EXAMPLES.each do |example|
     describe 'XML Instance' do
-      let(:xml) { puts example; File.read(example) }
-
-      subject { xml }
+      subject { example }
 
       it { is_expected.to be_valid_xml }
 
