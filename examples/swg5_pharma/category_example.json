@@ -194,8 +194,7 @@
 				"display": "内服"
 			    }
 			]
-		    },
-		    
+		    }	    
 		],
 		"medicationCodeableConcept": {
 		    "coding": [
