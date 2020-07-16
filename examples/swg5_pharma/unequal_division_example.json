@@ -136,7 +136,7 @@
     },
     {
       "resource": {
-        "resourceType": "PractitionerRole",
+        "resourceType": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
 	"id": "43575da0-3ede-4958-9f85-615c4631e191",
         "identifier": [
           {
@@ -146,7 +146,7 @@
         ],
         "practitioner": {
           "id": "9b79ad7e-8649-4f13-be2d-c46c8a20de07",
-          "type": "Practitioner"
+          "type": "http://hl7.org/fhir/StructureDefinition/Practitioner"
         },
         "code": [
           {
@@ -259,23 +259,17 @@
           "value": "1"
         },
         "subject": {
-          "type": "Patient",
-	  "identifier": {
-            "value": "4d42f5a0-ed7b-4a2a-91ad-56196de1c98f"
-	  }
+          "type": "http://hl7.org/fhir/StructureDefinition/Patient",
+	  "id": "4d42f5a0-ed7b-4a2a-91ad-56196de1c98f"
         },
         "requester": {
-          "type": "Practitioner",
-	  "identifier": {
-            "value": "9b79ad7e-8649-4f13-be2d-c46c8a20de07"
- 	  }
+          "type": "http://hl7.org/fhir/StructureDefinition/Practitioner",
+	  "id": "9b79ad7e-8649-4f13-be2d-c46c8a20de07"
         },
         "insurance": [
           {
-	    "type": "Coverage",
-	    "identifier": {
-              "value": "a9761f5d-a4e4-4559-996b-313f8b9d1d55"
-            }
+	    "type": "http://hl7.org/fhir/StructureDefinition/Patient/Coverage",
+	    "id": "a9761f5d-a4e4-4559-996b-313f8b9d1d55"
 	  }
         ],
         "dosageInstruction": [
