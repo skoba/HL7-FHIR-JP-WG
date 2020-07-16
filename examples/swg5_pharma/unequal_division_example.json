@@ -91,7 +91,7 @@
         "payor": [
           {
             "id": "dummy",
-            "type": "Organization"
+            "type": "http://hl7.org/fhir/StructureDefinition/Organization"
           }
         ]
       }
@@ -136,7 +136,7 @@
     },
     {
       "resource": {
-        "resourceType": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+        "resourceType": "PractitionerRole",
 	"id": "43575da0-3ede-4958-9f85-615c4631e191",
         "identifier": [
           {
