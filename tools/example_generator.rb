@@ -1,6 +1,6 @@
 # coding: utf-8
 require 'fhir_models'
-require 'ruby-hl7'
+require 'simple_hl7'
 
 # JAHIS　処方データ交換規約　Ver 3.0Cから
 # 1. 内服処方例
@@ -39,8 +39,7 @@ TQ1|||1012040400000000&内服・経口・１日２回朝夕食後&JAMISDP01|||14
 RXR|PO^口^HL70162
 EOM
 
-#v2_message = HL7::Message.new RP1_HL7_VER25_INSTANCE
-#print v2_message.inspect
+v2_message = SimpleHL7::Message.parse RP1_HL7_VER25_INSTANCE, segment_separator: "\n"
 
 # MSH(Message Header) Mapping HL7 V2.5 to FHIR 
 # MSH-1 - none
@@ -198,7 +197,11 @@ coverage_organization = FHIR::Organization.new(
 )
 coverage = FHIR::Coverage.new(
   identifier: [{ value: '1' }],
-  payor: coverage_organization
+  payor: coverage_organization,
+  extension: {
+    url: 'http://nlftp.mlit.go.jp/ksj/gml/codelist/PrefCd.html',
+    valueCode: '26'
+             }
 )
 
 # MedicationRequest Resourceは、ORC, RXE, TQ1, RXRから構成される。
@@ -220,6 +223,12 @@ coverage = FHIR::Coverage.new(
 # ORC-15 - none
 # ORC-16 - MedicationRequest.reasonCode
 # ORC-17 - none
+
+practitioner_identifier = FHIR::Identifier.new(value: v2_message.orc[12][1])
+practitioner_name = FHIR::HumanName.new(
+  family: v2_message.orc[12][2],
+  given: [v2_message.orc[12][3]]
+)
 
 # RXE(Pharmacy/Treatment Encoded Order) Mapping HL7 V2.5 to FHIR
 # RXE-1 - none
@@ -267,14 +276,32 @@ coverage = FHIR::Coverage.new(
 # RXE-43 - none
 # RXE-44 - none
 
+medication_requester = FHIR::Practitioner.new(
+  identifier: [practitioner_identifier],
+  name: practitioner_name
+)
+
+medication_identifier = FHIR::Identifier.new(value: v2_message.orc[2])
+medication_request_authoredon = v2_message.orc[8]
+medication_coding = v2_message.rxe[2]
+medication_coding_system = v2_message.rxe[2][3]
+medication_code = FHIR::Coding.new(
+  system: medication_coding_system,
+  code: medication_coding
+)
+
+medication_code_text = v2_message.rxe[2][2]
+medication = FHIR::Medication.new(
+  identifier: FHIR::Identifier.new(value: medication_identifier),
+  code: { coding: medication_code, text: medication_code_text }
+) 
+
 # RXR(Route) Mapping HL7 V2.5 to FHIR
 # RXR-1* - MedicationRequest.dosageInstruction, Dosage.route, 使用者定義表0162
-# RXR-2 - Dosage.site, HL7 table 0163, HL7 table 0550, JAMI標準用法規格
-# RXR-3 - none
+# RXR-2 - Dosage.site, HL7 table 0163, HL7 table 0550, JAMI標準用法規格# RXR-3 - none
 # RXR-4 - Dosage.method
 # RXR-5 - none
 # RXR-6 - none, HL70495
-
 # TQ1(Timing/Quantity Segment) Mapping HL7 V2.5 to FHIR
 # TQ1-1 - MedicationRequest.dosageInstruction, Dosage.sequence
 # TQ1-2 - MedicationRequest.dosageInstruction, Dosage.doseAndRate.dose
@@ -283,8 +310,25 @@ coverage = FHIR::Coverage.new(
 # TQ1-5 - none 
 # TQ1-6 - none
 
+dosage = FHIR::Dosage.new(
+  timing: v2_message.tq1[3].to_s.split('&')[0],
+  sequence:
+  rate:
+  route:
+)
+
+medication_request = FHIR::MedicationRequest.new(
+  identifier: [FHIR::Identifier.new(value: medication_identifier)],
+  subject: patient,
+  medicationReference: medication,
+  authoredOn: medication_request_authoredon,
+  status: 'draft',
+  requester: medication_requester,
+  medication: medication,
+  insurance: coverage
+)
 
 bundle = FHIR::Bundle.new(type: 'message')
-bundle.entry = [message_header, patient, coverage]
+bundle.entry = [message_header, medication_request]
 
-print bundle.to_json if bundle.valid?
+# print bundle.to_json if bundle.valid?
