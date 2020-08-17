@@ -149,10 +149,20 @@ Medication "0..*" *-down- Ingredient : ingredient
 |Medication.code|薬剤を定義するコード|Example|#HOTコード#
 
 |Medication.status|その薬剤の有効性を示すコード|Required|Medication Status Codes
+|Medication.category|処方区分を示すコード|Example|処方箋データ交換規約 Ver 3.0cに記載のMERIT9処方区分コード
 |Medication.doseForm|剤形についてのコード|Example|#改訂Merit9コード
 |Medication.ingredientStrength|薬剤成分の力価を示すコード|Example|Medication Ingredient Strength Codes
 |===
 
+==== 処方箋オーダー記述のためのextensions
+療担則23条、様式２、同様式2-2に規定される処方箋を記載するために必要となるextensionを以下に示す。
+
+|===
+|Resource|概要
+|Address|都道府県番号
+|Coverage|区分（被保険者、被扶養者）
+|Coverage|点数表番号
+|===
 
 
 // .Table Medication Resource構造
@@ -294,19 +304,18 @@ Element Id:: MedicationRequest.priority
 Definition:: この処方オーダーが他のオーダーと比較してどの程度優先されるべきかを示す。
 Cardinality:: 0..1
 Terminology Binding:: Request priority (Required)
+Type:: code
+Summary::	true
 
-Type	code
-Summary	true
-MedicationRequest.doNotPerform
-Element Id	MedicationRequest.doNotPerform
-Definition	
 
-If true indicates that the provider is asking for the medication request not to occur.
-Cardinality	0..1
-Type	boolean
-Is Modifier	true (Reason: This element is labeled as a modifier because this element negates the request to occur (ie, this is a request for the medication not to be ordered or prescribed, etc))
-Summary	true
-Comments	
+===== MedicationRequest.doNotPerform
+Element Id:: MedicationRequest.doNotPerform
+Definition:: もし、trueであれば提供者は処方オーダーが発生しないことを依頼している。
+Cardinality:: 0..1
+Type:: boolean
+Is Modifier::	true　(理由：このエレメントはオーダーが発生することを否定しているため、modifierとして標識される（たとえば、この薬剤がオーダーや処方などされないことを要求している）)
+Summary::	true
+Comments:: 
 
 If do not perform is not specified, the request is a positive request e.g. "do perform".
 MedicationRequest.reported[x]
