@@ -285,7 +285,8 @@ Comments:: requesterの種別は MedicationRequest の手順が異なれば制�
 
 ===== MedicationRequest.category
 Element ID:: MedicationRequest.category
-Definition:: 	
+Definition:: この処方オーダーが実施あるいは管理される種別（例えば、入院処方、外来処方）を示す。
+Terminology Binding:: 
 
 Indicates the type of medication request (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).
 Cardinality	0..*

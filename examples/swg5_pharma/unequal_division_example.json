@@ -390,23 +390,6 @@
           },
 	  {
 	    "timing": {
-	      "repeat": {
-		"period": 3,
-		"periodUnit": "d"
-	      },
-	      "code": [
-		{
-		  "coding": [
-		    {
-		      "system": "urn:oid:1.2.392.200250.2.2.20",
-		      "code": "1013044400000000",
-		      "display": "内服・経口・１日３回朝昼夕食後"
-		    }
-		  ]
-		}
-	      ]
-	    },
-	    "timing": {
 	      "event": [
 		"2016-08-25T00:00:00+00:00"
 	      ],
@@ -416,9 +399,18 @@
 	      },
 	      "code": [
 		{
-		  "system": "urn:oid:1.2.392.200250.2.2.20",
-		  "code": "V31NNNNN",
-		  "display": "7錠"
+		  "coding": [
+		    {
+		      "system": "urn:oid:1.2.392.200250.2.2.20",
+		      "code": "1013044400000000",
+		      "display": "内服・経口・１日３回朝昼夕食後"
+		    },
+		    {
+		      "system": "urn:oid:1.2.392.200250.2.2.20",
+		      "code": "V31NNNNN",
+		      "display": "7錠"
+		    }
+		  ]
 		}
 	      ]
 	    },
@@ -468,7 +460,18 @@
 		      "valueInteger": 3
 		    }
 		  ]
-		}
+		},
+		"extension": [
+		  {
+		    "url": "http://hl7fhir.jp/fhir/StructureDefinition/Dosage/dailyTotal",
+		    "valueQuantity": {
+		      "value": 7,
+		      "unit": "錠",
+		      "system": "http://hl7fhir.jp/medication/MR9PUnit",
+		      "code": "TAB"
+		    }
+		  }
+		]
 	      }
 	    ]
           }
