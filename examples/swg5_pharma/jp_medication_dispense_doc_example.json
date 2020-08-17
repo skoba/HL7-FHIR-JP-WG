@@ -249,13 +249,13 @@
 	  }
 	],
 	"status": "preparation",
-	"category": {
+	"medicationCodeableConcept": {
 	  "coding": [
-            {
-              "system": "urn:oid:1.2.392.100495.20.2.21",
-              "code": "1",
-              "display": "内服"
-            }
+	    {
+              "system": "urn:oid:1.2.392.100495.20.2.74",
+              "code": "103835401",
+              "display": "ムコダイン錠２５０ｍｇ"
+	    }
 	  ]
 	},
 	"subject": {

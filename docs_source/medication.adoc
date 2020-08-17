@@ -286,22 +286,15 @@ Comments:: requesterの種別は MedicationRequest の手順が異なれば制�
 ===== MedicationRequest.category
 Element ID:: MedicationRequest.category
 Definition:: この処方オーダーが実施あるいは管理される種別（例えば、入院処方、外来処方）を示す。
-Terminology Binding:: 
+Terminology Binding:: JAHIS処方データ交換規約Ver 3.0Cに記載のMERIT9, 処方区分を利用する。URLは"http://hl7fhir.jp/medication/MR9PCategory"と便宜上設定する。
+Comments:: この区分は薬剤がどこで服用されるか、あうりは他の処方区分のために利用される。
 
-Indicates the type of medication request (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).
-Cardinality	0..*
-Terminology Binding	Medication request category codes (Example)
-Type	CodeableConcept
-Comments	
+===== MedicationRequest.priority
+Element Id:: MedicationRequest.priority
+Definition:: この処方オーダーが他のオーダーと比較してどの程度優先されるべきかを示す。
+Cardinality:: 0..1
+Terminology Binding:: Request priority (Required)
 
-The category can be used to include where the medication is expected to be consumed or other types of requests.
-MedicationRequest.priority
-Element Id	MedicationRequest.priority
-Definition	
-
-Indicates how quickly the Medication Request should be addressed with respect to other requests.
-Cardinality	0..1
-Terminology Binding	Request priority (Required)
 Type	code
 Summary	true
 MedicationRequest.doNotPerform

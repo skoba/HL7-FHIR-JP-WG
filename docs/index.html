@@ -1043,25 +1043,43 @@ HL7協会の木村通男会長の許諾を得て翻訳・公開するもので�
 </dd>
 <dt class="hdlist1">Definition</dt>
 <dd>
-<p>Indicates the type of medication request (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).
-Cardinality	0..*
-Terminology Binding	Medication request category codes (Example)
-Type	CodeableConcept
-Comments</p>
+<p>この処方オーダーが実施あるいは管理される種別（例えば、入院処方、外来処方）を示す。</p>
+</dd>
+<dt class="hdlist1">Terminology Binding</dt>
+<dd>
+<p>JAHIS処方データ交換規約Ver 3.0Cに記載のMERIT9, 処方区分を利用する。URLは"http://hl7fhir.jp/medication/MR9PCategory"と便宜上設定する。</p>
+</dd>
+<dt class="hdlist1">Comments</dt>
+<dd>
+<p>この区分は薬剤がどこで服用されるか、あうりは他の処方区分のために利用される。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_medicationrequest_priority">MedicationRequest.priority</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Element Id</dt>
+<dd>
+<p>MedicationRequest.priority</p>
+</dd>
+<dt class="hdlist1">Definition</dt>
+<dd>
+<p>この処方オーダーが他のオーダーと比較してどの程度優先されるべきかを示す。</p>
+</dd>
+<dt class="hdlist1">Cardinality</dt>
+<dd>
+<p>0..1</p>
+</dd>
+<dt class="hdlist1">Terminology Binding</dt>
+<dd>
+<p>Request priority (Required)</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>The category can be used to include where the medication is expected to be consumed or other types of requests.
-MedicationRequest.priority
-Element Id	MedicationRequest.priority
-Definition</p>
-</div>
-<div class="paragraph">
-<p>Indicates how quickly the Medication Request should be addressed with respect to other requests.
-Cardinality	0..1
-Terminology Binding	Request priority (Required)
-Type	code
+<p>Type	code
 Summary	true
 MedicationRequest.doNotPerform
 Element Id	MedicationRequest.doNotPerform
