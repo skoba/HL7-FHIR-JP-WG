@@ -436,7 +436,9 @@
 		      "valueInteger": 1
 		    }
 		  ]
-		},
+		}
+	      },
+	      {
 		"doseQuantity": {
 		  "value": 2,
 		  "unit": "錠",
@@ -448,7 +450,9 @@
 		      "valueInteger": 2
 		    }
 		  ]
-		},
+		}
+	      },
+	      {
 		"doseQuantity": {
 		  "value": 1,
 		  "unit": "錠",
@@ -460,7 +464,9 @@
 		      "valueInteger": 3
 		    }
 		  ]
-		},
+		}
+	      },
+              {	
 		"extension": [
 		  {
 		    "url": "http://hl7fhir.jp/fhir/StructureDefinition/Dosage/dailyTotal",
