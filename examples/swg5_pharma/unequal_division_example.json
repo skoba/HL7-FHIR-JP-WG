@@ -283,13 +283,17 @@
                 "period": 7,
                 "periodUnit": "d"
               },
-              "code": [
-                {
-                  "system": "urn:oid:1.2.392.200250.2.2.20",
-                  "code": "V14NNNNN",
-                  "display": "４錠"
-                }
-              ]
+	      "code": [
+	        {
+	          "coding": [
+	            {
+	              "system": "urn:oid:1.2.392.200250.2.2.20",
+	              "code": "1013044400000000",
+	              "display": "内服・経口・１日３回朝昼夕食後"
+	            }
+	          ]
+	        }
+	      ]
             },
             "route": {
               "coding": [
@@ -466,7 +470,17 @@
 		  ]
 		}
 	      },
-              {	
+	      {
+		  "rateRatio": {
+	            "numerator": {
+		      "value": 3,
+		      "unit": "錠"
+		    },
+		    "denominator": {
+		      "value": 1,
+		      "unit": "日"
+		    }
+		  },
 		"extension": [
 		  {
 		    "url": "http://hl7fhir.jp/fhir/StructureDefinition/Dosage/dailyTotal",
