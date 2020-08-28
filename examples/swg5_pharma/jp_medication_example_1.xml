@@ -190,10 +190,8 @@
 	<dosageInstruction> 
           <timing> 
             <repeat>
-	      <boundsDuration>
-		<value value="3"/>
-		<unit value="d"/>
-	      </boundsDuration>
+	      <duration value="3"/>
+	      <durationUnit value="d"/>
 	      <frequency value="3"/>
               <period value="1"/> 
               <periodUnit value="d"/>
@@ -276,10 +274,8 @@
 	<dosageInstruction> 
           <timing> 
             <repeat>
-	      <boundsDuration>
-		<value value="3"/>
-		<unit value="d"/>
-	      </boundsDuration>
+	      <duration value="3"/>
+	      <durationUnit value="d"/>
 	      <frequency value="3"/>
               <period value="1"/> 
               <periodUnit value="d"/>
@@ -309,21 +305,6 @@
             </type> 
             <doseQuantity> 
               <value value="2"/> 
-              <unit value="錠"/> 
-	      <system value="http://hl7fhir.jp/medication/MR9PUnit"/>
-              <code value="TAB"/> 
-            </doseQuantity> 
-          </doseAndRate> 
-          <doseAndRate> 
-            <type> 
-              <coding> 
-                <system value="http://terminology.hl7.org/CodeSystem/dose-rate-type" />
-                <code value="ordered"/> 
-                <display value="Ordered"/> 
-              </coding> 
-            </type> 
-            <doseQuantity> 
-              <value value="6"/> 
               <unit value="錠"/> 
 	      <system value="http://hl7fhir.jp/medication/MR9PUnit"/>
               <code value="TAB"/> 
@@ -447,14 +428,17 @@
 	  <system value="urn:oid:1.2.392.100495.20.3.11"/>
 	  <value value="12345678"/>
 	</identifier>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.81"/>
+	  <value value="3"/>
+	</identifier>
+	<identifier>
+	  <system value="http://hl7fhir.jp/medication/rporder"/>
+	  <value value="1"/>
+	</identifier>
 	<status value="draft"/> 
 	<intent value="order"/>
 	<category>
-          <coding> 
-            <system value="http://hl7fhir.jp/medication/MR9PForm"/>
-            <code value="OIT"/> 
-            <display value="軟膏"/> 
-          </coding>	  
           <coding> 
             <system value="http://hl7fhir.jp/medication/JHSP0003"/>
             <code value="23"/> 
@@ -487,8 +471,9 @@
 	</groupIdentifier>
 	<dosageInstruction> 
           <timing> 
-            <repeat> 
-              <period value="3"/> 
+            <repeat>
+	      <frequency value="4"/>
+              <period value="1"/> 
               <periodUnit value="d"/> 
             </repeat>
 	    <code>
@@ -520,7 +505,13 @@
                 <code value="ordered"/> 
                 <display value="Ordered"/> 
               </coding>
-            </type> 
+            </type>
+	    <doseQuantity>
+	      <value value="2"/>
+	      <unit value="本"/>
+	      <system value="http://hl7fhir.jp/medication/MR9PUnit"/>
+	      <code value="HON"/>
+	    </doseQuantity>
           </doseAndRate> 
 	</dosageInstruction>
 	<dispenseRequest>
