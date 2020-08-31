@@ -163,17 +163,20 @@
 	  <value value="1"/>
 	</groupIdentifier>
 	<dosageInstruction> 
-	  <extension url="http://hl7fhir.jp/fhir/StructureDefinition/Dosage/dailyTotal">
-	    <valueQuantity>
-	      <value value="3"/>
-	      <unit value="錠"/>
-	      <system value="http://hl7fhir.jp/medication/MR9PUnit"/>
-	      <code value="TAB"/>
-	    </valueQuantity>
-	  </extension>
+	  <!-- <extension url="http://hl7fhir.jp/fhir/StructureDefinition/Dosage/dailyTotal"> -->
+	  <!--   <valueQuantity> -->
+	  <!--     <value value="3"/> -->
+	  <!--     <unit value="錠"/> -->
+	  <!--     <system value="http://hl7fhir.jp/medication/MR9PUnit"/> -->
+	  <!--     <code value="TAB"/> -->
+	  <!--   </valueQuantity> -->
+	  <!-- </extension> -->
           <timing> 
-            <repeat> 
-              <period value="3"/> 
+            <repeat>
+	      <duration value="3"/>
+	      <durationUnit value="d"/>
+	      <frequency value="3"/>
+              <period value="1"/> 
               <periodUnit value="d"/> 
             </repeat>
 	    <code>
