@@ -333,8 +333,15 @@
 		      "valueInteger": 1
 		    },
 		    {
-		      "url": "urn:oid:1.2.392.200250.2.2.20",
-		      "valueCode": "V14NNNNN"
+		      "url": "http://hl7fhir.jp/StructuredDefinition/jp_medicationRequest/dosageInstruction",
+		      "valueCodeableConcept": {
+			"coding": [
+			  {
+			    "system": "urn:oid:1.2.392.200250.2.2.20",
+			    "code": "V14NNNNN"
+			  }
+			]
+		      }
 		    }
 		  ],
                   "value": 4,
@@ -351,8 +358,15 @@
 		      "valueInteger": 2
 		    },
 		    {
-		      "url": "urn:oid:1.2.392.200250.2.2.20",
-		      "valueCode": "V22NNNNN"
+		      "url": "http://hl7fhir.jp/StructuredDefinition/jp_medicationRequest/dosageInstruction",
+		      "valueCodeableConcept": {
+			"coding": [
+			  {
+			    "system": "urn:oid:1.2.392.200250.2.2.20",
+			    "code": "V22NNNNN"
+			  }
+			]
+		      }
 		    }
 		  ],
                   "value": 2,
@@ -369,8 +383,15 @@
 		      "valueInteger": 3
 		    },
 		    {
-		      "url": "urn:oid:1.2.392.200250.2.2.20",
-		      "valueCode": "V31NNNNN"
+		      "url": "http://hl7fhir.jp/StructuredDefinition/jp_medicationRequest/dosageInstruction",
+		      "valueCodeableConcept": {
+			"coding": [
+			  {
+			    "system": "urn:oid:1.2.392.200250.2.2.20",
+			    "code": "V31NNNNN"
+			  }
+			]
+		      }
 		    }
 		  ],
 		  "value": 1,
