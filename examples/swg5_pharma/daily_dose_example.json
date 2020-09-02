@@ -252,7 +252,7 @@
 		  ]
 		},
 		"doseQuantity": {
-		  "value": 1,
+		  "value": 3,
 		  "unit": "錠",
 		  "system": "http://hl7fhir.jp/medication/MR9PUnit",
 		  "code": "TAB"
@@ -266,17 +266,6 @@
 		    "value": 1,
 		    "unit": "日"
 		  }
-		}
-	      }
-	    ],
-	    "extension": [
-	      {
-		"url": "http://hl7fhir.jp/fhir/StructureDefinition/Dosage/dailyTotal",
-		"valueQuantity": {
-		  "value": 3,
-		  "unit": "錠",
-		  "system": "http://hl7fhir.jp/medication/MR9PUnit",
-		  "code": "TAB"
 		}
 	      }
 	    ]

@@ -196,7 +196,7 @@
               </coding> 
             </type> 
             <doseQuantity> 
-              <value value="1"/> 
+              <value value="3"/> 
               <unit value="錠"/>
 	      <system value="http://hl7fhir.jp/medication/MR9PUnit"/>
               <code value="TAB"/> 

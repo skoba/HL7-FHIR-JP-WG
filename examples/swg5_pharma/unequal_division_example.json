@@ -280,7 +280,10 @@
                 "2016-08-25T00:00:00+00:00"
               ],
               "repeat": {
-                "period": 7,
+		"duration": 7,
+		"durationUnit": "d",
+		"frequency": 3,
+                "period": 1,
                 "periodUnit": "d"
               },
 	      "code": [
