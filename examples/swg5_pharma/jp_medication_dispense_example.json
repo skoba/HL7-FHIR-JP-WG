@@ -26,7 +26,13 @@
       }
     ]
   },
-  "subject": {
+  "extension": [
+    {
+	"url": "http://hl7fhir.jp/preparation/",
+	"valueString": "一包化"
+    }
+  ],
+    "subject": {
       "id": "d2d077e1-8aa2-499c-ab68-a1bb05bdee60",
       "type": "http://hl7.org/fhir/StructureDefinition/Patient"
   },
