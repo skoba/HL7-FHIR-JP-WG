@@ -166,7 +166,8 @@
     },
     {
       "resource": {
-        "id": "9d5bdb3c-f821-4d50-a0fb-f647fed19bcd",
+        "resourceType": "Practitioner",
+	"id": "9d5bdb3c-f821-4d50-a0fb-f647fed19bcd",
         "identifier": [
           {
             "system": "urn:oid:1.2.392.100495.20.3.41.11349999999",
@@ -203,13 +204,24 @@
         ],
         "qualification": [
           {
-            "identifier": {
-              "system": "urn:oid:1.2.392.100495.20.3.33",
-              "value": "12345678"
-            }
+            "identifier": [
+	      {
+		"system": "urn:oid:1.2.392.100495.20.3.33",
+		"value": "12345678"
+              }
+	    ],
+	    "code": {
+	      "coding": [
+		{
+		  "system": "http://terminology.hl7.org/CodeSystem/v2-0360|2.7",
+		  "code": "RPH",
+		  "display": "登録薬剤師"
+		}
+	      ],
+	      "text": "薬剤師"
+	    }
           }
-        ],
-        "resourceType": "Practitioner"
+        ]
       }
     },
     {

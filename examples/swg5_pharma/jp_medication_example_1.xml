@@ -105,16 +105,16 @@
     <resource>
       <Organization>
 	<identifier>
-	  <system value="urn:oid:1.2.392.100495.20.3.21"/>
-	  <value value="13"/>
+	  <system value="urn:oid:1.2.392.100495.20.3.11"/>
+	  <value value="12345678"/>
 	</identifier>
 	<identifier>
-	  <system value="urn:oid:1.2.392.100495.20.3.22"/>
+	  <system value="urn:oid:1.2.392.100495.20.3.81"/>
 	  <value value="1"/>
 	</identifier>
 	<identifier>
-	  <system value="urn:oid:1.2.392.100495.20.3.23"/>
-	  <value value="9999999"/>
+	  <system value="http://hl7fhir.jp/medication/rporder"/>
+	  <value value="1"/>
 	</identifier>
 	<name value="メドレークリニック"/>
 	<address>
@@ -137,14 +137,30 @@
 	<intent value="order"/>
 	<category>
           <coding> 
-            <system value="http://hl7fhir.jp/medication/MR9PForm"/>
-            <code value="TAB"/> 
-            <display value="錠"/> 
-          </coding>	  
-          <coding> 
             <system value="http://hl7fhir.jp/medication/JHSP0003"/>
             <code value="21"/> 
             <display value="内服"/> 
+          </coding>	  
+	</category>
+	<category>
+          <coding> 
+            <system value="http://terminology.hl7.org/CodeSystem/medicationrequest-category"/>
+            <code value="outpatient"/> 
+            <display value="外来患者オーダ"/> 
+          </coding>	  
+	</category>
+	<category>
+          <coding> 
+            <system value="http://hl7fhir.jp/medication/MR9PCategory"/>
+            <code value="OHP"/> 
+            <display value="外来処方"/> 
+          </coding>	  
+	</category>
+	<category>
+          <coding>
+            <system value="http://hl7fhir.jp/medication/MR9PCategory"/>
+            <code value="OHI"/> 
+            <display value="院内処方"/> 
           </coding>	  
 	</category>
 	<medicationCodeableConcept>
@@ -173,9 +189,12 @@
 	</groupIdentifier>
 	<dosageInstruction> 
           <timing> 
-            <repeat> 
-              <period value="3"/> 
-              <periodUnit value="d"/> 
+            <repeat>
+	      <duration value="3"/>
+	      <durationUnit value="d"/>
+	      <frequency value="3"/>
+              <period value="1"/> 
+              <periodUnit value="d"/>
             </repeat>
 	    <code>
 	      <coding>
@@ -211,14 +230,17 @@
 	  <system value="urn:oid:1.2.392.100495.20.3.11"/>
 	  <value value="12345678"/>
 	</identifier>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.81"/>
+	  <value value="1"/>
+	</identifier>
+	<identifier>
+	  <system value="http://hl7fhir.jp/medication/rporder"/>
+	  <value value="2"/>
+	</identifier>
 	<status value="draft"/> 
 	<intent value="order"/>
 	<category>
-          <coding> 
-            <system value="http://hl7fhir.jp/medication/MR9PForm"/>
-            <code value="TAB"/> 
-            <display value="錠"/> 
-          </coding>	  
           <coding> 
             <system value="http://hl7fhir.jp/medication/JHSP0003"/>
             <code value="21"/> 
@@ -251,9 +273,12 @@
 	</groupIdentifier>
 	<dosageInstruction> 
           <timing> 
-            <repeat> 
-              <period value="3"/> 
-              <periodUnit value="d"/> 
+            <repeat>
+	      <duration value="3"/>
+	      <durationUnit value="d"/>
+	      <frequency value="3"/>
+              <period value="1"/> 
+              <periodUnit value="d"/>
             </repeat>
 	    <code>
 	      <coding>
@@ -285,21 +310,6 @@
               <code value="TAB"/> 
             </doseQuantity> 
           </doseAndRate> 
-          <doseAndRate> 
-            <type> 
-              <coding> 
-                <system value="http://terminology.hl7.org/CodeSystem/dose-rate-type" />
-                <code value="ordered"/> 
-                <display value="Ordered"/> 
-              </coding> 
-            </type> 
-            <doseQuantity> 
-              <value value="6"/> 
-              <unit value="錠"/> 
-	      <system value="http://hl7fhir.jp/medication/MR9PUnit"/>
-              <code value="TAB"/> 
-            </doseQuantity> 
-          </doseAndRate> 
 	</dosageInstruction>
 	<dispenseRequest>
 	  <quantity>
@@ -321,7 +331,11 @@
 	</identifier>
 	<identifier>
 	  <system value="urn:oid:1.2.392.100495.20.3.81"/>
-	  <value value="12345678_02"/>
+	  <value value="2"/>
+	</identifier>
+	<identifier>
+	  <system value="http://hl7fhir.jp/medication/rporder"/>
+	  <value value="1"/>
 	</identifier>
 	<status value="draft"/> 
 	<intent value="order"/>
@@ -358,8 +372,10 @@
 	</groupIdentifier>
 	<dosageInstruction> 
           <timing> 
-            <repeat> 
-              <period value="3"/> 
+            <repeat>
+	      <count value="10"/>
+	      <frequencyMax value="2"/>
+              <period value="1"/>
               <periodUnit value="d"/> 
             </repeat>
 	    <code>
@@ -412,14 +428,17 @@
 	  <system value="urn:oid:1.2.392.100495.20.3.11"/>
 	  <value value="12345678"/>
 	</identifier>
+	<identifier>
+	  <system value="urn:oid:1.2.392.100495.20.3.81"/>
+	  <value value="3"/>
+	</identifier>
+	<identifier>
+	  <system value="http://hl7fhir.jp/medication/rporder"/>
+	  <value value="1"/>
+	</identifier>
 	<status value="draft"/> 
 	<intent value="order"/>
 	<category>
-          <coding> 
-            <system value="http://hl7fhir.jp/medication/MR9PForm"/>
-            <code value="OIT"/> 
-            <display value="軟膏"/> 
-          </coding>	  
           <coding> 
             <system value="http://hl7fhir.jp/medication/JHSP0003"/>
             <code value="23"/> 
@@ -452,8 +471,9 @@
 	</groupIdentifier>
 	<dosageInstruction> 
           <timing> 
-            <repeat> 
-              <period value="3"/> 
+            <repeat>
+	      <frequency value="4"/>
+              <period value="1"/> 
               <periodUnit value="d"/> 
             </repeat>
 	    <code>
@@ -485,7 +505,13 @@
                 <code value="ordered"/> 
                 <display value="Ordered"/> 
               </coding>
-            </type> 
+            </type>
+	    <doseQuantity>
+	      <value value="2"/>
+	      <unit value="本"/>
+	      <system value="http://hl7fhir.jp/medication/MR9PUnit"/>
+	      <code value="HON"/>
+	    </doseQuantity>
           </doseAndRate> 
 	</dosageInstruction>
 	<dispenseRequest>
