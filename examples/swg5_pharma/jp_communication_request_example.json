@@ -1,0 +1,31 @@
+{
+  "resourceType": "CommunicationRequest",
+  "id": "example",
+  "text": {
+    "status": "generated",
+    "div": "<div>疑義照会サンプル</div>"
+  },
+  "status": "active",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
+  },
+  "payload": [
+    {
+      "contentString": "他院で同効薬の処方あり。"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+	{
+	  "system": "http://codingexample.jp/",
+	  "code": "01"
+	}
+      ],
+      "text": "重複"
+    }
+  ]
+}
