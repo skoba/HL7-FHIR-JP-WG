@@ -17,6 +17,14 @@
       "contentString": "他院で同効薬の処方あり。"
     }
   ],
+  "requester": {
+    "reference": "Pharmacist/example"
+  },
+  "recipient": [
+    {
+      "reference": "PrescribedPhysician/example"
+    }
+  ],
   "reasonCode": [
     {
       "coding": [

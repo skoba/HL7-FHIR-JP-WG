@@ -12,6 +12,12 @@
   "encounter": {
     "reference": "Encounter/example"
   },
+  "recipient": {
+    "reference": "Pharmacist/example"
+  },
+  "sender": {
+    "refernce": "PrescribedPhysician/example"
+  },
   "reasonCode": [
     {
       "coding": [
