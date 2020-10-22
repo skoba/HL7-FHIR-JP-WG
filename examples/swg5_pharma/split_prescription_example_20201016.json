@@ -81,7 +81,13 @@
               "resourceType": "Composition",
 	      "id": "b089ad4b-284e-4664-8351-a6c9cd3314b4",
               "status": "final",
-              "type": {
+              "extension": [
+		{
+		  "url": "http://hl7fhir.jp/medication/splitSeq",
+		  "valueInteger": 1
+		}
+	      ],
+	      "type": {
 		"coding": [
                   {
                     "system": "urn:oid:1.2.392.100495.20.2.11",
@@ -456,6 +462,12 @@
               "resourceType": "Composition",
 	      "id": "d0db43a9-63fc-4e0f-ba6e-8559c5df8d87",
               "status": "final",
+              "extension": [
+		{
+		  "url": "http://hl7fhir.jp/medication/splitSeq",
+		  "valueInteger": 2
+		}
+	      ],
               "type": {
 		"coding": [
                   {
@@ -830,6 +842,12 @@
               "resourceType": "Composition",
 	      "id": "4438b2b5-e6c2-4c11-b5bf-b7cfff114c67",
               "status": "final",
+              "extension": [
+		{
+		  "url": "http://hl7fhir.jp/medication/splitSeq",
+		  "valueInteger": 3
+		}
+	      ],
               "type": {
 		"coding": [
                   {
