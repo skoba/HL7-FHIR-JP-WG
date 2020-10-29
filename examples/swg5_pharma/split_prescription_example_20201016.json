@@ -84,7 +84,16 @@
               "extension": [
 		{
 		  "url": "http://hl7fhir.jp/medication/splitSeq",
-		  "valueInteger": 1
+		  "valueRatio": {
+		    "numerator": {
+                      "value": 1,
+                      "unit": "枚"
+		    },
+		    "denominator": {
+                      "value": 3,
+                      "unit": "枚"
+		    }
+		  }
 		}
 	      ],
 	      "type": {
@@ -465,7 +474,16 @@
               "extension": [
 		{
 		  "url": "http://hl7fhir.jp/medication/splitSeq",
-		  "valueInteger": 2
+		  "valueRatio": {
+		    "numerator": {
+                      "value": 2,
+                      "unit": "枚"
+		    },
+		    "denominator": {
+                      "value": 3,
+                      "unit": "枚"
+		    }
+		  }
 		}
 	      ],
               "type": {
@@ -845,7 +863,16 @@
               "extension": [
 		{
 		  "url": "http://hl7fhir.jp/medication/splitSeq",
-		  "valueInteger": 3
+		  "valueRatio": {
+		    "numerator": {
+                      "value": 1,
+                      "unit": "枚"
+		    },
+		    "denominator": {
+                      "value": 3,
+                      "unit": "枚"
+		    }
+		  }
 		}
 	      ],
               "type": {
