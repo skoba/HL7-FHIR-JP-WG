@@ -112,6 +112,14 @@
   ],
   "dosageInstruction": [
     {
+      "extension": [
+	{
+	  "url": "http://hlfhir.jp/fhir/MedicationRequest/line",
+	  "valueString": "中心静脈ルート赤"
+	}
+      ]
+    },
+    {
       "additionalInstruction": [
         {
           "coding": [
