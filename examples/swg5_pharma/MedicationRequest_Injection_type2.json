@@ -43,6 +43,22 @@
         }
       ],
       "resourceType": "Medication"
+    },
+    {
+      "resourceType": "Device",
+      "id": "12345-6789-101112",
+      "identifier": [
+	{
+	  "system": "http://hl7fhir.jp/Device/Identifier",
+	  "value": "11111111111"
+	}
+      ],
+      "deviceName": [
+	{
+	  "name": "IVAC",
+	  "type": "manufacturer-name"
+	}
+      ]
     }
   ],
   "identifier": [
@@ -104,6 +120,9 @@
   "authoredOn": "2016-07-01",
   "requester": {
     "reference": "PractitionerRole/3c042392-4307-4533-b763-c81c6532bf57"
+  },
+  "performer": {
+    "reference": "Device/12345-6789-101112"
   },
   "insurance": [
     {
