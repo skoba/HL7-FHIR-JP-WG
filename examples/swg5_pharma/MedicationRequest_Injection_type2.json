@@ -137,14 +137,6 @@
   ],
   "dosageInstruction": [
     {
-      "extension": [
-	{
-	  "url": "http://hlfhir.jp/fhir/MedicationRequest/line",
-	  "valueString": "中心静脈ルート赤"
-	}
-      ]
-    },
-    {
       "additionalInstruction": [
         {
           "coding": [
@@ -200,22 +192,28 @@
         ]
       },
       "route": {
+	"extension": [
+	  {
+	    "url": "http://hlfhir.jp/fhir/MedicationRequest/line",
+	    "valueString": "中心静脈ルート赤"
+	  }
+	],
         "coding": [
-          {
+	  {
             "system": "http://hl7fhir.jp/HL70162",
             "code": "IV",
             "display": "静脈内"
           }
-        ]
+	]
       },
       "method": {
-        "coding": [
+	"coding": [
           {
             "system": "http://hl7fhir.jp/99ILL",
             "code": "102",
             "display": "点滴静注(末梢)"
           }
-        ]
+	]
       },
       "doseAndRate": [
         {
