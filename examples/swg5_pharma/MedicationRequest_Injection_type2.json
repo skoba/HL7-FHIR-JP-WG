@@ -219,6 +219,8 @@
 	    "valueCodeableConcept": {
 	      "coding": [
 		{
+		  "system": "http://hl7fhir.jp/hl70164",
+		  "code": "IVP",
 		  "display": "IVAC"
 		}
 	      ]
