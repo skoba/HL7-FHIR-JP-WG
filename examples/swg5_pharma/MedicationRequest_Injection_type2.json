@@ -213,6 +213,18 @@
 	]
       },
       "method": {
+	"extension": [
+	  {
+	    "url": "http://hlfhir.jp/fhir/MedicationRequest/device",
+	    "valueCodeableConcept": {
+	      "coding": [
+		{
+		  "display": "IVAC"
+		}
+	      ]
+	    }
+	  }
+	],
 	"coding": [
           {
             "system": "http://hl7fhir.jp/99ILL",
