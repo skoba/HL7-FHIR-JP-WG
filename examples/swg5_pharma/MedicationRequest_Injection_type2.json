@@ -16,6 +16,16 @@
             ]
           },
           "strength": {
+	    "extension": [
+	      {
+		"url": "http://hlfhir.jp/fhir/Medication/strength",
+		"valueQuantity": {
+		  "value": 1.0,
+		  "unit": "本",
+		  "code": "HON"
+		}
+	      }
+	    ],
 	    "numerator": {
               "value": 1.0,
               "unit": "本",
@@ -37,6 +47,16 @@
             ]
           },
           "strength": {
+	    "extension": [
+	      {
+		"url": "http://hlfhir.jp/fhir/Medication/strength",
+		"valueQuantity": {
+		  "value": 1.0,
+		  "unit": "アンプル",
+		  "code": "AMP"
+		}
+	      }
+	    ],
 	    "numerator": {
               "value": 1.0,
               "unit": "アンプル",
