@@ -245,6 +245,18 @@
 		}
 	      ]
 	    }
+	  },
+	  {
+	    "url": "http://hlfhir.jp/fhir/MedicationRequest/claim",
+	    "valueCodeableConcept": {
+	      "coding": [
+		{
+		  "system": "http://hl7fhir.jp/claim",
+		  "code": "G004",
+		  "display": "点滴注射"
+		}
+	      ]
+	    }
 	  }
 	],
 	"coding": [
