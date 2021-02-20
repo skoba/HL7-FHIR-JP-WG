@@ -10,7 +10,7 @@
         "type": {
           "coding": [
             {
-              "system": "1.2.392.100495.20.2.11",
+              "system": "urn:oid:1.2.392.100495.20.2.11",
               "code": "02"
             }
           ]
@@ -38,7 +38,7 @@
                 }
               ]
             },
-            "text": "RP1\\nムコダイン錠２５０ｍｇ\\n3 錠\\n１日３回朝昼夕食後\\n14 日分",
+            "text": "RP1\\nシスダイン錠２５０ｍｇ\\n3 錠\\n１日３回朝昼夕食後\\n14 日分",
             "entry": [
               {
                 "id": "96c8f004-f160-4afc-997f-80871b21a0c4",
@@ -63,7 +63,8 @@
     },
     {
       "resource": {
-        "id": "aaa7c577-84c2-42eb-ad42-0c256098b993",
+        "resourceType": "Patient",
+	"id": "aaa7c577-84c2-42eb-ad42-0c256098b993",
         "identifier": [
           {
             "system": "urn:oid:1.2.392.100495.20.3.51.11319999999",
@@ -122,8 +123,7 @@
             "postalCode": "1050004",
             "country": "JPN"
           }
-        ],
-        "resourceType": "Patient"
+        ]
       }
     },
     {
@@ -251,7 +251,6 @@
     },
     {
       "resource": {
-	
 	"resourceType": "MedicationDispense",
 	"id": "2e0a96ad-d94d-4a7d-95fb-9845a8463b94",
 	"identifier": [
@@ -265,8 +264,8 @@
 	  "coding": [
 	    {
               "system": "urn:oid:1.2.392.100495.20.2.74",
-              "code": "103835401",
-              "display": "ムコダイン錠２５０ｍｇ"
+              "code": "2233002F1301",
+              "display": "カルボシステイン錠250mg「テバ」"
 	    }
 	  ]
 	},
@@ -293,7 +292,7 @@
 	],
 	"authorizingPrescription": [
 	  {
-	    "id": "dummy",
+	    "id": "prescription-id",
 	    "type": "MedicationRequest"
 	  }
 	],
