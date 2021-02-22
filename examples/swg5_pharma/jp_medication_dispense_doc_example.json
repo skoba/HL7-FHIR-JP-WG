@@ -4,71 +4,6 @@
   "entry": [
     {
       "resource": {
-        "resourceType": "Patient",
-	"id": "aaa7c577-84c2-42eb-ad42-0c256098b993",
-        "identifier": [
-          {
-            "system": "urn:oid:1.2.392.100495.20.3.51.11319999999",
-            "value": "99990010"
-          }
-        ],
-        "name": [
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
-                "valueCode": "IDE"
-              }
-            ],
-            "use": "official",
-            "family": "患者",
-            "given": [
-              "太郎"
-            ]
-          },
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
-                "valueCode": "SYL"
-              }
-            ],
-            "use": "official",
-            "family": "カンジャ",
-            "given": [
-              "タロウ"
-            ]
-          }
-        ],
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "0335068010",
-            "use": "home"
-          },
-          {
-            "system": "fax",
-            "value": "0335068070",
-            "use": "home"
-          }
-        ],
-        "gender": "male",
-        "birthDate": "1979-11-01",
-        "address": [
-          {
-            "line": [
-              "新橋2丁目5番5号　新橋2丁目MTビル"
-            ],
-            "city": "港区",
-            "state": "東京都",
-            "postalCode": "1050004",
-            "country": "JPN"
-          }
-        ]
-      }
-    },
-    {
-      "resource": {
         "resourceType": "Composition",
 	"id": "146eb32c-2fc1-4697-98c2-a6dd1ef752b7",
         "status": "preliminary",
@@ -128,6 +63,42 @@
             ]
           },
           {
+            "title": "疑義照会",
+            "code": {
+	      "coding": [
+                {
+                  "system": "urn:oid:1.2.392.100495.20.2.12",
+                  "code": "XXX"
+                }
+              ]
+            },
+            "text": "疑義照会の内容等のフリーテキスト\\nテストテストテスト",
+	    "entry": [
+	      {
+		"reference": "CommunicationRequest/example"
+	      }
+            ]
+
+          },
+          {
+            "title": "疑義照会回答",
+            "code": {
+	      "coding": [
+                {
+                  "system": "urn:oid:1.2.392.100495.20.2.12",
+                  "code": "YYY"
+                }
+              ]
+            },
+            "text": "疑義照会への回答についてのフリーテキスト\\nテストテストテスト",
+	    "entry": [
+	      {
+		"reference": "Communication/example"
+	      }
+            ]
+
+          },
+          {
             "title": "備考情報",
             "code": {
               "coding": [
@@ -137,7 +108,7 @@
                 }
               ]
             },
-            "text": "疑義照会の内容等のフリーテキスト\\nテストテストテスト"
+            "text": "その他の備考情報"
           }
         ]
       }
@@ -175,6 +146,71 @@
 	    }
 	  },
     	  {
+	    "resource": {
+              "resourceType": "Patient",
+	      "id": "aaa7c577-84c2-42eb-ad42-0c256098b993",
+              "identifier": [
+		{
+		  "system": "urn:oid:1.2.392.100495.20.3.51.11319999999",
+		  "value": "99990010"
+		}
+              ],
+              "name": [
+		{
+		  "extension": [
+		    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "IDE"
+		    }
+		  ],
+		  "use": "official",
+		  "family": "患者",
+		  "given": [
+		    "太郎"
+		  ]
+		},
+		{
+		  "extension": [
+		    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "SYL"
+		    }
+		  ],
+		  "use": "official",
+		  "family": "カンジャ",
+		  "given": [
+		    "タロウ"
+		  ]
+		}
+              ],
+              "telecom": [
+		{
+		  "system": "phone",
+		  "value": "0335068010",
+		  "use": "home"
+		},
+		{
+		  "system": "fax",
+		  "value": "0335068070",
+		  "use": "home"
+		}
+              ],
+              "gender": "male",
+              "birthDate": "1979-11-01",
+              "address": [
+		{
+		  "line": [
+		    "新橋2丁目5番5号　新橋2丁目MTビル"
+		  ],
+		  "city": "港区",
+		  "state": "東京都",
+		  "postalCode": "1050004",
+		  "country": "JPN"
+		}
+              ]
+	    }
+	  },
+	  {
 	    "resource": {
 	      "resourceType": "Organization",
 	      "id": "c1eedb33-db99-4e0d-a9a5-20cd3893a29e",
@@ -429,6 +465,71 @@
 	  },
 	  {
 	    "resource": {
+              "resourceType": "Patient",
+	      "id": "aaa7c577-84c2-42eb-ad42-0c256098b993",
+              "identifier": [
+		{
+		  "system": "urn:oid:1.2.392.100495.20.3.51.11319999999",
+		  "value": "99990010"
+		}
+              ],
+              "name": [
+		{
+		  "extension": [
+		    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "IDE"
+		    }
+		  ],
+		  "use": "official",
+		  "family": "患者",
+		  "given": [
+		    "太郎"
+		  ]
+		},
+		{
+		  "extension": [
+		    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "SYL"
+		    }
+		  ],
+		  "use": "official",
+		  "family": "カンジャ",
+		  "given": [
+		    "タロウ"
+		  ]
+		}
+              ],
+              "telecom": [
+		{
+		  "system": "phone",
+		  "value": "0335068010",
+		  "use": "home"
+		},
+		{
+		  "system": "fax",
+		  "value": "0335068070",
+		  "use": "home"
+		}
+              ],
+              "gender": "male",
+              "birthDate": "1979-11-01",
+              "address": [
+		{
+		  "line": [
+		    "新橋2丁目5番5号　新橋2丁目MTビル"
+		  ],
+		  "city": "港区",
+		  "state": "東京都",
+		  "postalCode": "1050004",
+		  "country": "JPN"
+		}
+              ]
+	    }
+	  },
+	  {
+	    "resource": {
 	      "resourceType": "Practitioner",
 	      "identifier": [
 		{
@@ -640,6 +741,88 @@
 		}
 	      ]
 	    }
+	  }
+	]
+      }
+    },
+    {
+      "resource": {
+	"resourceType": "CommunicationRequest",
+	"id": "example",
+	"text": {
+	  "status": "generated",
+	  "div": "<div>疑義照会サンプル</div>"
+	},
+	"status": "active",
+	"subject": {
+	  "reference": "Patient/example"
+	},
+	"encounter": {
+	  "reference": "Encounter/example"
+	},
+	"payload": [
+	  {
+	    "contentString": "他院で同効薬の処方あり。"
+	  }
+	],
+	"requester": {
+	  "reference": "Pharmacist/example"
+	},
+	"recipient": [
+	  {
+	    "reference": "PrescribedPhysician/example"
+	  }
+	],
+	"reasonCode": [
+	  {
+	    "coding": [
+	      {
+		"system": "http://codingexample.jp/",
+		"code": "01"
+	      }
+	    ],
+	    "text": "重複"
+	  }
+	]
+      }
+    },
+    {
+      "resource": {
+	"resourceType": "Communication",
+	"id": "example",
+	"text": {
+	  "status": "generated",
+	  "div": "<div>疑義照会回答</div>"
+	},
+	"status": "completed",
+	"subject": {
+	  "reference": "Patient/example"
+	},
+	"encounter": {
+	  "reference": "Encounter/example"
+	},
+	"recipient": [
+	  {
+	    "reference": "Pharmacist/example"
+	  }
+	],
+	"sender": {
+	  "reference": "PrescribedPhysician/example"
+	},
+	"reasonCode": [
+	  {
+	    "coding": [
+	      {
+		"system": "http://codingexample.jp/",
+		"code": "01"
+	      }
+	    ],
+	    "text": "重複??"
+	  }
+	],
+	"payload": [
+	  {
+	    "contentString": "該当薬剤中止"
 	  }
 	]
       }
