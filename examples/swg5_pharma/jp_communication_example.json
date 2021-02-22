@@ -5,18 +5,20 @@
     "status": "generated",
     "div": "<div>疑義照会回答</div>"
   },
-  "status": "active",
+  "status": "completed",
   "subject": {
     "reference": "Patient/example"
   },
   "encounter": {
     "reference": "Encounter/example"
   },
-  "recipient": {
-    "reference": "Pharmacist/example"
-  },
+  "recipient": [
+    {
+      "reference": "Pharmacist/example"
+    }
+  ],
   "sender": {
-    "refernce": "PrescribedPhysician/example"
+    "reference": "PrescribedPhysician/example"
   },
   "reasonCode": [
     {

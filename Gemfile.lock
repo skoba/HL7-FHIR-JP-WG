@@ -58,7 +58,7 @@ GEM
     uri_template (0.7.0)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   asciidoctor
