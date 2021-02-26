@@ -474,6 +474,44 @@
 	      ]
 	    }
 	  }
+	  {
+	    "resource": {
+	      "resourceType": "Communication",
+	      "id": "example2",
+	      "text": {
+		"status": "generated",
+		"div": "<div>服薬指導</div>"
+	      },
+	      "status": "completed",
+	      "subject": {
+		"reference": "Patient/example"
+	      },
+	      "recipient": [
+		{
+		  "reference": "Patient/example"
+		}
+	      ],
+	      "sender": {
+		"reference": "PrescribedPhysician/example"
+	      },
+	      "reasonCode": [
+		{
+		  "coding": [
+		    {
+		      "system": "http://codingexample.jp/",
+		      "code": "AAAAA"
+		    }
+		  ],
+		  "text": "指導理由"
+		}
+	      ],
+	      "payload": [
+		{
+		  "contentString": "S)ジェネリック薬についての不安\\nA)先行薬は後発薬剤で代替可能。\\nP)効果は同じであることについて説明を行った"
+		}
+	      ]
+	    }
+	  }
 	]
       }
     },
