@@ -38,7 +38,7 @@
                 }
               ]
             },
-            "text": "RP1\\nシスダイン錠２５０ｍｇ\\n3 錠\\n１日３回朝昼夕食後\\n14 日分",
+            "text": "RP1\\nシスダイン錠２５０ｍｇ\\n3 錠\\n１日３回朝昼夕食後\\n14 日分\\n\\n疑義照会の内容等のフリーテキスト\\nテストテストテスト\\n\\n疑義照会への回答についてのフリーテキスト\\nテストテストテスト",
             "entry": [
 	      {
 		"reference": "Composition/dispense_id"
@@ -61,42 +61,6 @@
 		"reference": "Composition/prescription_id"
 	      }
             ]
-          },
-          {
-            "title": "疑義照会",
-            "code": {
-	      "coding": [
-                {
-                  "system": "urn:oid:1.2.392.100495.20.2.12",
-                  "code": "XXX"
-                }
-              ]
-            },
-            "text": "疑義照会の内容等のフリーテキスト\\nテストテストテスト",
-	    "entry": [
-	      {
-		"reference": "CommunicationRequest/example"
-	      }
-            ]
-
-          },
-          {
-            "title": "疑義照会回答",
-            "code": {
-	      "coding": [
-                {
-                  "system": "urn:oid:1.2.392.100495.20.2.12",
-                  "code": "YYY"
-                }
-              ]
-            },
-            "text": "疑義照会への回答についてのフリーテキスト\\nテストテストテスト",
-	    "entry": [
-	      {
-		"reference": "Communication/example"
-	      }
-            ]
-
           },
           {
             "title": "備考情報",
@@ -427,6 +391,88 @@
 		}
 	      }
 	    }
+	  },
+	  {
+	    "resource": {
+	      "resourceType": "CommunicationRequest",
+	      "id": "example",
+	      "text": {
+		"status": "generated",
+		"div": "<div>疑義照会サンプル</div>"
+	      },
+	      "status": "active",
+	      "subject": {
+		"reference": "Patient/example"
+	      },
+	      "encounter": {
+		"reference": "Encounter/example"
+	      },
+	      "payload": [
+		{
+		  "contentString": "他院で同効薬の処方あり。"
+		}
+	      ],
+	      "requester": {
+		"reference": "Pharmacist/example"
+	      },
+	      "recipient": [
+		{
+		  "reference": "PrescribedPhysician/example"
+		}
+	      ],
+	      "reasonCode": [
+		{
+		  "coding": [
+		    {
+		      "system": "http://codingexample.jp/",
+		      "code": "01"
+		    }
+		  ],
+		  "text": "重複"
+		}
+	      ]
+	    }
+	  },
+	  {
+	    "resource": {
+	      "resourceType": "Communication",
+	      "id": "example",
+	      "text": {
+		"status": "generated",
+		"div": "<div>疑義照会回答</div>"
+	      },
+	      "status": "completed",
+	      "subject": {
+		"reference": "Patient/example"
+	      },
+	      "encounter": {
+		"reference": "Encounter/example"
+	      },
+	      "recipient": [
+		{
+		  "reference": "Pharmacist/example"
+		}
+	      ],
+	      "sender": {
+		"reference": "PrescribedPhysician/example"
+	      },
+	      "reasonCode": [
+		{
+		  "coding": [
+		    {
+		      "system": "http://codingexample.jp/",
+		      "code": "01"
+		    }
+		  ],
+		  "text": "重複??"
+		}
+	      ],
+	      "payload": [
+		{
+		  "contentString": "該当薬剤中止"
+		}
+	      ]
+	    }
 	  }
 	]
       }
@@ -741,88 +787,6 @@
 		}
 	      ]
 	    }
-	  }
-	]
-      }
-    },
-    {
-      "resource": {
-	"resourceType": "CommunicationRequest",
-	"id": "example",
-	"text": {
-	  "status": "generated",
-	  "div": "<div>疑義照会サンプル</div>"
-	},
-	"status": "active",
-	"subject": {
-	  "reference": "Patient/example"
-	},
-	"encounter": {
-	  "reference": "Encounter/example"
-	},
-	"payload": [
-	  {
-	    "contentString": "他院で同効薬の処方あり。"
-	  }
-	],
-	"requester": {
-	  "reference": "Pharmacist/example"
-	},
-	"recipient": [
-	  {
-	    "reference": "PrescribedPhysician/example"
-	  }
-	],
-	"reasonCode": [
-	  {
-	    "coding": [
-	      {
-		"system": "http://codingexample.jp/",
-		"code": "01"
-	      }
-	    ],
-	    "text": "重複"
-	  }
-	]
-      }
-    },
-    {
-      "resource": {
-	"resourceType": "Communication",
-	"id": "example",
-	"text": {
-	  "status": "generated",
-	  "div": "<div>疑義照会回答</div>"
-	},
-	"status": "completed",
-	"subject": {
-	  "reference": "Patient/example"
-	},
-	"encounter": {
-	  "reference": "Encounter/example"
-	},
-	"recipient": [
-	  {
-	    "reference": "Pharmacist/example"
-	  }
-	],
-	"sender": {
-	  "reference": "PrescribedPhysician/example"
-	},
-	"reasonCode": [
-	  {
-	    "coding": [
-	      {
-		"system": "http://codingexample.jp/",
-		"code": "01"
-	      }
-	    ],
-	    "text": "重複??"
-	  }
-	],
-	"payload": [
-	  {
-	    "contentString": "該当薬剤中止"
 	  }
 	]
       }
