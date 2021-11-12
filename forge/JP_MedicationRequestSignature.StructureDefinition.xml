@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="11d9bf36-ca2a-457b-8c76-e434fc2cbdd0" />
+  <meta>
+    <versionId value="8" />
+    <lastUpdated value="2021-10-20T10:19:23.712+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestSignature" />
+  <name value="JP_MedicationRequestSignature" />
+  <status value="draft" />
+  <date value="2021-10-20T10:19:22.3885415+00:00" />
+  <description value="後発医薬品変更不可に対する電⼦署名を表す拡張「Signature」。" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="後発薬品変更不可署名" />
+      <definition value="後発医薬品変更不可に対する電⼦署名を表す拡張「Signature」。" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestSignature" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="Signature" />
+      </type>
+    </element>
+    <element id="Extension.value[x].type">
+      <path value="Extension.value[x].type" />
+      <short value="署名を行った理由を示す" />
+      <definition value="後発品への薬剤変更不可を示す署名" />
+      <fixedCoding>
+        <system value="http://hl7.org/fhir/ValueSet/signature-type" />
+        <code value="1.2.840.10065.1.12.1.1" />
+      </fixedCoding>
+      <binding>
+        <strength value="required" />
+        <description value="バリューセット SignatureTypeCodesから文書作成者を意味する&quot;1.2.840.10065.1.12.1.1” を指定。" />
+      </binding>
+    </element>
+    <element id="Extension.value[x].type.system">
+      <path value="Extension.value[x].type.system" />
+      <short value="署名形式を示す" />
+      <definition value="電子処方箋では固定値。となる" />
+      <min value="1" />
+      <fixedUri value="urn:iso-astm:E1762-95:2013" />
+    </element>
+    <element id="Extension.value[x].type.code">
+      <path value="Extension.value[x].type.code" />
+      <short value="作成者の署名を意味する固定値" />
+      <definition value="作成者の署名を意味する固定値" />
+      <min value="1" />
+      <fixedCode value="1.2.840.10065.1.12.1.1" />
+    </element>
+    <element id="Extension.value[x].type.display">
+      <path value="Extension.value[x].type.display" />
+      <short value="コードの表示名" />
+      <definition value="コードの表示名" />
+      <fixedString value="作成者の署名" />
+    </element>
+    <element id="Extension.value[x].when">
+      <path value="Extension.value[x].when" />
+      <short value="署名が⽣成された時刻" />
+      <definition value="署名が⽣成された時刻。精度はミリ秒とし、タイムゾーンを含めること" />
+    </element>
+    <element id="Extension.value[x].who">
+      <path value="Extension.value[x].who" />
+      <short value="署名者の処⽅医" />
+      <definition value="署名者の処⽅医を表すPractitionerリソースへの参照。" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+    </element>
+    <element id="Extension.value[x].who.reference">
+      <path value="Extension.value[x].who.reference" />
+      <short value="Practitoner resourceへの参照" />
+      <definition value="署名した医師についてのPractitionerリソースのfullUrl要素に指定されるUUID を指定" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x].data">
+      <path value="Extension.value[x].data" />
+      <short value="署名データ" />
+      <definition value="電子署名を示すデータ" />
+    </element>
+  </differential>
+</StructureDefinition>

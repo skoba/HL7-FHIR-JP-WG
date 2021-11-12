@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestCategoryExtension" />
-  <name value="JP_MedicationRequestCategoryExtension" />
+  <url value="https://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestInjectionSite" />
+  <name value="JP_MedicationRequestInjectionSite" />
   <status value="draft" />
-  <date value="2021-07-16" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="rim" />
@@ -12,13 +11,17 @@
   </mapping>
   <kind value="complex-type" />
   <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Dosage.site" />
+  </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="category" />
+      <short value="Body site description" />
     </element>
     <element id="Extension.extension">
       <path value="Extension.extension" />
@@ -30,27 +33,23 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Extension.extension:category">
+    <element id="Extension.extension:BodySiteReference">
       <path value="Extension.extension" />
-      <sliceName value="category" />
+      <sliceName value="BodySiteReference" />
     </element>
-    <element id="Extension.extension:category.url">
+    <element id="Extension.extension:BodySiteReference.url">
       <path value="Extension.extension.url" />
-      <fixedUri value="category" />
+      <fixedUri value="BodySiteReference" />
     </element>
-    <element id="Extension.extension:category.value[x]">
+    <element id="Extension.extension:BodySiteReference.value[x]">
       <path value="Extension.extension.value[x]" />
       <type>
-        <code value="CodeableConcept" />
+        <code value="Reference" />
       </type>
-    </element>
-    <element id="Extension.extension:elem">
-      <path value="Extension.extension" />
-      <sliceName value="elem" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestCategoryExtension" />
+      <fixedUri value="https://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestInjectionSite" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

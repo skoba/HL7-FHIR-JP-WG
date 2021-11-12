@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="510af89c-61b1-4cb3-b78b-4e391f7827da" />
+  <id value="e8b0671d-6709-4a63-b9eb-2e63f04738f6" />
   <meta>
-    <versionId value="81" />
-    <lastUpdated value="2021-11-11T16:51:57.501+00:00" />
+    <versionId value="2" />
+    <lastUpdated value="2021-11-11T17:02:28.078+00:00" />
   </meta>
-  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest" />
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_Injection" />
   <version value="0.1.0" />
-  <name value="JP_MedicationRequest" />
+  <name value="JP_MedicationRequest_Injection" />
   <status value="draft" />
-  <date value="2021-11-11T16:51:53.7799913+00:00" />
-  <description value="日本版FHIR MedicationRequest Profile" />
+  <date value="2021-11-11T17:02:20.8615933+00:00" />
+  <description value="日本版FHIR MedicationRequest注射 Profile" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
@@ -734,71 +734,9 @@
       <definition value="医薬品コードと医薬品名称。coding要素を繰り返すことでHOT9 やYJコードなど複数のコード体系で医薬品コード並記することが可能。&#xD;&#xA;&#xD;&#xA;薬される薬剤についてのID。日本では同じ用法の複数の薬剤を一処方区分とすることがある。複数の薬剤を表記するMedication Resourceのインスタンスを参照するか、codeableConceptとして、薬品コードと&#xD;&#xA;処方の詳細な内容を示すか既知の処方リストの中から特定の処方を選択するための属性を表すResourceにリンクされている。" />
       <comment value="日本での運用を検討した場合に、煩雑ではあるがMedication resourceを参照するのではなくcodeableConceptとして1薬剤ごとにMedicationRequestインスタンスを生成する方針とした。&#xD;&#xA;&#xD;&#xA;コードだけが指定されていても、製品を特定できる必要がある。もし、多くの情報が必要であれば、Medication Resourceを利用することが推奨される。たとえば、もし、薬剤の剤型や、ロット番号を知る必要があったり、薬剤の成分や臨時で調整されたものであったりする場合には、Medication Resourceを参照しなくてはならない。" />
       <type>
-        <code value="CodeableConcept" />
+        <code value="Reference" />
       </type>
       <mustSupport value="true" />
-      <binding>
-        <strength value="preferred" />
-        <description value="処方する製剤を表すコード。" />
-      </binding>
-    </element>
-    <element id="MedicationRequest.medication[x].id">
-      <path value="MedicationRequest.medication[x].id" />
-      <short value="エレメント間参照のためのユニークID" />
-      <definition value="エレメント間参照のためのユニークID。空白を含まない全ての文字を使ってもよい(MAY)。" />
-    </element>
-    <element id="MedicationRequest.medication[x].coding">
-      <path value="MedicationRequest.medication[x].coding" />
-      <short value="医薬品を表すコード" />
-      <definition value="医薬品を表すコード。JP Coreでは最低1個のコードを記録しなければならない。&#xD;&#xA;利用できるコードは下記の通りである。&#xD;&#xA;医薬品コード（医薬品マスター）&#xD;&#xA;薬価基準収載医薬品コード&#xD;&#xA;YJコード&#xD;&#xA;HOT コード（9 桁）&#xD;&#xA;⼀般名処⽅マスター" />
-      <comment value="コードは臨時で列記したものや、コードのリストからSNOMED CTのように公式に定義されたものまである（HL7 v3 core principle を参照)。FHIR自体ではコーディング規約を定めてはいないし、意味を暗示するために利用されない(SHALL NOT)。一般的に UserSelected = trueの場合には一つのコードシステムが使われる。" />
-      <min value="1" />
-    </element>
-    <element id="MedicationRequest.medication[x].coding.id">
-      <path value="MedicationRequest.medication[x].coding.id" />
-      <short value="エレメント間参照のためのユニークID" />
-      <definition value="エレメント間参照のためのユニークID。空白を含まない全ての文字を使ってもよい(MAY)。" />
-    </element>
-    <element id="MedicationRequest.medication[x].coding.system">
-      <path value="MedicationRequest.medication[x].coding.system" />
-      <short value="コードシステムのID" />
-      <definition value="医薬品コードのマスタ、ターミノロジーへのURI。" />
-      <comment value="URIはOID(urn:oid:....)やUUID(urn:uuid:....)であることもある。OIDやUUIDはHL7のOIDレジストリを参照していなければならない（SHALL)。そうでなければ、URIはHL7のFHIRのリストに挙げられている特別なURIであるか、用語集が明確な定義が参照されるべきである。" />
-      <min value="1" />
-    </element>
-    <element id="MedicationRequest.medication[x].coding.version">
-      <path value="MedicationRequest.medication[x].coding.version" />
-      <short value="用語集のバージョン - もし必要であれば追加する。" />
-      <definition value="コードが選択された際に利用されたコードシステムのバージョンである。コードの意味するところがバージョンが変わっても一貫しているように十分にメンテナンスされているコードシステムであれば、バージョンを表記する必要はないことに留意されたい。しかしながら、一貫性はなかなか保証されるものではないし、意味の一貫性が保証されていないのであればバージョンは交換されるべきである（SHOULD)。" />
-      <comment value="ターミノロジーのバージョンが文字列としてコードシステムにより定義されていない場合は、そのバージョンが公式に公開された日付を示す（FHIRのdateフォーマットで表現される）dateを用いることが推奨されている。" />
-    </element>
-    <element id="MedicationRequest.medication[x].coding.code">
-      <path value="MedicationRequest.medication[x].coding.code" />
-      <short value="医薬品コード" />
-      <definition value="ターミノロジーのバージョンが文字列としてコードシステムにより定義されていない場合は、そのバージョンが公式に公開された日付を示す（FHIRのdateフォーマットで表現される）dateを用いることが推奨されている。" />
-      <comment value="FHIRの文字列は1MB以上の大きさとなってなはらない(SHALL NOT)。" />
-      <requirements value="システム内の特定のコードを参照する必要がある。" />
-      <min value="1" />
-    </element>
-    <element id="MedicationRequest.medication[x].coding.display">
-      <path value="MedicationRequest.medication[x].coding.display" />
-      <short value="医薬品名称。" />
-      <definition value="医薬品の名称" />
-      <comment value="FHIRの文字列は1MB以上の大きさとなってなはらない(SHALL NOT)。" />
-      <requirements value="コードが持つ意味をそのシステムを知らない人でも読めるように人間可読であるようにしている必要がある。" />
-      <min value="1" />
-    </element>
-    <element id="MedicationRequest.medication[x].coding.userSelected">
-      <path value="MedicationRequest.medication[x].coding.userSelected" />
-      <short value="このコードが直接ユーザーが指定したものであるかどうか" />
-      <definition value="ユーザーが直接コーディングしたかどうかを示す。たとえば、有効な項目のリスト（コードか表現）から選択したかどうか。" />
-      <comment value="ユーザーが直接コーディングしたかどうかを示す。たとえば、有効な項目のリスト（コードか表現）から選択したかどうか。" />
-    </element>
-    <element id="MedicationRequest.medication[x].text">
-      <path value="MedicationRequest.medication[x].text" />
-      <short value="この概念のプレーンテキスト表現" />
-      <definition value="入力したユーザーが見た/選択した/発したとおりの概念および・またはユーザーが意図した概念を自然言語で表現したもの。" />
-      <comment value="textエレメントはcodingのdisplayNameエレメントと一致することがよくある。" />
     </element>
     <element id="MedicationRequest.subject">
       <path value="MedicationRequest.subject" />
@@ -3974,25 +3912,22 @@
       </slicing>
       <min value="0" />
     </element>
-    <element id="MedicationRequest.dosageInstruction.extension:PeriodOfUse">
+    <element id="MedicationRequest.dosageInstruction.extension:Line">
       <path value="MedicationRequest.dosageInstruction.extension" />
-      <sliceName value="PeriodOfUse" />
-      <short value="投与開始日を明示する拡張" />
+      <sliceName value="Line" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_PeriodOfUse" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_Line" />
       </type>
     </element>
-    <element id="MedicationRequest.dosageInstruction.extension:UsageDuration">
+    <element id="MedicationRequest.dosageInstruction.extension:Device">
       <path value="MedicationRequest.dosageInstruction.extension" />
-      <sliceName value="UsageDuration" />
-      <short value="実投与日数" />
-      <definition value="実投与日数を格納する拡張" />
+      <sliceName value="Device" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_UsageDuration" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_Device" />
       </type>
     </element>
     <element id="MedicationRequest.dosageInstruction.sequence">
@@ -4086,8 +4021,8 @@
     </element>
     <element id="MedicationRequest.dosageInstruction.timing">
       <path value="MedicationRequest.dosageInstruction.timing" />
-      <short value="服⽤タイミング" />
-      <definition value="服⽤タイミングを記録する。" />
+      <short value="投与タイミング" />
+      <definition value="投与タイミングを記録する。" />
       <comment value="Dosage.textが設定されていることが想定されているのとは異なり、この属性は常に設定されていなくてもよい。もし、療法が設定されている場合はDosage.textはDosage.timingを反映させているべきである。" />
       <requirements value="患者に薬剤を投与すべき計画上のタイミング。このデータ型はさまざまな表現をとることができる。たとえば、「8時間おき」「1日3回」、「2011年12月23日から10日間、朝食全30分前に」、「2013年10月15日と2013年11月1日に」などである。しばしば、総量/総投与期間を表現するような場合に比率は期間を明示しておくことがある（たとえば、500mlを2時間でという指示は2時間と明示している)。しかしながら、比率で期間を表さない場合(たとえば、250ml/毎時）はtiming.repeat.durationで注射の総投与期間を伝える必要がある。" />
       <min value="1" />
@@ -5174,7 +5109,6 @@
       <definition value="1回の調剤で払い出される薬剤の量" />
       <comment value="このエレメントはどのような量を表現するか定義するためにコンテキストにあわせてよく定義される。したがって、どのような単位でも利用することができる。使用されるコンテキストによってcomparatorエレメントで値が定義されることもある。" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="MedicationRequest.dispenseRequest.quantity.id">
       <path value="MedicationRequest.dispenseRequest.quantity.id" />

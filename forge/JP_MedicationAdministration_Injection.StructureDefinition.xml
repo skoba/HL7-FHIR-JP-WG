@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="13fa6823-c9de-45b9-a8fa-b820544b2fae" />
   <meta>
-    <lastUpdated value="2021-10-21T11:20:37.778+00:00" />
+    <versionId value="3" />
+    <lastUpdated value="2021-10-21T11:21:11.972+00:00" />
   </meta>
-  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration" />
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Injection" />
   <version value="0.1.0" />
-  <name value="JP_MedicationAdministration" />
+  <name value="JP_MedicationAdministration_Injection" />
   <status value="draft" />
-  <date value="2021-10-20T14:26:29.9714301+00:00" />
+  <date value="2021-10-21T11:21:10.7232586+00:00" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
@@ -43,7 +43,7 @@
   <differential>
     <element id="MedicationAdministration">
       <path value="MedicationAdministration" />
-      <short value="患者への薬剤投与記録" />
+      <short value="患者への注射薬剤投与記録" />
       <constraint>
         <key value="dom-2" />
         <severity value="error" />
@@ -185,6 +185,17 @@
       <type>
         <code value="Extension" />
         <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Location" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.extension:UncategorizedComment">
+      <path value="MedicationAdministration.extension" />
+      <sliceName value="UncategorizedComment" />
+      <short value="未分類コメント" />
+      <definition value="未分類コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_UncategorizedComment" />
       </type>
     </element>
     <element id="MedicationAdministration.identifier">
@@ -487,6 +498,48 @@
         </code>
       </type>
     </element>
+    <element id="MedicationAdministration.dosage.extension">
+      <path value="MedicationAdministration.dosage.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.extension:Line">
+      <path value="MedicationAdministration.dosage.extension" />
+      <sliceName value="Line" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestLine" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.dosage.extension:LineComment">
+      <path value="MedicationAdministration.dosage.extension" />
+      <sliceName value="LineComment" />
+      <short value="ラインコメント" />
+      <definition value="ラインコメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosage_LineComment" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.dosage.extension:DosageComment">
+      <path value="MedicationAdministration.dosage.extension" />
+      <sliceName value="DosageComment" />
+      <short value="用法コメント" />
+      <definition value="用法コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosage_DosageComment" />
+      </type>
+    </element>
     <element id="MedicationAdministration.dosage.text">
       <path value="MedicationAdministration.dosage.text" />
       <constraint>
@@ -505,6 +558,28 @@
         <source value="Element" />
       </constraint>
     </element>
+    <element id="MedicationAdministration.dosage.site.extension">
+      <path value="MedicationAdministration.dosage.site.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.site.extension:SiteComment">
+      <path value="MedicationAdministration.dosage.site.extension" />
+      <sliceName value="SiteComment" />
+      <short value="投与部位コメント" />
+      <definition value="投与部位コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosageSite_SiteComment" />
+      </type>
+    </element>
     <element id="MedicationAdministration.dosage.route">
       <path value="MedicationAdministration.dosage.route" />
       <constraint>
@@ -514,6 +589,28 @@
         <source value="Element" />
       </constraint>
     </element>
+    <element id="MedicationAdministration.dosage.route.extension">
+      <path value="MedicationAdministration.dosage.route.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.route.extension:RouteComment">
+      <path value="MedicationAdministration.dosage.route.extension" />
+      <sliceName value="RouteComment" />
+      <short value="投与経路コメント" />
+      <definition value="投与経路コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosageRoute_RouteComment" />
+      </type>
+    </element>
     <element id="MedicationAdministration.dosage.method">
       <path value="MedicationAdministration.dosage.method" />
       <constraint>
@@ -522,6 +619,28 @@
         <human value="All FHIR elements must have a @value or children" />
         <source value="Element" />
       </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage.method.extension">
+      <path value="MedicationAdministration.dosage.method.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.method.extension:MethodComment">
+      <path value="MedicationAdministration.dosage.method.extension" />
+      <sliceName value="MethodComment" />
+      <short value="手技コメント" />
+      <definition value="手技コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosageMethod_MethodComment" />
+      </type>
     </element>
     <element id="MedicationAdministration.dosage.dose">
       <path value="MedicationAdministration.dosage.dose" />
@@ -560,6 +679,28 @@
         <xpath value="(count(f:numerator) = count(f:denominator)) and ((count(f:numerator) &gt; 0) or (count(f:extension) &gt; 0))" />
         <source value="Ratio" />
       </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage.rate[x].extension">
+      <path value="MedicationAdministration.dosage.rate[x].extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.rate[x].extension:RateComment">
+      <path value="MedicationAdministration.dosage.rate[x].extension" />
+      <sliceName value="RateComment" />
+      <short value="投与速度コメント" />
+      <definition value="投与速度コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosageRate_RateComment" />
+      </type>
     </element>
     <element id="MedicationAdministration.eventHistory">
       <path value="MedicationAdministration.eventHistory" />

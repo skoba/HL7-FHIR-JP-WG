@@ -2,26 +2,26 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="900bf440-359f-490c-b1ba-fc23ee6ed05f" />
   <meta>
-    <versionId value="3" />
-    <lastUpdated value="2020-05-15T07:26:02.87+00:00" />
+    <versionId value="2" />
+    <lastUpdated value="2021-08-25T09:52:44.5+00:00" />
   </meta>
   <text>
     <status value="extensions" />
     <div xmlns="http://www.w3.org/1999/xhtml">MedicationRequest Resourceを平成30年改訂処方箋様式2に準拠して日本で利用するために必要となる拡張データセットです。</div>
   </text>
-  <url value="http://hl7fhir.jp/fhir/StructureDefinition/JP_MedicationRequestExtension" />
+  <url value="http://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestExtension" />
   <name value="JP_MedicationRequestExtension" />
   <title value="MedicationRequest Extension for Japan" />
   <status value="draft" />
-  <date value="2020-05-15T07:26:05.0723326Z" />
+  <date value="2021-08-25T08:24:04.0513582Z" />
   <description value="MedicationRequest Resourceを日本で利用するために必要となるExtensionについて定義を行った。" />
   <purpose value="日本で薬剤処方オーダを発行するために必要となるデータを網羅するための拡張。" />
-  <fhirVersion value="4.0.0" />
+  <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="MedicationRequest.dispenseRequest" />
+    <expression value="MedicationRequest" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -77,9 +77,6 @@
       </code>
     </element>
     <element id="Extension.extension:additionalInstructionForDispense.value[x].text">
-      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-        <valueBoolean value="true" />
-      </extension>
       <path value="Extension.extension.value[x].text" />
       <short value="残薬調整時のコメント" />
       <definition value="療担則23条様式2にある残薬調整を行う際に薬局から保健医療機関への問い合わせについての指示" />
@@ -288,12 +285,6 @@
       </type>
     </element>
     <element id="Extension.extension:category">
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-        <valueCode value="normative" />
-      </extension>
-      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
-        <valueCode value="4.0.0" />
-      </extension>
       <path value="Extension.extension" />
       <sliceName value="category" />
       <short value="処方区分" />
@@ -317,7 +308,7 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://hl7fhir.jp/fhir/StructureDefinition/JP_MedicationRequestExtension" />
+      <fixedUri value="http://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestExtension" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

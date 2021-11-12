@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="bb8b26fd-810e-4603-98e7-a8a5c4fcf8e6" />
+  <meta>
+    <versionId value="11" />
+    <lastUpdated value="2021-10-18T16:13:05.818+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestPeriodOfUse" />
+  <name value="JP_MedicationRequestPeriodOfUse" />
+  <status value="draft" />
+  <date value="2021-10-18T16:13:02.8155858+00:00" />
+  <description value="投与開始日を格納する拡張" />
+  <purpose value="処方日とは別に明示的に投与・内服開始日を指定するため。" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="MedicationDispense" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="投与期間の開始日を明示するための拡張" />
+      <definition value="MedcationRequestの投与期間の開始日を明示するための拡張" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestPeriodOfUse" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="投与期間を表す" />
+      <definition value="MedicationRequestに投与期間の開始日を明示するための拡張" />
+      <type>
+        <code value="Period" />
+      </type>
+    </element>
+    <element id="Extension.value[x].start">
+      <path value="Extension.value[x].start" />
+      <short value="投与期間の開始日" />
+      <definition value="明示された投与期間の開始日" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="a9b018d6-e66a-4ce6-ae5f-caeed3fe81d1" />
+  <id value="18fccf14-63e6-45f8-a8a9-39b809c5f0b4" />
   <meta>
-    <versionId value="6" />
-    <lastUpdated value="2021-11-03T15:40:18.738+00:00" />
+    <versionId value="2" />
+    <lastUpdated value="2021-10-21T11:37:21.272+00:00" />
   </meta>
-  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense" />
-  <name value="JP_MedicationDispense" />
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispenseInjection" />
+  <name value="JP_MedicationDispenseInjection" />
   <status value="draft" />
-  <date value="2021-11-03T15:40:14.894864+00:00" />
+  <date value="2021-10-21T11:36:06.8761166Z" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
@@ -107,7 +107,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense_Preparation" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispensePreparation" />
       </type>
     </element>
     <element id="MedicationDispense.identifier">
@@ -170,7 +170,7 @@
     <element id="MedicationDispense.medication[x]">
       <path value="MedicationDispense.medication[x]" />
       <type>
-        <code value="CodeableConcept" />
+        <code value="Reference" />
       </type>
       <constraint>
         <key value="ele-1" />
@@ -179,18 +179,6 @@
         <source value="Element" />
       </constraint>
       <mustSupport value="true" />
-    </element>
-    <element id="MedicationDispense.medication[x].coding.system">
-      <path value="MedicationDispense.medication[x].coding.system" />
-      <min value="1" />
-    </element>
-    <element id="MedicationDispense.medication[x].coding.code">
-      <path value="MedicationDispense.medication[x].coding.code" />
-      <min value="1" />
-    </element>
-    <element id="MedicationDispense.medication[x].coding.display">
-      <path value="MedicationDispense.medication[x].coding.display" />
-      <min value="1" />
     </element>
     <element id="MedicationDispense.subject">
       <path value="MedicationDispense.subject" />
@@ -337,7 +325,6 @@
       <path value="MedicationDispense.quantity" />
       <short value="払い出される薬剤の量" />
       <definition value="JP Coreでは必須&#xD;&#xA;払い出される薬剤の量。計測単位を含む。" />
-      <min value="1" />
       <constraint>
         <key value="ele-1" />
         <severity value="error" />
@@ -356,7 +343,6 @@
         <human value="The comparator is not used on a SimpleQuantity" />
         <source value="Quantity" />
       </constraint>
-      <mustSupport value="true" />
     </element>
     <element id="MedicationDispense.quantity.value">
       <path value="MedicationDispense.quantity.value" />
@@ -479,26 +465,22 @@
       </slicing>
       <min value="0" />
     </element>
-    <element id="MedicationDispense.dosageInstruction.extension:PeriodOfUse">
+    <element id="MedicationDispense.dosageInstruction.extension:Device">
       <path value="MedicationDispense.dosageInstruction.extension" />
-      <sliceName value="PeriodOfUse" />
-      <short value="投与開始日" />
-      <definition value="投与開始日を格納する拡張" />
+      <sliceName value="Device" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_PeriodOfUse" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestDevice" />
       </type>
     </element>
-    <element id="MedicationDispense.dosageInstruction.extension:UsageDuration">
+    <element id="MedicationDispense.dosageInstruction.extension:Line">
       <path value="MedicationDispense.dosageInstruction.extension" />
-      <sliceName value="UsageDuration" />
-      <short value="実投与日数" />
-      <definition value="実投与日数を格納する拡張" />
+      <sliceName value="Line" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_UsageDuration" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestLine" />
       </type>
     </element>
     <element id="MedicationDispense.dosageInstruction.text">

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="8a1c4ab5-8609-40d4-ac0b-95939bc9fba8" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2021-06-04T07:58:19.076+00:00" />
+  </meta>
+  <text>
+    <status value="extensions" />
+    <div xmlns="http://www.w3.org/1999/xhtml">MedicationRequest Resourceを平成30年改訂処方箋様式2に準拠して日本で利用するために必要となる拡張データセットです。</div>
+  </text>
+  <url value="http://jpfhir.jp/fhir/Core/1.0/StructureDefinition/JP_MedicationRequestInsurance" />
+  <name value="JP_MedicationRequestInsurance" />
+  <status value="draft" />
+  <date value="2021-06-04T07:58:16.8402317+00:00" />
+  <description value="MedicationRequest Resourceを日本で利用するために必要となるExtensionについて定義を行った。" />
+  <purpose value="日本で薬剤処方オーダを発行するために必要となるデータを送信するため。" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest.insurance" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="残薬調整" />
+      <definition value="H30年診療報酬改定に伴う様式2号に準拠した残薬調整に関する薬局への指示" />
+      <comment value="HL7 Ver 2.5では未サポートであり当エレメントへのマッピングはなし。" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:scoreBookIdentifier">
+      <path value="Extension.extension" />
+      <sliceName value="scoreBookIdentifier" />
+      <short value="点数表番号" />
+      <definition value="処方箋様式にある点数表を記載する。医科：1，歯科：3と番号が割り振られている。" />
+      <comment value="この項目設定は院内処方の場合にはほぼ不要である。" />
+      <requirements value="様式上の項目ではあるが、概念上は保健情報の一つとも考えられる。" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:scoreBookIdentifier.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="scoreBookIdentifier" />
+    </element>
+    <element id="Extension.extension:scoreBookIdentifier.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <short value="保険点数表の番号" />
+      <definition value="保険点数表の番号を記載する。" />
+      <comment value="Terminologyとすべきか。" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/Core/1.0/StructureDefinition/JP_MedicationRequestInsurance" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="b4ef1dd1-ce07-48d4-a136-c7d9a15055f8" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2021-10-20T14:29:55.9+00:00" />
+  </meta>
+  <url value="https://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministrationLocation" />
+  <name value="JP_MedicationAdministrationLocation" />
+  <status value="draft" />
+  <date value="2021-10-20T14:29:53.5656245+00:00" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationAdministration" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministrationLocation" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="実施場所" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

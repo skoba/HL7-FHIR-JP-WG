@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="d2a74cc1-3928-4f1d-afe8-e7b49a2b4b04" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2021-11-11T16:37:13.252+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_UsageDuration" />
+  <version value="0.1.0" />
+  <name value="JP_MedicationRequest_atDosageInstruction_UsageDuration" />
+  <status value="draft" />
+  <date value="2021-11-11T16:37:12.1532758+00:00" />
+  <description value="隔⽇投与など、服⽤開始⽇から終了⽇までの⽇数と実投与⽇数が異なる場合に、実投与⽇数を明⽰したい場合に使⽤する拡張" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest.dosageInstruction" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="MedicationDispense.dosageInstruction" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.id">
+      <path value="Extension.id" />
+      <short value="エレメント間参照のためのID" />
+      <definition value="JP Coreでは使用されない。" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_UsageDuration" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="実投与⽇数" />
+      <definition value="隔日投与などで実投与日数と処方期間が異なる場合に用いられる。" />
+      <type>
+        <code value="Duration" />
+      </type>
+    </element>
+    <element id="Extension.value[x].id">
+      <path value="Extension.value[x].id" />
+      <short value="エレメント間参照のためのID" />
+      <definition value="JP Coreでは使用されない。" />
+      <max value="0" />
+    </element>
+    <element id="Extension.value[x].value">
+      <path value="Extension.value[x].value" />
+      <short value="実投与日数" />
+      <definition value="隔日投与などで実投与日数と処方期間が異なる場合に用いられる。" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x].comparator">
+      <path value="Extension.value[x].comparator" />
+      <max value="0" />
+    </element>
+    <element id="Extension.value[x].unit">
+      <path value="Extension.value[x].unit" />
+      <short value="実投与日数単位" />
+      <definition value="「日」で固定される" />
+      <min value="1" />
+      <fixedString value="日" />
+    </element>
+    <element id="Extension.value[x].system">
+      <path value="Extension.value[x].system" />
+      <short value="UCUM" />
+      <definition value="単位コード UCUMを識別するURI。固定値。" />
+      <min value="1" />
+      <fixedUri value="http://unitsofmeasure.org" />
+    </element>
+    <element id="Extension.value[x].code">
+      <path value="Extension.value[x].code" />
+      <short value="単位コードUCUMにおける実投与⽇数の単位" />
+      <definition value="単位コードUCUMにおける実投与⽇数の単位。dで固定される" />
+      <min value="1" />
+      <fixedCode value="d" />
+    </element>
+  </differential>
+</StructureDefinition>
