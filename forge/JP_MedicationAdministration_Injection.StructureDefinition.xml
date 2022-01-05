@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="dfb9173b-7aa9-4924-90a8-b9e03b232b6c" />
   <meta>
-    <versionId value="3" />
-    <lastUpdated value="2021-10-21T11:21:11.972+00:00" />
+    <versionId value="9" />
+    <lastUpdated value="2021-12-04T22:52:29.005+00:00" />
   </meta>
   <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Injection" />
-  <version value="0.1.0" />
+  <version value="1.0.0" />
   <name value="JP_MedicationAdministration_Injection" />
-  <status value="draft" />
-  <date value="2021-10-21T11:21:10.7232586+00:00" />
+  <title value="JP_MedicationAdministration_Injection" />
+  <status value="active" />
+  <date value="2021-12-04T22:52:25.6695749+00:00" />
+  <publisher value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="このプロファイルはMedicationAdministrationリソースに対して、内服・外用薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <purpose value="このプロファイルはMedicationAdministrationリソースに対して、内服・外用薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <copyright value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
@@ -149,9 +155,10 @@
       <short value="依頼科" />
       <definition value="依頼科を格納するための拡張" />
       <min value="0" />
+      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_RequestDepartment" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestDepartment" />
       </type>
     </element>
     <element id="MedicationAdministration.extension:Requester">
@@ -162,7 +169,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Requester" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Requester" />
       </type>
     </element>
     <element id="MedicationAdministration.extension:RequestAuthoredOn">
@@ -171,9 +178,10 @@
       <short value="依頼日時" />
       <definition value="依頼日時を格納するための拡張" />
       <min value="0" />
+      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn" />
       </type>
     </element>
     <element id="MedicationAdministration.extension:Location">
@@ -182,20 +190,20 @@
       <short value="実施場所" />
       <definition value="実施場所を格納するための拡張" />
       <min value="0" />
+      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Location" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Location" />
       </type>
     </element>
     <element id="MedicationAdministration.extension:UncategorizedComment">
       <path value="MedicationAdministration.extension" />
       <sliceName value="UncategorizedComment" />
-      <short value="未分類コメント" />
       <definition value="未分類コメントを格納するための拡張" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_UncategorizedComment" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_UncategorizedComment" />
       </type>
     </element>
     <element id="MedicationAdministration.identifier">
@@ -515,7 +523,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestLine" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Line" />
       </type>
     </element>
     <element id="MedicationAdministration.dosage.extension:LineComment">
@@ -526,7 +534,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosage_LineComment" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Dosage_LineComment" />
       </type>
     </element>
     <element id="MedicationAdministration.dosage.extension:DosageComment">
@@ -537,7 +545,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosage_DosageComment" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Dosage_DosageComment" />
       </type>
     </element>
     <element id="MedicationAdministration.dosage.text">
@@ -577,7 +585,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosageSite_SiteComment" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageSite_SiteComment" />
       </type>
     </element>
     <element id="MedicationAdministration.dosage.route">
@@ -608,7 +616,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosageRoute_RouteComment" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRoute_RouteComment" />
       </type>
     </element>
     <element id="MedicationAdministration.dosage.method">
@@ -634,12 +642,10 @@
     <element id="MedicationAdministration.dosage.method.extension:MethodComment">
       <path value="MedicationAdministration.dosage.method.extension" />
       <sliceName value="MethodComment" />
-      <short value="手技コメント" />
-      <definition value="手技コメントを格納するための拡張" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosageMethod_MethodComment" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageMethod_MethodComment" />
       </type>
     </element>
     <element id="MedicationAdministration.dosage.dose">
@@ -694,12 +700,10 @@
     <element id="MedicationAdministration.dosage.rate[x].extension:RateComment">
       <path value="MedicationAdministration.dosage.rate[x].extension" />
       <sliceName value="RateComment" />
-      <short value="投与速度コメント" />
-      <definition value="投与速度コメントを格納するための拡張" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_atDosageRate_RateComment" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRate_RateComment" />
       </type>
     </element>
     <element id="MedicationAdministration.eventHistory">

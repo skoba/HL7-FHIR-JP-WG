@@ -2,13 +2,19 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="a9b018d6-e66a-4ce6-ae5f-caeed3fe81d1" />
   <meta>
-    <versionId value="6" />
-    <lastUpdated value="2021-11-03T15:40:18.738+00:00" />
+    <versionId value="12" />
+    <lastUpdated value="2021-12-04T23:02:20.337+00:00" />
   </meta>
   <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense" />
+  <version value="1.0.0" />
   <name value="JP_MedicationDispense" />
-  <status value="draft" />
-  <date value="2021-11-03T15:40:14.894864+00:00" />
+  <title value="JP_MedicationDispense" />
+  <status value="active" />
+  <date value="2021-12-04T23:02:17.140371+00:00" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="このプロファイルはMedicationDispenseリソースに対して、内服・外用薬剤処方調剤・払い出し記録のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <purpose value="このプロファイルはMedicationDispenseリソースに対して、内服・外用薬剤処方調剤・払い出し記録のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
@@ -107,7 +113,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense_Preparation" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDispense_Preparation" />
       </type>
     </element>
     <element id="MedicationDispense.identifier">
@@ -482,23 +488,23 @@
     <element id="MedicationDispense.dosageInstruction.extension:PeriodOfUse">
       <path value="MedicationDispense.dosageInstruction.extension" />
       <sliceName value="PeriodOfUse" />
-      <short value="投与開始日" />
-      <definition value="投与開始日を格納する拡張" />
-      <min value="0" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_PeriodOfUse" />
-      </type>
-    </element>
-    <element id="MedicationDispense.dosageInstruction.extension:UsageDuration">
-      <path value="MedicationDispense.dosageInstruction.extension" />
-      <sliceName value="UsageDuration" />
       <short value="実投与日数" />
       <definition value="実投与日数を格納する拡張" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_UsageDuration" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration" />
+      </type>
+    </element>
+    <element id="MedicationDispense.dosageInstruction.extension:UsageDuration">
+      <path value="MedicationDispense.dosageInstruction.extension" />
+      <sliceName value="UsageDuration" />
+      <short value="実服用日数" />
+      <definition value="実服用日数を格納する" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration" />
       </type>
     </element>
     <element id="MedicationDispense.dosageInstruction.text">

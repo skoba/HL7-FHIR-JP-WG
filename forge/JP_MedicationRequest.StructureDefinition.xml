@@ -2,15 +2,19 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="510af89c-61b1-4cb3-b78b-4e391f7827da" />
   <meta>
-    <versionId value="81" />
-    <lastUpdated value="2021-11-11T16:51:57.501+00:00" />
+    <versionId value="87" />
+    <lastUpdated value="2021-12-04T22:55:58.274+00:00" />
   </meta>
   <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest" />
-  <version value="0.1.0" />
+  <version value="1.0.0" />
   <name value="JP_MedicationRequest" />
-  <status value="draft" />
-  <date value="2021-11-11T16:51:53.7799913+00:00" />
-  <description value="日本版FHIR MedicationRequest Profile" />
+  <title value="JP_MedicationRequest" />
+  <status value="active" />
+  <date value="2021-12-04T22:55:46.7488732+00:00" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="このプロファイルはMedicationRequestリソースに対して、内服・外用薬剤処方のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <purpose value="このプロファイルはMedicationRequestリソースに対して、内服・外用薬剤処方のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
@@ -3611,28 +3615,6 @@
       <short value="内部エレメントを参照するためのユニークID" />
       <definition value="リソース内のエレメントを参照（内部参照）するためのユニークなID。空白を含まなければどのような文字列であってもよい。" />
     </element>
-    <element id="MedicationRequest.insurance.extension">
-      <path value="MedicationRequest.insurance.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="0" />
-    </element>
-    <element id="MedicationRequest.insurance.extension:ScoreBook">
-      <path value="MedicationRequest.insurance.extension" />
-      <sliceName value="ScoreBook" />
-      <short value="保険点数表番号" />
-      <definition value="療養担当則23条、処方箋様式2号にある「点数表番号」を記録する。" />
-      <min value="0" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/Core/1.0/StructureDefinition/JP_MedicationRequestInsurance" />
-      </type>
-    </element>
     <element id="MedicationRequest.insurance.reference">
       <path value="MedicationRequest.insurance.reference" />
       <short value="文字列による参照、関係、内部あるいは絶対URL" />
@@ -3977,22 +3959,21 @@
     <element id="MedicationRequest.dosageInstruction.extension:PeriodOfUse">
       <path value="MedicationRequest.dosageInstruction.extension" />
       <sliceName value="PeriodOfUse" />
-      <short value="投与開始日を明示する拡張" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_PeriodOfUse" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_PeriodOfUse" />
       </type>
     </element>
     <element id="MedicationRequest.dosageInstruction.extension:UsageDuration">
       <path value="MedicationRequest.dosageInstruction.extension" />
       <sliceName value="UsageDuration" />
-      <short value="実投与日数" />
-      <definition value="実投与日数を格納する拡張" />
+      <short value="実投与⽇数" />
+      <definition value="隔日投与などで実投与日数と処方期間が異なる場合に用いられる。" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_UsageDuration" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration" />
       </type>
     </element>
     <element id="MedicationRequest.dosageInstruction.sequence">
@@ -4244,13 +4225,6 @@
     </element>
     <element id="MedicationRequest.dosageInstruction.timing.code">
       <path value="MedicationRequest.dosageInstruction.timing.code" />
-      <slicing>
-        <discriminator>
-          <type value="type" />
-          <path value="$this" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
       <definition value="スケジュール上のタイミングを表すコード（あるいはcode.text内のテキスト）。BID(1日2回)のようなコードはどこにでもあるが、多くの医療機関は付加的なコードを定義している。もし、コードが示されていれば、構造化されたタイミングで完全に示されたデータであると解釈され、コードまたはTimingを解釈するためのデータであると解釈される。しかし、例外的に.repeat.bounds（コードは含まれません)はコードを上書きして適用される。" />
       <comment value="BIDなどは「施設特有の時間」として定義される。たとえば、施設がBIDを「つねに朝7時と夕方6時」であると指定することがある。この指定が不適切であれば、BIDというコードは使うべきではない。その代わり、HL7が定義したBIDのコードではなく、その施設特有のコードで明示的に示すべきであり、構造化された表現を使うべきである（この場合、2回のイベントの時刻を指定する必要がある）。" />
     </element>
@@ -4261,6 +4235,9 @@
     </element>
     <element id="MedicationRequest.dosageInstruction.timing.code.coding">
       <path value="MedicationRequest.dosageInstruction.timing.code.coding" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <short value="ターミノロジーによって決められたコード" />
       <definition value="ターミノロジーを参照する際に定義されたコード" />
       <comment value="コードは臨時で列記したものや、コードのリストからSNOMED CTのように公式に定義されたものまである（HL7 v3 core principle を参照)。FHIR自体ではコーディング規約を定めてはいないし、意味を暗示するために利用されない(SHALL NOT)。一般的に UserSelected = trueの場合には一つのコードシステムが使われる。" />
@@ -4305,50 +4282,18 @@
       <comment value="選択肢の中から、直接選ばれたコードは新しく翻訳するときには最も適切なスタート地点である。何をもって「直接選ばれた」とするのかには曖昧なところがあり、このエレメントの使用について明確にして結論として何を意味するのかより完全になるよう取引先との合意が必要となる。" />
       <requirements value="このエレメントは臨床安全のために特定されてきた。System/codeのペアが明示的に選択されることは、言語処理や何らかの規則を元に推測されるよりも正確だからである。" />
     </element>
+    <element id="MedicationRequest.dosageInstruction.timing.code.coding:JAMIcode">
+      <path value="MedicationRequest.dosageInstruction.timing.code.coding" />
+      <sliceName value="JAMIcode" />
+      <short value="JAMI標準⽤法コード" />
+      <definition value="⽤法。JAMI標準⽤法コードを指定する" />
+    </element>
     <element id="MedicationRequest.dosageInstruction.timing.code.text">
       <path value="MedicationRequest.dosageInstruction.timing.code.text" />
       <short value="この概念のプレーンテキスト表現" />
       <definition value="入力したユーザーが見た/選択した/発したとおりの概念および・またはユーザーが意図した概念を自然言語で表現したもの。" />
       <comment value="textエレメントはcodingのdisplayNameエレメントと一致することがよくある。" />
       <requirements value="ターミノロジー由来のコードは必ずしも人間が使う言葉の全てのニュアンスを含めた正確な意味を捉えているわけではなく、適切なコードが見つからない場合もある。そのような場合でもtextエレメントは元々の意味のすべてを捉えるために使うことができる。" />
-    </element>
-    <element id="MedicationRequest.dosageInstruction.timing.code:JAMIcode">
-      <path value="MedicationRequest.dosageInstruction.timing.code" />
-      <sliceName value="JAMIcode" />
-      <short value="JAMI標準⽤法コード" />
-      <definition value="⽤法。JAMI標準⽤法コードを指定する" />
-      <comment value="HL7規定のコードではなく電子処方箋ガイドラインに示されるJAMI標準用法コードを使用する。" />
-    </element>
-    <element id="MedicationRequest.dosageInstruction.timing.code:JAMIcode.coding">
-      <path value="MedicationRequest.dosageInstruction.timing.code.coding" />
-      <short value="JAMI 標準⽤法16桁コード" />
-      <definition value="JAMI 標準⽤法16桁コード" />
-    </element>
-    <element id="MedicationRequest.dosageInstruction.timing.code:JAMIcode.coding.id">
-      <path value="MedicationRequest.dosageInstruction.timing.code.coding.id" />
-      <max value="0" />
-    </element>
-    <element id="MedicationRequest.dosageInstruction.timing.code:JAMIcode.coding.system">
-      <path value="MedicationRequest.dosageInstruction.timing.code.coding.system" />
-      <short value="JAMI 標準⽤法16桁コードを示すURI" />
-      <definition value="JAMI 標準⽤法16桁コードを示すURI" />
-      <min value="1" />
-      <fixedUri value="urn:oid:1.2.392.200250.2.2.20.20" />
-    </element>
-    <element id="MedicationRequest.dosageInstruction.timing.code:JAMIcode.coding.version">
-      <path value="MedicationRequest.dosageInstruction.timing.code.coding.version" />
-      <max value="0" />
-    </element>
-    <element id="MedicationRequest.dosageInstruction.timing.code:JAMIcode.coding.code">
-      <path value="MedicationRequest.dosageInstruction.timing.code.coding.code" />
-      <short value="JAMI 標準⽤法コード" />
-      <definition value="JAMI 標準⽤法コード" />
-      <min value="1" />
-    </element>
-    <element id="MedicationRequest.dosageInstruction.timing.code:JAMIcode.coding.display">
-      <path value="MedicationRequest.dosageInstruction.timing.code.coding.display" />
-      <short value="JAMI 標準⽤法コードの表⽰名" />
-      <definition value="JAMI 標準⽤法コードの表⽰名" />
     </element>
     <element id="MedicationRequest.dosageInstruction.asNeeded[x]">
       <path value="MedicationRequest.dosageInstruction.asNeeded[x]" />
@@ -4976,22 +4921,27 @@
       <path value="MedicationRequest.dispenseRequest.extension" />
       <sliceName value="InstructionForDispense" />
       <short value="調剤指示" />
-      <definition value="薬剤単位の調剤指示を表現するための拡張" />
+      <definition value="薬剤単位の調剤指示を格納する" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDispenseRequest_InstructionForDispense" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense" />
       </type>
+    </element>
+    <element id="MedicationRequest.dispenseRequest.extension:InstructionForDispense.value[x]">
+      <path value="MedicationRequest.dispenseRequest.extension.value[x]" />
+      <short value="調剤指示" />
+      <definition value="薬剤単位の調剤・払い出し指示" />
     </element>
     <element id="MedicationRequest.dispenseRequest.extension:ExpectedRepeatCount">
       <path value="MedicationRequest.dispenseRequest.extension" />
       <sliceName value="ExpectedRepeatCount" />
       <short value="頓用回数" />
-      <definition value="頓用の場合など調剤量を錠数ではなく回数で表現したい場合の回数を格納する拡張" />
+      <definition value="頓用回数" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDispenseRequest_ExpectedRepeatCount" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount" />
       </type>
     </element>
     <element id="MedicationRequest.dispenseRequest.initialFill">

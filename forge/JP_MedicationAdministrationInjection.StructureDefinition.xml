@@ -2,13 +2,18 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="62a15e32-1f65-4643-bffe-6298f353a978" />
   <meta>
-    <versionId value="3" />
-    <lastUpdated value="2021-10-21T11:21:11.972+00:00" />
+    <versionId value="1" />
+    <lastUpdated value="2021-12-04T09:27:01.85+00:00" />
   </meta>
   <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministrationInjection" />
   <name value="JP_MedicationAdministrationInjection" />
+  <title value="JP_MedicationAdministrationInjection" />
   <status value="draft" />
-  <date value="2021-10-21T11:21:10.7232586+00:00" />
+  <date value="2021-12-04T09:26:58.0699429+00:00" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="このプロファイルはMedicationAdministrationリソースに対して、注射薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <purpose value="このプロファイルはMedicationAdministrationリソースに対して、注射薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />

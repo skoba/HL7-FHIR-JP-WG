@@ -2,15 +2,19 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="d2a74cc1-3928-4f1d-afe8-e7b49a2b4b04" />
   <meta>
-    <versionId value="1" />
-    <lastUpdated value="2021-11-11T16:37:13.252+00:00" />
+    <versionId value="3" />
+    <lastUpdated value="2021-12-03T16:20:07.616+00:00" />
   </meta>
-  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_UsageDuration" />
-  <version value="0.1.0" />
-  <name value="JP_MedicationRequest_atDosageInstruction_UsageDuration" />
-  <status value="draft" />
-  <date value="2021-11-11T16:37:12.1532758+00:00" />
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationRequest_DosageInstruction_UsageDuration" />
+  <title value="JP_MedicationRequest_DosageInstruction_UsageDuration" />
+  <status value="active" />
+  <date value="2021-12-03T16:19:09.395429+00:00" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <description value="隔⽇投与など、服⽤開始⽇から終了⽇までの⽇数と実投与⽇数が異なる場合に、実投与⽇数を明⽰したい場合に使⽤する拡張" />
+  <purpose value="隔⽇投与など、服⽤開始⽇から終了⽇までの⽇数と実投与⽇数が異なる場合に、実投与⽇数を明⽰したい場合に使⽤する拡張" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="rim" />
@@ -39,7 +43,7 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_UsageDuration" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

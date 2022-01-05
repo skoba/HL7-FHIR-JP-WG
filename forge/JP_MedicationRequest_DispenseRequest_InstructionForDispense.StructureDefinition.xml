@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="41bcb8d5-3940-4baf-8b00-9b8fbaa8ae5d" />
+  <id value="91cc41f3-a701-4cbe-b9bc-7d810bb7e9e5" />
   <meta>
-    <versionId value="5" />
-    <lastUpdated value="2021-12-03T16:26:48.552+00:00" />
+    <versionId value="2" />
+    <lastUpdated value="2021-12-03T14:50:05.993+00:00" />
   </meta>
-  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDispense_Preparation" />
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense" />
   <version value="1.0.0" />
-  <name value="JP_MedicationDispense_Preparation" />
-  <title value="JP_MedicationDispense_Preparation" />
+  <name value="JP_MedicationRequest_DispenseRequest_InstructionForDispense" />
+  <title value="JP_MedicationRequest_DispenseRequest_InstructionForDispense" />
   <status value="active" />
-  <date value="2021-12-03T16:26:12.6876987Z" />
+  <date value="2021-12-03T14:48:42.1477777Z" />
   <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
-  <description value="薬剤単位の調剤結果" />
-  <purpose value="薬剤単位の調剤結果" />
+  <description value="調剤指示。薬剤単位の調剤指示を表現するための拡張" />
+  <purpose value="薬剤単位の調剤指示を表現するための拡張" />
   <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
@@ -25,25 +25,22 @@
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="MedicationDispense" />
+    <expression value="MedicationRequest.dispenseRequest" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
-    <element id="Extension">
-      <path value="Extension" />
-      <short value="調剤についてのExtension" />
-      <definition value="一包化、粉砕などの処理を行った際に記載する。" />
+    <element id="Extension.id">
+      <path value="Extension.id" />
+      <max value="0" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDispense_Preparation" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <short value="調剤結果" />
-      <definition value="薬剤単位の調剤結果" />
       <type>
         <code value="string" />
       </type>

@@ -2,15 +2,19 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="dd47eb40-6be1-479f-9902-e03defe748bf" />
   <meta>
-    <versionId value="1" />
-    <lastUpdated value="2021-11-05T08:17:00.241+00:00" />
+    <versionId value="4" />
+    <lastUpdated value="2021-12-03T17:06:41.578+00:00" />
   </meta>
-  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn" />
-  <version value="0.1.0" />
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn" />
+  <version value="1.0.0" />
   <name value="JP_MedicationAdministration_RequestAuthoredOn" />
-  <status value="draft" />
-  <date value="2021-11-05T08:16:57.7844151+00:00" />
+  <title value="JP_MedicationAdministration_RequestAuthoredOn" />
+  <status value="active" />
+  <date value="2021-12-03T16:56:22.6010227Z" />
+  <publisher value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
   <description value="依頼日時を格納するための拡張" />
+  <purpose value="依頼日時を格納するための拡張" />
+  <copyright value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
@@ -24,7 +28,7 @@
   <differential>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

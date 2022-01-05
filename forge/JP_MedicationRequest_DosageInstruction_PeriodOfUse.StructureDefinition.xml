@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="bb8b26fd-810e-4603-98e7-a8a5c4fcf8e6" />
+  <id value="a6ce827d-1083-49c4-b538-201c18de518d" />
   <meta>
-    <versionId value="1" />
-    <lastUpdated value="2021-12-03T11:25:35.14+00:00" />
+    <versionId value="3" />
+    <lastUpdated value="2021-12-03T16:16:40.148+00:00" />
   </meta>
-  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequestPeriodOfUse" />
-  <name value="JP_MedicationRequest_PeriodOfUse" />
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_PeriodOfUse" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationRequest_DosageInstruction_PeriodOfUse" />
+  <title value="JP_MedicationRequest_DosageInstruction_PeriodOfUse" />
   <status value="active" />
-  <date value="2021-12-03T11:25:32.9051694+00:00" />
+  <date value="2021-12-03T16:16:35.2385505+00:00" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <description value="投与開始日を格納する拡張" />
   <purpose value="処方日とは別に明示的に投与・内服開始日を指定するため。" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="rim" />
@@ -21,11 +25,11 @@
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="MedicationRequest" />
+    <expression value="MedicationRequest.dosageInstruction" />
   </context>
   <context>
     <type value="element" />
-    <expression value="MedicationDispense" />
+    <expression value="MedicationDispense.dosageInstruction" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -39,7 +43,7 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequestPeriodOfUse" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_PeriodOfUse" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

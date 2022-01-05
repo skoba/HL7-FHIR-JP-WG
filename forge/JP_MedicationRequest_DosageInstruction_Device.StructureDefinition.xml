@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="3c153c8f-bc10-4109-8552-0a8ad65498d9" />
+  <id value="6d3333b3-d0f9-4b48-bd78-abfcbaad19fe" />
   <meta>
     <versionId value="1" />
-    <lastUpdated value="2021-11-03T15:12:12.739+00:00" />
+    <lastUpdated value="2021-11-03T15:12:46.115+00:00" />
   </meta>
-  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_Line" />
-  <name value="JP_MedicationRequest_atDosageInstruction_Line" />
-  <status value="draft" />
-  <date value="2021-11-03T15:12:09.1888117+00:00" />
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Device" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationRequest_DosageInstruction_Device" />
+  <title value="投与装置" />
+  <status value="active" />
+  <date value="2021-11-03T15:12:44.0783375+00:00" />
+  <purpose value="投与装置を格納する拡張" />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
@@ -20,27 +23,23 @@
     <type value="element" />
     <expression value="MedicationDispense.dosageInstruction" />
   </context>
-  <context>
-    <type value="element" />
-    <expression value="MedicationAdministration.dosage" />
-  </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="指示ライン" />
-      <definition value="指示ラインを格納する拡張" />
+      <short value="投与装置" />
+      <definition value="投与装置を格納する拡張" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_Line" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Device" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <type>
-        <code value="CodeableConcept" />
+        <code value="Reference" />
       </type>
     </element>
   </differential>

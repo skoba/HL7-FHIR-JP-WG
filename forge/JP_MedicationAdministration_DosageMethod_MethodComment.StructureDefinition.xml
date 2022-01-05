@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="630bb3f4-f35b-4cd3-a83f-31e8e7afd2cc" />
+  <id value="4327927e-6d72-442a-bd48-5d5b059bd8fe" />
   <meta>
-    <versionId value="1" />
-    <lastUpdated value="2021-12-03T17:36:52.4+00:00" />
+    <versionId value="2" />
+    <lastUpdated value="2021-12-04T09:30:22.134+00:00" />
   </meta>
-  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_UncategorizedComment" />
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageMethod_MethodComment" />
   <version value="1.0.0" />
-  <name value="JP_MedicationAdministration_UncategorizedComment" />
-  <title value="JP_MedicationAdministration_UncategorizedComment" />
+  <name value="JP_MedicationAdministration_DosageMethod_MethodComment" />
+  <title value="JP_MedicationAdministration_DosageMethod_MethodComment" />
   <status value="active" />
-  <date value="2021-12-03T00:00:00+09:00" />
+  <date value="2021-12-04T09:30:20.0755099+00:00" />
   <publisher value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
-  <description value="未分類コメントを格納するための拡張" />
-  <purpose value="未分類コメントを格納するための拡張" />
+  <description value="手技コメントを格納するための拡張" />
+  <purpose value="手技コメントを格納するための拡張" />
   <copyright value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="MedicationAdministration" />
+    <expression value="MedicationAdministration.dosage.method" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -28,11 +28,12 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="未分類コメント" />
+      <short value="手技コメント" />
+      <definition value="手技コメントを格納するための拡張" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_UncategorizedComment" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageMethod_MethodComment" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

@@ -2,14 +2,19 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="346cfa16-6ee7-4999-9b13-8113259c2acc" />
   <meta>
-    <versionId value="1" />
-    <lastUpdated value="2021-11-03T16:07:25.593+00:00" />
+    <versionId value="7" />
+    <lastUpdated value="2021-12-04T23:00:28.464+00:00" />
   </meta>
   <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense_Injection" />
-  <version value="0.1.0" />
+  <version value="1.0.0" />
   <name value="JP_MedicationDispense_Injection" />
-  <status value="draft" />
-  <date value="2021-11-03T16:07:24.1442395+00:00" />
+  <title value="JP_MedicationDispense_Injection" />
+  <status value="active" />
+  <date value="2021-12-04T23:00:26.0441724+00:00" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="このプロファイルはMedicationDispenseリソースに対して、注射薬剤処方調剤・払い出し記録のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <purpose value="このプロファイルはMedicationDispenseリソースに対して、注射薬剤処方調剤・払い出し記録のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
@@ -108,7 +113,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense_Preparation" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDispense_Preparation" />
       </type>
     </element>
     <element id="MedicationDispense.identifier">
@@ -472,7 +477,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_Device" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Device" />
       </type>
     </element>
     <element id="MedicationDispense.dosageInstruction.extension:Line">
@@ -481,7 +486,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_atDosageInstruction_Line" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Line" />
       </type>
     </element>
     <element id="MedicationDispense.dosageInstruction.text">

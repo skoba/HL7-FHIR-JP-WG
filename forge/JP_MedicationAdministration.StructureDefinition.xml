@@ -2,13 +2,19 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="13fa6823-c9de-45b9-a8fa-b820544b2fae" />
   <meta>
-    <lastUpdated value="2021-10-21T11:20:37.778+00:00" />
+    <versionId value="11" />
+    <lastUpdated value="2021-12-04T23:01:36.581+00:00" />
   </meta>
   <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration" />
-  <version value="0.1.0" />
+  <version value="1.0.0" />
   <name value="JP_MedicationAdministration" />
-  <status value="draft" />
-  <date value="2021-10-20T14:26:29.9714301+00:00" />
+  <title value="JP_MedicationAdministration" />
+  <status value="active" />
+  <date value="2021-12-04T09:26:12.4448275Z" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="このプロファイルはMedicationAdministrationリソースに対して、内服・外用薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <purpose value="このプロファイルはMedicationAdministrationリソースに対して、内服・外用薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <copyright value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
@@ -149,9 +155,10 @@
       <short value="依頼科" />
       <definition value="依頼科を格納するための拡張" />
       <min value="0" />
+      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_RequestDepartment" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestDepartment" />
       </type>
     </element>
     <element id="MedicationAdministration.extension:Requester">
@@ -162,7 +169,7 @@
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Requester" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Requester" />
       </type>
     </element>
     <element id="MedicationAdministration.extension:RequestAuthoredOn">
@@ -171,9 +178,10 @@
       <short value="依頼日時" />
       <definition value="依頼日時を格納するための拡張" />
       <min value="0" />
+      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn" />
       </type>
     </element>
     <element id="MedicationAdministration.extension:Location">
@@ -182,9 +190,10 @@
       <short value="実施場所" />
       <definition value="実施場所を格納するための拡張" />
       <min value="0" />
+      <max value="1" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Location" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Location" />
       </type>
     </element>
     <element id="MedicationAdministration.identifier">

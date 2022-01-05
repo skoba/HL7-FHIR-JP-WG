@@ -2,15 +2,19 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="98f6b570-4345-474c-b631-8a0b09ec6312" />
   <meta>
-    <versionId value="33" />
-    <lastUpdated value="2021-11-03T05:11:23.244+00:00" />
+    <versionId value="42" />
+    <lastUpdated value="2021-12-04T23:06:37.027+00:00" />
   </meta>
   <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_Medication" />
-  <version value="0.1.0" />
+  <version value="1.0.0" />
   <name value="JP_Medication" />
-  <status value="draft" />
-  <date value="2021-11-03T05:11:18.6283472+00:00" />
-  <description value="NEXEHRS協議会のFHIR JPワーキンググループで開発中の日本向けFHIR Medication Profile" />
+  <title value="JP_Medication" />
+  <status value="active" />
+  <date value="2021-12-04T23:06:33.9186632+00:00" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="このプロファイルはMedicationリソースに対して、主に注射薬剤リストデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <purpose value="このプロファイルはMedicationリソースに対して、主に注射薬剤リストデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="script10.6" />
@@ -2118,12 +2122,10 @@
     <element id="Medication.ingredient.extension:DrugNo">
       <path value="Medication.ingredient.extension" />
       <sliceName value="DrugNo" />
-      <short value="RP内薬剤番号" />
-      <definition value="RP内の薬剤の連番を格納する拡張" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_Medication_atIngredient_DrugNo" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Medication_Ingredient_DrugNo" />
       </type>
     </element>
     <element id="Medication.ingredient.item[x]">
@@ -2168,15 +2170,14 @@
       </slicing>
       <min value="0" />
     </element>
-    <element id="Medication.ingredient.strength.extension:StrengthType">
+    <element id="Medication.ingredient.strength.extension:StrenghtType">
       <path value="Medication.ingredient.strength.extension" />
-      <sliceName value="StrengthType" />
-      <short value="力価区分" />
+      <sliceName value="StrenghtType" />
       <definition value="投与量が製剤単位か成分単位かを格納する拡張" />
       <min value="0" />
       <type>
         <code value="Extension" />
-        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_Medication_atIngredientStrength_StrengthType" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Medication_IngredientStrength_StrengthType" />
       </type>
     </element>
     <element id="Medication.ingredient.strength.numerator">
