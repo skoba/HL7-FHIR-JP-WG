@@ -1,0 +1,51 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="3c153c8f-bc10-4109-8552-0a8ad65498d9" />
+  <meta>
+    <lastUpdated value="2021-12-03T16:23:26.879+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Line" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationRequest_DosageInstruction_Line" />
+  <title value="JP_MedicationRequest_DosageInstruction_Line" />
+  <status value="active" />
+  <date value="2021-12-03T14:07:12.5634947+00:00" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="指示ラインを格納するための拡張" />
+  <purpose value="指示ラインを格納するための拡張" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest.dosageInstruction" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="MedicationDispense.dosageInstruction" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="MedicationAdministration.dosage" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="指示ライン" />
+      <definition value="指示ラインを格納する拡張" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/JP_MedicationRequest_DosageInstruction_Line" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

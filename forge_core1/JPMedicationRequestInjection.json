@@ -1,0 +1,103 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_Injection",
+  "version": "1.0.0",
+  "name": "JP_MedicationRequest_Injection",
+  "title": "JP_MedicationRequest_Injection",
+  "status": "active",
+  "date": "2021-12-03T16:17:33.415963+00:00",
+  "publisher": "FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)",
+  "description": "このプロファイルはMedicationRequestリソースに対して、注射薬剤処方のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+  "purpose": "このプロファイルはMedicationRequestリソースに対して、内服・外用薬剤処方のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+  "copyright": "FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "script10.6",
+      "uri": "http://ncpdp.org/SCRIPT10_6",
+      "name": "Mapping to NCPDP SCRIPT 10.6"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest",
+        "path": "MedicationRequest",
+        "short": "患者あるいはグループに対しての注射薬剤処方オーダ",
+        "definition": "患者への薬の供給と注射や点滴の指示を共に提供するオーダ。ケアプランやワークフローパターンとハーモナイズし、入院や外来でも使えるようにするため、このリソースは\"MedicationPrescription\"や\"MedicationOrder\"ではなく、\"MedicationRequest\"と呼ばれる。"
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension:Line",
+        "path": "MedicationRequest.dosageInstruction.extension",
+        "sliceName": "Line",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Line"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension:Device",
+        "path": "MedicationRequest.dosageInstruction.extension",
+        "sliceName": "Device",
+        "short": "Device",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension:PeriodOfUse",
+        "path": "MedicationRequest.dosageInstruction.extension",
+        "sliceName": "PeriodOfUse",
+        "max": 0
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.extension:UsageDuration",
+        "path": "MedicationRequest.dosageInstruction.extension",
+        "sliceName": "UsageDuration",
+        "max": 0
+      },
+      {
+        "id": "MedicationRequest.dosageInstruction.timing",
+        "path": "MedicationRequest.dosageInstruction.timing",
+        "short": "投与タイミング",
+        "definition": "投与タイミングを記録する。"
+      }
+    ]
+  }
+}

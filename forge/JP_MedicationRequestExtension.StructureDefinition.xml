@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="900bf440-359f-490c-b1ba-fc23ee6ed05f" />
+  <meta>
+    <versionId value="2" />
+    <lastUpdated value="2021-08-25T09:52:44.5+00:00" />
+  </meta>
+  <text>
+    <status value="extensions" />
+    <div xmlns="http://www.w3.org/1999/xhtml">MedicationRequest Resourceを平成30年改訂処方箋様式2に準拠して日本で利用するために必要となる拡張データセットです。</div>
+  </text>
+  <url value="http://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestExtension" />
+  <name value="JP_MedicationRequestExtension" />
+  <title value="MedicationRequest Extension for Japan" />
+  <status value="draft" />
+  <date value="2021-08-25T08:24:04.0513582Z" />
+  <description value="MedicationRequest Resourceを日本で利用するために必要となるExtensionについて定義を行った。" />
+  <purpose value="日本で薬剤処方オーダを発行するために必要となるデータを網羅するための拡張。" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="MedicationRequestの日本拡張" />
+      <definition value="H30年診療報酬改定に伴う様式2号に準拠するための拡張&#xD;&#xA;残薬調整に関する薬局への指示" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:additionalInstructionForDispense">
+      <path value="Extension.extension" />
+      <sliceName value="additionalInstructionForDispense" />
+      <short value="薬局に対する払い出し指示" />
+      <definition value="平成30年改訂の療担則23状様式2の備考欄でチェックボックスが用意されている「残薬を確認した場合の対応」について、「保険医療機関に疑義照会した上で調剤」「保健医療機関へ情報提供」のうち、チェックがされたぶんについて記録する" />
+      <comment value="調剤" />
+    </element>
+    <element id="Extension.extension:additionalInstructionForDispense.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="additionalInstructionForDispense" />
+    </element>
+    <element id="Extension.extension:additionalInstructionForDispense.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:additionalInstructionForDispense.value[x].coding.system">
+      <path value="Extension.extension.value[x].coding.system" />
+      <fixedUri value="http://hl7fhir.jp/fhir/medication" />
+    </element>
+    <element id="Extension.extension:additionalInstructionForDispense.value[x].coding.userSelected">
+      <path value="Extension.extension.value[x].coding.userSelected" />
+      <code>
+        <system value="http://hl7fhir.jp/fhir/medication/dispense_request" />
+        <code value="1" />
+        <display value="保健医療機関に疑義照会した上で調剤" />
+      </code>
+      <code>
+        <system value="http://hl7fhir.jp/fhir/medication/dispense_request" />
+        <code value="2" />
+        <display value="保健医療機関に情報提供" />
+      </code>
+    </element>
+    <element id="Extension.extension:additionalInstructionForDispense.value[x].text">
+      <path value="Extension.extension.value[x].text" />
+      <short value="残薬調整時のコメント" />
+      <definition value="療担則23条様式2にある残薬調整を行う際に薬局から保健医療機関への問い合わせについての指示" />
+      <comment value="保健医療機関への問い合わせについて増えれば" />
+    </element>
+    <element id="Extension.extension:dosage">
+      <path value="Extension.extension" />
+      <sliceName value="dosage" />
+      <short value="一日量表記のためのdosage拡張" />
+      <definition value="一日量" />
+    </element>
+    <element id="Extension.extension:dosage.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:dosage.extension:sequence">
+      <path value="Extension.extension.extension" />
+      <sliceName value="sequence" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:dosage.extension:sequence.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="sequence" />
+    </element>
+    <element id="Extension.extension:dosage.extension:sequence.value[x]">
+      <path value="Extension.extension.extension.value[x]" />
+      <type>
+        <code value="integer" />
+      </type>
+    </element>
+    <element id="Extension.extension:dosage.extension:dailyTotal">
+      <path value="Extension.extension.extension" />
+      <sliceName value="dailyTotal" />
+      <short value="一日量" />
+      <definition value="一日量表記で処方がひょうげんされるばあいにつかわれるｃ" />
+    </element>
+    <element id="Extension.extension:dosage.extension:dailyTotal.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="dailyTotal" />
+    </element>
+    <element id="Extension.extension:dosage.extension:dailyTotal.value[x]">
+      <path value="Extension.extension.extension.value[x]" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Extension.extension:dosage.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="dosage" />
+    </element>
+    <element id="Extension.extension:dosage.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
+      <type>
+        <code value="base64Binary" />
+      </type>
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="canonical" />
+      </type>
+      <type>
+        <code value="code" />
+      </type>
+      <type>
+        <code value="date" />
+      </type>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="decimal" />
+      </type>
+      <type>
+        <code value="id" />
+      </type>
+      <type>
+        <code value="instant" />
+      </type>
+      <type>
+        <code value="integer" />
+      </type>
+      <type>
+        <code value="markdown" />
+      </type>
+      <type>
+        <code value="oid" />
+      </type>
+      <type>
+        <code value="positiveInt" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="time" />
+      </type>
+      <type>
+        <code value="unsignedInt" />
+      </type>
+      <type>
+        <code value="uri" />
+      </type>
+      <type>
+        <code value="url" />
+      </type>
+      <type>
+        <code value="uuid" />
+      </type>
+      <type>
+        <code value="Address" />
+      </type>
+      <type>
+        <code value="Age" />
+      </type>
+      <type>
+        <code value="Annotation" />
+      </type>
+      <type>
+        <code value="Attachment" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <type>
+        <code value="Coding" />
+      </type>
+      <type>
+        <code value="ContactPoint" />
+      </type>
+      <type>
+        <code value="Count" />
+      </type>
+      <type>
+        <code value="Distance" />
+      </type>
+      <type>
+        <code value="Duration" />
+      </type>
+      <type>
+        <code value="HumanName" />
+      </type>
+      <type>
+        <code value="Identifier" />
+      </type>
+      <type>
+        <code value="Money" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+      <type>
+        <code value="Quantity" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <type>
+        <code value="Ratio" />
+      </type>
+      <type>
+        <code value="Reference" />
+      </type>
+      <type>
+        <code value="SampledData" />
+      </type>
+      <type>
+        <code value="Signature" />
+      </type>
+      <type>
+        <code value="Timing" />
+      </type>
+      <type>
+        <code value="ContactDetail" />
+      </type>
+      <type>
+        <code value="Contributor" />
+      </type>
+      <type>
+        <code value="DataRequirement" />
+      </type>
+      <type>
+        <code value="Expression" />
+      </type>
+      <type>
+        <code value="ParameterDefinition" />
+      </type>
+      <type>
+        <code value="RelatedArtifact" />
+      </type>
+      <type>
+        <code value="TriggerDefinition" />
+      </type>
+      <type>
+        <code value="UsageContext" />
+      </type>
+      <type>
+        <code value="Dosage" />
+      </type>
+    </element>
+    <element id="Extension.extension:category">
+      <path value="Extension.extension" />
+      <sliceName value="category" />
+      <short value="処方区分" />
+      <definition value="日本のレセプトでの処方区分を表現するためのextensionである。" />
+    </element>
+    <element id="Extension.extension:category.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="category" />
+    </element>
+    <element id="Extension.extension:category.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <code>
+        <system value="http://hl7fhir.jp/medication/JHSP0003" />
+      </code>
+      <short value="薬剤処方区分についての拡張" />
+      <definition value="JHSP0003を利用してレセプトで出力される処方区分を表現する" />
+      <comment value="JHSP0003" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestExtension" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

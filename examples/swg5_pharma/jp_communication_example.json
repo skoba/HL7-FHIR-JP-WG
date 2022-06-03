@@ -1,0 +1,39 @@
+{
+  "resourceType": "Communication",
+  "id": "example",
+  "text": {
+    "status": "generated",
+    "div": "<div>疑義照会回答</div>"
+  },
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
+  },
+  "recipient": [
+    {
+      "reference": "Pharmacist/example"
+    }
+  ],
+  "sender": {
+    "reference": "PrescribedPhysician/example"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+	{
+	  "system": "http://codingexample.jp/",
+	  "code": "01"
+	}
+      ],
+      "text": "重複??"
+    }
+  ],
+  "payload": [
+    {
+      "contentString": "該当薬剤中止"
+    }
+  ]
+}

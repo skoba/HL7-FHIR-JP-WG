@@ -1,0 +1,1260 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "timestamp": "2020-10-15T15:20:33+09:00",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Composition",
+	"id": "f54f3031-d710-4ad4-91ab-f36a78e70ed0",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://hl7fhir.jp/medication",
+              "code": "XX",
+              "display": "分割処方箋(仮)"
+            }
+          ]
+        },
+        "date": "2020-10-15T15:20:33+09:00",
+        "title": "分割処方箋(仮)",
+        "author": [
+          {
+            "reference": "PractitionerRole/d42f088d-dd05-4d29-946b-6bbd5c040325"
+          }
+        ],
+	"confidentiality": "N",
+        "section": [
+          {
+            "title": "分割処方箋(仮)",
+            "code": {
+              "coding": [
+                {
+		  "system": "http://hl7fhir.jp/medication",
+                  "code": "XX",
+                  "display": "分割処方箋(仮)"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "Bundle/059c052c-0bf1-4940-9141-94eb7a26e3ce"
+              },
+              {
+                "reference": "Bundle/b47268b1-6389-407e-aa56-38a2579af6af"
+              },
+              {
+                "reference": "Bundle/5c9a2e15-c484-44cd-8b08-18d87ee2c38d"
+              }
+            ]
+          },
+          {
+            "title": "別紙(仮)",
+            "code": {
+              "coding": [
+                {
+		  "system": "http://hl7fhir.jp/medication",
+                  "code": "XX",
+                  "display": "別紙(仮)"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "Organization/0d5ee7b4-6b8c-4620-aa3d-b6c377d71022"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+	"resourceType": "Bundle",
+	"id": "059c052c-0bf1-4940-9141-94eb7a26e3ce",
+	"type": "document",
+	"timestamp": "2020-10-15T15:20:33+09:00",
+	"entry": [
+          {
+            "resource": {
+              "resourceType": "Composition",
+	      "id": "b089ad4b-284e-4664-8351-a6c9cd3314b4",
+              "status": "final",
+              "extension": [
+		{
+		  "url": "http://hl7fhir.jp/medication/splitSeq",
+		  "valueRatio": {
+		    "numerator": {
+                      "value": 1,
+                      "unit": "枚"
+		    },
+		    "denominator": {
+                      "value": 3,
+                      "unit": "枚"
+		    }
+		  }
+		}
+	      ],
+	      "type": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.11",
+                    "code": "01",
+                    "display": "処方箋"
+                  }
+		]
+              },
+              "subject": {
+		"reference": "Patient/45d5f3d8-4d98-4f52-8898-e6932eec4c68"
+              },
+              "date": "2020-10-15T15:20:33+09:00",
+              "author": [
+		{
+                  "reference": "PractitionerRole/d42f088d-dd05-4d29-946b-6bbd5c040325"
+		}
+              ],
+              "title": "処方箋",
+              "confidentiality": "N",
+              "event": [
+		{
+		  "period": {
+                    "start": "2020-10-14"
+		  }
+		}
+	      ],
+              "section": [
+		{
+                  "title": "処方指示ヘッダ",
+                  "code": {
+                    "coding": [
+                      {
+			"system": "TBD",
+			"code": "01",
+			"display": "処方指示ヘッダ"
+                      }
+                    ]
+                  },
+                  "entry": [
+                    {
+                      "reference": "Coverage/f12ecee9-e434-414f-9904-aefe51868c29"
+                    }
+                  ]
+		},
+		{
+                  "title": "処方指示ボディ",
+                  "code": {
+                    "coding": [
+                      {
+			"system": "TBD",
+			"code": "02",
+			"display": "処方指示ボディ"
+                      }
+                    ]
+                  },
+                  "entry": [
+                    {
+                      "reference": "MedicationRequest/2cb731c6-b837-4d88-beae-fec84a45c473"
+                    }
+                  ]
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Patient",
+	      "id": "45d5f3d8-4d98-4f52-8898-e6932eec4c68",
+              "identifier": [
+		{
+		  "system": "urn:oid:1.2.392.100495.20.3.51.1",
+		  "value": "11"
+		}
+	      ],
+              "name": [
+		{
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "IDE"
+                    }
+                  ],
+                  "use": "official",
+                  "family": "患者",
+                  "given": [
+                    "一郎"
+                  ]
+		},
+		{
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "SYL"
+                    }
+                  ],
+                  "use": "official",
+                  "family": "カンジャ",
+                  "given": [
+                    "イチロウ"
+                  ]
+		}
+              ],
+              "gender": "male",
+              "birthDate": "1979-11-01"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Organization",
+	      "id": "11dc87e5-4717-433f-afbe-a9f77d2c2244",
+              "identifier": [
+		{
+                  "system": "1.2.392.100495.20.3.21",
+                  "value": "13"
+		},
+		{
+                  "system": "1.2.392.100495.20.3.22",
+                  "value": "1"
+		},
+		{
+                  "system": "1.2.392.100495.20.3.23",
+                  "value": "1234567"
+		}
+              ],
+              "type": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                      "code": "prov",
+                      "display": "Healthcare Provider"
+                    }
+                  ]
+		}
+              ],
+              "name": "医療法人　オルカ医院",
+              "telecom": [
+		{
+                  "system": "phone",
+                  "value": "03-3946-0001"
+		},
+		{
+                  "system": "fax",
+                  "value": "03-3946-0002"
+		}
+              ],
+              "address": [
+		{
+                  "line": [
+                    "東京都文京区本駒込２−２８−１６"
+                  ],
+                  "postalCode": "113-0021"
+		}
+              ],
+              "partOf": {
+		"reference": "Organization/9c9891a4-74d6-4647-87ea-f87e3ac88512"
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Organization",
+              "id": "9c9891a4-74d6-4647-87ea-f87e3ac88512",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.2.51",
+                  "value": "01"
+		}
+              ],
+              "type": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                      "code": "dept",
+                      "display": "Hospital Department"
+                    }
+                  ]
+		}
+              ],
+              "name": "内科"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Practitioner",
+	      "id": "84183d0a-070a-4195-87d4-2e74f8f6f79e",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.41.1"
+		}
+              ],
+              "name": [
+		{
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "IDE"
+                    }
+                  ],
+                  "use": "official",
+                  "text": "テスト医師"
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "PractitionerRole",
+	      "id": "d42f088d-dd05-4d29-946b-6bbd5c040325",
+              "practitioner": {
+		"reference": "Practitioner/84183d0a-070a-4195-87d4-2e74f8f6f79e"
+              },
+              "organization": {
+		"reference": "Organization/11dc87e5-4717-433f-afbe-a9f77d2c2244"
+              },
+              "code": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/practitioner-role",
+                      "code": "doctor",
+                      "display": "Doctor"
+                    }
+                  ]
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Organization",
+	      "id": "985a0c31-f75d-4b7a-8819-3b680848a700",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.61",
+                  "value": "133959"
+		}
+              ],
+              "type": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                      "code": "pay",
+                      "display": "Payer"
+                    }
+                  ]
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Coverage",
+	      "id": "f12ecee9-e434-414f-9904-aefe51868c29",
+              "status": "draft",
+              "type": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.61",
+                    "code": "2",
+                    "display": "国保"
+                  }
+		]
+              },
+              "subscriberId": "１２３ ４５６",
+              "beneficiary": {
+		"reference": "Patient/pat1"
+	      },
+	      "relationship": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.62",
+                    "code": "1",
+                    "display": "被保険者"
+                  }
+		]
+              },
+              "payor": [
+		{
+                  "reference": "Organization/985a0c31-f75d-4b7a-8819-3b680848a700"
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "MedicationRequest",
+	      "id": "2cb731c6-b837-4d88-beae-fec84a45c473",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.81",
+                  "value": "1"
+		},
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.xx",
+                  "value": "1"
+		}
+              ],
+              "status": "draft",
+              "intent": "order",
+              "category": [
+		{
+                  "coding": [
+                  {
+                    "system": "LC",
+                    "code": "1",
+                    "display": "内服"
+                  }
+                  ]
+		}
+              ],
+              "medicationCodeableConcept": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.74",
+                    "code": "100988001",
+                    "display": "ロキソニン錠６０ｍｇ"
+                  }
+		]
+              },
+              "subject": {
+		"reference": "Patient/45d5f3d8-4d98-4f52-8898-e6932eec4c68"
+              },
+              "requester": {
+		"reference": "PractitionerRole/d42f088d-dd05-4d29-946b-6bbd5c040325"
+              },
+              "dosageInstruction": [
+		{
+                  "text": "１日３回朝昼夕食後",
+                  "doseAndRate": [
+                    {
+                      "rateRatio": {
+			"numerator": {
+                          "value": 3.0,
+                          "unit": "錠"
+			},
+			"denominator": {
+                          "value": 1,
+                          "unit": "d"
+			}
+                      }
+                    }
+                  ]
+		}
+              ],
+              "dispenseRequest": {
+		"quantity": {
+                  "value": 33.0,
+                  "unit": "錠"
+		},
+		"expectedSupplyDuration": {
+                  "value": 11,
+                  "unit": "d"
+		}
+              }
+            }
+          }
+	]
+      }
+    },
+    {
+      "resource": {
+	"resourceType": "Bundle",
+	"id": "b47268b1-6389-407e-aa56-38a2579af6af",
+	"type": "document",
+	"timestamp": "2020-10-15T15:20:33+09:00",
+	"entry": [
+          {
+            "resource": {
+              "resourceType": "Composition",
+	      "id": "d0db43a9-63fc-4e0f-ba6e-8559c5df8d87",
+              "status": "final",
+              "extension": [
+		{
+		  "url": "http://hl7fhir.jp/medication/splitSeq",
+		  "valueRatio": {
+		    "numerator": {
+                      "value": 2,
+                      "unit": "枚"
+		    },
+		    "denominator": {
+                      "value": 3,
+                      "unit": "枚"
+		    }
+		  }
+		}
+	      ],
+              "type": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.11",
+                    "code": "01",
+                    "display": "処方箋"
+                  }
+		]
+              },
+              "subject": {
+		"reference": "Patient/6a425c84-ff4f-4691-a969-55125554f90c"
+              },
+              "date": "2020-10-15T15:20:34+09:00",
+              "author": [
+		{
+                  "reference": "PractitionerRole/3161670f-8829-4552-b4f8-20d54768da9a"
+		}
+              ],
+              "title": "処方箋",
+              "confidentiality": "N",
+              "event": [
+		{
+		  "period": {
+                    "start": "2020-10-14"
+		  }
+		}
+	      ],
+              "section": [
+		{
+                  "title": "処方指示ヘッダ",
+                  "code": {
+                    "coding": [
+                      {
+			"system": "TBD",
+			"code": "01",
+			"display": "処方指示ヘッダ"
+                      }
+                    ]
+                  },
+                  "entry": [
+                    {
+                      "reference": "Coverage/ddeb2aa0-3a54-4d6d-89cf-aa11fa1b84c3"
+                    }
+                  ]
+		},
+		{
+                  "title": "処方指示ボディ",
+                  "code": {
+                    "coding": [
+                      {
+			"system": "TBD",
+			"code": "02",
+			"display": "処方指示ボディ"
+                      }
+                    ]
+                  },
+                  "entry": [
+                    {
+                      "reference": "MedicationRequest/7157ce3e-4a16-43d6-8c46-a078c4b55c56"
+                    }
+                  ]
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "id": "6a425c84-ff4f-4691-a969-55125554f90c",
+              "identifier": [
+		{
+		  "system": "urn:oid:1.2.392.100495.20.3.51.1",
+		  "value": "11"
+		}
+	      ],
+              "name": [
+		{
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "IDE"
+                    }
+                  ],
+                  "use": "official",
+                  "family": "患者",
+                  "given": [
+                    "一郎"
+                  ]
+		},
+		{
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "SYL"
+                    }
+                  ],
+                  "use": "official",
+                  "family": "カンジャ",
+                  "given": [
+                    "イチロウ"
+                  ]
+		}
+              ],
+              "gender": "male",
+              "birthDate": "1979-11-01",
+              "resourceType": "Patient"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Organization",
+	      "id": "4a5a1fde-a18f-4606-9a9a-773ef1e44a54",
+              "identifier": [
+		{
+                  "system": "1.2.392.100495.20.3.21",
+                  "value": "13"
+		},
+		{
+                  "system": "1.2.392.100495.20.3.22",
+                  "value": "1"
+		},
+		{
+                  "system": "1.2.392.100495.20.3.23",
+                  "value": "1234567"
+		}
+              ],
+              "type": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                      "code": "prov",
+                      "display": "Healthcare Provider"
+                    }
+                  ]
+		}
+              ],
+              "name": "医療法人　オルカ医院",
+              "telecom": [
+		{
+                  "system": "phone",
+                  "value": "03-3946-0001"
+		},
+		{
+                  "system": "fax",
+                  "value": "03-3946-0002"
+		}
+              ],
+              "address": [
+		{
+                  "line": [
+                    "東京都文京区本駒込２−２８−１６"
+                  ],
+                  "postalCode": "113-0021"
+		}
+              ],
+              "partOf": {
+		"reference": "Organization/360fa8db-7b78-4c37-bf03-57844f7462be"
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Organization",
+	      "id": "360fa8db-7b78-4c37-bf03-57844f7462be",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.2.51",
+                  "value": "01"
+		}
+              ],
+              "type": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                      "code": "dept",
+                      "display": "Hospital Department"
+                    }
+                  ]
+		}
+              ],
+              "name": "内科"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Practitioner",
+	      "id": "a4960986-5156-47bc-a79b-153ef218bbdb",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.41.1"
+		}
+              ],
+              "name": [
+		{
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "IDE"
+                    }
+                  ],
+                  "use": "official",
+                  "text": "テスト医師"
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "PractitionerRole",
+	      "id": "3161670f-8829-4552-b4f8-20d54768da9a",
+              "practitioner": {
+		"reference": "Practitioner/a4960986-5156-47bc-a79b-153ef218bbdb"
+              },
+              "organization": {
+		"reference": "Organization/4a5a1fde-a18f-4606-9a9a-773ef1e44a54"
+              },
+              "code": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/practitioner-role",
+                      "code": "doctor",
+                      "display": "Doctor"
+                    }
+                  ]
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Organization",
+	      "id": "aa850727-b731-429d-8d35-2637c34f808c",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.61",
+                  "value": "133959"
+		}
+              ],
+              "type": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                      "code": "pay",
+                      "display": "Payer"
+                    }
+                  ]
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Coverage",
+	      "id": "ddeb2aa0-3a54-4d6d-89cf-aa11fa1b84c3",
+              "status": "draft",
+              "type": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.61",
+                    "code": "2",
+                    "display": "国保"
+                  }
+		]
+              },
+              "subscriberId": "１２３ ４５６",
+              "relationship": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.62",
+                    "code": "1",
+                    "display": "被保険者"
+                  }
+		]
+              },
+              "beneficiary": {
+		"reference": "Patient/pat1"
+	      },
+              "payor": [
+		{
+                  "reference": "Organization/aa850727-b731-429d-8d35-2637c34f808c"
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "MedicationRequest",
+	      "id": "7157ce3e-4a16-43d6-8c46-a078c4b55c56",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.81",
+                  "value": "1"
+		},
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.xx",
+                  "value": "1"
+		}
+              ],
+              "status": "draft",
+              "intent": "order",
+              "category": [
+		{
+                  "coding": [
+                    {
+                      "system": "LC",
+                      "code": "1",
+                      "display": "内服"
+                    }
+                  ]
+		}
+              ],
+              "medicationCodeableConcept": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.74",
+                    "code": "100988001",
+                    "display": "ロキソニン錠６０ｍｇ"
+                  }
+		]
+              },
+              "subject": {
+		"reference": "Patient/6a425c84-ff4f-4691-a969-55125554f90c"
+              },
+              "requester": {
+		"reference": "PractitionerRole/3161670f-8829-4552-b4f8-20d54768da9a"
+              },
+              "dosageInstruction": [
+		{
+                  "text": "１日３回朝昼夕食後",
+                  "doseAndRate": [
+                    {
+                      "rateRatio": {
+			"numerator": {
+                          "value": 3.0,
+                          "unit": "錠"
+			},
+			"denominator": {
+                          "value": 1,
+                          "unit": "d"
+			}
+                      }
+                    }
+                  ]
+		}
+              ],
+              "dispenseRequest": {
+		"quantity": {
+                  "value": 66.0,
+                  "unit": "錠"
+		},
+		"expectedSupplyDuration": {
+                  "value": 22,
+                  "unit": "d"
+		}
+              }
+            }
+          }
+	]
+      }
+    },
+    {
+      "resource": {
+	"id": "5c9a2e15-c484-44cd-8b08-18d87ee2c38d",
+	"type": "document",
+	"timestamp": "2020-10-15T15:20:33+09:00",
+	"entry": [
+          {
+            "resource": {
+              "resourceType": "Composition",
+	      "id": "4438b2b5-e6c2-4c11-b5bf-b7cfff114c67",
+              "status": "final",
+              "extension": [
+		{
+		  "url": "http://hl7fhir.jp/medication/splitSeq",
+		  "valueRatio": {
+		    "numerator": {
+                      "value": 1,
+                      "unit": "枚"
+		    },
+		    "denominator": {
+                      "value": 3,
+                      "unit": "枚"
+		    }
+		  }
+		}
+	      ],
+              "type": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.11",
+                    "code": "01",
+                    "display": "処方箋"
+                  }
+		]
+              },
+              "subject": {
+		"reference": "Patient/677f8999-0153-4a0d-8f63-2b5ac1924432"
+              },
+              "date": "2020-10-15T15:20:34+09:00",
+              "author": [
+		{
+                  "reference": "PractitionerRole/cd9111a6-f2b5-4517-93e3-20355a2ff9b4"
+		}
+              ],
+              "title": "処方箋",
+              "confidentiality": "N",
+              "event": [
+		{
+		  "period": {
+                    "start": "2020-10-14"
+		  }
+		}
+	      ],
+              "section": [
+		{
+                  "title": "処方指示ヘッダ",
+                  "code": {
+                    "coding": [
+                      {
+			"system": "TBD",
+			"code": "01",
+			"display": "処方指示ヘッダ"
+                      }
+                    ]
+                  },
+                  "entry": [
+                    {
+                      "reference": "Coverage/8fa06d30-88ec-481d-a3cd-d847dc7ce2ed"
+                    }
+                  ]
+		},
+		{
+                  "title": "処方指示ボディ",
+                  "code": {
+                    "coding": [
+                      {
+			"system": "TBD",
+			"code": "02",
+			"display": "処方指示ボディ"
+                      }
+                    ]
+                  },
+                  "entry": [
+                    {
+                      "reference": "MedicationRequest/ce9dbe9f-2a98-44a3-9195-163f44315501"
+                    }
+                  ]
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Patient",
+              "id": "677f8999-0153-4a0d-8f63-2b5ac1924432",
+              "identifier": [
+		{
+		  "system": "urn:oid:1.2.392.100495.20.3.51.1",
+		  "value": "11"
+		}
+	      ],
+              "name": [
+		{
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "IDE"
+                    }
+                  ],
+                  "use": "official",
+                  "family": "患者",
+                  "given": [
+                    "一郎"
+                  ]
+		},
+		{
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "SYL"
+                    }
+                  ],
+                  "use": "official",
+                  "family": "カンジャ",
+                  "given": [
+                    "イチロウ"
+                  ]
+		}
+              ],
+              "gender": "male",
+              "birthDate": "1979-11-01"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Organization",
+	      "id": "ae08cf25-4b37-42ee-bbf5-5539afd1161c",
+              "identifier": [
+		{
+                  "system": "1.2.392.100495.20.3.21",
+                  "value": "13"
+		},
+		{
+                  "system": "1.2.392.100495.20.3.22",
+                  "value": "1"
+		},
+		{
+                  "system": "1.2.392.100495.20.3.23",
+                  "value": "1234567"
+		}
+              ],
+              "type": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                      "code": "prov",
+                      "display": "Healthcare Provider"
+                    }
+                  ]
+		}
+              ],
+              "name": "医療法人　オルカ医院",
+              "telecom": [
+		{
+                  "system": "phone",
+                  "value": "03-3946-0001"
+		},
+		{
+                  "system": "fax",
+                  "value": "03-3946-0002"
+		}
+              ],
+              "address": [
+		{
+                  "line": [
+                    "東京都文京区本駒込２−２８−１６"
+                  ],
+                  "postalCode": "113-0021"
+		}
+              ],
+              "partOf": {
+		"reference": "Organization/f612ac41-2c97-4a8a-b43e-c432264d28e4"
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Organization",
+	      "id": "f612ac41-2c97-4a8a-b43e-c432264d28e4",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.2.51",
+                  "value": "01"
+		}
+              ],
+              "type": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                      "code": "dept",
+                      "display": "Hospital Department"
+                    }
+                  ]
+		}
+              ],
+              "name": "内科"
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Practitioner",
+	      "id": "0fe8215e-8a72-4804-b569-788257499076",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.41.1"
+		}
+              ],
+              "name": [
+		{
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                      "valueCode": "IDE"
+                    }
+                  ],
+                  "use": "official",
+                  "text": "テスト医師"
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "PractitionerRole",
+	      "id": "cd9111a6-f2b5-4517-93e3-20355a2ff9b4",
+              "practitioner": {
+		"reference": "Practitioner/0fe8215e-8a72-4804-b569-788257499076"
+              },
+              "organization": {
+		"reference": "Organization/ae08cf25-4b37-42ee-bbf5-5539afd1161c"
+              },
+              "code": [
+		{
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/practitioner-role",
+                      "code": "doctor",
+                      "display": "Doctor"
+                    }
+                  ]
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Organization",
+	      "id": "2f5835a6-f13c-4aaf-8987-9df07d7aadda",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.61",
+                  "value": "133959"
+		}
+              ],
+              "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                    "code": "pay",
+                    "display": "Payer"
+                  }
+                ]
+              }
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Coverage",
+	      "id": "8fa06d30-88ec-481d-a3cd-d847dc7ce2ed",
+              "status": "draft",
+              "type": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.61",
+                    "code": "2",
+                    "display": "国保"
+                  }
+		]
+              },
+              "subscriberId": "１２３ ４５６",
+              "relationship": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.62",
+                    "code": "1",
+                    "display": "被保険者"
+                  }
+		]
+              },
+              "beneficiary": {
+		"reference": "Patient/pat1"
+	      },
+              "payor": [
+		{
+                  "reference": "Organization/2f5835a6-f13c-4aaf-8987-9df07d7aadda"
+		}
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "MedicationRequest",
+	      "id": "ce9dbe9f-2a98-44a3-9195-163f44315501",
+              "identifier": [
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.81",
+                  "value": "1"
+		},
+		{
+                  "system": "urn:oid:1.2.392.100495.20.3.xx",
+                  "value": "1"
+		}
+              ],
+              "status": "draft",
+              "intent": "order",
+              "category": [
+		{
+                  "coding": [
+                    {
+                      "system": "LC",
+                      "code": "1",
+                      "display": "内服"
+                    }
+                  ]
+		}
+              ],
+              "medicationCodeableConcept": {
+		"coding": [
+                  {
+                    "system": "urn:oid:1.2.392.100495.20.2.74",
+                    "code": "100988001",
+                    "display": "ロキソニン錠６０ｍｇ"
+                  }
+		]
+              },
+              "subject": {
+		"reference": "Patient/677f8999-0153-4a0d-8f63-2b5ac1924432"
+              },
+              "requester": {
+		"reference": "PractitionerRole/cd9111a6-f2b5-4517-93e3-20355a2ff9b4"
+              },
+              "dosageInstruction": [
+		{
+                  "text": "１日３回朝昼夕食後",
+                  "doseAndRate": [
+                    {
+                      "rateRatio": {
+			"numerator": {
+                          "value": 3.0,
+                          "unit": "錠"
+			},
+			"denominator": {
+                          "value": 1,
+                          "unit": "d"
+			}
+                      }
+                    }
+                  ]
+		}
+              ],
+              "dispenseRequest": {
+		"quantity": {
+                  "value": 99.0,
+                  "unit": "錠"
+		},
+		"expectedSupplyDuration": {
+                  "value": 33,
+                  "unit": "d"
+		}
+              }
+            }
+          }
+	],
+	"resourceType": "Bundle"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+	"id": "0d5ee7b4-6b8c-4620-aa3d-b6c377d71022",
+        "name": "医療法人　オルカ医院",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "03-3946-0001"
+          },
+          {
+            "system": "fax",
+            "value": "03-3946-0002"
+          }
+        ]
+      }
+    }
+  ]
+}

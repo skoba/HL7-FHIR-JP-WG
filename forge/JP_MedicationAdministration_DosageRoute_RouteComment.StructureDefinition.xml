@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="7d2bd9f9-3e77-423c-be7f-8602a284fe0a" />
+  <meta>
+    <versionId value="2" />
+    <lastUpdated value="2021-12-04T09:31:10.547+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRoute_RouteComment" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationAdministration_DosageRoute_RouteComment" />
+  <title value="JP_MedicationAdministration_DosageRoute_RouteComment" />
+  <status value="active" />
+  <date value="2021-12-04T09:31:07.4774892+00:00" />
+  <publisher value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="投与経路コメントを格納するための拡張" />
+  <purpose value="投与経路コメントを格納するための拡張" />
+  <copyright value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationAdministration.dosage.route" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRoute_RouteComment" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

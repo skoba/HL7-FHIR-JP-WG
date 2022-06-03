@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="32d5b5a1-0cee-4027-8ae6-debb569f3dbd" />
+  <meta>
+    <versionId value="3" />
+    <lastUpdated value="2021-10-18T16:13:56.139+00:00" />
+  </meta>
+  <text>
+    <status value="extensions" />
+    <div xmlns="http://www.w3.org/1999/xhtml">Enter you narrative here</div>
+  </text>
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestExpectedRepeatCount" />
+  <name value="JP_MedicationRequestExpectedRepeatCount" />
+  <title value="ExpectedRepeatCount" />
+  <status value="draft" />
+  <date value="2021-10-18T16:13:53.991378+00:00" />
+  <description value="頓用の場合など調剤量を錠数ではなく回数で表現したい場合の回数を格納する拡張" />
+  <purpose value="頓用の場合など調剤量を錠数ではなく回数で表現したい場合の回数を格納する拡張" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest.dispenseRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="頓用回数" />
+      <definition value="頓用の場合など調剤量を錠数ではなく回数で表現したい場合の回数を格納する拡張" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestExpectedRepeatCount" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="integer" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

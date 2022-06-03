@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="850e787b-21c8-4dcd-8fc5-597dbc911ecd" />
+  <meta>
+    <versionId value="3" />
+    <lastUpdated value="2021-07-16T07:19:42.055+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestDispenseRequestInstructionForDispense" />
+  <name value="JP_MedicationRequestDispenseRequestInstructionForDispense" />
+  <status value="draft" />
+  <date value="2021-07-16T07:19:39.9492116+00:00" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest.dispenseRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestDispenseRequestInstructionForDispense" />
+    </element>
+  </differential>
+</StructureDefinition>

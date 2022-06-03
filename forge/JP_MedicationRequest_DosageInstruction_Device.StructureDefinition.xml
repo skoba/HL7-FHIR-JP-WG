@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="6d3333b3-d0f9-4b48-bd78-abfcbaad19fe" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2021-11-03T15:12:46.115+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Device" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationRequest_DosageInstruction_Device" />
+  <title value="投与装置" />
+  <status value="active" />
+  <date value="2021-11-03T15:12:44.0783375+00:00" />
+  <purpose value="投与装置を格納する拡張" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest.dosageInstruction" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="MedicationDispense.dosageInstruction" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="投与装置" />
+      <definition value="投与装置を格納する拡張" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Device" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

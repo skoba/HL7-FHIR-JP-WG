@@ -1,0 +1,96 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense_Injection",
+  "version": "1.0.0",
+  "name": "JP_MedicationDispense_Injection",
+  "title": "JP_MedicationDispense_Injection",
+  "status": "active",
+  "date": "2021-12-25T14:35:21.0508205Z",
+  "publisher": "FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)",
+  "description": "このプロファイルはMedicationDispenseリソースに対して、注射薬剤処方調剤・払い出し記録のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+  "purpose": "このプロファイルはMedicationDispenseリソースに対して、注射薬剤処方調剤・払い出し記録のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+  "copyright": "FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "rx-dispense-rmim",
+      "uri": "http://www.hl7.org/v3/PORX_RM020070UV",
+      "name": "V3 Pharmacy Dispense RMIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationDispense",
+  "baseDefinition": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationDispense.dosageInstruction.extension:Device",
+        "path": "MedicationDispense.dosageInstruction.extension",
+        "sliceName": "Device",
+        "short": "投与機器の情報",
+        "definition": "投与機器の情報を記述する拡張。",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationDispense.dosageInstruction.extension:Line",
+        "path": "MedicationDispense.dosageInstruction.extension",
+        "sliceName": "Line",
+        "short": "投与ラインの情報",
+        "definition": "投与ラインの情報を記述する拡張。",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Line"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationDispense.dosageInstruction.extension:UsageDuration",
+        "path": "MedicationDispense.dosageInstruction.extension",
+        "sliceName": "UsageDuration",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "MedicationDispense.dosageInstruction.extension:PeriodOfUse",
+        "path": "MedicationDispense.dosageInstruction.extension",
+        "sliceName": "PeriodOfUse",
+        "min": 0,
+        "max": "0"
+      }
+    ]
+  }
+}

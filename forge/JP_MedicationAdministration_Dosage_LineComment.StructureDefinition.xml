@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="7a1b4824-7464-47b1-ba4d-dad4dd006663" />
+  <meta>
+    <versionId value="3" />
+    <lastUpdated value="2021-12-04T09:29:44.689+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Dosage_LineComment" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationAdministration_Dosage_LineComment" />
+  <title value="JP_MedicationAdministration_atDosage_LineComment" />
+  <status value="active" />
+  <date value="2021-12-04T09:29:42.393301+00:00" />
+  <description value="ラインコメントを格納する" />
+  <purpose value="ラインコメントを格納する" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationAdministration.dosage" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Dosage_LineComment" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

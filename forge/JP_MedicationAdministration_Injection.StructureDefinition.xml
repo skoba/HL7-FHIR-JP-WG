@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="dfb9173b-7aa9-4924-90a8-b9e03b232b6c" />
+  <meta>
+    <versionId value="9" />
+    <lastUpdated value="2021-12-04T22:52:29.005+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Injection" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationAdministration_Injection" />
+  <title value="JP_MedicationAdministration_Injection" />
+  <status value="active" />
+  <date value="2021-12-04T22:52:25.6695749+00:00" />
+  <publisher value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="このプロファイルはMedicationAdministrationリソースに対して、内服・外用薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <purpose value="このプロファイルはMedicationAdministrationリソースに対して、内服・外用薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。" />
+  <copyright value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w3c.prov" />
+    <uri value="http://www.w3.org/ns/prov" />
+    <name value="W3C PROV" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="MedicationAdministration" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MedicationAdministration" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="MedicationAdministration">
+      <path value="MedicationAdministration" />
+      <short value="患者への注射薬剤投与記録" />
+      <constraint>
+        <key value="dom-2" />
+        <severity value="error" />
+        <human value="If the resource is contained in another resource, it SHALL NOT contain nested Resources" />
+        <source value="DomainResource" />
+      </constraint>
+      <constraint>
+        <key value="dom-4" />
+        <severity value="error" />
+        <human value="If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated" />
+        <source value="DomainResource" />
+      </constraint>
+      <constraint>
+        <key value="dom-3" />
+        <severity value="error" />
+        <human value="If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource" />
+        <xpath value="not(exists(for $contained in f:contained return $contained[not(parent::*/descendant::f:reference/@value=concat('#', $contained/*/id/@value) or descendant::f:reference[@value='#'])]))" />
+        <source value="DomainResource" />
+      </constraint>
+      <constraint>
+        <key value="dom-6" />
+        <severity value="warning" />
+        <human value="A resource should have narrative for robust management" />
+        <expression value="text.div.exists()" />
+        <source value="DomainResource" />
+      </constraint>
+      <constraint>
+        <key value="dom-5" />
+        <severity value="error" />
+        <human value="If a resource is contained in another resource, it SHALL NOT have a security label" />
+        <source value="DomainResource" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.id">
+      <path value="MedicationAdministration.id" />
+      <type>
+        <code value="id" />
+      </type>
+      <condition value="ele-1" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <expression value="hasValue() or (children().count() &gt; id.count())" />
+        <xpath value="@value|f:*|h:div" />
+        <source value="Element" />
+      </constraint>
+      <mapping>
+        <identity value="rim" />
+        <map value="n/a" />
+      </mapping>
+    </element>
+    <element id="MedicationAdministration.meta">
+      <path value="MedicationAdministration.meta" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.implicitRules">
+      <path value="MedicationAdministration.implicitRules" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.language">
+      <path value="MedicationAdministration.language" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.text">
+      <path value="MedicationAdministration.text" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.extension">
+      <path value="MedicationAdministration.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.extension:RequestDepartment">
+      <path value="MedicationAdministration.extension" />
+      <sliceName value="RequestDepartment" />
+      <short value="依頼科" />
+      <definition value="依頼科を格納するための拡張" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestDepartment" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.extension:Requester">
+      <path value="MedicationAdministration.extension" />
+      <sliceName value="Requester" />
+      <short value="依頼医" />
+      <definition value="依頼医を格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Requester" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.extension:RequestAuthoredOn">
+      <path value="MedicationAdministration.extension" />
+      <sliceName value="RequestAuthoredOn" />
+      <short value="依頼日時" />
+      <definition value="依頼日時を格納するための拡張" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.extension:Location">
+      <path value="MedicationAdministration.extension" />
+      <sliceName value="Location" />
+      <short value="実施場所" />
+      <definition value="実施場所を格納するための拡張" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Location" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.extension:UncategorizedComment">
+      <path value="MedicationAdministration.extension" />
+      <sliceName value="UncategorizedComment" />
+      <definition value="未分類コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_UncategorizedComment" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.identifier">
+      <path value="MedicationAdministration.identifier" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.instantiates">
+      <path value="MedicationAdministration.instantiates" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.partOf">
+      <path value="MedicationAdministration.partOf" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ref-1" />
+        <severity value="error" />
+        <human value="SHALL have a contained resource if a local reference is provided" />
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %resource.contained.id.trace('ids'))" />
+        <source value="Reference" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.status">
+      <path value="MedicationAdministration.status" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <binding>
+        <strength value="required" />
+        <description value="患者への投与状況" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/medication-admin-status|4.0.0" />
+      </binding>
+    </element>
+    <element id="MedicationAdministration.statusReason">
+      <path value="MedicationAdministration.statusReason" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.category">
+      <path value="MedicationAdministration.category" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.medication[x]">
+      <path value="MedicationAdministration.medication[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationAdministration.medication[x].coding.system">
+      <path value="MedicationAdministration.medication[x].coding.system" />
+      <min value="1" />
+    </element>
+    <element id="MedicationAdministration.medication[x].coding.code">
+      <path value="MedicationAdministration.medication[x].coding.code" />
+      <min value="1" />
+    </element>
+    <element id="MedicationAdministration.medication[x].coding.display">
+      <path value="MedicationAdministration.medication[x].coding.display" />
+      <min value="1" />
+    </element>
+    <element id="MedicationAdministration.subject">
+      <path value="MedicationAdministration.subject" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ref-1" />
+        <severity value="error" />
+        <human value="SHALL have a contained resource if a local reference is provided" />
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %resource.contained.id.trace('ids'))" />
+        <source value="Reference" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationAdministration.context">
+      <path value="MedicationAdministration.context" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ref-1" />
+        <severity value="error" />
+        <human value="SHALL have a contained resource if a local reference is provided" />
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %resource.contained.id.trace('ids'))" />
+        <source value="Reference" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.supportingInformation">
+      <path value="MedicationAdministration.supportingInformation" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ref-1" />
+        <severity value="error" />
+        <human value="SHALL have a contained resource if a local reference is provided" />
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %resource.contained.id.trace('ids'))" />
+        <source value="Reference" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.effective[x]">
+      <path value="MedicationAdministration.effective[x]" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationAdministration.performer">
+      <path value="MedicationAdministration.performer" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.performer.id">
+      <path value="MedicationAdministration.performer.id" />
+      <type>
+        <code>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+            <valueString value="string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+            <valueString value="xsd:string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+            <valueString value="xsd:string" />
+          </extension>
+        </code>
+      </type>
+    </element>
+    <element id="MedicationAdministration.performer.function">
+      <path value="MedicationAdministration.performer.function" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.performer.actor">
+      <path value="MedicationAdministration.performer.actor" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ref-1" />
+        <severity value="error" />
+        <human value="SHALL have a contained resource if a local reference is provided" />
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %resource.contained.id.trace('ids'))" />
+        <source value="Reference" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.reasonCode">
+      <path value="MedicationAdministration.reasonCode" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.reasonReference">
+      <path value="MedicationAdministration.reasonReference" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ref-1" />
+        <severity value="error" />
+        <human value="SHALL have a contained resource if a local reference is provided" />
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %resource.contained.id.trace('ids'))" />
+        <source value="Reference" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.request">
+      <path value="MedicationAdministration.request" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ref-1" />
+        <severity value="error" />
+        <human value="SHALL have a contained resource if a local reference is provided" />
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %resource.contained.id.trace('ids'))" />
+        <source value="Reference" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.device">
+      <path value="MedicationAdministration.device" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ref-1" />
+        <severity value="error" />
+        <human value="SHALL have a contained resource if a local reference is provided" />
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %resource.contained.id.trace('ids'))" />
+        <source value="Reference" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.note">
+      <path value="MedicationAdministration.note" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage">
+      <path value="MedicationAdministration.dosage" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="mad-1" />
+        <severity value="error" />
+        <human value="SHALL have at least one of dosage.dose or dosage.rate[x]" />
+        <source value="MedicationAdministration" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage.id">
+      <path value="MedicationAdministration.dosage.id" />
+      <type>
+        <code>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+            <valueString value="string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+            <valueString value="xsd:string" />
+          </extension>
+          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+            <valueString value="xsd:string" />
+          </extension>
+        </code>
+      </type>
+    </element>
+    <element id="MedicationAdministration.dosage.extension">
+      <path value="MedicationAdministration.dosage.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.extension:Line">
+      <path value="MedicationAdministration.dosage.extension" />
+      <sliceName value="Line" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Line" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.dosage.extension:LineComment">
+      <path value="MedicationAdministration.dosage.extension" />
+      <sliceName value="LineComment" />
+      <short value="ラインコメント" />
+      <definition value="ラインコメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Dosage_LineComment" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.dosage.extension:DosageComment">
+      <path value="MedicationAdministration.dosage.extension" />
+      <sliceName value="DosageComment" />
+      <short value="用法コメント" />
+      <definition value="用法コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Dosage_DosageComment" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.dosage.text">
+      <path value="MedicationAdministration.dosage.text" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage.site">
+      <path value="MedicationAdministration.dosage.site" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage.site.extension">
+      <path value="MedicationAdministration.dosage.site.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.site.extension:SiteComment">
+      <path value="MedicationAdministration.dosage.site.extension" />
+      <sliceName value="SiteComment" />
+      <short value="投与部位コメント" />
+      <definition value="投与部位コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageSite_SiteComment" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.dosage.route">
+      <path value="MedicationAdministration.dosage.route" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage.route.extension">
+      <path value="MedicationAdministration.dosage.route.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.route.extension:RouteComment">
+      <path value="MedicationAdministration.dosage.route.extension" />
+      <sliceName value="RouteComment" />
+      <short value="投与経路コメント" />
+      <definition value="投与経路コメントを格納するための拡張" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRoute_RouteComment" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.dosage.method">
+      <path value="MedicationAdministration.dosage.method" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage.method.extension">
+      <path value="MedicationAdministration.dosage.method.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.method.extension:MethodComment">
+      <path value="MedicationAdministration.dosage.method.extension" />
+      <sliceName value="MethodComment" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageMethod_MethodComment" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.dosage.dose">
+      <path value="MedicationAdministration.dosage.dose" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="qty-3" />
+        <severity value="error" />
+        <human value="If a code for the unit is present, the system SHALL also be present" />
+        <source value="Quantity" />
+      </constraint>
+      <constraint>
+        <key value="sqty-1" />
+        <severity value="error" />
+        <human value="The comparator is not used on a SimpleQuantity" />
+        <source value="Quantity" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage.rate[x]">
+      <path value="MedicationAdministration.dosage.rate[x]" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="rat-1" />
+        <severity value="error" />
+        <human value="Numerator and denominator SHALL both be present, or both are absent. If both are absent, there SHALL be some extension present" />
+        <expression value="(numerator.empty() xor denominator.exists()) and (numerator.exists() or extension.exists())" />
+        <xpath value="(count(f:numerator) = count(f:denominator)) and ((count(f:numerator) &gt; 0) or (count(f:extension) &gt; 0))" />
+        <source value="Ratio" />
+      </constraint>
+    </element>
+    <element id="MedicationAdministration.dosage.rate[x].extension">
+      <path value="MedicationAdministration.dosage.rate[x].extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="MedicationAdministration.dosage.rate[x].extension:RateComment">
+      <path value="MedicationAdministration.dosage.rate[x].extension" />
+      <sliceName value="RateComment" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRate_RateComment" />
+      </type>
+    </element>
+    <element id="MedicationAdministration.eventHistory">
+      <path value="MedicationAdministration.eventHistory" />
+      <constraint>
+        <key value="ele-1" />
+        <severity value="error" />
+        <human value="All FHIR elements must have a @value or children" />
+        <source value="Element" />
+      </constraint>
+      <constraint>
+        <key value="ref-1" />
+        <severity value="error" />
+        <human value="SHALL have a contained resource if a local reference is provided" />
+        <expression value="reference.startsWith('#').not() or (reference.substring(1).trace('url') in %resource.contained.id.trace('ids'))" />
+        <source value="Reference" />
+      </constraint>
+    </element>
+  </differential>
+</StructureDefinition>

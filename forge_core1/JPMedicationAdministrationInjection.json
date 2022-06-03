@@ -1,0 +1,246 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Injection",
+  "version": "1.0.0",
+  "name": "JP_MedicationAdministration_Injection",
+  "title": "JP_MedicationAdministration_Injection",
+  "status": "active",
+  "date": "2021-12-25T14:32:12.4448275+00:00",
+  "publisher": "FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)",
+  "description": "このプロファイルはMedicationAdministrationリソースに対して、注射薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+  "purpose": "このプロファイルはMedicationAdministrationリソースに対して、注射薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+  "copyright": "FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "w3c.prov",
+      "uri": "http://www.w3.org/ns/prov",
+      "name": "W3C PROV"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationAdministration",
+  "baseDefinition": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationAdministration",
+        "path": "MedicationAdministration",
+        "short": "患者への注射薬剤投与記録"
+      },
+      {
+        "id": "MedicationAdministration.extension:UncategorizedComment",
+        "path": "MedicationAdministration.extension",
+        "sliceName": "UncategorizedComment",
+        "definition": "未分類コメントを格納するための拡張",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_UncategorizedComment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.dosage.extension",
+        "path": "MedicationAdministration.dosage.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "MedicationAdministration.dosage.extension:Line",
+        "path": "MedicationAdministration.dosage.extension",
+        "sliceName": "Line",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Line"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.dosage.extension:LineComment",
+        "path": "MedicationAdministration.dosage.extension",
+        "sliceName": "LineComment",
+        "short": "ラインコメント",
+        "definition": "ラインコメントを格納するための拡張",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Dosage_LineComment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.dosage.extension:DosageComment",
+        "path": "MedicationAdministration.dosage.extension",
+        "sliceName": "DosageComment",
+        "short": "用法コメント",
+        "definition": "用法コメントを格納するための拡張",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Dosage_DosageComment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.dosage.site.extension",
+        "path": "MedicationAdministration.dosage.site.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "MedicationAdministration.dosage.site.extension:SiteComment",
+        "path": "MedicationAdministration.dosage.site.extension",
+        "sliceName": "SiteComment",
+        "short": "投与部位コメント",
+        "definition": "投与部位コメントを格納するための拡張",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageSite_SiteComment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.dosage.route.extension",
+        "path": "MedicationAdministration.dosage.route.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "MedicationAdministration.dosage.route.extension:RouteComment",
+        "path": "MedicationAdministration.dosage.route.extension",
+        "sliceName": "RouteComment",
+        "short": "投与経路コメント",
+        "definition": "投与経路コメントを格納するための拡張",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRoute_RouteComment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.dosage.method.extension",
+        "path": "MedicationAdministration.dosage.method.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "MedicationAdministration.dosage.method.extension:MethodComment",
+        "path": "MedicationAdministration.dosage.method.extension",
+        "sliceName": "MethodComment",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageMethod_MethodComment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.dosage.rate[x].extension",
+        "path": "MedicationAdministration.dosage.rate[x].extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "MedicationAdministration.dosage.rate[x].extension:RateComment",
+        "path": "MedicationAdministration.dosage.rate[x].extension",
+        "sliceName": "RateComment",
+        "min": 0,
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRate_RateComment"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

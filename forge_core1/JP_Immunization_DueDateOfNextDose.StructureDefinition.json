@@ -1,0 +1,21 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://jpfhir.jp/fhir/StructureDefinition/JP_Immunization_DueDateOfNextDose",
+  "name": "JP_Immunization_DueDateOfNextDose",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://jpfhir.jp/fhir/StructureDefinition/JP_Immunization_DueDateOfNextDose"
+      }
+    ]
+  }
+}

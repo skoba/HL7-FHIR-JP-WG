@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="88c8b7c4-fbfa-4a42-814d-071dc8acb4eb" />
+  <meta>
+    <versionId value="12" />
+    <lastUpdated value="2021-12-04T09:25:08.445+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Medication_IngredientStrength_StrengthType" />
+  <version value="1.0.0" />
+  <name value="JP_Medication_IngredientStrength_StrengthType" />
+  <title value="JP_Medication_IngredientStrength_StrengthType" />
+  <status value="active" />
+  <date value="2021-12-04T09:25:05.7937536+00:00" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="投与量が製剤単位か成分単位かを格納する拡張" />
+  <purpose value="投与量が製剤単位か成分単位かを格納する拡張" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Medication.ingredient.strength" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="力価区分" />
+      <definition value="投与量が製剤単位か成分単位かを格納する" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Medication_IngredientStrength_StrengthType" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

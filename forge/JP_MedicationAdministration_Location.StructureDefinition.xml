@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="78061a6c-42e8-402d-8f76-6fdac69f7f90" />
+  <meta>
+    <versionId value="3" />
+    <lastUpdated value="2021-12-03T16:59:14.588+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Location" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationAdministration_Location" />
+  <title value="JP_MedicationAdministration_Location" />
+  <status value="active" />
+  <date value="2021-12-03T16:59:13.4024301+00:00" />
+  <publisher value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="実施場所を格納するための拡張" />
+  <purpose value="実施場所を格納するための拡張" />
+  <copyright value="FHIR® Japanese implementation research workaing group in Japan Association of Medical Informatics (JAMI)" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationAdministration" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Location" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="実施場所" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

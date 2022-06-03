@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="b450accd-cc2c-427b-b4dc-22bf66740bca" />
+  <meta>
+    <versionId value="6" />
+    <lastUpdated value="2021-07-16T07:16:12.135+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestDispenseRequestExpectedRepeatCount" />
+  <name value="JP_MedicationRequestDispenseRequestExpectedRepeatCount" />
+  <status value="draft" />
+  <date value="2021-07-16T07:11:10.2626478Z" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest.dispenseRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="頓⽤回数を表現する拡張" />
+      <definition value="頓⽤回数を表現する拡張" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/StructureDefinition/JP_MedicationRequestDispenseRequestExpectedRepeatCount" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="頓用回数" />
+      <definition value="頓用回数" />
+      <min value="1" />
+      <type>
+        <code value="integer" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

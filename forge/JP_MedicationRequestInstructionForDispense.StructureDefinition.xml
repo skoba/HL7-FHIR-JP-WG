@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="2ae4ae81-c4e6-4eb4-86a4-14f9b8a9e3fc" />
+  <meta>
+    <versionId value="4" />
+    <lastUpdated value="2021-10-20T10:26:00.889+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestInstructionForDispense" />
+  <name value="JP_MedicationRequestInstructionForDispense" />
+  <status value="draft" />
+  <date value="2021-10-20T10:25:59.4364036+00:00" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest.dispenseRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="調剤指示" />
+      <definition value="薬剤単位の調剤指示を表現するための拡張" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestInstructionForDispense" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

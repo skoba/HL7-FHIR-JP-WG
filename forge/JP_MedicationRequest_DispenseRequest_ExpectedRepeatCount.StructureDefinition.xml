@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="996ef0bf-8b22-46e5-bc34-46c7bd6c6926" />
+  <meta>
+    <versionId value="2" />
+    <lastUpdated value="2021-12-03T12:47:27.207+00:00" />
+  </meta>
+  <url value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount" />
+  <version value="1.0.0" />
+  <name value="JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount" />
+  <title value="JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount" />
+  <status value="active" />
+  <date value="2021-12-03T12:42:41.6873441Z" />
+  <publisher value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <description value="頓用回数" />
+  <purpose value="頓用の場合など調剤量を錠数ではなく回数で表現したい場合の回数を格納する拡張" />
+  <copyright value="FHIR® Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest.dispenseRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="頓⽤回数を表現する拡張" />
+      <definition value="頓⽤回数を表現する拡張" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <short value="頓用回数" />
+      <definition value="頓用回数" />
+      <min value="1" />
+      <type>
+        <code value="integer" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
