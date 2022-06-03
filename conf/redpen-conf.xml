@@ -29,5 +29,6 @@
         <validator name="DuplicatedSection" />
         <!-- <validator name="EmptySection" /> -->
         <validator name="SectionLevel" />
+	<validator name="JapaneseJoyoKanji" />
     </validators>
 </redpen-conf>
