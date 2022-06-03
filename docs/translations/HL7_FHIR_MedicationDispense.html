@@ -2,7 +2,7 @@
 <head>
   <title>MedicationDispense-FHIR v4.0.0</title>
 
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
   <meta name="author" content="http://hl7.org/fhir"></meta>
 
@@ -34,29 +34,29 @@
 
 </head>
 <body dir="ltr">
-	<div id="segment-header" class="segment">  <!-- segment-header -->	
+	<div id="segment-header" class="segment">  <!-- segment-header -->
 		<div class="container">  <!-- container -->
 			<a id="logo" href="http://hl7.org/fhir" no-external="true"><img src="https://www.hl7.org/implement/standards/fhir/assets/images/fhir-logo-www.png" height="60" width="249" alt="ロゴファー"> </a>
 			<div id="hl7-status">
 				<b>FHIR R4</b>
-			</div>       	
-			
+			</div>
+
 			<div id="hl7-nav">
 				 <a id="hl7-logo" href="http://www.hl7.org" no-external="true">
 					<img src="https://www.hl7.org/implement/standards/fhir/assets/images/hl7-logo.png" width="42" alt="hl7ウェブサイトをご覧ください" height="50">
-				</a> 
-			</div>       	
-			<div id="hl7-nav"><a id="hl7-logo" href="http://hl7.org/fhir/search.cfm" no-external="true"><img src="https://www.hl7.org/implement/standards/fhir/assets/images/search.png" alt="FHIRを検索"></a></div> 
+				</a>
+			</div>
+			<div id="hl7-nav"><a id="hl7-logo" href="http://hl7.org/fhir/search.cfm" no-external="true"><img src="https://www.hl7.org/implement/standards/fhir/assets/images/search.png" alt="FHIRを検索"></a></div>
 		</div>
 		<div class="container">  <!-- container -->
-	</div></div>  <!-- /segment-header -->	
+	</div></div>  <!-- /segment-header -->
 
 
 	<div id="segment-navbar" class="segment">  <!-- segment-navbar -->
 		<div id="stripe"> </div>
 		<div class="container">  <!-- container -->
    <!-- HEADER CONTENT -->
- 	      		 	      		      		
+
 			<nav class="navbar navbar-inverse">
 				<div class="container">
 					<button type="button" class="navbar-toggle" data-target=".navbar-inverse-collapse" data-toggle="collapse"></button>
@@ -75,21 +75,21 @@
 					</div>  <!-- /.nav-collapse -->
 				</div>  <!-- /.container -->
 			</nav>  <!-- /.navbar -->
-      		
-  <!-- /HEADER CONTENT -->				
+
+  <!-- /HEADER CONTENT -->
 		</div>  <!-- /container -->
 	</div>  <!-- /segment-navbar -->
-	
+
 
 	<div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
-		<div class="container">  <!-- container -->	
+		<div class="container">  <!-- container -->
 			<ul class="breadcrumb">
         <li><a href="https://www.hl7.org/implement/standards/fhir/medications-module.html"><img src="https://www.hl7.org/implement/standards/fhir/medication.png">Medication</a></li>        <li><b>MedicationDispense</b></li>          <!-- medicationdispense.html / resource / MedicationDispense -->
 
-			</ul>	
+			</ul>
 		</div>  <!-- /container -->
 	</div>  <!-- /segment-breadcrumb -->
-	
+
 
 	<div id="segment-content" class="segment">  <!-- segment-content -->
 	<div class="container">  <!-- container -->
@@ -696,187 +696,6 @@
   fhir:<a class="dict" title="患者に対する1つ以上の積極的または提案された臨床行為に関する、またはその間の実際または潜在的な臨床的問題を示します。例：薬物間相互作用、重複治療、投与量アラートなど。" href="https://www.hl7.org/implement/standards/fhir/medicationdispense-definitions.html#MedicationDispense.detectedIssue">MedicationDispense.detectedIssue</a><a name="ttl-detectedIssue"> </a>[ <a href="https://www.hl7.org/implement/standards/fhir/references.html#Reference">Reference</a>(<a href="https://www.hl7.org/implement/standards/fhir/detectedissue.html#DetectedIssue">DetectedIssue</a>) ], ... ; # 0..* <span style="color:navy">Clinical issue with action</span>
   fhir:<a class="dict" title="調剤が検証されたときなど、発生した関心のあるイベントの概要。" href="https://www.hl7.org/implement/standards/fhir/medicationdispense-definitions.html#MedicationDispense.eventHistory">MedicationDispense.eventHistory</a><a name="ttl-eventHistory"> </a>[ <a href="https://www.hl7.org/implement/standards/fhir/references.html#Reference">Reference</a>(<a href="https://www.hl7.org/implement/standards/fhir/provenance.html#Provenance">Provenance</a>) ], ... ; # 0..* <span style="color:navy">A list of relevant lifecycle events</span>
 ]
-</pre>
-
- </div>
-</div>
-
-<div id="vdiff2">
-<p><b>リリース3以降の変更</b></p>
- <div id="diff-inner2">
-  <table class="grid">
-  <tr class="diff-item">
-    <td class="diff-left">
-      <a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.html#MedicationDispense">MedicationDispense</a>
-    </td>
-    <td class="diff-right"></td>
-  </tr>
-  <tr class="diff-entry">
-    <td class="diff-left">MedicationDispense.status</td>
-    <td class="diff-right">
-      <ul>
-        <li>最小カーディナリティーが0から1に変更されました</li>
-        <li>値セットをhttp://hl7.org/fhir/ValueSet/medication-dispense-statusからhttp://hl7.org/fhir/ValueSet/medicationdispense-status|4.0.0に変更します</li>
-      </ul>
-    </td>
-  </tr>
-  <tr class="diff-new">
-    <td class="diff-left">MedicationDispense.statusReason[x]</td>
-    <td class="diff-right">
-      <ul>
-        <li>追加されたElement</li>
-      </ul>
-    </td>
-  </tr>
-  <tr class="diff-new">
-    <td class="diff-left">MedicationDispense.performer.function</td>
-    <td class="diff-right">
-      <ul>
-        <li>追加されたElement</li>
-      </ul>
-    </td>
-  </tr>
-  <tr class="diff-entry">
-    <td class="diff-left">MedicationDispense.performer.actor</td>
-    <td class="diff-right">
-      <ul>
-        <li>型リファレンス：Target型PractitionerRoleを追加</li>
-      </ul>
-    </td>
-  </tr>
-  <tr class="diff-new">
-    <td class="diff-left">MedicationDispense.location</td>
-    <td class="diff-right">
-      <ul>
-        <li>追加されたElement</li>
-      </ul>
-    </td>
-  </tr>
-  <tr class="diff-entry">
-    <td class="diff-left">MedicationDispense.substitution.responsibleParty</td>
-    <td class="diff-right">
-      <ul>
-        <li>型リファレンス：ターゲット型PractitionerRoleを追加</li>
-      </ul>
-    </td>
-  </tr>
-  <tr class="diff-del">
-    <td class="diff-left">MedicationDispense.performer.onBehalfOf</td>
-    <td class="diff-right">
-      <ul>
-        <li>削除された</li>
-      </ul>
-    </td>
-  </tr>
-  <tr class="diff-del">
-    <td class="diff-left">MedicationDispense.notDone</td>
-    <td class="diff-right">
-      <ul>
-        <li>削除された</li>
-      </ul>
-    </td>
-  </tr>
-  <tr class="diff-del">
-    <td class="diff-left">MedicationDispense.notDoneReason [x]</td>
-    <td class="diff-right">
-      <ul>
-        <li>削除された</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-<p>詳細については、 <a href="https://www.hl7.org/implement/standards/fhir/diff.html">全ての変更</a>を参照してください</p>
-
-  <p>この分析は、 <a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.diff.xml">XML</a>または<a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.diff.json">JSON</a>として利用でき<a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.diff.json">ます</a> 。</p>
-  <p><a href="https://www.hl7.org/implement/standards/fhir/medicationdispense-version-maps.html">R3 &lt;-&gt; R4変換マップを</a>参照してください（ステータス=すべてのテストが正常に実行される31のテスト<span style="background-color:#ccffcc">。6回のラウンドトリップテストに失敗し</span> 、 <span style="background-color:#e0b0ff">31のr3Resourceが無効です（エラー0）。</span> ）</p>
-
- </div>
-</div>
-
-  </div>
-</div>
-
-<p> </p>
-<p><a href="https://www.hl7.org/implement/standards/fhir/medicationdispense-profiles.html">ProfileとExtension</a>および代替定義を参照してください：マスター定義<a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.profile.xml.html">XML</a> + <a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.profile.json.html">JSON</a> 、 <a href="https://www.hl7.org/implement/standards/fhir/xml.html">XML</a> <a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.xsd">スキーマ</a> / <a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.sch">Schematron</a> + <a href="https://www.hl7.org/implement/standards/fhir/json.html">JSON</a> <a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.schema.json.html">スキーマ</a> 、 <a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.shex.html">ShEx</a> （ <a href="https://www.hl7.org/implement/standards/fhir/rdf.html">Turtle用</a> ）+ <a href="https://www.hl7.org/implement/standards/fhir/medicationdispense-profiles.html">Extension</a>と<a href="https://www.hl7.org/implement/standards/fhir/medicationdispense-dependencies.html">依存関係分析</a>を <a href="https://www.hl7.org/implement/standards/fhir/medicationdispense-profiles.html">参照してください</a></p>
-
-<a name="tx"></a>
-<h3 class="self-link-parent"><span class="sectioncount">11.3.4.1</span>用語の<span class="sectioncount">バインド</span><a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.html#tx" title="ここへリンク" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3>
-<table class="grid">
- <tr><th>Path</th><th>定義</th><th>型</th><th>参照</th></tr>
- <tr><td valign="top" title="投薬調剤ステータスコード">MedicationDispense.status</td><td valign="top">調剤イベントの状態を指定するコード化された概念。</td><td><a href="https://www.hl7.org/implement/standards/fhir/terminologies.html#required">必須</a></td><td valign="top"><a href="https://www.hl7.org/implement/standards/fhir/valueset-medicationdispense-status.html">MedicationDispenseステータスコード</a> <!-- b --></td> </tr>
- <tr><td valign="top" title="投薬調剤ステータス理由コード">MedicationDispense.statusReason [x]</td><td valign="top">調剤が実行されなかった理由を説明するコード。</td><td><a href="https://www.hl7.org/implement/standards/fhir/terminologies.html#example">例</a></td><td valign="top"><a href="https://www.hl7.org/implement/standards/fhir/valueset-medicationdispense-status-reason.html">MedicationDispenseステータス理由コード</a> <!-- b --></td> </tr>
- <tr><td valign="top" title="投薬調剤カテゴリーコード">MedicationDispense.category</td><td valign="top">調剤された薬がどこで使用または投与されると予想されるかを記述するコード。</td><td><a href="https://www.hl7.org/implement/standards/fhir/terminologies.html#preferred">優先</a></td><td valign="top"><a href="https://www.hl7.org/implement/standards/fhir/valueset-medicationdispense-category.html">MedicationDispenseカテゴリコード</a> <!-- b --></td> </tr>
- <tr><td valign="top" title="SNOMED CT投薬コード">MedicationDispense.medication[x] </td><td valign="top">調剤できる物質または製品を識別するコード化された概念。</td><td><a href="https://www.hl7.org/implement/standards/fhir/terminologies.html#example">例</a></td><td valign="top"><a href="https://www.hl7.org/implement/standards/fhir/valueset-medication-codes.html">SNOMEDCTMedicationCodes</a> <!-- b --></td> </tr>
- <tr><td valign="top" title="投薬ディスペンサー機能コード">MedicationDispense.performer.function</td><td valign="top">薬物の調剤において個人が果たした役割を説明するコード。</td><td><a href="https://www.hl7.org/implement/standards/fhir/terminologies.html#example">例</a></td><td valign="top"><a href="https://www.hl7.org/implement/standards/fhir/valueset-medicationdispense-performer-function.html">MedicationDispenseパフォーマー機能コード</a> <!-- b --></td> </tr>
- <tr><td valign="top" title="V3値SetActPharmacySupplyType">MedicationDispense.type</td><td valign="top">実施される調剤イベントのタイプを示します。例えば、トライアルの調剤、トライアルの完了、部分調剤、緊急調剤、サンプルなど。</td><td><a href="https://www.hl7.org/implement/standards/fhir/terminologies.html#example">例</a></td><td valign="top"><a href="https://www.hl7.org/implement/standards/fhir/v3/ActPharmacySupplyType/vs.html">v3.ActPharmacySupplyType</a>  <!-- b --></td> </tr>
- <tr><td valign="top" title="V3値SetActSubstanceAdminSubstitutionCode">MedicationDispense.substitution.type</td><td valign="top">処方で正確に指定されている製品以外の異なる医薬品を調剤できるかどうかを説明するコード化された概念。</td><td><a href="https://www.hl7.org/implement/standards/fhir/terminologies.html#example">例</a></td><td valign="top"><a href="https://www.hl7.org/implement/standards/fhir/v3/ActSubstanceAdminSubstitutionCode/vs.html">v3.ActSubstanceAdminSubstitutionCode</a>  <!-- b --></td> </tr>
- <tr><td valign="top" title="V3値セットSubstanceAdminSubstitutionReason">MedicationDispense.substitution.reason </td><td valign="top">処方されたものとは異なる薬物を代用する（またはすべきではない）理由を説明するためのコード化された概念。</td><td><a href="https://www.hl7.org/implement/standards/fhir/terminologies.html#example">例</a></td><td valign="top"><a href="https://www.hl7.org/implement/standards/fhir/v3/SubstanceAdminSubstitutionReason/vs.html">v3.SubstanceAdminSubstitutionReason</a> <!-- b --></td> </tr>
-</table>
-<p> </p>
-
-
-<a name="invs"> </a>
-<h3 class="self-link-parent"><span class="sectioncount">11.3.4.2</span>制約<a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.html#invs" title="ここへリンク" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h3><table class="grid"><tr><td width="60"><b>id</b></td><td><b>Level</b></td><td><b>Location</b></td><td><b>説明</b></td><td><b><a href="https://www.hl7.org/implement/standards/fhir/fhirpath.html">表現</a></b></td></tr><tr><td><b title="正式な不変識別子">mdd-1</b></td><td><a href="https://www.hl7.org/implement/standards/fhir/conformance-rules.html#rule" style="color:Maroon">Rule</a> </td><td>(base)</td><td>whenHandedOverはwhenPreparedの前にはできません</td><td><span style="font-family:Courier New,monospace">whenHandedOver.empty() or whenPrepared.empty() or whenHandedOver &gt;= whenPrepared</span></td></tr></table>
-
-  <!-- insert xhtml content here -->
-
-<a name="search"></a>
-<h2 class="self-link-parent"><span class="sectioncount">11.3.5</span>検索パラメーター<a href="https://www.hl7.org/implement/standards/fhir/medicationdispense.html#search" title="ここへリンク" class="self-link"><svg width="20" class="self-link" height="20" viewbox="0 0 1792 1792"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z" fill="navy"></path></svg></a></h2>
-<p>このResourceの検索パラメーター。<a href="https://www.hl7.org/implement/standards/fhir/search.html#all">共通パラメーター</a>も適用されます。REST、メッセージング、およびサービスでの検索の詳細については、 <a href="https://www.hl7.org/implement/standards/fhir/search.html">検索</a>を参照してください。</p>
-<table class="list">
-<tr><td><b>名</b></td><td><b>型</b></td><td><b>説明</b></td><td><b>表現</b></td><td><b>In Common</b></td></tr>
-<tr><td><a name="sp-code"> </a>code</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#token">token</a></td><td>この医薬品コードの調剤を返します</td><td>（CodeableConceptとしてのMedicationDispense.medication）</td><td><a href="https://www.hl7.org/implement/standards/fhir/searchparameter-registry.html#clinical-code">Resource</a></td></tr>
-<tr><td><a name="sp-context"> </a>context</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#reference">reference</a></td><td>特定のコンテキスト（エピソードまたはケアのエピソード）を持った調剤を返します</td><td>MedicationDispense.context<br>(<a href="https://www.hl7.org/implement/standards/fhir/episodeofcare.html">EpisodeOfCare</a>, <a href="https://www.hl7.org/implement/standards/fhir/encounter.html">Encounter</a>)</td><td></td></tr>
-<tr><td><a name="sp-destination"> </a>destination</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#reference">reference</a></td><td>特定の宛先に送信する必要がある調剤を返します。</td><td>MedicationDispense.destination<br>(<a href="https://www.hl7.org/implement/standards/fhir/location.html">Location</a>)</td><td></td></tr>
-<tr><td><a name="sp-identifier"> </a>identifier</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#token">token</a></td><td>この外部ID情報を持った調剤を返します</td><td>MedicationDispense.identifier</td><td><a href="https://www.hl7.org/implement/standards/fhir/searchparameter-registry.html#clinical-identifier">Resource</a></td></tr>
-<tr><td><a name="sp-medication"> </a>medication</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#reference">reference</a></td><td>この医薬品Resourceの調剤を返します</td><td>（参照としてのMedicationDispense.medication）<br>(<a href="https://www.hl7.org/implement/standards/fhir/medication.html">Medication</a>)</td><td><a href="https://www.hl7.org/implement/standards/fhir/searchparameter-registry.html#medications-medication">Resource</a></td></tr>
-<tr><td><a name="sp-patient"> </a>patient</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#reference">reference</a></td><td>調剤をリストする患者のID</td><td>MedicationDispense.subject.where（resolve（）は患者です）<br>(<a href="https://www.hl7.org/implement/standards/fhir/patient.html">Patient</a>)</td><td><a href="https://www.hl7.org/implement/standards/fhir/searchparameter-registry.html#clinical-patient">Resource</a></td></tr>
-<tr><td><a name="sp-performer"> </a>performer</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#reference">reference</a></td><td>特定の個人が実行した調剤を返します</td><td>MedicationDispense.performer.actor<br>(<a href="https://www.hl7.org/implement/standards/fhir/practitioner.html">Practitioner</a>, <a href="https://www.hl7.org/implement/standards/fhir/organization.html">Organization</a>, <a href="https://www.hl7.org/implement/standards/fhir/device.html">Device</a>, <a href="https://www.hl7.org/implement/standards/fhir/patient.html">Patient</a>, <a href="https://www.hl7.org/implement/standards/fhir/practitionerrole.html">PractitionerRole</a>, <a href="https://www.hl7.org/implement/standards/fhir/relatedperson.html">RelatedPerson</a>)</td><td></td></tr>
-<tr><td><a name="sp-prescription"> </a>prescription</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#reference">reference</a></td><td>調剤のリストを作成するための処方のID</td><td>MedicationDispense.authorizingPrescription<br>（ <a href="https://www.hl7.org/implement/standards/fhir/medicationrequest.html">MedicationRequest</a> ）</td><td><a href="https://www.hl7.org/implement/standards/fhir/searchparameter-registry.html#medications-prescription">Resource</a></td></tr>
-<tr><td><a name="sp-receiver"> </a>receiver</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#reference">reference</a></td><td>調剤をリストするレシーバーのID</td><td>MedicationDispense.receiver<br>(<a href="https://www.hl7.org/implement/standards/fhir/practitioner.html">Practitioner</a>, <a href="https://www.hl7.org/implement/standards/fhir/patient.html">Patient</a>)</td><td></td></tr>
-<tr><td><a name="sp-responsibleparty"> </a>responsibleparty</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#reference">reference</a></td><td>指定された責任者との調剤を返します</td><td>MedicationDispense.substitution.responsibleParty<br>(<a href="https://www.hl7.org/implement/standards/fhir/practitioner.html">Practitioner</a>, <a href="https://www.hl7.org/implement/standards/fhir/practitionerrole.html">PractitionerRole</a>)</td><td></td></tr>
-<tr><td><a name="sp-status"> </a>status</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#token">token</a></td><td>指定された調剤ステータスの調剤を返します</td><td>MedicationDispense.status</td><td><a href="https://www.hl7.org/implement/standards/fhir/searchparameter-registry.html#medications-status">Resource</a></td></tr>
-<tr><td><a name="sp-subject"> </a>subject</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#reference">reference</a></td><td>調剤結果をリスト化するための患者ID</td><td>MedicationDispense.subject<br>(<a href="https://www.hl7.org/implement/standards/fhir/group.html">Group</a>, <a href="https://www.hl7.org/implement/standards/fhir/patient.html">Patient</a>)</td><td></td></tr>
-<tr><td><a name="sp-type"> </a>type</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#token">token</a></td><td>特定のタイプの調剤を返します</td><td>MedicationDispense.type</td><td></td></tr>
-<tr><td><a name="sp-whenhandedover"> </a>whenhandedover</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#date">date</a></td><td>その日に引き渡された調剤を返します</td><td>MedicationDispense.whenHandedOver</td><td></td></tr>
-<tr><td><a name="sp-whenprepared"> </a>whenprepared</td><td><a href="https://www.hl7.org/implement/standards/fhir/search.html#date">date</a></td><td>その日に準備された調剤を返します</td><td>MedicationDispense.whenPrepared</td><td></td></tr>
-</table>
-
-
-
-</div>
-
-
-				</div>  <!-- /inner-wrapper -->
-            </div>  <!-- /row -->
-        </div>  <!-- /container -->
-        
-    </div>  <!-- /segment-content -->
-
-
-	<div id="segment-footer" class="segment">  <!-- segment-footer -->
-		<div class="container">  <!-- container -->
-			<div class="inner-wrapper">
-				<p>®©HL7.org 2011+。FHIR Release 4 (v4.0.0) generated on  Thu, Dec 27, 2018. <a href="https://www.hl7.org/implement/standards/fhir/qa.html" style="color:#ffffff">QAページ</a>
-        <br>
-        <span style="color:#ffff77">リンク： <a href="http://hl7.org/fhir/search.cfm" style="color:#b8dcf9">検索<img src="https://www.hl7.org/implement/standards/fhir/external.png" style="vertical-align:baseline"></a> | <a href="https://www.hl7.org/implement/standards/fhir/history.html" style="color:#b8dcf9">バージョン履歴</a> | <a href="https://www.hl7.org/implement/standards/fhir/toc.html" style="color:#b8dcf9">目次</a> | <a href="https://www.hl7.org/implement/standards/fhir/credits.html" style="color:#b8dcf9">クレジット</a> | <a href="http://services.w3.org/htmldiff?doc1=http%3A%2F%2Fhl7.org%2Ffhir%2FSTU3%2Fmedicationdispense.html&amp;doc2=http%3A%2F%2Fhl7.org%2Ffhir%2Fmedicationdispense.html" style="color:#b8dcf9">R3と比較<img src="https://www.hl7.org/implement/standards/fhir/external.png" style="vertical-align:baseline"></a> | <a rel="license" href="https://www.hl7.org/implement/standards/fhir/license.html" style="color:#b8dcf9"><img src="https://www.hl7.org/implement/standards/fhir/cc0.png" alt="CC0" style="border-style:none"></a> | <a href="http://hl7.org/fhir-issues" style="color:#b8dcf9" target="_blank">変更を提案する<img src="https://www.hl7.org/implement/standards/fhir/external.png" style="vertical-align:baseline"></a>   
-        </span>
-        </p>
-			</div>  <!-- /inner-wrapper -->
-		</div>  <!-- /container -->
-	</div>  <!-- /segment-footer -->
-  <!-- disqus thread -->
-  <!-- disqus -->
-  <!-- end disqus -->        
-	
-	<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
-		<div class="container">  <!-- container -->
-		</div>  <!-- /container -->
-	</div>  <!-- /segment-post-footer -->
-    
-      <!-- JS and analytics only. -->
-      <!-- Bootstrap core JavaScript
 ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://www.hl7.org/implement/standards/fhir/assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
@@ -919,4 +738,3 @@ $( '#tabs' ).tabs({
 </script>
 
 </body>
-</html>
