@@ -28,6 +28,71 @@
         "short": "このResourceに対する論理ID"
       },
       {
+        "id": "Immunization.extension",
+        "path": "Immunization.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 0
+      },
+      {
+        "id": "Immunization.extension:DueDateOfNextDose",
+        "path": "Immunization.extension",
+        "sliceName": "DueDateOfNextDose",
+        "short": "次回接種予定日",
+        "definition": "次回接種を予定している日、期限",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://jpfhir.jp/fhir/StructureDefinition/JP_Immunization_DueDateOfNextDose"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Immunization.extension:ManufacturedDate",
+        "path": "Immunization.extension",
+        "sliceName": "ManufacturedDate",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Immunization_ManufacturedDate"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Immunization.extension:CertificatedDate",
+        "path": "Immunization.extension",
+        "sliceName": "CertificatedDate",
+        "short": "検定年月日",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Immunization_CertificatedDate"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
         "id": "Immunization.status",
         "path": "Immunization.status",
         "definition": "予防接種記録の現在の状態を示すコード",

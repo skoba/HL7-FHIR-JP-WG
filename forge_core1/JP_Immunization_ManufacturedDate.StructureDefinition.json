@@ -1,8 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "url": "https://jpfhir.jp/fhir/StructureDefinition/JP_Immunization_DueDateOfNextDose",
-  "name": "JP_Immunization_DueDateOfNextDose",
+  "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Immunization_ManufacturedDate",
+  "name": "JP_Immunization_ManufacturedDate",
   "status": "draft",
+  "description": "製造年月日",
   "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,
@@ -20,7 +21,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://jpfhir.jp/fhir/StructureDefinition/JP_Immunization_DueDateOfNextDose"
+        "fixedUri": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Immunization_ManufacturedDate"
       },
       {
         "id": "Extension.value[x]",
