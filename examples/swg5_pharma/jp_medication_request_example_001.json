@@ -1,21 +1,118 @@
 {
-    "resourceType": "Bundle",
-    "type": "message",
-    "entry": [
+  "resourceType": "MedicationRequest",
+  "status": "draft",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/pat1",
+    "display": "患者太郎"
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.392.100495.20.3.11",
+      "value": "12345678"
+    },
+    {
+      "system": "urn:oid:1.2.392.100495.20.3.81",
+      "value": "2"
+    },
+    {
+      "system": "http://hl7fhir.jp/medication/rporder",
+      "value": "1"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
 	{
-	    "resource": {
-		"resourceType": "MessageHeader",
-		"destination": [
-		    {
-			"name": "HL7FHIR",
-			"endpoint": "http://h7fhir.jp/dest"
-		    }
-		],
-		"source": {
-		    "name": "HL7V2",
-		    "endpoint": "http://h7fhir.jp/src"
-		}
-	    }
+	  "system": "http://hl7fhir.jp/medication/JHSP0003",
+	  "code": "22",
+	  "display": "頓用"
 	}
+      ]
+    }
+  ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+	"system": "urn:oid:1.2.392.100495.20.2.74",
+	"code": "100795402",
+	"display": "ボルタレン錠２５ｍｇ"
+      }
     ]
+  },
+  "authoredOn": "2016-08-25",
+  "requester": {
+    "reference": "Practitioner/phys1",
+    "type": "Practioner",
+    "identifier": {
+	"system": "urn:oid:1.2.392.100495.20.3.41.11319999999",
+      "value": "123456"
+    },
+    "display": "医師春子"
+  },
+  "groupIdentifier": {
+    "value": "2"
+  },
+  "dosageInstruction": [
+    {
+      "timing": {
+	"repeat": {
+	  "count": 10,
+	  "frequencyMax": 2,
+	  "period": 1,
+	  "periodUnit": "d"
+	},
+	"code": [
+	  {
+	    "coding": [
+	      {
+		"system": "urn:oid:1.2.392.200250.2.2.20",
+		"code": "1050110020000000",
+		"display": "内服・経口・疼痛時"
+	      }
+	    ]
+	  }
+	]
+      },
+      "asNeededBoolean": true,
+      "route": {
+	"coding": [
+	  {
+	    "system": "urn:oid:2.16.840.1.113883.3.1937.777.10.5.162",
+	    "code": "PO",
+	    "display": "経口"
+	  }
+	]
+      },
+      "doseAndRate": [
+	{
+	  "type": {
+	    "coding": [
+	      {
+		"system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+		"code": "ordered",
+		"display": "Ordered"
+	      }
+	    ]
+	  },
+	  "doseQuantity": {
+	    "value": 1,
+	    "unit": "錠",
+	    "system": "http://hl7fhir.jp/medication/MR9PUnit",
+	    "code": "TAB"
+	  }
+	}
+      ]
+    }
+  ],
+  "dispenseRequest": {
+    "quantity": {
+      "value": 10,
+      "unit": "錠",
+      "system": "http://hl7fhir.jp/medication/MR9PUnit",
+      "code": "TAB"
+    }
+  }
 }
+
+
